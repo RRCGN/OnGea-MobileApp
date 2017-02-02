@@ -1,26 +1,9 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * Entry point for iOS
  * @flow
  */
 
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'
-import { TabNavigator } from 'react-navigation'
+import { AppRegistry } from 'react-native'
+import OnGeaApp from './app/OnGeaApp'
 
-const OnGeaApp = TabNavigator({
-  Web: {
-    screen: WebAppScreen
-  },
-  Dashboard: {
-    screen: DashboardScreen
-  }
-})
-
-AppRegistry.registerComponent('OnGeaApp', () => OnGeaApp);
+AppRegistry.registerComponent('OnGea', () => OnGeaApp);
