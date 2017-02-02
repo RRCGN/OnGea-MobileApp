@@ -3,17 +3,10 @@
  * @flow
  */
 
-import { TabNavigator } from 'react-navigation'
-import WebAppTabRoute from './routes/WebAppTabRoute'
-import DashboardTabRoute from './routes/DashboardTabRoute'
+import MainTabNavigator from './navigators'
 
-const OnGeaApp = TabNavigator({
-  Web: {
-    screen: WebAppTabRoute
-  },
-  Dashboard: {
-    screen: DashboardTabRoute
-  }
-})
+// This proxies MainTabNavigator in case the App Container needs additional stuff.
+// Maybe it doesn't.
+const OnGeaApp = MainTabNavigator
 
 export default OnGeaApp
