@@ -4,12 +4,10 @@
  */
 
 import React, { Component } from 'react'
-import {
-  Text
-} from 'react-native'
+import { Text } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 
-export default class DashboardScreen extends Component {
+export default class DashboardTabRoute extends Component {
   static navigationOptions = {
     title: 'Dashboard',
     tabBar: {
@@ -23,7 +21,7 @@ export default class DashboardScreen extends Component {
       )
     }
   }
-
+  
   render() {
     return (
       <Text>Hellooo!</Text>

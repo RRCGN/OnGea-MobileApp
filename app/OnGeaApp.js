@@ -4,15 +4,15 @@
  */
 
 import { TabNavigator } from 'react-navigation'
-import WebAppScreen from './screens/WebAppScreen'
-import DashboardScreen from './screens/DashboardScreen'
+import WebAppTabRoute from './routes/WebAppTabRoute'
+import DashboardTabRoute from './routes/DashboardTabRoute'
 
 const OnGeaApp = TabNavigator({
   Web: {
-    screen: WebAppScreen
+    screen: WebAppTabRoute
   },
   Dashboard: {
-    screen: DashboardScreen
+    screen: DashboardTabRoute
   }
 })
 
