@@ -19,6 +19,7 @@ const MainScreenTabNavigator = TabNavigator({
 }, {
   tabBarComponent: TabView.TabBarBottom,
   tabBarPosition: 'bottom',
+  swipeEnabled: false,
   ...Platform.select({
     android: {
       tabBarOptions: {
