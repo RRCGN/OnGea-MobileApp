@@ -6,6 +6,7 @@
 import React, { Component } from 'react'
 import { Text } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
+import WebTabButton from '../components/WebTabButton'
 
 export default class WebViewScreen extends Component {
   static navigationOptions = {
@@ -13,11 +14,7 @@ export default class WebViewScreen extends Component {
     tabBar: {
       label: 'Web',
       icon: ({ tintColor, focused }) => (
-        <Icon
-          name={focused ? 'ios-globe' : 'ios-globe-outline'}
-          size={26}
-          style={{ color: tintColor }}
-        />
+        <WebTabButton tintColor={tintColor} focused={focused} />
       )
     }
   }

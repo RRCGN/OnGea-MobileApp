@@ -6,16 +6,18 @@
 
 import {
   TabNavigator,
-  StackNavigator
+  StackNavigator,
+  TabView
 } from 'react-navigation'
 import React from 'react'
+import { Platform } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import WebAppView from './views/WebAppView'
-import DashboardOverviewView from './views/DashboardOverviewView'
+import MobilitiesOverviewView from './views/MobilitiesOverviewView'
 import TestView from './views/TestView'
 
-const DashboardNavigator = StackNavigator({
-  Overview: { screen: DashboardOverviewView },
+const MobilitiesNavigator = StackNavigator({
+  Overview: { screen: MobilitiesOverviewView },
   Test: { screen: TestView }
 })
 
@@ -24,19 +26,22 @@ const MainScreenTabNavigator = TabNavigator({
     screen: WebAppView
   },
   Dashboard: {
-    screen: DashboardNavigator
+    screen: MobilitiesNavigator
   }
+}, {
+  tabBarComponent: TabView.TabBarBottom,
+  tabBarPosition: 'bottom',
+  ...Platform.select({
+    android: {
+      tabBarOptions: {
+        activeTintColor: 'white',
+        inactiveTintColor: '#BBDEFB',
+        style: {
+          backgroundColor: '#2196F3'
+        }
+      }
+    }
+  })
 })
-
-export const dashboardTabBar = {
-  label: 'Activities',
-  icon: ({ tintColor, focused }) => (
-    <Icon
-      name={focused ? 'ios-briefcase' : 'ios-briefcase-outline'}
-      size={26}
-      style={{ color: tintColor }}
-    />
-  )
-}
 
 export default MainScreenTabNavigator
