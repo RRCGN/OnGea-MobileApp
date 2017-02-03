@@ -1,5 +1,17 @@
-# Notes
+# OnGea App
 
-- > 1 Mobility: Tab goes directly to Mobility
-- more Mobilities: Tab goes to Mobility Overview
-- On App Start: Test Network, maybe show Offline Message
+OnGea Apps for iOS and Android, written in react-native.
+
+## Dependencies
+
+- react-native
+
+## Installation
+
+1. Install dependencies: `yarn install`
+2. Link native dependencies: `react-native link`
+
+## Run
+
+- `react-native run-ios`
+- `react-native run-android`
