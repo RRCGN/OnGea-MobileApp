@@ -6,10 +6,11 @@
 import React, { Component } from 'react'
 import { Text, Button, View } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
-import navOpt from '../lib/mobilities-tab-options'
 
 export default class DashboardOverviewView extends Component {
-  static navigationOptions = navOpt({ title: 'Meine Mobilities' })
+  static navigationOptions = {
+    title: 'Meine Mobilities'
+  }
 
   render() {
     const { navigate } = this.props.navigation
