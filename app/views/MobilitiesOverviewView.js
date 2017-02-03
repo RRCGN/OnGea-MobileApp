@@ -6,6 +6,7 @@
 import React, { Component } from 'react'
 import { Text, Button, View } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
+import { CardView, CardImage } from '../components/Card'
 
 export default class DashboardOverviewView extends Component {
   static navigationOptions = {
@@ -16,9 +17,10 @@ export default class DashboardOverviewView extends Component {
     const { navigate } = this.props.navigation
     return (
       <View>
-        <Button onPress={() => navigate('Test', { no: 1 })} title="Mobility 1" />
-        <Button onPress={() => navigate('Test', { no: 2 })} title="Mobility 2" />
-        <Button onPress={() => navigate('Test', { no: 3 })} title="Mobility 3" />
+        <CardView>
+          <CardImage source={require('../assets/concert.jpg')} />
+          <Text>Hellooo</Text>
+        </CardView>
       </View>
     )
   }
