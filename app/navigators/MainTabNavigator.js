@@ -8,6 +8,7 @@ import { Platform } from 'react-native'
 import { TabNavigator, TabView } from 'react-navigation'
 import WebAppView from '../views/WebAppView'
 import MobilitiesTabView from '../views/MobilitiesTabView'
+import { Colors } from '../utils/constants'
 
 const MainScreenTabNavigator = TabNavigator({
   Web: {
@@ -20,17 +21,13 @@ const MainScreenTabNavigator = TabNavigator({
   tabBarComponent: TabView.TabBarBottom,
   tabBarPosition: 'bottom',
   swipeEnabled: false,
-  ...Platform.select({
-    android: {
-      tabBarOptions: {
-        activeTintColor: 'white',
-        inactiveTintColor: '#BBDEFB',
-        style: {
-          backgroundColor: '#2196F3'
-        }
-      }
+  tabBarOptions: {
+    activeTintColor: 'white',
+    inactiveTintColor: Colors.LIGHT_BLUE,
+    style: {
+      backgroundColor: Colors.BLUE
     }
-  })
+  }
 })
 
 export default MainScreenTabNavigator
