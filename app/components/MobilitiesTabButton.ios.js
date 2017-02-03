@@ -8,7 +8,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 
 const MobilitiesTabButton = ({ tintColor, focused }) => (
   <Ionicon
-    name={focused ? 'ios-briefcase' : 'ios-briefcase-outline'}
+    name={focused ? 'ios-bonfire' : 'ios-bonfire-outline'}
     size={26}
     style={{ color: tintColor }}
   />
