@@ -15,7 +15,7 @@ const MobilitiesTabButton = ({ tintColor, focused }) => (
 
 MobilitiesTabButton.propTypes = {
   tintColor: React.PropTypes.string,
-  focused: React.PropTypes.boolean // focused has no effect in Android Version
+  focused: React.PropTypes.bool // focused has no effect in Android Version
 }
 
 export default MobilitiesTabButton
