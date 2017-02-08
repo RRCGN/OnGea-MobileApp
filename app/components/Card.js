@@ -4,7 +4,8 @@
  */
 
 import React, { Component } from 'react'
-import { View, StyleSheet, Image } from 'react-native'
+import { View, StyleSheet, Image, Platform } from 'react-native'
+import ImageWithCaption from './ImageWithCaption'
 
 const Colors = {
   WHITE: '#FFFFFF'
@@ -13,27 +14,28 @@ const Colors = {
 const styles = StyleSheet.create({
   card: {
     margin: 16,
-    padding: 16,
     backgroundColor: Colors.WHITE,
     borderRadius: 2
-  },
-  imageContainer: {
-    marginLeft: -16,
-    marginRight: -16,
-    marginTop: -16
-  },
-  image: {
-    flex: 1,
-    width: null,
-    height: null,
   }
 })
 
 export class CardView extends Component {
   render() {
+    const shadowProps = Platform.select({
+      ios: {
+        shadowOpacity: 0.18,
+        shadowRadius: 1.4,
+        shadowOffset: {
+          height: 1
+        }
+      },
+      android: {
+        elevation: 2
+      }
+    })
     const elevation = this.props.elevation || 2
     return (
-      <View style={styles.card} elevation={elevation}>{this.props.children}</View>
+      <View style={styles.card} {...shadowProps}>{this.props.children}</View>
     )
   }
 }
@@ -41,8 +43,7 @@ export class CardView extends Component {
 export class CardImage extends Component {
   render() {
     return (
-
-        <Image style={styles.image} resizeMode='cover' source={require('../assets/concert.jpg')} />
+      <ImageWithCaption {...this.props} />
     )
   }
 }

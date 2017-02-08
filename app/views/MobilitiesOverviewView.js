@@ -18,7 +18,7 @@ export default class DashboardOverviewView extends Component {
     return (
       <View>
         <CardView>
-          <CardImage source={require('../assets/concert.jpg')} />
+          <CardImage source={require('../assets/concert.jpg')} title="Il Mestiere Dell'arte 2" subtitle="Second Educational Path" />
           <Text>Hellooo</Text>
         </CardView>
       </View>
