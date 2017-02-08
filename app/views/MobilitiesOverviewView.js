@@ -10,6 +10,8 @@ import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 import FlatButton from '../components/FlatButton'
 import ButtonList from '../components/ButtonList'
 import Button from '../components/Button'
+import TripDate from '../components/TripDate'
+import TripDateList from '../components/TripDateList'
 
 export default class DashboardOverviewView extends Component {
   static navigationOptions = {
@@ -33,7 +35,10 @@ export default class DashboardOverviewView extends Component {
             </ButtonList>
           </CardSegment>
           <CardSegment space="big">
-            <Text>Dates</Text>
+            <TripDateList>
+              <TripDate typeText="vom" dateText="10.04.2017" />
+              <TripDate typeText="bis" dateText="16.04.2017" />
+            </TripDateList>
           </CardSegment>
           <CardSegment space="small">
             <ButtonList>
