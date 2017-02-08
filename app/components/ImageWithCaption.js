@@ -65,7 +65,7 @@ export default class ImageWithCaption extends Component {
 }
 
 ImageWithCaption.propTypes = {
-  title: React.PropTypes.string,
+  title: React.PropTypes.string.isRequired,
   subtitle: React.PropTypes.string,
-  source: Image.propTypes.source
+  source: Image.propTypes.source.isRequired
 }
