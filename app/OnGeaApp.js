@@ -1,6 +1,5 @@
 /**
  * Main App
- * @flow
  */
 
 import MainTabNavigator from './navigators/MainTabNavigator'

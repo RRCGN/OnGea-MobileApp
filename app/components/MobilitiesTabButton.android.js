@@ -1,6 +1,5 @@
 /**
- *
- * @flow
+ * Android (Material) Icon for TabBar
  */
 
 import React from 'react'

@@ -1,6 +1,5 @@
 /**
- *
- * @flow
+ * Mobilities Navigator (Stack Navigator)
  */
 
 import React from 'react'

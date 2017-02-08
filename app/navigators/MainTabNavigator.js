@@ -1,6 +1,6 @@
 /**
- *
- * @flow
+ * Main Navigation (Tab Navigator)
+ * Two Tabs for WebView and Mobilities Overview
  */
 
 import React from 'react'

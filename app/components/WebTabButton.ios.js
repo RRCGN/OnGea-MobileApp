@@ -1,6 +1,5 @@
 /**
- * Tab Button for Web View
- * @flow
+ * iOS: Tab Button for Web View
  */
 
 import React from 'react'

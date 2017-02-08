@@ -1,6 +1,5 @@
 /**
  * Card Component
- * @flow
  */
 
 import React, { Component } from 'react'

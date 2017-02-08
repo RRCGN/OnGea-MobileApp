@@ -1,6 +1,5 @@
 /**
  * Aspect Ratio Image with an overlayed caption
- * @flow
  */
 
 import React, { Component } from 'react'

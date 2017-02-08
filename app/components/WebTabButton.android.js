@@ -1,6 +1,5 @@
 /**
- * Tab Button for Web View
- * @flow
+ * Android: Tab Button for Web View
  */
 
 import React from 'react'

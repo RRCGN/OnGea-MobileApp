@@ -1,6 +1,5 @@
 /**
  * Constants
- * @flow
  */
 
 export const Colors = {

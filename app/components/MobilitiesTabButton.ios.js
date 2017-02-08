@@ -1,6 +1,5 @@
 /**
- *
- * @flow
+ * iOS (Ionicon) Icon for TabBar
  */
 
 import React from 'react'

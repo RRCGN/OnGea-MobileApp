@@ -1,6 +1,5 @@
 /**
- * Dashboard Overview
- * @flow
+ * Mobilities Overview
  */
 
 import React, { Component } from 'react'

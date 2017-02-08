@@ -1,6 +1,5 @@
 /**
- * Screen for OnGea Web View
- * @flow
+ * Screen for OnGea WebView
  */
 
 import React, { Component } from 'react'

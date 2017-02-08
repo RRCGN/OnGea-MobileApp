@@ -1,6 +1,5 @@
 /**
  * Dashboard Overview
- * @flow
  */
 
 import React, { Component } from 'react'
