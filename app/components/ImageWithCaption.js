@@ -44,21 +44,28 @@ export default class ImageWithCaption extends Component {
 
   render() {
     const { height, width } = this.state
+    const { title, subtitle, source } = this.props
 
     return (
       <View onLayout={this.handleOnLayout} style={{ position: 'relative' }}>
         <Image
           resizeMode="cover"
           style={{ height, width, ...StyleSheet.flatten(styles.image) }}
-          source={this.props.source}
+          source={source}
         />
         <View style={styles.overlay}>
-          <Text style={styles.text}>{this.props.title}</Text>
-          {this.props.subtitle && (
-            <Text style={styles.subtext}>{this.props.subtitle}</Text>
+          <Text style={styles.text}>{title}</Text>
+          {subtitle && (
+            <Text style={styles.subtext}>{subtitle}</Text>
           )}
         </View>
       </View>
     )
   }
+}
+
+ImageWithCaption.propTypes = {
+  title: React.PropTypes.string,
+  subtitle: React.PropTypes.string,
+  source: Image.propTypes.source
 }

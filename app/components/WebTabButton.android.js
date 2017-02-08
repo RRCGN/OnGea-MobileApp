@@ -13,4 +13,9 @@ const WebTabButton = ({ tintColor, focused }) => (
   />
 )
 
+WebTabButton.propTypes = {
+  tintColor: React.PropTypes.string,
+  focused: React.PropTypes.boolean // focused has no effect in Android Version
+}
+
 export default WebTabButton
