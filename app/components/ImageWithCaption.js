@@ -55,7 +55,7 @@ export default class ImageWithCaption extends Component {
         />
         <View style={styles.overlay}>
           <Text style={styles.text}>{title}</Text>
-          {subtitle && (
+          {subtitle.length > 0 && (
             <Text style={styles.subtext}>{subtitle}</Text>
           )}
         </View>
