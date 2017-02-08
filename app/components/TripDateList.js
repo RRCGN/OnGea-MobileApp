@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     paddingBottom: 8
   },
   itemSeparator: {
-    borderLeftWidth: StyleSheet.hairlineWidth,
+    borderLeftWidth: 1,
     borderLeftColor: '#E0E0E0'
   }
 })

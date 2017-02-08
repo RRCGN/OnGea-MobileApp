@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   },
   segmentWithBorder: {
     borderBottomColor: Colors.CARD_BORDER,
-    borderBottomWidth: StyleSheet.hairlineWidth
+    borderBottomWidth: 1
   }
 })
 
