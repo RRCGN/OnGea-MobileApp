@@ -5,12 +5,16 @@
 import React from 'react'
 import { View } from 'react-native'
 
-const ButtonList = ({ children }) => {
+const ButtonList = ({ justifyContent, children }) => {
   return (
-    <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+    <View style={{ flexDirection: 'row', justifyContent }}>
       {children}
     </View>
   )
+}
+
+ButtonList.defaultProps = {
+  justifyContent: 'flex-end'
 }
 
 export default ButtonList

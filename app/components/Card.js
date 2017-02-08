@@ -6,14 +6,19 @@ import React, { Component } from 'react'
 import { View, StyleSheet, Image, Platform, Text } from 'react-native'
 import ImageWithCaption from './ImageWithCaption'
 
+/**
+ * Color Constants not from ./utils/constants
+ * to encapsulate card more
+ */
 const Colors = {
-  WHITE: '#FFFFFF'
+  CARD_BACKGROUND: '#FFFFFF',
+  CARD_BORDER: '#E0E0E0'
 }
 
 const styles = StyleSheet.create({
   card: {
     margin: 16,
-    backgroundColor: Colors.WHITE,
+    backgroundColor: Colors.CARD_BACKGROUND,
     borderRadius: 2
   },
   segmentSmallSpace: {
@@ -23,7 +28,7 @@ const styles = StyleSheet.create({
     padding: 16
   },
   segmentWithBorder: {
-    borderBottomColor: '#E0E0E0',
+    borderBottomColor: Colors.CARD_BORDER,
     borderBottomWidth: StyleSheet.hairlineWidth
   }
 })

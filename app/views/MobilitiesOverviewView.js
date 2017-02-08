@@ -9,6 +9,7 @@ import { CardView, CardImage, CardSegment } from '../components/Card'
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 import FlatButton from '../components/FlatButton'
 import ButtonList from '../components/ButtonList'
+import Button from '../components/Button'
 
 export default class DashboardOverviewView extends Component {
   static navigationOptions = {
@@ -20,7 +21,7 @@ export default class DashboardOverviewView extends Component {
     return (
       <View>
         <CardView>
-          <CardImage source={require('../assets/concert.jpg')} title="Il Mestiere Dell'arte 2" subtitle="Second Educational Path" />
+          <CardImage source={require('../assets/concert.jpg')} title="Tolle Reise" subtitle="nach Madrid" />
           <CardSegment hasBorderBottom space="small">
             <ButtonList>
               <FlatButton>
@@ -35,7 +36,9 @@ export default class DashboardOverviewView extends Component {
             <Text>Dates</Text>
           </CardSegment>
           <CardSegment space="small">
-            <Text>More actions</Text>
+            <ButtonList>
+              <Button text="ANSEHEN" />
+            </ButtonList>
           </CardSegment>
         </CardView>
       </View>
