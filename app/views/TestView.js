@@ -8,7 +8,16 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 export default class TestView extends Component {
   static navigationOptions = {
-    title: ({ state }) => `Mobility ${state.params.no}`
+    title: ({ state }) => state.params.title,
+    header: ({ state, setParams }) => ({
+      left: undefined,
+      style: {
+        backgroundColor: 'transparent'
+      },
+      titleStyle: {
+        backgroundColor: 'transparent'
+      }
+    })
   }
 
   render() {

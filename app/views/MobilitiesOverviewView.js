@@ -11,6 +11,6 @@ export default class MobilitiesOverviewView extends Component {
   }
 
   render() {
-    return <MobilitiesListView />
+    return <MobilitiesListView {...this.props} />
   }
 }

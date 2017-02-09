@@ -30,7 +30,7 @@ export default class MobilitiesListView extends Component {
         source={require('../assets/concert.jpg')}
         title="Tolle Reise"
         subtitle="nach Madrid"
-        onPress={() => alert('Hello')}
+        onPress={() => this.props.navigation.navigate('Test', { title: 'Tolle Reise' })}
       />
       <CardSegment hasBorderBottom space="small">
         <ButtonList>
