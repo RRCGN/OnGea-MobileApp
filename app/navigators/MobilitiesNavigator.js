@@ -6,12 +6,12 @@ import React from 'react'
 import { StyleSheet } from 'react-native'
 import { StackNavigator } from 'react-navigation'
 import MobilitiesOverviewView from '../views/MobilitiesOverviewView'
-import TestView from '../views/TestView'
+import SingleView from '../views/SingleView'
 import { Colors } from '../utils/constants'
 
 const MobilitiesNavigator = StackNavigator({
   Overview: { screen: MobilitiesOverviewView },
-  Test: { screen: TestView }
+  Single: { screen: SingleView }
 }, {
   headerMode: 'float',
   navigationOptions: {
