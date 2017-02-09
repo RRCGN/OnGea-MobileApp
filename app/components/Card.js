@@ -3,7 +3,15 @@
  */
 
 import React, { Component } from 'react'
-import { View, StyleSheet, Image, Platform, Text } from 'react-native'
+import {
+  View,
+  StyleSheet,
+  Image,
+  Platform,
+  Text,
+  TouchableNativeFeedback,
+  TouchableOpacity
+ } from 'react-native'
 import ImageWithCaption from './ImageWithCaption'
 
 /**
@@ -58,7 +66,27 @@ export const CardView = ({ children }) => {
 
 /** Card Image (Proxy for ImageWithCaption) */
 
-export const CardImage = (props) => {
+export const CardImage = ({ onPress, ...props }) => {
+  const TouchableFeedback =
+    Platform.OS === 'ios' ? TouchableOpacity : TouchableNativeFeedback
+  const touchableProps = Platform.select({
+    android: {
+      background: TouchableNativeFeedback.SelectableBackground(),
+      useForeground: TouchableNativeFeedback.canUseNativeForeground() ? true : false
+    },
+    ios: { }
+  })
+
+  if (onPress) {
+    return (
+      <TouchableFeedback onPress={onPress} {...touchableProps}>
+        <View>
+          <ImageWithCaption {...props} />
+        </View>
+      </TouchableFeedback>
+    )
+  }
+
   return <ImageWithCaption {...props} />
 }
 

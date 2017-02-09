@@ -26,7 +26,12 @@ export default class MobilitiesListView extends Component {
 
   renderListRow = (rowData) => (
     <CardView>
-      <CardImage source={require('../assets/concert.jpg')} title="Tolle Reise" subtitle="nach Madrid" />
+      <CardImage
+        source={require('../assets/concert.jpg')}
+        title="Tolle Reise"
+        subtitle="nach Madrid"
+        onPress={() => alert('Hello')}
+      />
       <CardSegment hasBorderBottom space="small">
         <ButtonList>
           <FlatButton>
