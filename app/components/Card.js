@@ -70,11 +70,14 @@ export const CardImage = ({ onPress, ...props }) => {
   const TouchableFeedback =
     Platform.OS === 'ios' ? TouchableOpacity : TouchableNativeFeedback
   const touchableProps = Platform.select({
+    // iOS really hates Android and gets angry when you call something from TouchableNativeFeedback.
+    // But Android is pissed if you try to call `canUseNativeForeground` in a function.
+    // This looks a bit strange, but it makes both OS's a bit less angry.
     android: {
-      background: TouchableNativeFeedback.SelectableBackground(),
-      useForeground: TouchableNativeFeedback.canUseNativeForeground() ? true : false
+      useForeground: TouchableFeedback.canUseNativeForeground && TouchableFeedback.canUseNativeForeground(),
+      background: TouchableFeedback.SelectableBackground && TouchableFeedback.SelectableBackground()
     },
-    ios: { }
+    ios: {}
   })
 
   if (onPress) {
