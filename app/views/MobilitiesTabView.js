@@ -20,7 +20,13 @@ export default class MobilitiesTabView extends Component {
   }
 
   componentDidMount() {
-    Platform.OS === 'android' && StatusBar.setBackgroundColor(Colors.DARK_BLUE, true)
+    switch (Platform.OS) {
+      case 'android':
+        StatusBar.setBackgroundColor(Colors.DARK_BLUE, true)
+        break
+      case 'ios':
+        StatusBar.setBarStyle('light-content')
+    }
   }
 
   render() {
