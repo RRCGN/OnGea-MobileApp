@@ -1,21 +1,23 @@
 /**
  * iOS: Tab Button for Web View
+ * @flow
  */
 
 import React from 'react'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-const WebTabButton = ({ tintColor, focused }) => (
+
+type Props = {
+  tintColor: string,
+  focused: boolean
+}
+
+const WebTabButton = ({ tintColor, focused }: Props) => (
   <Ionicon
     name={focused ? 'ios-globe' : 'ios-globe-outline'}
     size={26}
     style={{ color: tintColor }}
   />
 )
-
-WebTabButton.propTypes = {
-  tintColor: React.PropTypes.string.isRequired,
-  focused: React.PropTypes.bool // focused has no effect in Android Version
-}
 
 export default WebTabButton

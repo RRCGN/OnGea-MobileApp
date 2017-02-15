@@ -1,21 +1,21 @@
 /**
  * Android: Tab Button for Web View
+ * @flow
  */
 
 import React from 'react'
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 
-const WebTabButton = ({ tintColor, focused }) => (
+type Props = {
+  tintColor: string
+}
+
+const WebTabButton = ({ tintColor }: Props) => (
   <MaterialIcon
     name='public'
     size={26}
     style={{ color: tintColor }}
   />
 )
-
-WebTabButton.propTypes = {
-  tintColor: React.PropTypes.string.isRequired,
-  focused: React.PropTypes.bool // focused has no effect in Android Version
-}
 
 export default WebTabButton
