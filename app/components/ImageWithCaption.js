@@ -4,6 +4,7 @@
 
 import React, { Component } from 'react'
 import { View, Image, StyleSheet, Text } from 'react-native'
+import LinearGradient from 'react-native-linear-gradient'
 
 const styles = StyleSheet.create({
   overlay: {
@@ -14,16 +15,17 @@ const styles = StyleSheet.create({
     paddingTop: 24,
     paddingBottom: 16,
     paddingLeft: 16,
-    paddingRight: 16,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)'
+    paddingRight: 16
   },
   text: {
     color: 'white',
-    fontSize: 24
+    fontSize: 24,
+    backgroundColor: 'transparent'
   },
   subtext: {
     color: 'white',
-    fontSize: 14
+    fontSize: 14,
+    backgroundColor: 'transparent'
   },
   image: {
     borderTopLeftRadius: 2,
@@ -53,12 +55,12 @@ export default class ImageWithCaption extends Component {
           style={{ height, width, ...StyleSheet.flatten(styles.image) }}
           source={source}
         />
-        <View style={styles.overlay}>
+        <LinearGradient colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.8)']} style={styles.overlay}>
           <Text style={styles.text}>{title}</Text>
           {subtitle && (
             <Text style={styles.subtext}>{subtitle}</Text>
           )}
-        </View>
+        </LinearGradient>
       </View>
     )
   }

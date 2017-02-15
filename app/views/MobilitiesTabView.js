@@ -4,6 +4,7 @@
  */
 
 import React, { Component } from 'react'
+import { View, StatusBar } from 'react-native'
 import MobilitiesNavigator from '../navigators/MobilitiesNavigator'
 import MobilitiesTabButton from '../components/MobilitiesTabButton'
 
@@ -19,7 +20,10 @@ export default class MobilitiesTabView extends Component {
 
   render() {
     return (
-      <MobilitiesNavigator />
+      <View style={{ flex: 1 }}>
+        <StatusBar barStyle="light-content" />
+        <MobilitiesNavigator />
+      </View>
     )
   }
 }
