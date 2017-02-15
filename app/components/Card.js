@@ -12,7 +12,8 @@ import {
   TouchableNativeFeedback,
   TouchableOpacity
  } from 'react-native'
-import ImageWithCaption, { Props as IWCProps } from './ImageWithCaption'
+import ImageWithCaption from './ImageWithCaption'
+import type { Props as IWCProps } from './ImageWithCaption'
 
 // Color Constants not from ./utils/constants to encapsulate card more
 const CardColors = {
