@@ -1,5 +1,5 @@
 /**
- * Component to display two Dates side by side
+ * Component to display a date with some text above it
  * @flow
  */
 
