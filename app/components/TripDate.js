@@ -1,5 +1,28 @@
+/**
+ * Component to display two Dates side by side
+ * @flow
+ */
+
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
+
+
+type Props = {
+  typeText: string,
+  dateText: string
+}
+
+const TripDate = ({ typeText, dateText }: Props) => {
+  return (
+    <View>
+      <Text style={styles.typeText}>{typeText}</Text>
+      <Text style={styles.dateText}>{dateText}</Text>
+    </View>
+  )
+}
+
+export default TripDate
+
 
 const styles = StyleSheet.create({
   typeText: {
@@ -12,14 +35,3 @@ const styles = StyleSheet.create({
     color: 'rgba(0,0,0,0.87)'
   }
 })
-
-const TripDate = ({ typeText, dateText }) => {
-  return (
-    <View>
-      <Text style={styles.typeText}>{typeText}</Text>
-      <Text style={styles.dateText}>{dateText}</Text>
-    </View>
-  )
-}
-
-export default TripDate
