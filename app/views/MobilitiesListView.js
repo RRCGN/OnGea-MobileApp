@@ -25,7 +25,7 @@ export default class MobilitiesListView extends Component {
   }
 
   renderListRow = (rowData) => (
-    <View style={styles.listItem}>
+    <View style={styles.item}>
       <CardView>
         <CardImage
           source={require('../assets/concert.jpg')}
@@ -60,25 +60,20 @@ export default class MobilitiesListView extends Component {
 
   render() {
     return (
-      <View>
-        <ListView
-          style={styles.list}
-          dataSource={this.state.dataSource}
-          renderRow={this.renderListRow}
-        />
-      </View>
+      <ListView
+        dataSource={this.state.dataSource}
+        renderRow={this.renderListRow}
+      />
     )
   }
 }
 
-
 const styles = StyleSheet.create({
-  list: {
-    paddingTop: 16
-  },
   listItem: {
-    paddingBottom: 16,
-    paddingLeft: 16,
-    paddingRight: 16
+    margin: 16
+    // FIXME: Space between cards is now 32, because RN doesn't collapse
+    // margins. Other solutions causes issues under Android: Although there
+    // is _somehow_ padding below the last card, it will just scroll to the end
+    // of the last card, ignoring everything else.
   }
 })
