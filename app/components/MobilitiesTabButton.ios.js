@@ -1,21 +1,23 @@
 /**
  * iOS (Ionicon) Icon for TabBar
+ * @flow
  */
 
 import React from 'react'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-const MobilitiesTabButton = ({ tintColor, focused }) => (
+
+type Props = {
+  tintColor: string,
+  focused: boolean
+}
+
+const MobilitiesTabButton = ({ tintColor, focused }: Props) => (
   <Ionicon
     name={focused ? 'ios-bonfire' : 'ios-bonfire-outline'}
     size={26}
     style={{ color: tintColor }}
   />
 )
-
-MobilitiesTabButton.propTypes = {
-  tintColor: React.PropTypes.string.isRequired,
-  focused: React.PropTypes.bool // focused has no effect in Android Version
-}
 
 export default MobilitiesTabButton
