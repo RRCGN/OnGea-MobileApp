@@ -1,6 +1,7 @@
 /**
  * Contents of Mobilities Tab. Nested Navigator.
  * Mobilities Tab renders a StackNavigator, see MobilitiesNavigator.
+ * @flow
  */
 
 import React, { Component } from 'react'

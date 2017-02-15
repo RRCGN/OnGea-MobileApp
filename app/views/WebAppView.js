@@ -1,5 +1,6 @@
 /**
  * Screen for OnGea WebView
+ * @flow
  */
 
 import React, { Component } from 'react'
@@ -25,7 +26,6 @@ export default class WebViewScreen extends Component {
         <StatusBar backgroundColor={Colors.DARK_BLUE} />
         <Text>Hellooo WebApp!</Text>
       </View>
-
     )
   }
 }
