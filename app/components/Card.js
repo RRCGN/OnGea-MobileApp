@@ -63,7 +63,7 @@ export const CardImage = ({ onPress, ...props }: CardImageProps) => {
     return (
       <Touch onPress={onPress} {...touchableProps}>
         <View>{/* Touch works only wrapped in <View> */}
-          <ImageWithCaption {...props} />
+          <ImageWithCaption inCard={true} style={styles.image} {...props} />
         </View>
       </Touch>
     )
@@ -71,7 +71,7 @@ export const CardImage = ({ onPress, ...props }: CardImageProps) => {
 
   // If onPress not present, proxy to ImageWithCaption
   return (
-    <ImageWithCaption {...props} />
+    <ImageWithCaption inCard={true} {...props} />
   )
 }
 
@@ -105,9 +105,9 @@ export const CardSegment = (
 
 const styles = StyleSheet.create({
   card: {
-    margin: 16,
     backgroundColor: CardColors.CARD_BACKGROUND,
     borderRadius: 2,
+    overflow: 'hidden',
     ...Platform.select({
       ios: {
         shadowOpacity: 0.18,

@@ -12,7 +12,8 @@ import type { ImageSource } from 'react-native'
 export type Props = {
   title: string,
   subtitle?: string,
-  source: ImageSource
+  source: ImageSource,
+  inCard?: boolean
 }
 
 
@@ -23,6 +24,10 @@ export default class ImageWithCaption extends Component<any, Props, any> {
     height: number,
     width: number
   };
+
+  static defaultProps = {
+    inCard: false
+  }
 
   constructor(props: Props) {
     super(props)
@@ -39,13 +44,13 @@ export default class ImageWithCaption extends Component<any, Props, any> {
 
   render() {
     const { height, width } = this.state
-    const { title, subtitle, source } = this.props
+    const { title, subtitle, source, inCard } = this.props
 
     return (
       <View onLayout={this.handleOnLayout} style={{ position: 'relative' }}>
         <Image
           resizeMode="cover"
-          style={{ height, width, ...StyleSheet.flatten(styles.image) }}
+          style={{ ...StyleSheet.flatten(inCard && styles.roundedImage), height, width }}
           source={source}
         />
         <LinearGradient colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.8)']} style={styles.overlay}>
@@ -79,7 +84,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     backgroundColor: 'transparent'
   },
-  image: {
+  roundedImage: {
     borderTopLeftRadius: 2,
     borderTopRightRadius: 2
   }
