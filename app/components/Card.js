@@ -21,36 +21,6 @@ const CardColors = {
   CARD_BORDER: '#E0E0E0'
 }
 
-const styles = StyleSheet.create({
-  card: {
-    margin: 16,
-    backgroundColor: CardColors.CARD_BACKGROUND,
-    borderRadius: 2,
-    ...Platform.select({
-      ios: {
-        shadowOpacity: 0.18,
-        shadowRadius: 1.4,
-        shadowOffset: {
-          height: 1
-        }
-      },
-      android: {
-        elevation: 2
-      }
-    })
-  },
-  segmentSmallSpace: {
-    padding: 8
-  },
-  segmentBigSpace: {
-    padding: 16
-  },
-  segmentWithBorder: {
-    borderBottomColor: CardColors.CARD_BORDER,
-    borderBottomWidth: 1
-  }
-})
-
 
 /** Card View */
 
@@ -131,3 +101,34 @@ export const CardSegment = (
     <View style={style}>{children}</View>
   )
 }
+
+
+const styles = StyleSheet.create({
+  card: {
+    margin: 16,
+    backgroundColor: CardColors.CARD_BACKGROUND,
+    borderRadius: 2,
+    ...Platform.select({
+      ios: {
+        shadowOpacity: 0.18,
+        shadowRadius: 1.4,
+        shadowOffset: {
+          height: 1
+        }
+      },
+      android: {
+        elevation: 2
+      }
+    })
+  },
+  segmentSmallSpace: {
+    padding: 8
+  },
+  segmentBigSpace: {
+    padding: 16
+  },
+  segmentWithBorder: {
+    borderBottomColor: CardColors.CARD_BORDER,
+    borderBottomWidth: 1
+  }
+})
