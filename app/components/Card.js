@@ -1,24 +1,21 @@
 /**
  * Card Component
+ * @flow
  */
 
 import React, { Component } from 'react'
 import {
   View,
   StyleSheet,
-  Image,
   Platform,
   Text,
   TouchableNativeFeedback,
   TouchableOpacity
  } from 'react-native'
-import ImageWithCaption from './ImageWithCaption'
+import ImageWithCaption, { Props as IWCProps } from './ImageWithCaption'
 
-/**
- * Color Constants not from ./utils/constants
- * to encapsulate card more
- */
-const Colors = {
+// Color Constants not from ./utils/constants to encapsulate card more
+const CardColors = {
   CARD_BACKGROUND: '#FFFFFF',
   CARD_BORDER: '#E0E0E0'
 }
@@ -26,8 +23,20 @@ const Colors = {
 const styles = StyleSheet.create({
   card: {
     margin: 16,
-    backgroundColor: Colors.CARD_BACKGROUND,
-    borderRadius: 2
+    backgroundColor: CardColors.CARD_BACKGROUND,
+    borderRadius: 2,
+    ...Platform.select({
+      ios: {
+        shadowOpacity: 0.18,
+        shadowRadius: 1.4,
+        shadowOffset: {
+          height: 1
+        }
+      },
+      android: {
+        elevation: 2
+      }
+    })
   },
   segmentSmallSpace: {
     padding: 8
@@ -36,7 +45,7 @@ const styles = StyleSheet.create({
     padding: 16
   },
   segmentWithBorder: {
-    borderBottomColor: Colors.CARD_BORDER,
+    borderBottomColor: CardColors.CARD_BORDER,
     borderBottomWidth: 1
   }
 })
@@ -44,72 +53,80 @@ const styles = StyleSheet.create({
 
 /** Card View */
 
-export const CardView = ({ children }) => {
-  const shadowProps = Platform.select({
-    ios: {
-      shadowOpacity: 0.18,
-      shadowRadius: 1.4,
-      shadowOffset: {
-        height: 1
-      }
-    },
-    android: {
-      elevation: 2
-    }
-  })
-
-  return (
-    <View style={styles.card} {...shadowProps}>{children}</View>
-  )
+type CardViewProps = {
+  children: ReactElement<*>
 }
+
+export const CardView = ({ children }: CardViewProps) => (
+  <View style={styles.card}>{children}</View>
+)
 
 
 /** Card Image (Proxy for ImageWithCaption) */
 
-export const CardImage = ({ onPress, ...props }) => {
-  const TouchableFeedback =
+type CardImageProps = {
+  onPress?: ?Function,
+  props: IWCProps
+}
+
+export const CardImage = ({ onPress, ...props }: CardImageProps) => {
+  // Decide: TouchableOpacity for iOS or TouchableNativeFeedback for Android
+  const Touch =
     Platform.OS === 'ios' ? TouchableOpacity : TouchableNativeFeedback
+
+  // iOS really hates Android and gets angry when you call something from
+  // TouchableNativeFeedback.
+  // Android is really mad if you try to call `canUseNativeForeground` in
+  // a function.
+  // This looks a bit strange, but it makes both OS's a bit less angry.
   const touchableProps = Platform.select({
-    // iOS really hates Android and gets angry when you call something from TouchableNativeFeedback.
-    // But Android is pissed if you try to call `canUseNativeForeground` in a function.
-    // This looks a bit strange, but it makes both OS's a bit less angry.
     android: {
-      useForeground: TouchableFeedback.canUseNativeForeground && TouchableFeedback.canUseNativeForeground(),
-      background: TouchableFeedback.SelectableBackground && TouchableFeedback.SelectableBackground()
-    },
-    ios: {}
+      useForeground: Touch.canUseNativeForeground &&
+        Touch.canUseNativeForeground(),
+      background: Touch.SelectableBackground && Touch.SelectableBackground()
+    }
   })
 
+  // If onPress function is available, wrap it in Touch Component
   if (onPress) {
     return (
-      <TouchableFeedback onPress={onPress} {...touchableProps}>
-        <View>
+      <Touch onPress={onPress} {...touchableProps}>
+        <View>{/* Touch works only wrapped in <View> */}
           <ImageWithCaption {...props} />
         </View>
-      </TouchableFeedback>
+      </Touch>
     )
   }
 
-  return <ImageWithCaption {...props} />
+  // If onPress not present, proxy to ImageWithCaption
+  return (
+    <ImageWithCaption {...props} />
+  )
 }
-
-CardImage.propTypes = ImageWithCaption.propTypes
 
 
 /** Card Actions */
 
-export const CardSegment = ({ hasBorderBottom, space, children }) => {
-  const styleList = [
-    hasBorderBottom && styles.segmentWithBorder,
-    space === 'small' ? styles.segmentSmallSpace : styles.segmentBigSpace
-  ]
-
-  return (
-    <View style={StyleSheet.flatten(styleList)}>{children}</View>
-  )
+type CardSegmentProps = {
+  hasBorderBottom: boolean,
+  space?: 'small' | 'big',
+  children: ReactElement<*>
 }
 
-CardSegment.defaultProps = {
-  space: 'big',
-  hasBorderBottom: false
+export const CardSegment = (
+  { hasBorderBottom = false, space = 'big', children }: CardSegmentProps
+) => {
+
+  // Compute styles based on props
+  const style = StyleSheet.flatten([
+    // Border Bottom
+    hasBorderBottom && styles.segmentWithBorder,
+
+    // Big or small Segment Spacing
+    space === 'big' ? styles.segmentBigSpace : styles.segmentSmallSpace
+  ])
+
+  return (
+    <View style={style}>{children}</View>
+  )
 }
