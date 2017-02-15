@@ -8,6 +8,11 @@ import { Text, StyleSheet } from 'react-native'
 import FlatButton from './FlatButton'
 import { Colors } from '../utils/constants'
 
+type Props = {
+  onPress: () => void,
+  text: string
+}
+
 const styles = StyleSheet.create({
   text: {
     fontWeight: 'bold',
@@ -15,12 +20,10 @@ const styles = StyleSheet.create({
   }
 })
 
-function Button({ onPress, text }: { onPress: Function, text: string }) {
-  return (
-    <FlatButton onPress={onPress}>
-      <Text style={styles.text}>{text}</Text>
-    </FlatButton>
-  )
-}
+const Button = ({ onPress = () => {}, text }: Props) => (
+  <FlatButton onPress={onPress}>
+    <Text style={styles.text}>{text}</Text>
+  </FlatButton>
+)
 
 export default Button
