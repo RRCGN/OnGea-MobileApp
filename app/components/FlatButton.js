@@ -1,5 +1,6 @@
 /**
  * Flat Button (no background) with touch feedback
+ * @flow
  */
 
 import React from 'react'
@@ -11,20 +12,19 @@ import {
   StyleSheet
 } from 'react-native'
 
-const styles = StyleSheet.create({
-  container: {
-    marginRight: 8,
-    padding: 8,
-    borderRadius: 2
-  }
-})
+
+type Props = {
+  onPress: () => void,
+  children: ReactElement<*>
+}
 
 const FlatButton = ({ onPress, children }) => {
-  const TouchableComponent = Platform.select({
-    ios: TouchableOpacity,
-    android: TouchableNativeFeedback
-  })
+  // Decide: TouchableOpacity for iOS or TouchableNativeFeedback for Android
+  const Touch =
+    Platform.OS === 'ios' ? TouchableOpacity : TouchableNativeFeedback
 
+  // Use SelectableBackground only under Android
+  // ...as callback, so iOS doesn't get mad.
   const backgroundProps = Platform.select({
     ios: {},
     android: {
@@ -33,17 +33,22 @@ const FlatButton = ({ onPress, children }) => {
   })
 
   return (
-    <TouchableComponent
+    <Touch
       onPress={onPress}>
       <View style={styles.container}>
         {children}
       </View>
-    </TouchableComponent>
+    </Touch>
   )
 }
 
-FlatButton.propTypes = {
-  onPress: React.PropTypes.func
-}
-
 export default FlatButton
+
+
+const styles = StyleSheet.create({
+  container: {
+    marginRight: 8,
+    padding: 8,
+    borderRadius: 2
+  }
+})
