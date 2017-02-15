@@ -105,9 +105,6 @@ export const CardSegment = (
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: CardColors.CARD_BACKGROUND,
-    borderRadius: 2,
-    overflow: 'hidden',
     ...Platform.select({
       ios: {
         shadowOpacity: 0.18,
@@ -119,7 +116,9 @@ const styles = StyleSheet.create({
       android: {
         elevation: 2
       }
-    })
+    }),
+    backgroundColor: CardColors.CARD_BACKGROUND,
+    borderRadius: 2
   },
   segmentSmallSpace: {
     padding: 8
