@@ -3,9 +3,10 @@
  */
 
 import React, { Component } from 'react'
-import { Text } from 'react-native'
+import { Text, View, StatusBar } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import WebTabButton from '../components/WebTabButton'
+import { Colors } from '../utils/constants'
 
 export default class WebViewScreen extends Component {
   static navigationOptions = {
@@ -20,7 +21,11 @@ export default class WebViewScreen extends Component {
 
   render() {
     return (
-      <Text>Hellooo WebApp!</Text>
+      <View>
+        <StatusBar backgroundColor={Colors.DARK_BLUE} />
+        <Text>Hellooo WebApp!</Text>
+      </View>
+
     )
   }
 }
