@@ -8,7 +8,7 @@ import ImageWithCaption from '../components/ImageWithCaption'
 
 export default class SingleView extends Component {
   static navigationOptions = {
-    title: ({ state }) => (state.params.title)
+    title: null
   }
 
   render() {
