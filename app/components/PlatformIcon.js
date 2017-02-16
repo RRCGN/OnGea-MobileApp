@@ -1,5 +1,5 @@
 /**
- *
+ * Icon for different Platforms. MaterialIcon for Android, Ionicon for iOS.
  * @flow
  */
 

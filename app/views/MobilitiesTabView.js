@@ -17,7 +17,7 @@ export default class MobilitiesTabView extends Component {
         <PlatformIcon
           iosIcon={focused ? 'ios-bonfire' : 'ios-bonfire-outline'}
           androidIcon="landscape"
-          size={24} color={tintColor} focused={focused} />
+          size={24} color={tintColor} />
       )
     }
   }

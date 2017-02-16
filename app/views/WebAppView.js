@@ -18,7 +18,7 @@ export default class WebViewScreen extends Component {
         <PlatformIcon
           iosIcon={focused ? 'ios-globe' : 'ios-globe-outline'}
           androidIcon="public"
-          size={24} color={tintColor} focused={focused} />
+          size={24} color={tintColor} />
       )
     }
   }
