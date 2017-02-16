@@ -23,18 +23,8 @@ const FlatButton = ({ onPress, children }: Props) => {
   const Touch =
     Platform.OS === 'ios' ? TouchableOpacity : TouchableNativeFeedback
 
-  // Use SelectableBackground only under Android
-  // ...as callback, so iOS doesn't get mad.
-  const backgroundProps = Platform.select({
-    ios: {},
-    android: {
-      background: () => (TouchableNativeFeedback.SelectableBackground())
-    }
-  })
-
   return (
-    <Touch
-      onPress={onPress}>
+    <Touch onPress={onPress}>
       <View style={styles.container}>
         {children}
       </View>
