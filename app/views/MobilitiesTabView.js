@@ -7,14 +7,17 @@
 import React, { Component } from 'react'
 import { View, StatusBar } from 'react-native'
 import MobilitiesNavigator from '../navigators/MobilitiesNavigator'
-import MobilitiesTabButton from '../components/MobilitiesTabButton'
+import PlatformIcon from '../components/PlatformIcon'
 
 export default class MobilitiesTabView extends Component {
   static navigationOptions = {
     tabBar: {
       label: 'Mobilities',
       icon: ({ tintColor, focused }) => (
-        <MobilitiesTabButton tintColor={tintColor} focused={focused} />
+        <PlatformIcon
+          iosIcon={focused ? 'ios-bonfire' : 'ios-bonfire-outline'}
+          androidIcon="landscape"
+          size={24} color={tintColor} focused={focused} />
       )
     }
   }
