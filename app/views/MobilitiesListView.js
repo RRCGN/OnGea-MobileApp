@@ -25,7 +25,7 @@ export default class MobilitiesListView extends Component {
   }
 
   renderListRow = (rowData) => (
-    <View style={styles.item}>
+    <View style={styles.listItem}>
       <CardView>
         <CardImage
           source={require('../assets/concert.jpg')}
