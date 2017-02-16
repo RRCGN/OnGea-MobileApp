@@ -18,7 +18,7 @@ type Props = {
   children: ReactElement<*>
 }
 
-const FlatButton = ({ onPress, children }) => {
+const FlatButton = ({ onPress, children }: Props) => {
   // Decide: TouchableOpacity for iOS or TouchableNativeFeedback for Android
   const Touch =
     Platform.OS === 'ios' ? TouchableOpacity : TouchableNativeFeedback
