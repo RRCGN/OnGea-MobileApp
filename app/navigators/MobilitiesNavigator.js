@@ -3,7 +3,7 @@
  */
 
 import React from 'react'
-import { StyleSheet } from 'react-native'
+import { Platform, StyleSheet } from 'react-native'
 import { StackNavigator } from 'react-navigation'
 import MobilitiesOverviewView from '../views/MobilitiesOverviewView'
 import SingleView from '../views/SingleView'
@@ -13,15 +13,7 @@ const MobilitiesNavigator = StackNavigator({
   Overview: { screen: MobilitiesOverviewView },
   Single: { screen: SingleView }
 }, {
-  headerMode: 'float',
-  navigationOptions: {
-    header: {
-      tintColor: Colors.WHITE,
-      style: {
-        backgroundColor: Colors.BLUE
-      }
-    }
-  }
+  headerMode: Platform.OS === 'ios' ? 'float' : 'screen'
 })
 
 export default MobilitiesNavigator
