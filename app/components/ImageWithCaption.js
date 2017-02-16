@@ -13,7 +13,8 @@ export type Props = {
   title: string,
   subtitle?: string,
   source: ImageSource,
-  inCard?: boolean
+  inCard?: boolean,
+  ratio?: string
 }
 
 
@@ -26,7 +27,8 @@ export default class ImageWithCaption extends Component<any, Props, any> {
   };
 
   static defaultProps = {
-    inCard: false
+    inCard: false,
+    ratio: '16:9'
   }
 
   constructor(props: Props) {
@@ -35,11 +37,14 @@ export default class ImageWithCaption extends Component<any, Props, any> {
       height: 0,
       width: 0
     }
+
+    let ratio = this.props.ratio.split(':')
+    this.ratio = ratio[1]/ratio[0]
   }
 
   handleOnLayout = (event: any): void => {
     const { width } = event.nativeEvent.layout
-    this.setState({ height: width * (9/16), width })
+    this.setState({ height: width * this.ratio, width })
   }
 
   render() {
