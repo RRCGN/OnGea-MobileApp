@@ -2965,6 +2965,10 @@ react-native-linear-gradient@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.0.0.tgz#7442c00e1fcd9fca329119dcbaf744d12bcd1b5a"
 
+react-native-parallax-scroll-view@^0.19.0:
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/react-native-parallax-scroll-view/-/react-native-parallax-scroll-view-0.19.0.tgz#23b9af1f13249a610f4641e2582a58997df7d80a"
+
 react-native-tab-view@^0.0.55:
   version "0.0.55"
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-0.0.55.tgz#6e82c50f916b46e0a5af2f9748e6aca36d58f7ad"

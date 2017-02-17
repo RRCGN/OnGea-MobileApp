@@ -3,15 +3,16 @@
  */
 
 import React, { Component } from 'react'
-import { View, Platform, StyleSheet, StatusBar, ScrollView } from 'react-native'
+import { View, Platform, StyleSheet, StatusBar, Image, Dimensions, Text } from 'react-native'
 import ImageWithCaption from '../components/ImageWithCaption'
 import ToolbarButton from '../components/ToolbarButton'
 import LinearGradient from 'react-native-linear-gradient'
+import ParallaxScrollView from 'react-native-parallax-scroll-view'
 
 export default class SingleView extends Component {
   static navigationOptions = {
     title: "",
-    header: ({ goBack }) => ({
+    header: ({ goBack, state }) => ({
       style: {
         borderRadius: 0,
         backgroundColor: 'transparent',
@@ -40,15 +41,42 @@ export default class SingleView extends Component {
   }
 
   render() {
+    const { width } = Dimensions.get('window')
+    const ratio32Height = width * (2/3)
     return (
-      <View>
+      <View style={{ flex: 1 }}>
         {Platform.OS === 'ios' &&
           <LinearGradient colors={['rgba(0, 0, 0, 0.3)', 'rgba(0, 0, 0, 0)']} style={styles.iosTopGradient} />
         }
-        <ScrollView>
-          <ImageWithCaption source={require('../assets/concert.jpg')} title="Tolle Reise" ratio="3:2" />
-          <View style={{ height: 1000 }} />
-        </ScrollView>
+        <ParallaxScrollView
+          style={{ flex: 1 }}
+          fadeOutForeground={false}
+          backgroundColor="rgba(255, 0, 0, 0.5)"
+          parallaxHeaderHeight={ratio32Height}
+          renderBackground={() => (
+            <View style={{ height: ratio32Height }}>
+              <Image
+                style={{ flex: 1 }}
+                source={require('../assets/concert.jpg')}
+                width={width}
+                height={ratio32Height}
+                resizeMode="cover" />
+            </View>
+          )}
+          renderForeground={() => (
+            <Text>Hello</Text>
+          )}
+          stickyHeaderHeight={100}
+          renderStickyHeader={() => (
+            <View style={{ height: 100, paddingTop: 60 }}>
+              <Text style={{ color: 'white'}}>Foo bar</Text>
+            </View>
+          )}
+        >
+          <View style={{ height: 1000, flex: 1 }}>
+
+          </View>
+        </ParallaxScrollView>
       </View>
     )
   }
