@@ -43,7 +43,7 @@ export default class SingleView extends Component {
 
   render() {
     const { width } = Dimensions.get('window')
-    const ratio32Height = width * (2/3)
+    const height = width * (2/3)
     return (
       <View style={{ flex: 1 }}>
         {Platform.OS === 'ios' &&
@@ -53,14 +53,14 @@ export default class SingleView extends Component {
           style={{ flex: 1 }}
           fadeOutForeground={false}
           backgroundColor="rgba(255, 0, 0, 0.5)"
-          parallaxHeaderHeight={ratio32Height}
+          parallaxHeaderHeight={height}
           renderBackground={() => (
-            <View style={{ height: ratio32Height }}>
+            <View style={{ height: height }}>
               <Image
                 style={{ flex: 1 }}
                 source={require('../assets/concert.jpg')}
                 width={width}
-                height={ratio32Height}
+                height={height}
                 resizeMode="cover" />
             </View>
           )}
