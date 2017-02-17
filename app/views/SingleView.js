@@ -6,6 +6,7 @@ import React, { Component } from 'react'
 import { View, Platform, StyleSheet, StatusBar, Image, Dimensions, Text } from 'react-native'
 import ImageWithCaption from '../components/ImageWithCaption'
 import ToolbarButton from '../components/ToolbarButton'
+import TitleOnShadow from '../components/TitleOnShadow'
 import LinearGradient from 'react-native-linear-gradient'
 import ParallaxScrollView from 'react-native-parallax-scroll-view'
 
@@ -64,7 +65,7 @@ export default class SingleView extends Component {
             </View>
           )}
           renderForeground={() => (
-            <Text>Hello</Text>
+            <TitleOnShadow title="Hello" />
           )}
           stickyHeaderHeight={100}
           renderStickyHeader={() => (

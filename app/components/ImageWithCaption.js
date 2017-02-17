@@ -1,4 +1,5 @@
 /**
+ * DEPRECATED
  * Aspect Ratio Image with an overlayed caption
  * @flow
  */
@@ -14,7 +15,8 @@ export type Props = {
   subtitle?: string,
   source: ImageSource,
   inCard?: boolean,
-  ratio?: string
+  ratio?: string,
+  onLayout?: () => void
 }
 
 
@@ -28,7 +30,8 @@ export default class ImageWithCaption extends Component<any, Props, any> {
 
   static defaultProps = {
     inCard: false,
-    ratio: '16:9'
+    ratio: '16:9',
+    onLayout: () => { }
   }
 
   constructor(props: Props) {
@@ -45,6 +48,7 @@ export default class ImageWithCaption extends Component<any, Props, any> {
   handleOnLayout = (event: any): void => {
     const { width } = event.nativeEvent.layout
     this.setState({ height: width * this.ratio, width })
+    this.props.onLayout(event)
   }
 
   render() {
