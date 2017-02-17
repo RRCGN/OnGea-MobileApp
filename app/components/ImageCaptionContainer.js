@@ -6,21 +6,34 @@
 import React from 'react'
 import {
   View,
+  Image,
   StyleSheet
 } from 'react-native'
+import type { ImageSource } from 'react-native'
 import TitleOnShadow from './TitleOnShadow'
 
 
 type Props = {
-  image: ReactElement<Image>,
+  source: ImageSource,
   caption: ReactElement<TitleOnShadow>
 }
 
-const ImageCaptionContainer = ({ image, caption }: Props) => (
+const ImageCaptionContainer = ({ source, caption }: Props) => (
   <View style={{ flex: 1, position: 'relative' }}>
-    {image}
+    <Image source={source} style={styles.image} />
     {caption}
   </View>
 )
 
 export default ImageCaptionContainer
+
+
+const styles = StyleSheet.create({
+  image: {
+    flex: 1,
+    alignSelf: 'stretch',
+    width: undefined,
+    height: undefined,
+    resizeMode: 'cover'
+  }
+})

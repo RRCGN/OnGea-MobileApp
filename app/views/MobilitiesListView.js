@@ -3,12 +3,15 @@
  */
 
 import React, { Component } from 'react'
-import { ListView, View, StyleSheet } from 'react-native'
+import { ListView, View, StyleSheet, Image } from 'react-native'
 import FlatButton from '../components/FlatButton'
 import ButtonList from '../components/ButtonList'
 import Button from '../components/Button'
 import TripDate from '../components/TripDate'
 import TripDateList from '../components/TripDateList'
+import ImageCaptionContainer from '../components/ImageCaptionContainer'
+import TitleOnShadow from '../components/TitleOnShadow'
+import Touchable from '../components/Touchable'
 import { CardView, CardImage, CardSegment } from '../components/Card'
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 
@@ -27,12 +30,15 @@ export default class MobilitiesListView extends Component {
   renderListRow = (rowData) => (
     <View style={styles.listItem}>
       <CardView>
-        <CardImage
-          source={require('../assets/concert.jpg')}
-          title="Tolle Reise"
-          subtitle="nach Madrid"
-          onPress={() => this.props.navigation.navigate('Single', { title: 'Tolle Reise' })}
-        />
+        <Touchable onPress={() => this.props.navigation.navigate('Single', { title: 'Tolle Reise' })}>
+          <View style={{ aspectRatio: 9/16 }}>
+            <ImageCaptionContainer
+              source={require('../assets/concert.jpg')}
+              caption={
+                <TitleOnShadow title="Tolle Reise" subtitle="nach Madrid" />
+              } />
+          </View>
+        </Touchable>
         <CardSegment hasBorderBottom space="small">
           <ButtonList>
             <FlatButton>

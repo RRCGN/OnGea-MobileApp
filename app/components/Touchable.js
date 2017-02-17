@@ -24,30 +24,38 @@ const Touchable = ({
   rippleColor,
   useForeground = false,
   children
-}: Props) => (
-  // Use TouchableNativeFeedback for Android
-  {Platform.OS === 'android' &&
-    <TouchableNativeFeedback
-      onPress={onPress}
-      useForeground={() => (
-        useForeground && TouchableNativeFeedback.canUseNativeForeground()
-      )}
-      background={() => (
-        rippleColor ?
-          TouchableNativeFeedback.Ripple(rippleColor, false) :
-          TouchableNativeFeedback.SelectableBackground()
-      )}>
-      <View>{children}</View>
-    </TouchableNativeFeedback>
-  }
+}: Props) => {
 
   // Use TouchableNativeFeedback for Android
-  {Platform.OS === 'ios' &&
-    <TouchableOpacity
-      onPress={onPress}>
-      <View>{children}</View>
-    </TouchableOpacity>
+  if (Platform.OS === 'android') {
+    return (
+      <TouchableNativeFeedback
+        onPress={onPress}
+        useForeground={
+          TouchableNativeFeedback.canUseNativeForeground() ?
+            useForeground :
+            false
+        }
+        background={
+          rippleColor ?
+            TouchableNativeFeedback.Ripple(rippleColor, false) :
+            TouchableNativeFeedback.SelectableBackground()
+        }>
+        <View>{children}</View>
+      </TouchableNativeFeedback>
+    )
+
   }
-)
+
+  // Use TouchableOpacity for iOS
+  if (Platform.OS === 'ios') {
+    return (
+      <TouchableOpacity
+        onPress={onPress}>
+        <View>{children}</View>
+      </TouchableOpacity>
+    )
+  }
+}
 
 export default Touchable
