@@ -8,12 +8,12 @@ import {
   View,
   StyleSheet
 } from 'react-native'
-import ImageWithCaption from './ImageWithCaption'
+import TitleOnShadow from './TitleOnShadow'
 
 
 type Props = {
   image: ReactElement<Image>,
-  caption: ReactElement<ImageWithCaption>
+  caption: ReactElement<TitleOnShadow>
 }
 
 const ImageCaptionContainer = ({ image, caption }: Props) => (
