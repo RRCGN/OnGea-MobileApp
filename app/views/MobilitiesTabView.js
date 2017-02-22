@@ -25,7 +25,7 @@ export default class MobilitiesTabView extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <StatusBar barStyle="light-content" />
+        <StatusBar translucent backgroundColor="rgba(0,0,0,0.36)" />
         <MobilitiesNavigator />
       </View>
     )

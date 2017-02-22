@@ -26,7 +26,6 @@ export default class WebViewScreen extends Component {
   render() {
     return (
       <View>
-        <StatusBar translucent backgroundColor={Colors.DARK_BLUE} />
         <Text>Hellooo WebApp!</Text>
       </View>
     )
