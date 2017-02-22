@@ -4,13 +4,7 @@
  */
 
 import React from 'react'
-import {
-  View,
-  TouchableOpacity,
-  TouchableNativeFeedback,
-  Platform,
-  StyleSheet, Text
-} from 'react-native'
+import { View, Text, StyleSheet, Platform } from 'react-native'
 import TouchableItem from 'react-navigation/src/views/TouchableItem'
 import PlatformIcon from './PlatformIcon'
 
@@ -28,9 +22,6 @@ const ToolbarButton = ({
   floating = false,
   onPress = () => { }
 }: Props) => {
-  const Touch =
-    Platform.OS === 'ios' ? TouchableOpacity : TouchableNativeFeedback
-
   return (
     <TouchableItem
       onPress={onPress}
@@ -44,7 +35,7 @@ const ToolbarButton = ({
           iosIcon={iosIcon}
           size={24}
           color="white"
-          style={StyleSheet.flatten([styles.icon, floating && styles.floating])}
+          style={[styles.icon, floating && styles.floating]}
         />
       </View>
     </TouchableItem>
