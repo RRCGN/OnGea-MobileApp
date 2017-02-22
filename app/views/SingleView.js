@@ -56,7 +56,7 @@ export default class SingleView extends Component {
   }
 
   _handleUnstickHeader = () => {
-    this.navBarView.fadeOutDown(100)
+    this.navBarView.fadeOut(100)
   }
 
   render() {
