@@ -1,14 +1,10 @@
 /**
- * Container for an Image with a Caption
+ * Container for an Image with a Caption.
  * @flow
  */
 
 import React from 'react'
-import {
-  View,
-  Image,
-  StyleSheet
-} from 'react-native'
+import { View, Image, StyleSheet } from 'react-native'
 import type { ImageSource } from 'react-native'
 import TitleOnShadow from './TitleOnShadow'
 

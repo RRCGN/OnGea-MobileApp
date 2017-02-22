@@ -1,5 +1,6 @@
 /**
- * Flat Button (no background) with touch feedback
+ * Flat Button (no background) with touch feedback.
+ * Can display an Icon or Text.
  * @flow
  */
 
@@ -9,18 +10,18 @@ import Touchable from './Touchable'
 import { Colors } from '../utils/constants'
 
 
-type IProps = {
+type Props = {
   onPress: () => void,
   label?: string,
   icon?: ReactElement<*>,
   color?: string
 }
 
-const FlatButton = ({ onPress, label, icon, color }: IProps) => (
+const FlatButton = ({ onPress, label, icon, color }: Props) => (
   <Touchable onPress={onPress}>
     <View style={{ padding: 8, borderRadius: 2 }}>
       {label &&
-        <Text style={[ styles.text, color ]}>{label.toUpperCase()}</Text>
+        <Text style={[ { color }, styles.text ]}>{label.toUpperCase()}</Text>
       }
       {icon}
     </View>

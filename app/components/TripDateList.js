@@ -1,20 +1,21 @@
 /**
- * Display Components side-by-side with a line between it
+ * Display TripDate side-by-side with a line between it.
  * @flow
  */
 
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
+import TripDate from './TripDate'
 
 
 type Props = {
-  children: Array<ReactElement<*>>
+  children: Array<ReactElement<TripDate>>
 }
 
 const TripDateList = ({ children }: Props) => {
   return (
     <View style={styles.row}>
-      {children.map((child, i) => {
+      {React.Children.map(children, (child, i) => {
         // Wrap every child in a view with its own styles.
         // Every view except the first has a seperator style
         const style = StyleSheet.flatten([

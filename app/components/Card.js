@@ -1,12 +1,10 @@
 /**
- * Card Component
+ * Component Collection for a Material Card.
  * @flow
  */
 
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, Platform } from 'react-native'
-import ImageWithCaption from './ImageWithCaption'
-import type { Props as IWCProps } from './ImageWithCaption'
+import { View, StyleSheet, Platform } from 'react-native'
 
 
 // Color Constants not from utils/constants to encapsulate card more
@@ -16,10 +14,10 @@ const CardColors = {
 }
 
 
-/** Card View */
+/** Card View – outer wrapper of a card */
 
 type CardViewProps = {
-  children: ReactElement<*>
+  children: Array<ReactElement<*>>
 }
 
 export const CardView = ({ children }: CardViewProps) => (
@@ -27,21 +25,23 @@ export const CardView = ({ children }: CardViewProps) => (
 )
 
 
-/** Card Segment */
+/** Card Segment – section in a card */
 
 type CardSegmentProps = {
-  hasBorderBottom: boolean,
+  hasBorderBottom?: boolean,
   space?: 'small' | 'big',
-  children: ReactElement<*>
+  children: Array<ReactElement<*>>
 }
 
 export const CardSegment = (
   { hasBorderBottom = false, space = 'big', children }: CardSegmentProps
 ) => (
-  <View style={[
-    hasBorderBottom && styles.segmentWithBorder,
-    space === 'big' ? styles.segmentBigSpace : styles.segmentSmallSpace
-  ]}>{children}</View>
+  <View
+    style={[
+      hasBorderBottom && styles.segmentWithBorder,
+      space === 'big' ? styles.segmentBigSpace : styles.segmentSmallSpace
+    ]}
+  >{children}</View>
 )
 
 

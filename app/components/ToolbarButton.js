@@ -1,10 +1,10 @@
 /**
- * Button for use in Toolbar
+ * Button for use in Toolbar.
  * @flow
  */
 
 import React from 'react'
-import { View, Text, StyleSheet, Platform } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import TouchableItem from 'react-navigation/src/views/TouchableItem'
 import PlatformIcon from './PlatformIcon'
 

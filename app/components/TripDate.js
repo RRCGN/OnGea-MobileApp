@@ -1,5 +1,5 @@
 /**
- * Component to display a date with some text above it
+ * Component to display a date with some text above it.
  * @flow
  */
 

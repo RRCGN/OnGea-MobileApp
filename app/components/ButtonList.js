@@ -1,5 +1,6 @@
 /**
- * Lists Buttons in a row
+ * A list of Buttons in a Row.
+ * With correct spaces and ability to align the list.
  * @flow
  */
 

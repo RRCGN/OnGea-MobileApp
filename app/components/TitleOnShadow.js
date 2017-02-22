@@ -1,14 +1,11 @@
 /**
- * Title on Shadow
+ * Title on a Inset Shadow.
+ * Has a big Title and maybe a smaller Subtitle.
  * @flow
  */
 
 import React from 'react'
-import {
-  View,
-  Text,
-  StyleSheet
-} from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 
 
@@ -20,7 +17,8 @@ type Props = {
 const TitleOnShadow = ({ title, subtitle }: Props) => (
   <LinearGradient
     colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.8)']}
-    style={styles.overlay}>
+    style={styles.overlay}
+  >
     <Text style={[styles.text, styles.title]}>{title}</Text>
     {subtitle && <Text style={[styles.text, styles.subtitle]}>{subtitle}</Text>}
   </LinearGradient>

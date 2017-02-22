@@ -1,5 +1,6 @@
 /**
- * Helper for native Touchable Views across platforms
+ * Helper for native Touchable Views across platforms.
+ * Uses TouchableNativeFeedback in Android and TouchableOpacity in iOS.
  * @flow
  */
 
@@ -40,7 +41,8 @@ const Touchable = ({
           rippleColor ?
             TouchableNativeFeedback.Ripple(rippleColor, false) :
             TouchableNativeFeedback.SelectableBackground()
-        }>
+        }
+      >
         <View>{children}</View>
       </TouchableNativeFeedback>
     )
@@ -51,7 +53,8 @@ const Touchable = ({
   if (Platform.OS === 'ios') {
     return (
       <TouchableOpacity
-        onPress={onPress}>
+        onPress={onPress}
+      >
         <View>{children}</View>
       </TouchableOpacity>
     )
