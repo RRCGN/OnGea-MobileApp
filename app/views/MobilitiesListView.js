@@ -41,12 +41,22 @@ export default class MobilitiesListView extends Component {
         </Touchable>
         <CardSegment hasBorderBottom space="small">
           <ButtonList>
-            <FlatButton>
-              <MaterialIcon name="map" style={{ color: 'rgba(0,0,0,0.54)'}} size={20} />
-            </FlatButton>
-            <FlatButton>
-              <MaterialIcon name="alarm" style={{ color: 'rgba(0,0,0,0.54)'}} size={20} />
-            </FlatButton>
+            <FlatButton
+              icon={
+                <MaterialIcon
+                  name="map"
+                  style={{ color: 'rgba(0,0,0,0.54)'}}
+                  size={20} />
+              }
+            />
+            <FlatButton
+              icon={
+                <MaterialIcon
+                  name="alarm"
+                  style={{ color: 'rgba(0,0,0,0.54)'}}
+                  size={20} />
+              }
+            />
           </ButtonList>
         </CardSegment>
         <CardSegment space="big">
@@ -57,7 +67,7 @@ export default class MobilitiesListView extends Component {
         </CardSegment>
         <CardSegment space="small">
           <ButtonList>
-            <Button text="ANSEHEN" />
+            <FlatButton label="Ansehen" />
           </ButtonList>
         </CardSegment>
       </CardView>
