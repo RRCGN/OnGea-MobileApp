@@ -7,7 +7,8 @@ import { View, Platform, StyleSheet, StatusBar, Image, Dimensions, Text } from '
 import ToolbarButton from '../components/ToolbarButton'
 import TitleOnShadow from '../components/TitleOnShadow'
 import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
-import ParallaxScrollView from 'react-native-parallax-scroll-view'
+import HeaderImageScrollView from '../lib/ImageHeaderScrollView'
+import * as Animatable from 'react-native-animatable'
 import { Colors } from '../utils/constants'
 
 export default class SingleView extends Component {
@@ -50,33 +51,32 @@ export default class SingleView extends Component {
     this.stickyHeaderHeight = Platform.OS === 'ios' ? 64 : 104
   }
 
+  _handleStickHeader = () => {
+    this.navBarView.fadeInUp(200)
+  }
+
+  _handleUnstickHeader = () => {
+    this.navBarView.fadeOutDown(100)
+  }
+
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <ParallaxScrollView
-          style={{ flex: 1 }}
-          fadeOutForeground={true}
-          backgroundColor={Colors.PRIMARY}
-          parallaxHeaderHeight={this.headerHeight}
-          renderBackground={this._renderTitleBackground}
-          renderForeground={this._renderTitleForeground}
-          stickyHeaderHeight={this.stickyHeaderHeight}
-          renderStickyHeader={this._renderStickyHeader}
-          onChangeHeaderVisibility={(headerVisible) => {
-            const { toolbarFloat } = this.props.navigation.state.params
-            const { setParams } = this.props.navigation
 
-            if (!headerVisible && toolbarFloat) {
-              setParams({ toolbarFloat: false })
-            } else if (headerVisible && !toolbarFloat) {
-              setParams({ toolbarFloat: true })
-            }
-          }}
+      <View style={{ flex: 1 }}>
+        <HeaderImageScrollView
+          maxHeight={this.headerHeight}
+          minHeight={this.stickyHeaderHeight}
+          renderHeader={this._renderTitleBackground}
+          renderForeground={this._renderTitleForeground}
+          renderFixedForeground={this._renderStickyHeader}
+          fadeOutForeground={true}
+          onMinIn={this._handleStickHeader}
+          onMinOut={this._handleUnstickHeader}
         >
-          <View style={{ height: 1000, flex: 1, backgroundColor: 'white' }}>
+          <View style={{ height: 1000 }}>
 
           </View>
-        </ParallaxScrollView>
+        </HeaderImageScrollView>
       </View>
     )
   }
@@ -102,17 +102,21 @@ export default class SingleView extends Component {
 
   _renderStickyHeader = () => {
     return (
-      <View style={styles.stickyHeader}>
+      <Animatable.View
+        style={styles.stickyHeader}
+        ref={(navBarView) => { this.navBarView = navBarView }}
+      >
         <View style={styles.stickyHeaderInner}>
           <Text style={styles.toolbarTitle}>Foo bar</Text>
         </View>
-      </View>
+      </Animatable.View>
     )
   }
 }
 
 const styles = StyleSheet.create({
   stickyHeader: {
+    opacity: 0,
     ...Platform.select({
       ios: {
         marginTop: 18,
@@ -135,6 +139,7 @@ const styles = StyleSheet.create({
   },
   toolbarTitle: {
     color: 'white',
+    backgroundColor: 'transparent',
     ...Platform.select({
       ios: {
         fontWeight: '600',
