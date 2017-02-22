@@ -11,11 +11,11 @@ import MobilitiesTabView from '../views/MobilitiesTabView'
 import { Colors } from '../utils/constants'
 
 const MainScreenTabNavigator = TabNavigator({
-  Web: {
-    screen: WebAppView
-  },
   Mobilities: {
     screen: MobilitiesTabView
+  },
+  Web: {
+    screen: WebAppView
   }
 }, {
   tabBarComponent: TabView.TabBarBottom,
