@@ -17,16 +17,14 @@ type IProps = {
 }
 
 const FlatButton = ({ onPress, label, icon, color }: IProps) => (
-  <View style={{ marginRight: 8 }}>
-    <Touchable onPress={onPress}>
-      <View style={{ padding: 8, borderRadius: 2 }}>
-        {label &&
-          <Text style={[ styles.text, color ]}>{label.toUpperCase()}</Text>
-        }
-        {icon}
-      </View>
-    </Touchable>
-  </View>
+  <Touchable onPress={onPress}>
+    <View style={{ padding: 8, borderRadius: 2 }}>
+      {label &&
+        <Text style={[ styles.text, color ]}>{label.toUpperCase()}</Text>
+      }
+      {icon}
+    </View>
+  </Touchable>
 )
 
 export default FlatButton

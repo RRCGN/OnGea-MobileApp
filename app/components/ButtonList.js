@@ -15,7 +15,9 @@ type Props = {
 
 const ButtonList = ({ justifyContent = 'flex-end', children }: Props) => (
   <View style={{ flexDirection: 'row', justifyContent }}>
-    {children}
+    {React.Children.map(children, (child, i) => (
+      <View key={i} style={{ marginRight: 8 }}>{child}</View>
+    ))}
   </View>
 )
 
