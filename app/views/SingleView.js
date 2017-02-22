@@ -4,10 +4,9 @@
 
 import React, { Component } from 'react'
 import { View, Platform, StyleSheet, StatusBar, Image, Dimensions, Text } from 'react-native'
-import ImageWithCaption from '../components/ImageWithCaption'
 import ToolbarButton from '../components/ToolbarButton'
 import TitleOnShadow from '../components/TitleOnShadow'
-import LinearGradient from 'react-native-linear-gradient'
+import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
 import ParallaxScrollView from 'react-native-parallax-scroll-view'
 
 export default class SingleView extends Component {
@@ -46,9 +45,6 @@ export default class SingleView extends Component {
     const height = width * (2/3)
     return (
       <View style={{ flex: 1 }}>
-        {Platform.OS === 'ios' &&
-          <LinearGradient colors={['rgba(0, 0, 0, 0.3)', 'rgba(0, 0, 0, 0)']} style={styles.iosTopGradient} />
-        }
         <ParallaxScrollView
           style={{ flex: 1 }}
           fadeOutForeground={false}
@@ -56,6 +52,7 @@ export default class SingleView extends Component {
           parallaxHeaderHeight={height}
           renderBackground={() => (
             <View style={{ height: height }}>
+              <StatusBarBackgroundIOS />
               <Image
                 style={{ flex: 1 }}
                 source={require('../assets/concert.jpg')}
@@ -82,15 +79,3 @@ export default class SingleView extends Component {
     )
   }
 }
-
-
-const styles = StyleSheet.create({
-  iosTopGradient: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    height: 60,
-    zIndex: 1,
-  }
-})
