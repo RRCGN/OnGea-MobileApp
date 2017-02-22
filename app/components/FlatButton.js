@@ -4,41 +4,23 @@
  */
 
 import React from 'react'
-import {
-  View,
-  TouchableNativeFeedback,
-  TouchableOpacity,
-  Platform,
-  StyleSheet
-} from 'react-native'
+import { View } from 'react-native'
+import Touchable from './Touchable'
 
 
-type Props = {
+type IProps = {
   onPress: () => void,
   children: ReactElement<*>
 }
 
-const FlatButton = ({ onPress, children }: Props) => {
-  // Decide: TouchableOpacity for iOS or TouchableNativeFeedback for Android
-  const Touch =
-    Platform.OS === 'ios' ? TouchableOpacity : TouchableNativeFeedback
-
-  return (
-    <Touch onPress={onPress}>
-      <View style={styles.container}>
+const FlatButton = ({ onPress, children }: IProps) => (
+  <View style={{ marginRight: 8 }}>
+    <Touchable onPress={onPress}>
+      <View style={{ padding: 8, borderRadius: 2 }}>
         {children}
       </View>
-    </Touch>
-  )
-}
+    </Touchable>
+  </View>
+)
 
 export default FlatButton
-
-
-const styles = StyleSheet.create({
-  container: {
-    marginRight: 8,
-    padding: 8,
-    borderRadius: 2
-  }
-})
