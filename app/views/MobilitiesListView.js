@@ -12,7 +12,7 @@ import TripDateList from '../components/TripDateList'
 import ImageCaptionContainer from '../components/ImageCaptionContainer'
 import TitleOnShadow from '../components/TitleOnShadow'
 import Touchable from '../components/Touchable'
-import { CardView, CardImage, CardSegment } from '../components/Card'
+import { CardView, CardSegment } from '../components/Card'
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 
 export default class MobilitiesListView extends Component {
