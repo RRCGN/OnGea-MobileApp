@@ -12,7 +12,7 @@ export default class MobilitiesOverviewView extends Component {
     title: 'Meine Mobilities',
     header: {
       style: {
-        backgroundColor: Colors.BLUE,
+        backgroundColor: Colors.PRIMARY,
         elevation: 5,
         ...Platform.select({
           'android': {

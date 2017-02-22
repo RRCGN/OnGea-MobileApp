@@ -32,6 +32,6 @@ export default FlatButton
 const styles = StyleSheet.create({
   text: {
     fontWeight: 'bold',
-    color: Colors.BLUE
+    color: Colors.PRIMARY
   }
 })

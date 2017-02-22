@@ -26,6 +26,6 @@ export default Button
 const styles = StyleSheet.create({
   text: {
     fontWeight: 'bold',
-    color: Colors.BLUE
+    color: Colors.PRIMARY
   }
 })

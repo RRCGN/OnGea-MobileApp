@@ -5,8 +5,6 @@
 
 import React, { Component } from 'react'
 import { Text, View, StatusBar } from 'react-native'
-import Icon from 'react-native-vector-icons/Ionicons'
-import { Colors } from '../utils/constants'
 import PlatformIcon from '../components/PlatformIcon'
 
 export default class WebViewScreen extends Component {
