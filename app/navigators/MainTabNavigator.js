@@ -23,9 +23,9 @@ const MainScreenTabNavigator = TabNavigator({
   swipeEnabled: false,
   tabBarOptions: {
     activeTintColor: 'white',
-    inactiveTintColor: Colors.LIGHT_BLUE,
+    inactiveTintColor: Colors.PRIMARY_LIGHT,
     style: {
-      backgroundColor: Colors.BLUE
+      backgroundColor: Colors.PRIMARY
     }
   }
 })
