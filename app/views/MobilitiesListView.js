@@ -6,7 +6,6 @@ import React, { Component } from 'react'
 import { ListView, View, StyleSheet, Image } from 'react-native'
 import FlatButton from '../components/FlatButton'
 import ButtonList from '../components/ButtonList'
-import Button from '../components/Button'
 import TripDate from '../components/TripDate'
 import TripDateList from '../components/TripDateList'
 import ImageCaptionContainer from '../components/ImageCaptionContainer'
@@ -14,6 +13,7 @@ import TitleOnShadow from '../components/TitleOnShadow'
 import Touchable from '../components/Touchable'
 import { CardView, CardSegment } from '../components/Card'
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
+
 
 export default class MobilitiesListView extends Component {
   constructor(props) {
@@ -27,59 +27,83 @@ export default class MobilitiesListView extends Component {
     }
   }
 
-  renderListRow = (rowData) => (
-    <View style={styles.listItem}>
-      <CardView>
-        <Touchable onPress={() => this.props.navigation.navigate('Single', { title: 'Tolle Reise' })}>
-          <View style={{ aspectRatio: 9/16 }}>
-            <ImageCaptionContainer
-              source={require('../assets/concert.jpg')}
-              caption={
-                <TitleOnShadow title="Tolle Reise" subtitle="nach Madrid" />
-              } />
-          </View>
-        </Touchable>
-        <CardSegment hasBorderBottom space="small">
-          <ButtonList>
-            <FlatButton
-              icon={
-                <MaterialIcon
-                  name="map"
-                  style={{ color: 'rgba(0,0,0,0.54)'}}
-                  size={20} />
-              }
-            />
-            <FlatButton
-              icon={
-                <MaterialIcon
-                  name="alarm"
-                  style={{ color: 'rgba(0,0,0,0.54)'}}
-                  size={20} />
-              }
-            />
-          </ButtonList>
-        </CardSegment>
-        <CardSegment space="big">
-          <TripDateList>
-            <TripDate typeText="vom" dateText="10.04.2017" />
-            <TripDate typeText="bis" dateText="16.04.2017" />
-          </TripDateList>
-        </CardSegment>
-        <CardSegment space="small">
-          <ButtonList>
-            <FlatButton label="Ansehen" />
-          </ButtonList>
-        </CardSegment>
-      </CardView>
-    </View>
-  )
-
   render() {
     return (
       <ListView
         dataSource={this.state.dataSource}
-        renderRow={this.renderListRow}
+        renderRow={this._renderListRow}
       />
+    )
+  }
+
+  _renderListRow = (rowData) => (
+    <View style={styles.listItem}>
+      <CardView>
+        {this._renderImage()}
+        {this._renderActionButtons()}
+        {this._renderDates()}
+        {this._renderMoreButtons()}
+      </CardView>
+    </View>
+  )
+
+  _renderImage = () => {
+    return (
+      <Touchable useForeground={true} onPress={() => this.props.navigation.navigate('Single', { title: 'Tolle Reise' })}>
+        <View style={{ aspectRatio: 9/16 }}>
+          <ImageCaptionContainer
+            source={require('../assets/concert.jpg')}
+            caption={
+              <TitleOnShadow title="Tolle Reise" subtitle="nach Madrid" />
+            } />
+        </View>
+      </Touchable>
+    )
+  }
+
+  _renderActionButtons = () => {
+    return (
+      <CardSegment hasBorderBottom space="small">
+        <ButtonList>
+          <FlatButton
+            icon={
+              <MaterialIcon
+                name="map"
+                style={{ color: 'rgba(0,0,0,0.54)'}}
+                size={20} />
+            }
+          />
+          <FlatButton
+            icon={
+              <MaterialIcon
+                name="alarm"
+                style={{ color: 'rgba(0,0,0,0.54)'}}
+                size={20} />
+            }
+          />
+        </ButtonList>
+      </CardSegment>
+    )
+  }
+
+  _renderDates = () => {
+    return (
+      <CardSegment space="big">
+        <TripDateList>
+          <TripDate typeText="vom" dateText="10.04.2017" />
+          <TripDate typeText="bis" dateText="16.04.2017" />
+        </TripDateList>
+      </CardSegment>
+    )
+  }
+
+  _renderMoreButtons = () => {
+    return (
+      <CardSegment space="small">
+        <ButtonList>
+          <FlatButton label="Ansehen" />
+        </ButtonList>
+      </CardSegment>
     )
   }
 }
