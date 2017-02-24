@@ -88,7 +88,6 @@ export default class SingleView extends Component {
   _renderTitleBackground = () => {
     return (
       <View style={{ height: this.headerHeight, overflow: 'hidden' }}>
-        <StatusBarBackgroundIOS />
         <Image
           style={{ flex: 1 }}
           source={require('../assets/concert.jpg')}
@@ -102,14 +101,17 @@ export default class SingleView extends Component {
 
   _renderStickyHeader = () => {
     return (
-      <Animatable.View
-        style={styles.stickyHeader}
-        ref={(navBarView) => this.navBarView = navBarView}
-      >
-        <View style={styles.stickyHeaderInner}>
-          <Text style={styles.toolbarTitle}>Foo bar</Text>
-        </View>
-      </Animatable.View>
+      <View>
+        <StatusBarBackgroundIOS />
+        <Animatable.View
+          style={styles.stickyHeader}
+          ref={(navBarView) => this.navBarView = navBarView}
+        >
+          <View style={styles.stickyHeaderInner}>
+            <Text style={styles.toolbarTitle}>Foo bar</Text>
+          </View>
+        </Animatable.View>
+      </View>
     )
   }
 }
