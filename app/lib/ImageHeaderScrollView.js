@@ -15,7 +15,7 @@ const SCROLLVIEW_REF = 'ScrollView';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
   header: {
     position: 'absolute',
@@ -51,10 +51,20 @@ const styles = StyleSheet.create({
 class ImageHeaderScrollView extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       scrollY: new Animated.Value(0),
-      pageY: 0,
+      pageY: 0
     };
+
+    const { headerHeight, overlayOpacity, headerScale } = this.calculateStuff()
+
+    this.state = {
+      headerHeight,
+      overlayOpacity,
+      headerScale,
+      ...this.state
+    }
   }
 
   getChildContext() {
@@ -94,21 +104,13 @@ class ImageHeaderScrollView extends Component {
     this.getScrollResponder().scrollTo(...args);
   }
 
-  interpolateOnImageHeight(outputRange) {
-    const headerScrollDistance = this.props.maxHeight - this.props.minHeight;
-    return this.state.scrollY.interpolate({
-      inputRange: [0, headerScrollDistance],
-      outputRange,
-      extrapolate: 'clamp',
-    });
-  }
-
-  renderHeader() {
+  calculateStuff = () => {
     const headerHeight = this.interpolateOnImageHeight([
       this.props.maxHeight,
       this.props.minHeight,
     ]);
     this.headerHeight = headerHeight
+
     const overlayOpacity = this.interpolateOnImageHeight([
       this.props.minOverlayOpacity,
       this.props.maxOverlayOpacity,
@@ -120,14 +122,44 @@ class ImageHeaderScrollView extends Component {
       extrapolate: 'clamp',
     });
 
-    const headerTransformStyle = { height: headerHeight, transform: [{ scale: headerScale }] };
+    return {
+      headerHeight,
+      overlayOpacity,
+      headerScale
+    }
+  }
+
+  _handleScroll = ({ nativeEvent }) => {
+    this.state.scrollY.setValue(nativeEvent.contentOffset.y)
+    const { headerHeight, overlayOpacity, headerScale } = this.calculateStuff()
+
+    this.setState({
+      headerHeight,
+      overlayOpacity,
+      headerScale
+    })
+  }
+
+  interpolateOnImageHeight(outputRange) {
+    const headerScrollDistance = this.props.maxHeight - this.props.minHeight;
+    return this.state.scrollY.interpolate({
+      inputRange: [0, headerScrollDistance],
+      outputRange,
+      extrapolate: 'clamp',
+    });
+  }
+
+  renderHeader() {
+    const headerTransformStyle = { height: this.state.headerHeight };
     return (
       <Animated.View style={[styles.header, headerTransformStyle]}>
-        <Animated.View style={[styles.blackOverlay, { opacity: overlayOpacity }]} />
+        <Animated.View style={[styles.blackOverlay, { opacity: this.state.overlayOpacity }]} />
         <View style={styles.fixedForeground}>
           { this.props.renderFixedForeground(this.state.scrollY) }
         </View>
-        { this.props.renderHeader(this.state.scrollY) }
+        <Animated.View style={{ transform: [{ scale: this.state.headerScale }] }}>
+          { this.props.renderHeader(this.state.scrollY) }
+        </Animated.View>
       </Animated.View>
     );
   }
@@ -165,9 +197,7 @@ class ImageHeaderScrollView extends Component {
           ref={(ref) => { this[SCROLLVIEW_REF] = ref; }}
           style={[styles.container, { marginTop: this.props.minHeight }]}
           scrollEventThrottle={16}
-          onScroll={Animated.event(
-            [{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }],
-          )}
+          onScroll={this._handleScroll}
           {...scrollViewProps}
         >
           <Animated.View style={[{ paddingTop: headerScrollDistance }, this.props.childrenStyle]}>

@@ -52,11 +52,11 @@ export default class SingleView extends Component {
   }
 
   _handleStickHeader = () => {
-    this.navBarView.fadeInUp(200)
+    this.navBarView.fadeIn(200)
   }
 
   _handleUnstickHeader = () => {
-    this.navBarView.fadeOut(100)
+    this.navBarView.fadeOut(200)
   }
 
   render() {
@@ -104,7 +104,7 @@ export default class SingleView extends Component {
     return (
       <Animatable.View
         style={styles.stickyHeader}
-        ref={(navBarView) => { this.navBarView = navBarView }}
+        ref={(navBarView) => this.navBarView = navBarView}
       >
         <View style={styles.stickyHeaderInner}>
           <Text style={styles.toolbarTitle}>Foo bar</Text>
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     opacity: 0,
     ...Platform.select({
       ios: {
-        marginTop: 18,
+        marginTop: 19,
         height: 46
       },
       android: {
