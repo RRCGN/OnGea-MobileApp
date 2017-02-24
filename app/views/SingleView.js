@@ -140,6 +140,9 @@ const styles = StyleSheet.create({
   toolbarTitle: {
     color: 'white',
     backgroundColor: 'transparent',
+    textShadowColor: 'rgba(0, 0, 0, 0.4)',
+    textShadowRadius: 2,
+    textShadowOffset: { width: 0, height: 1 },
     ...Platform.select({
       ios: {
         fontWeight: '600',
