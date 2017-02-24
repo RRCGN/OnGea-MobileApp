@@ -16,7 +16,8 @@ export default class MobilitiesOverviewView extends Component {
         elevation: 5,
         ...Platform.select({
           'android': {
-            paddingTop: StatusBar.currentHeight
+            paddingTop: StatusBar.currentHeight,
+            height: 56 + StatusBar.currentHeight
           }
         })
       },

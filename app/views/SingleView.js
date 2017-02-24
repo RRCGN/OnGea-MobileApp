@@ -25,8 +25,7 @@ export default class SingleView extends Component {
           elevation: 0,
           ...Platform.select({
             android: {
-              position: 'relative',
-              top: StatusBar.currentHeight
+              marginTop: StatusBar.currentHeight
             }
           })
         },
