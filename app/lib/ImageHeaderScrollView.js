@@ -57,12 +57,10 @@ class ImageHeaderScrollView extends Component {
       pageY: 0
     };
 
-    const { headerHeight, overlayOpacity, headerScale } = this.calculateStuff()
+    const styles = this.calculateStuff()
 
     this.state = {
-      headerHeight,
-      overlayOpacity,
-      headerScale,
+      ...styles,
       ...this.state
     }
   }
@@ -122,22 +120,27 @@ class ImageHeaderScrollView extends Component {
       extrapolate: 'clamp',
     });
 
+    const foregroundTranslate = this.state.scrollY.interpolate({
+      inputRange: [0, this.props.maxHeight * 2],
+      outputRange: [0, -this.props.maxHeight * 2 * this.props.foregroundParallaxRatio],
+      extrapolate: 'clamp',
+    });
+    const foregroundOpacity = this.interpolateOnImageHeight([1, -0.3]);
+
     return {
       headerHeight,
       overlayOpacity,
-      headerScale
+      headerScale,
+      foregroundTranslate,
+      foregroundOpacity
     }
   }
 
   _handleScroll = ({ nativeEvent }) => {
     this.state.scrollY.setValue(nativeEvent.contentOffset.y)
-    const { headerHeight, overlayOpacity, headerScale } = this.calculateStuff()
+    const styles = this.calculateStuff()
 
-    this.setState({
-      headerHeight,
-      overlayOpacity,
-      headerScale
-    })
+    this.setState(styles)
   }
 
   interpolateOnImageHeight(outputRange) {
@@ -165,17 +168,10 @@ class ImageHeaderScrollView extends Component {
   }
 
   renderForeground() {
-    const headerTranslate = this.state.scrollY.interpolate({
-      inputRange: [0, this.props.maxHeight * 2],
-      outputRange: [0, -this.props.maxHeight * 2 * this.props.foregroundParallaxRatio],
-      extrapolate: 'clamp',
-    });
-    const opacity = this.interpolateOnImageHeight([1, -0.3]);
-
     const headerTransformStyle = {
       height: this.props.maxHeight,
-      transform: [{ translateY: headerTranslate }],
-      opacity: this.props.fadeOutForeground ? opacity : 1,
+      transform: [{ translateY: this.state.foregroundTranslate }],
+      opacity: this.props.fadeOutForeground ? this.state.foregroundOpacity : 1,
     };
     return (
       <Animated.View style={[styles.header, headerTransformStyle]}>
