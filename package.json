@@ -12,7 +12,7 @@
     "react-native-animatable": "^1.1.0",
     "react-native-linear-gradient": "^2.0.0",
     "react-native-vector-icons": "^4.0.0",
-    "react-navigation": "^1.0.0-beta.5"
+    "react-navigation": "git+ssh://git@github.com/react-community/react-navigation.git#master"
   },
   "devDependencies": {
     "babel-jest": "18.0.0",
