@@ -1,16 +1,21 @@
 {
   "tokens": [
-    { "id": 1, "token": "7Qnz3[E2%iLjo2iq]Blr9cwXlL-!(c", "userId": 1 }
+    { "id": 1, "token": "7Qnz3[E2%iLjo2iq]Blr9cwXlL-!(c", "userId": 1 },
+    { "id": 2, "token": "9g_X$9bvXez_Ot0e*Q,7&1N}B{rkgt", "userId": 2 }
   ],
   "users": [
-    { "id": 1, "name": "John Doe" }
+    { "id": 1, "name": "John Doe" },
+    { "id": 2, "name": "Jane Doe" }
   ],
   "activities": [
-    { "id": 1, "name": "Dance Workshop", "location": "", "dateFrom": "", "dateTo": "" }
+    { "id": 1, "name": "Dance Workshop", "location": "", "dateFrom": "", "dateTo": "", "organizationId": 1 }
   ],
   "mobilities": [
     { "id": 1, "activityId": 1, "userId": 1 },
-    { "id": 1, "activityId": 1, "userId": 1 },
-    { "id": 2, "activityId": 1, "userId": 2 }
+    { "id": 1, "activityId": 1, "userId": 2 }
+  ],
+  "organizations": [
+    { "id": 1, "name": "RRCGN" },
+    { "id": 2, "name": "RRXYZ" }
   ]
 }
