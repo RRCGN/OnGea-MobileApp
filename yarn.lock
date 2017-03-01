@@ -3617,6 +3617,10 @@ react-native-linear-gradient@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.0.0.tgz#7442c00e1fcd9fca329119dcbaf744d12bcd1b5a"
 
+react-native-material-bottom-navigation@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-material-bottom-navigation/-/react-native-material-bottom-navigation-0.3.0.tgz#d56a545dfa23d18bd11e9a71a66947b74698b77c"
+
 react-native-tab-view@^0.0.56:
   version "0.0.56"
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-0.0.56.tgz#7417a1f6502deef49abf58ba76a1cde213abbbf1"
@@ -3709,9 +3713,9 @@ react-native@0.40.0:
     xmldoc "^0.4.0"
     yargs "^6.4.0"
 
-"react-navigation@git+ssh://git@github.com/react-community/react-navigation.git#master":
-  version "1.0.0-beta.5"
-  resolved "git+ssh://git@github.com/react-community/react-navigation.git#49133c3dfeb808ac235a20164244eacfe7c22c43"
+react-navigation@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/react-navigation/-/react-navigation-1.0.0-beta.6.tgz#56172ef7493a461b05d362674290eae4bdcaef6a"
   dependencies:
     clamp "^1.0.1"
     fbjs "^0.8.5"

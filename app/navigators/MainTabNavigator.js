@@ -6,6 +6,7 @@
 import React from 'react'
 import { Platform } from 'react-native'
 import { TabNavigator, TabView } from 'react-navigation'
+import { NavigationComponent } from 'react-native-material-bottom-navigation'
 import WebAppView from '../views/WebAppView'
 import MobilitiesTabView from '../views/MobilitiesTabView'
 import { Colors } from '../utils/constants'
@@ -18,7 +19,9 @@ const MainScreenTabNavigator = TabNavigator({
     screen: WebAppView
   }
 }, {
-  tabBarComponent: TabView.TabBarBottom,
+  tabBarComponent: Platform.OS === 'ios' ?
+                    TabView.TabBarBottom :
+                    NavigationComponent,
   tabBarPosition: 'bottom',
   swipeEnabled: false,
   tabBarOptions: {
@@ -26,6 +29,20 @@ const MainScreenTabNavigator = TabNavigator({
     inactiveTintColor: Colors.PRIMARY_LIGHT,
     style: {
       backgroundColor: Colors.PRIMARY
+    },
+    bottomNavigationOptions: {
+      style: { height: 56 },
+      labelColor: 'white',
+      rippleColor: 'white',
+      tabs: {
+        Mobilities: {
+          barBackgroundColor: '#00796B'
+        },
+        Web: {
+          barBackgroundColor: '#B71C1C',
+          rippleColor: 'black'
+        }
+      }
     }
   }
 })
