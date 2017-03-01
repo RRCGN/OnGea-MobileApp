@@ -15,7 +15,6 @@ export default class SingleView extends Component {
   static navigationOptions = {
     title: "",
     header: ({ goBack, state }) => {
-      const toolbarFloat = state.params.toolbarFloat == null ? true : state.params.toolbarFloat
       return {
         style: {
           borderRadius: 0,
@@ -36,7 +35,7 @@ export default class SingleView extends Component {
           <ToolbarButton
             androidIcon="arrow-back"
             iosIcon="ios-arrow-back"
-            floating={toolbarFloat}
+            floating={true}
             onPress={() => goBack(null)}
           />
         )
@@ -47,7 +46,7 @@ export default class SingleView extends Component {
   componentWillMount() {
     this.headerWidth = Dimensions.get('window').width
     this.headerHeight = this.headerWidth * (2/3)
-    this.stickyHeaderHeight = Platform.OS === 'ios' ? 64 : 104
+    this.stickyHeaderHeight = Platform.OS === 'ios' ? 64 : 80
   }
 
   _handleStickHeader = () => {
@@ -124,7 +123,7 @@ const styles = StyleSheet.create({
         height: 46
       },
       android: {
-        marginTop: 48,
+        marginTop: 24,
         height: 56
       }
     })
