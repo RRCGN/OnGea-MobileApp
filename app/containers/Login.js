@@ -24,16 +24,7 @@ export default class Login extends Component {
   }
 
   _handleSubmit = ({ username, password }) => {
-    LoginManager
-      .try({ username, password })
-      .then(success => {
-        if (!success) {
-          this.setState({ success })
-          return
-        }
-
-        this.props.onSuccessfulLogin()
-      })
+    this.props.onSuccessfulLogin()
   }
 
   render() {
