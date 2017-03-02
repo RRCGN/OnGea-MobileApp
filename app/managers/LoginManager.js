@@ -1,9 +1,7 @@
 /**
- *
+ * Manager for everything related to Logins.
  * @flow
  */
-
-
 
 import { AsyncStorage } from 'react-native'
 
