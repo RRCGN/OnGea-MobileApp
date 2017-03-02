@@ -4,7 +4,7 @@
     { "id": 2, "token": "9g_X$9bvXez_Ot0e*Q,7&1N}B{rkgt", "userId": 2 }
   ],
   "users": [
-    { "id": 1, "name": "John Doe" },
+    { "id": 1, "name": "John Doe", "username": "test", "password": "test" },
     { "id": 2, "name": "Jane Doe" }
   ],
   "activities": [

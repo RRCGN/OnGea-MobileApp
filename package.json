@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "server:no-auth": "nodemon --watch mock mock/server.js --no-auth",
-    "server": "nodemon --watch mock mock/server.js",
+    "server:no-auth": "nodemon --watch mockserver mockserver/server.js --no-auth",
+    "server": "nodemon --watch mockserver mockserver/server.js",
     "test": "jest"
   },
   "dependencies": {

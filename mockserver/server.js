@@ -11,10 +11,14 @@ const noAuth = process.argv[2] === '--no-auth'
 server.use(middlewares)
 
 server.get('/auth', (req, res) => {
-  const user = db.tokens
-                 .find(token => token.userId === parseInt(req.query.userId))
-  if (!user) return res.sendStatus(404)
-  return res.json(user)
+  const user = db.users
+    .find(user => (
+      user.username === req.query.username &&
+      user.password === req.query.password
+    ))
+  if (!user) return res.sendStatus(401)
+  const token = db.tokens.find(token => token.userId === user.id)
+  return res.json(token)
 })
 
 server.use(jsonServer.bodyParser)
