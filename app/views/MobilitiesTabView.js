@@ -23,6 +23,21 @@ export default class MobilitiesTabView extends Component {
     }
   }
 
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      loggedIn: false
+    }
+  }
+
+  componentWillMount() {
+    const { loggedIn } = this.props
+    if (loggedIn) {
+      this.setState({ loggedIn })
+    }
+  }
+
   render() {
     return (
       <View style={{ flex: 1 }}>
@@ -31,7 +46,7 @@ export default class MobilitiesTabView extends Component {
           backgroundColor="rgba(0,0,0,0.36)"
           barStyle="light-content"
         />
-        {this.props.loggedIn ?
+        {this.state.loggedIn ?
           <MobilitiesNavigator /> :
           <Login />
         }
