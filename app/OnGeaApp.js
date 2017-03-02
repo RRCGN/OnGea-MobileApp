@@ -11,7 +11,7 @@ import {
 } from 'react-native'
 import SplashScreen from 'rn-splash-screen'
 import MainTabNavigator from './navigators/MainTabNavigator'
-//import LoginManager from './managers/LoginManager'
+import LoginManager from './managers/LoginManager'
 
 export default class OnGeaApp extends Component {
 
@@ -29,21 +29,14 @@ export default class OnGeaApp extends Component {
     }
   }
 
-  componentDidMount() {
-    /*LoginManager
-      .checkStatus()
-      .then(loggedIn => {
-        SplashScreen.hide()
-        this.setState({
-          loaded: true,
-          loggedIn
-        })
-      })*/
-    SplashScreen.hide()
+  async componentDidMount() {
+    const { loggedIn, token } = await LoginManager.checkStatus()
     this.setState({
-      loaded: true,
-      loggedIn: true
+      loggedIn,
+      loaded: true
     })
+
+    SplashScreen.hide()
   }
 
   render() {
