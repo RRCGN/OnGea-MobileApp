@@ -31,7 +31,6 @@ const MainScreenTabNavigator = TabNavigator({
       backgroundColor: Colors.PRIMARY
     },
     bottomNavigationOptions: {
-      style: { height: 56 },
       labelColor: 'white',
       rippleColor: 'white',
       tabs: {
