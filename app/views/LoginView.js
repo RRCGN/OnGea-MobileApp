@@ -9,6 +9,7 @@ import {
   Button,
   TextInput
 } from 'react-native'
+import TextField from 'react-native-md-textinput'
 
 
 type Props = {
@@ -32,10 +33,15 @@ export default class LoginView extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <TextInput
+        <TextField
+          label="Username"
+          value={this.state.username}
           onChangeText={(username) => this.setState({ username })}
         />
-        <TextInput
+        <TextField
+          label="Password"
+          secureTextEntry={true}
+          value={this.state.password}
           onChangeText={(password) => this.setState({ password })}
         />
         <Button

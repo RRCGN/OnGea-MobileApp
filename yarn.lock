@@ -3621,6 +3621,10 @@ react-native-material-bottom-navigation@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/react-native-material-bottom-navigation/-/react-native-material-bottom-navigation-0.3.1.tgz#8f5a17eaea15025939ab55363d5aed8dacb5fc3a"
 
+react-native-md-textinput@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-md-textinput/-/react-native-md-textinput-2.0.4.tgz#9f81cff16ceba0bc595fc58ed1239bd13a4023a8"
+
 react-native-tab-view@^0.0.56:
   version "0.0.56"
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-0.0.56.tgz#7417a1f6502deef49abf58ba76a1cde213abbbf1"
