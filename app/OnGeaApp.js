@@ -1,11 +1,64 @@
 /**
  * Main App
+ * @flow
  */
 
+import React, { Component } from 'react'
+import {
+  View,
+  Text,
+  StatusBar
+} from 'react-native'
+import SplashScreen from 'rn-splash-screen'
 import MainTabNavigator from './navigators/MainTabNavigator'
+//import LoginManager from './managers/LoginManager'
 
-// This proxies MainTabNavigator in case the App Container needs additional stuff.
-// Maybe it doesn't.
-const OnGeaApp = MainTabNavigator
+export default class OnGeaApp extends Component {
 
-export default OnGeaApp
+  state: {
+    loaded: boolean,
+    loggedIn: ?boolean
+  }
+
+  constructor() {
+    super()
+
+    this.state = {
+      loaded: false,
+      loggedIn: null
+    }
+  }
+
+  componentDidMount() {
+    /*LoginManager
+      .checkStatus()
+      .then(loggedIn => {
+        SplashScreen.hide()
+        this.setState({
+          loaded: true,
+          loggedIn
+        })
+      })*/
+    SplashScreen.hide()
+    this.setState({
+      loaded: true,
+      loggedIn: true
+    })
+  }
+
+  render() {
+    return (
+      <View style={{ flex: 1 }}>
+        <StatusBar
+          translucent
+          backgroundColor="transparent"
+          barStyle="light-content"
+        />
+
+        {this.state.loaded &&
+          <MainTabNavigator loggedIn={this.state.loggedIn} />
+        }
+      </View>
+    )
+  }
+}
