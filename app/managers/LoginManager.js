@@ -10,7 +10,7 @@ export default class LoginManager {
 
   static async checkStatus(): Promise<{ loggedIn: boolean, token?: string }> {
     try {
-      const token = await AsyncStorage.getItem(this.TOKEN_KEY)
+      const token = await LoginManager.getToken()
       if (token != null) {
         return { loggedIn: true, token }
       } else {
@@ -19,6 +19,31 @@ export default class LoginManager {
     } catch (error) {
       if (__DEV__) console.error(error)
       return { loggedIn: false }
+    }
+  }
+
+  static async saveToken(token) {
+    try {
+      await AsyncStorage.setItem(this.TOKEN_KEY, token)
+    } catch (error) {
+      if (__DEV__) console.error(error)
+    }
+  }
+
+  static async getToken() {
+    try {
+      return await AsyncStorage.getItem(this.TOKEN_KEY)
+    } catch (error) {
+      if (__DEV__) console.error(error)
+      return null
+    }
+  }
+
+  static async removeToken() {
+    try {
+      await AsyncStorage.removeItem(this.TOKEN_KEY)
+    } catch (error) {
+      if (__DEV__) console.error(error)
     }
   }
 }

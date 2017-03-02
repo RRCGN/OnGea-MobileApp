@@ -1,5 +1,5 @@
 jest.mock('AsyncStorage', () => {
-  const store = {}
+  let store = {}
 
   return {
 
@@ -13,6 +13,10 @@ jest.mock('AsyncStorage', () => {
 
     removeItem: jest.fn((key) => {
       delete store[key]
+    }),
+
+    clear: jest.fn(() => {
+      store = {}
     })
 
   }
