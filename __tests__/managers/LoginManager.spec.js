@@ -2,7 +2,7 @@ import 'react-native'
 import '../../__mocks__/AsyncStorage'
 import LoginManager from '../../app/managers/LoginManager'
 
-describe('LoginManager checkStatus()', () => {
+describe('LoginManager', () => {
   const TEST_TOKEN = 'token'
 
   describe('if no token is available', () => {
