@@ -17,7 +17,8 @@ export default class OnGeaApp extends Component {
 
   state: {
     loaded: boolean,
-    loggedIn: ?boolean
+    loggedIn: ?boolean,
+    token?: string
   }
 
   constructor() {
@@ -29,17 +30,26 @@ export default class OnGeaApp extends Component {
     }
   }
 
-  async componentDidMount() {
-    const { loggedIn, token } = await LoginManager.checkStatus()
-    this.setState({
-      loggedIn,
-      loaded: true
-    })
+  componentDidMount() {
+    // Facebook/Flow doesn't allow async on lifecycle methods.
+    // It would look much nicer like `async componentDidMount()`, but flow
+    // throws an error.
 
-    SplashScreen.hide()
+    (async () => {
+      const { loggedIn, token } = await LoginManager.checkStatus()
+      this.setState({
+        token,
+        loggedIn,
+        loaded: true
+      })
+
+      SplashScreen.hide()
+    })()
   }
 
   render() {
+    const { loggedIn, token } = this.state
+
     return (
       <View style={{ flex: 1 }}>
         <StatusBar
@@ -49,7 +59,7 @@ export default class OnGeaApp extends Component {
         />
 
         {this.state.loaded &&
-          <MainTabNavigator loggedIn={this.state.loggedIn} />
+          <MainTabNavigator loggedIn={loggedIn} token={token} />
         }
       </View>
     )
