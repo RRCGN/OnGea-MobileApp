@@ -1,8 +1,21 @@
 package com.ongea;
 
+import android.os.Bundle;
+import android.graphics.Color;
+
+import com.facebook.react.ReactInstanceManager;
+import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.ReactActivity;
+import com.mehcode.reactnative.splashscreen.SplashScreen;
 
 public class MainActivity extends ReactActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        SplashScreen.show(this, getReactInstanceManager());
+
+        super.onCreate(savedInstanceState);
+    }
 
     /**
      * Returns the name of the main component registered from JavaScript.
