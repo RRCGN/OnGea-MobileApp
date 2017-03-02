@@ -4,7 +4,7 @@
  */
 
 import React, { Component } from 'react'
-import { Text, View, StatusBar, Platform } from 'react-native'
+import { Text, View, StatusBar, Platform, WebView } from 'react-native'
 import PlatformIcon from '../components/PlatformIcon'
 
 export default class WebViewScreen extends Component {
@@ -23,8 +23,11 @@ export default class WebViewScreen extends Component {
 
   render() {
     return (
-      <View>
-        <Text>Hellooo WebApp!</Text>
+      <View style={{ flex: 1, backgroundColor: '#d52319' }}>
+        <WebView
+          source={{ uri: 'http://rootsnroutes.eu' }}
+          style={{ marginTop: StatusBar.currentHeight }}
+        />
       </View>
     )
   }
