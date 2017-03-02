@@ -4,7 +4,7 @@
  */
 
 import React, { Component } from 'react'
-import { Text, View, StatusBar } from 'react-native'
+import { Text, View, StatusBar, Platform } from 'react-native'
 import PlatformIcon from '../components/PlatformIcon'
 
 export default class WebViewScreen extends Component {
@@ -16,7 +16,7 @@ export default class WebViewScreen extends Component {
         <PlatformIcon
           iosIcon={focused ? 'ios-globe' : 'ios-globe-outline'}
           androidIcon="public"
-          size={24} color={tintColor} />
+          size={24} color={Platform.OS === 'ios' ? tintColor : 'white' } />
       )
     }
   }

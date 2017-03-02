@@ -5,7 +5,7 @@
  */
 
 import React, { Component } from 'react'
-import { View, StatusBar } from 'react-native'
+import { View, StatusBar, Platform } from 'react-native'
 import MobilitiesNavigator from '../navigators/MobilitiesNavigator'
 import PlatformIcon from '../components/PlatformIcon'
 import Login from '../containers/Login'
@@ -18,7 +18,7 @@ export default class MobilitiesTabView extends Component {
         <PlatformIcon
           iosIcon={focused ? 'ios-bonfire' : 'ios-bonfire-outline'}
           androidIcon="landscape"
-          size={24} color={tintColor} />
+          size={24} color={Platform.OS === 'ios' ? tintColor : 'white' } />
       )
     }
   }
