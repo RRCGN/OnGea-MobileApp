@@ -8,6 +8,7 @@ import React, { Component } from 'react'
 import { View, StatusBar } from 'react-native'
 import MobilitiesNavigator from '../navigators/MobilitiesNavigator'
 import PlatformIcon from '../components/PlatformIcon'
+import Login from '../containers/Login'
 
 export default class MobilitiesTabView extends Component {
   static navigationOptions = {
@@ -30,7 +31,10 @@ export default class MobilitiesTabView extends Component {
           backgroundColor="rgba(0,0,0,0.36)"
           barStyle="light-content"
         />
-        <MobilitiesNavigator />
+        {this.props.loggedIn ?
+          <MobilitiesNavigator /> :
+          <Login />
+        }
       </View>
     )
   }
