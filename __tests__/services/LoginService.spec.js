@@ -3,45 +3,33 @@ import '../../__mocks__/AsyncStorage'
 import LoginService from '../../app/services/LoginService'
 
 describe('LoginService', () => {
-  const TEST_TOKEN = 'token'
+  const TEST_TOKEN = 'mock token'
 
-  describe('if no token is available', () => {
-    let status
+  describe('checkStatus()', () => {
+    it('is logged in if token is available', async () => {
+      await LoginService.saveToken(TEST_TOKEN)
+      const status = await LoginService.checkStatus()
 
-    beforeAll(async () => {
-      status = await LoginService.checkStatus()
+      expect(status.loggedIn).toBe(true)
+      expect(status.token).toEqual(TEST_TOKEN)
     })
 
-    it('should return not logged in', () => {
+    it('is not logged in if no token is available', async () => {
+      await LoginService.clearToken()
+      const status = await LoginService.checkStatus()
+
       expect(status.loggedIn).toBe(false)
-    })
-
-    it('should return no token', () => {
       expect(status.token).toBe(undefined)
     })
   })
 
-  describe('if token is available', () => {
-    let status
-
-    beforeAll(async () => {
+  describe('saveToken(token)', async () => {
+    it('saves the token', async () => {
       await LoginService.saveToken(TEST_TOKEN)
-      status = await LoginService.checkStatus()
-    })
+      const token = await LoginService.getToken()
 
-    it('should return logged in', () => {
-      expect(status.loggedIn).toBe(true)
+      expect(token).toEqual(TEST_TOKEN)
     })
-
-    it('should return token', () => {
-      expect(status.token).toEqual(TEST_TOKEN)
-    })
-  })
-
-  it('should save token', async () => {
-    await LoginService.saveToken(TEST_TOKEN)
-    const token = await LoginService.getToken()
-    expect(token).toEqual(TEST_TOKEN)
   })
 
 })
