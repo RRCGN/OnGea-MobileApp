@@ -1,5 +1,5 @@
 /**
- * View for Login
+ * View for Login.
  * @flow
  */
 
@@ -27,7 +27,7 @@ export default class LoginView extends Component {
   state: LoginViewState
 
   static defaultProps = {
-    onSubmit: () => { }
+    onSubmit: ({ username: '', password: '' }) => { }
   }
 
   constructor(props: LoginViewProps) {

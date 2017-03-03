@@ -1,35 +1,42 @@
 /**
- *
+ * Handles Auth Call and Token handling.
  * @flow
  */
 
 import React, { Component } from 'react'
 import LoginView from '../views/LoginView'
+import ApiService from '../services/ApiService'
 import LoginService from '../services/LoginService'
 
 
-type Props = {
-  onSuccessfulLogin: () => void
+export type LoginProps = {
+  onSuccessfulLogin: (token: string) => void
+}
+
+type LoginState = {
+  success: ?boolean
 }
 
 export default class Login extends Component {
+  props: LoginProps
+  state: LoginState
 
-  state: { success: ?boolean }
-
-  constructor(props: Props) {
+  constructor(props: LoginProps) {
     super(props)
-
-    this.state = {
-      success: null
-    }
+    this.state = { success: null }
   }
 
   _handleSubmit = async ({ username, password }) => {
-    const { success, token } = await LoginService.obtainToken(username, password)
-    this.setState({ success })
+    const { ok, token } = await ApiService.auth(username, password)
+    this.setState({ success: ok })
 
-    if (success) {
-      await LoginService.saveToken(token)
+    if (ok && token) {
+      try {
+        await LoginService.saveToken(token)
+      } catch (error) {
+        console.log('Could not save token. Error:', error)
+      }
+
       this.props.onSuccessfulLogin(token)
     }
   }
