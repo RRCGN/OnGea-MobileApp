@@ -31,16 +31,20 @@ export default class Login extends Component {
   }
 
   _handleSubmit = async (username, password) => {
+    // Try to auth on API.
     const { ok, token } = await ApiService.auth(username, password)
     this.setState({ success: ok })
 
+    // If auth was successful...
     if (ok && token) {
       try {
+        // ...save token...
         await LoginService.saveToken(token)
       } catch (error) {
         console.log('Could not save token. Error:', error)
       }
 
+      // ...and tell the Navigator we're logged in.
       this.props.onSuccessfulLogin(token)
     }
   }
