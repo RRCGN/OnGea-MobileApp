@@ -23,7 +23,17 @@ export default class ApiService {
 
   static async call(path: string, params: Params, opts?: any): Promise<Response> {
     const qs = this._queryString(params)
-    return await fetch(`${this.BASE_URL}${path}${qs}`, opts)
+    let response
+
+    try {
+      response = await fetch(`${this.BASE_URL}${path}${qs}`, opts)
+    } catch (error) {
+      console.log('Something went wrong while sending the request', error)
+      response = new Response()
+      response.ok = false
+    }
+
+    return response
   }
 
   static _queryString(params: Params): string {
