@@ -4,8 +4,9 @@
  */
 
 import { AsyncStorage } from 'react-native'
+import ApiService from './ApiService'
 
-export default class LoginManager {
+export default class LoginService {
   static TOKEN_KEY: string = '@LoginStore:token'
 
   static async checkStatus(): Promise<{ loggedIn: boolean, token?: string }> {
@@ -42,25 +43,6 @@ export default class LoginManager {
   static async removeToken() {
     try {
       await AsyncStorage.removeItem(this.TOKEN_KEY)
-    } catch (error) {
-      if (__DEV__) console.error(error)
-    }
-  }
-
-  static async obtainToken(username, password): Promise<{ success: boolean, token?: string }> {
-    const { success, json } = await LoginManager.sendLoginRequest(username, password)
-    if (!success) return { success }
-
-    return { success, token: json.token }
-  }
-
-  static async sendLoginRequest(username, password): Promise<{ success: boolean, json: any }> {
-    try {
-      const response = await fetch(`http://172.16.0.194:3000/auth?username=${username}&password=${password}`)
-      if (!response.ok) return { success: false }
-
-      const json = await response.json()
-      return { success: response.ok, json }
     } catch (error) {
       if (__DEV__) console.error(error)
     }
