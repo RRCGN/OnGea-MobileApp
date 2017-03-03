@@ -1,5 +1,5 @@
 /**
- *
+ * Wrapper for all API related Requests.
  * @flow
  */
 
