@@ -1,15 +1,15 @@
 import 'react-native'
 import '../../__mocks__/AsyncStorage'
-import LoginManager from '../../app/managers/LoginManager'
+import LoginService from '../../app/services/LoginService'
 
-describe('LoginManager', () => {
+describe('LoginService', () => {
   const TEST_TOKEN = 'token'
 
   describe('if no token is available', () => {
     let status
 
     beforeAll(async () => {
-      status = await LoginManager.checkStatus()
+      status = await LoginService.checkStatus()
     })
 
     it('should return not logged in', () => {
@@ -25,8 +25,8 @@ describe('LoginManager', () => {
     let status
 
     beforeAll(async () => {
-      await LoginManager.saveToken(TEST_TOKEN)
-      status = await LoginManager.checkStatus()
+      await LoginService.saveToken(TEST_TOKEN)
+      status = await LoginService.checkStatus()
     })
 
     it('should return logged in', () => {
@@ -39,8 +39,8 @@ describe('LoginManager', () => {
   })
 
   it('should save token', async () => {
-    await LoginManager.saveToken(TEST_TOKEN)
-    const token = await LoginManager.getToken()
+    await LoginService.saveToken(TEST_TOKEN)
+    const token = await LoginService.getToken()
     expect(token).toEqual(TEST_TOKEN)
   })
 

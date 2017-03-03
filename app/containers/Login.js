@@ -5,6 +5,7 @@
 
 import React, { Component } from 'react'
 import LoginView from '../views/LoginView'
+import LoginService from '../services/LoginService'
 
 
 type Props = {
@@ -23,8 +24,14 @@ export default class Login extends Component {
     }
   }
 
-  _handleSubmit = ({ username, password }) => {
-    this.props.onSuccessfulLogin()
+  _handleSubmit = async ({ username, password }) => {
+    const { success, token } = await LoginService.obtainToken(username, password)
+    this.setState({ success })
+
+    if (success) {
+      await LoginService.saveToken(token)
+      this.props.onSuccessfulLogin(token)
+    }
   }
 
   render() {

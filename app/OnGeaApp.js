@@ -11,7 +11,7 @@ import {
 } from 'react-native'
 import SplashScreen from 'rn-splash-screen'
 import MainTabNavigator from './navigators/MainTabNavigator'
-import LoginManager from './managers/LoginManager'
+import LoginService from './services/LoginService'
 
 export default class OnGeaApp extends Component {
 
@@ -36,7 +36,7 @@ export default class OnGeaApp extends Component {
     // throws an error.
 
     (async () => {
-      const { loggedIn, token } = await LoginManager.checkStatus()
+      const { loggedIn, token } = await LoginService.checkStatus()
       this.setState({
         token,
         loggedIn,
