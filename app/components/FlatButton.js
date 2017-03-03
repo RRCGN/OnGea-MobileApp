@@ -14,12 +14,13 @@ type Props = {
   onPress: () => void,
   label?: string,
   icon?: ReactElement<*>,
-  color?: string
+  color?: string,
+  style?: any
 }
 
-const FlatButton = ({ onPress, label, icon, color }: Props) => (
+const FlatButton = ({ onPress, label, icon, color, style }: Props) => (
   <Touchable onPress={onPress}>
-    <View style={{ padding: 8, borderRadius: 2 }}>
+    <View style={[ { padding: 8, borderRadius: 2 }, style ]}>
       {label &&
         <Text style={[ { color }, styles.text ]}>{label.toUpperCase()}</Text>
       }
@@ -32,6 +33,7 @@ export default FlatButton
 
 const styles = StyleSheet.create({
   text: {
+    textAlign: 'center',
     fontWeight: 'bold',
     color: Colors.PRIMARY
   }
