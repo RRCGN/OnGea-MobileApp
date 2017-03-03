@@ -13,8 +13,8 @@ import TextField from 'react-native-md-textinput'
 
 
 export type LoginViewProps = {
-  success: ?boolean,
-  onSubmit: ({ username: string, password: string }) => void
+  success?: ?boolean,
+  onSubmit: (username?: string, password?: string) => Promise<void>
 }
 
 type LoginViewState = {
@@ -27,7 +27,7 @@ export default class LoginView extends Component {
   state: LoginViewState
 
   static defaultProps = {
-    onSubmit: ({ username: '', password: '' }) => { }
+    onSubmit: async () => { }
   }
 
   constructor(props: LoginViewProps) {
@@ -64,7 +64,7 @@ export default class LoginView extends Component {
 
   _handleLoginPress = () => {
     const { username, password } = this.state
-    this.props.onSubmit({ username, password })
+    this.props.onSubmit(username, password)
   }
 }
 

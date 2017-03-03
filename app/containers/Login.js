@@ -21,12 +21,16 @@ export default class Login extends Component {
   props: LoginProps
   state: LoginState
 
+  static defaultProps = {
+    onSuccessfulLogin: () => { }
+  }
+
   constructor(props: LoginProps) {
     super(props)
     this.state = { success: null }
   }
 
-  _handleSubmit = async ({ username, password }) => {
+  _handleSubmit = async (username, password) => {
     const { ok, token } = await ApiService.auth(username, password)
     this.setState({ success: ok })
 
