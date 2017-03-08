@@ -7,7 +7,7 @@ import { View, Platform, StyleSheet, StatusBar, Image, Dimensions, Text } from '
 import ToolbarButton from '../components/ToolbarButton'
 import TitleOnShadow from '../components/TitleOnShadow'
 import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
-import HeaderImageScrollView from '../lib/ImageHeaderScrollView'
+import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view'
 import * as Animatable from 'react-native-animatable'
 import { Colors } from '../utils/constants'
 
@@ -68,12 +68,13 @@ export default class SingleView extends Component {
           renderForeground={this._renderTitleForeground}
           renderFixedForeground={this._renderStickyHeader}
           fadeOutForeground={true}
-          onMinIn={this._handleStickHeader}
-          onMinOut={this._handleUnstickHeader}
         >
-          <View style={{ height: 1000 }}>
-
-          </View>
+          <TriggeringView
+            style={{ height: 1000 }}
+            onBeginHidden={this._handleStickHeader}
+            onDisplay={this._handleUnstickHeader}
+          >
+          </TriggeringView>
         </HeaderImageScrollView>
       </View>
     )
