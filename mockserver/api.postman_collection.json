@@ -51,6 +51,17 @@
 				"description": ""
 			},
 			"response": []
+		},
+		{
+			"name": "Get Everything of User",
+			"request": {
+				"url": "http://localhost:3000/all?token={{token}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }
