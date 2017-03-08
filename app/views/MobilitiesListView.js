@@ -50,7 +50,7 @@ export default class MobilitiesListView extends Component {
   _renderImage = () => {
     return (
       <Touchable useForeground={true} onPress={() => this.props.navigation.navigate('Single', { title: 'Tolle Reise' })}>
-        <View style={{ aspectRatio: 9/16 }}>
+        <View style={{ aspectRatio: 16/9 }}>
           <ImageCaptionContainer
             source={require('../assets/concert.jpg')}
             caption={
