@@ -11,7 +11,7 @@ import { Colors } from '../utils/constants'
 
 
 type Props = {
-  onPress: () => void,
+  onPress: Function,
   label?: string,
   icon?: ReactElement<*>,
   color?: string,

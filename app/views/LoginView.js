@@ -8,18 +8,20 @@ import {
   View,
   StyleSheet
 } from 'react-native'
+import ApiService from '../services/ApiService'
+import LoginService from '../services/LoginService'
 import FlatButton from '../components/FlatButton'
 import TextField from 'react-native-md-textinput'
 
 
-export type LoginViewProps = {
-  success?: ?boolean,
-  onSubmit: (username?: string, password?: string) => Promise<void>
+type LoginViewProps = {
+  onSuccessfulLogin: (token: string) => void
 }
 
 type LoginViewState = {
   username: string,
-  password: string
+  password: string,
+  success: ?boolean
 }
 
 export default class LoginView extends Component {
@@ -32,10 +34,13 @@ export default class LoginView extends Component {
 
   constructor(props: LoginViewProps) {
     super(props)
-    this.state = { username: '', password: '' }
+    this.state = { username: '', password: '', success: null }
   }
 
   render() {
+    const { success } = this.state
+    const stateColor = this._getColorForSuccess(success)
+
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <TextField
@@ -43,6 +48,7 @@ export default class LoginView extends Component {
           label="Username"
           value={this.state.username}
           onChangeText={(username) => this.setState({ username })}
+          borderColor={stateColor}
         />
         <TextField
           style={styles.formElement}
@@ -50,6 +56,7 @@ export default class LoginView extends Component {
           secureTextEntry={true}
           value={this.state.password}
           onChangeText={(password) => this.setState({ password })}
+          borderColor={stateColor}
         />
         <View style={styles.button}>
           <FlatButton
@@ -62,9 +69,27 @@ export default class LoginView extends Component {
     )
   }
 
-  _handleLoginPress = () => {
+  _getColorForSuccess = (success) => {
+    if (success == true) return 'green'
+    else if (success == false) return 'red'
+    else return undefined
+  }
+
+  _handleLoginPress = async () => {
     const { username, password } = this.state
-    this.props.onSubmit(username, password)
+    const { ok, token } = await ApiService.auth(username, password)
+    this.setState({ success: ok })
+
+    if (ok && token) {
+      try {
+        await LoginService.saveToken(token)
+      } catch (error) {
+        console.log('Error when saving token:', error)
+      }
+
+      // Call onSuccessfulLogin from Navigator
+      this.props.onSuccessfulLogin(token)
+    }
   }
 }
 

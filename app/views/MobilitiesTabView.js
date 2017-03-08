@@ -8,9 +8,17 @@ import React, { Component } from 'react'
 import { View, StatusBar, Platform } from 'react-native'
 import MobilitiesNavigator from '../navigators/MobilitiesNavigator'
 import PlatformIcon from '../components/PlatformIcon'
-import Login from '../containers/Login'
+import LoginView from './LoginView'
+
+
+type TabViewState = {
+  loggedIn: boolean,
+  token?: string
+}
 
 export default class MobilitiesTabView extends Component {
+  state: TabViewState
+
   static navigationOptions = {
     tabBar: {
       label: 'Mobilities',
@@ -23,22 +31,21 @@ export default class MobilitiesTabView extends Component {
     }
   }
 
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      loggedIn: false
-    }
+  constructor() {
+    super()
+    this.state = { loggedIn: false }
   }
 
   componentWillMount() {
-    const { loggedIn } = this.props
+    // Initial check if we're logged in to render the proper screen.
+    const { loggedIn } = this.props.screenProps
     if (loggedIn) {
       this.setState({ loggedIn })
     }
   }
 
   render() {
+    const { loggedIn } = this.props.screenProps
     return (
       <View style={{ flex: 1 }}>
         <StatusBar
@@ -48,9 +55,13 @@ export default class MobilitiesTabView extends Component {
         />
         {this.state.loggedIn ?
           <MobilitiesNavigator /> :
-          <Login />
+          <LoginView onSuccessfulLogin={this._handleSuccessfulLogin} />
         }
       </View>
     )
+  }
+
+  _handleSuccessfulLogin = (token) => {
+    this.setState({ token, loggedIn: true })
   }
 }

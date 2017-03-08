@@ -11,13 +11,13 @@ type Auth = { ok: boolean, token?: string }
 type AuthApiResponse = ApiResponse<{ token: string }>
 
 export default class ApiService {
-  static BASE_URL = 'http://10.0.3.2'
+  static BASE_URL = 'http://10.0.3.2:3000'
 
   static async auth(username, password): Promise<Auth> {
     const AUTH_PATH = '/auth'
     const response = await this.call(AUTH_PATH, { username, password })
     if (!response.ok) return { ok: false }
-    const json = response.json()
+    const json = await response.json()
     return { ok: true, token: json.token }
   }
 

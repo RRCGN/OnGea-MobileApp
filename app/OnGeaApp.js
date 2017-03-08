@@ -35,6 +35,8 @@ export default class OnGeaApp extends Component {
     // It would look much nicer like `async componentDidMount()`, but flow
     // throws an error.
 
+    // Check if we're already logged in and pass result to Navigator,
+    // so we can render the LoginView, if we need it.
     (async () => {
       const { loggedIn, token } = await LoginService.checkStatus()
       this.setState({
@@ -59,7 +61,7 @@ export default class OnGeaApp extends Component {
         />
 
         {this.state.loaded &&
-          <MainTabNavigator loggedIn={loggedIn} token={token} />
+          <MainTabNavigator screenProps={{ loggedIn, token }} />
         }
       </View>
     )
