@@ -9,7 +9,6 @@ import {
   StyleSheet
 } from 'react-native'
 import ApiService from '../services/ApiService'
-import LoginService from '../services/LoginService'
 import FlatButton from '../components/FlatButton'
 import TextField from 'react-native-md-textinput'
 
@@ -81,12 +80,6 @@ export default class LoginView extends Component {
     this.setState({ success: ok })
 
     if (ok && token) {
-      try {
-        await LoginService.saveToken(token)
-      } catch (error) {
-        console.log('Error when saving token:', error)
-      }
-
       // Call onSuccessfulLogin from Navigator
       this.props.onSuccessfulLogin(token)
     }

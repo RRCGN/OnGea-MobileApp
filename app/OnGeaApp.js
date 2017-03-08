@@ -35,8 +35,7 @@ export default class OnGeaApp extends Component {
     // It would look much nicer like `async componentDidMount()`, but flow
     // throws an error.
 
-    // Check if we're already logged in and pass result to Navigator,
-    // so we can render the LoginView, if we need it.
+    // Check if we're already logged in to show correct view.
     (async () => {
       const { loggedIn, token } = await LoginService.checkStatus()
       this.setState({
@@ -61,11 +60,49 @@ export default class OnGeaApp extends Component {
         />
 
         {this.state.loaded &&
-          <MainTabNavigator screenProps={{ loggedIn, token }} />
+          <MainTabNavigator
+            screenProps={{
+              loggedIn,
+              token,
+              logout: this._handleLogout,
+              login: this._handleLogin
+            }}
+          />
         }
       </View>
     )
   }
+
+  _handleLogout = async (): Promise<void> => {
+    try {
+      await LoginService.clearToken()
+    } catch (error) {
+      console.error('Could not clear token:', error)
+    }
+
+    this.setState({ loggedIn: false, token: '' })
+    this._rerender()
+  }
+
+  _handleLogin = async (token: string): Promise<void> => {
+    try {
+      await LoginService.saveToken(token)
+    } catch (error) {
+      console.log('Error when saving token:', error)
+    }
+
+    this.setState({ loggedIn: true, token })
+    this._rerender()
+  }
+
+  _rerender() {
+    // FIXME: changing screenProps doesn't trigger a re-render, bug in
+    //   react-navigation. Solution is to re-render the navigator itself.
+    //   https://github.com/react-community/react-navigation/issues/577
+    this.setState({ loaded: false })
+    this.setState({ loaded: true })
+  }
+
 }
 
 

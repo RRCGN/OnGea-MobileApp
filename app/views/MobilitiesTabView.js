@@ -11,14 +11,7 @@ import PlatformIcon from '../components/PlatformIcon'
 import LoginView from './LoginView'
 
 
-type TabViewState = {
-  loggedIn: boolean,
-  token?: string
-}
-
 export default class MobilitiesTabView extends Component {
-  state: TabViewState
-
   static navigationOptions = {
     tabBar: {
       label: 'Mobilities',
@@ -31,21 +24,8 @@ export default class MobilitiesTabView extends Component {
     }
   }
 
-  constructor() {
-    super()
-    this.state = { loggedIn: false }
-  }
-
-  componentWillMount() {
-    // Initial check if we're logged in to render the proper screen.
-    const { loggedIn } = this.props.screenProps
-    if (loggedIn) {
-      this.setState({ loggedIn })
-    }
-  }
-
   render() {
-    const { loggedIn } = this.props.screenProps
+    const { login, loggedIn } = this.props.screenProps
     return (
       <View style={{ flex: 1 }}>
         <StatusBar
@@ -53,15 +33,11 @@ export default class MobilitiesTabView extends Component {
           backgroundColor="rgba(0,0,0,0.36)"
           barStyle="light-content"
         />
-        {this.state.loggedIn ?
-          <MobilitiesNavigator /> :
-          <LoginView onSuccessfulLogin={this._handleSuccessfulLogin} />
+        {loggedIn ?
+          <MobilitiesNavigator screenProps={this.props.screenProps} /> :
+          <LoginView onSuccessfulLogin={login} />
         }
       </View>
     )
-  }
-
-  _handleSuccessfulLogin = (token) => {
-    this.setState({ token, loggedIn: true })
   }
 }
