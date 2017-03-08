@@ -67,3 +67,9 @@ export default class OnGeaApp extends Component {
     )
   }
 }
+
+
+// $FlowFixMe: uuugh flow doesn't know about ignoredYellowBox why
+console.ignoredYellowBox = [
+   'Behaviour of screenProps has changed',
+]
