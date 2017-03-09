@@ -3,7 +3,8 @@
  */
 
 import React, { Component } from 'react'
-import { ListView, View, StyleSheet, Image } from 'react-native'
+import { ListView, RefreshControl, View, StyleSheet, Image } from 'react-native'
+import DataService from '../services/DataService'
 import FlatButton from '../components/FlatButton'
 import ButtonList from '../components/ButtonList'
 import TripDate from '../components/TripDate'
@@ -23,13 +24,20 @@ export default class MobilitiesListView extends Component {
     })
 
     this.state = {
-      dataSource: dataSource.cloneWithRows(['halli', 'hallo'])
+      dataSource: dataSource.cloneWithRows(['halli', 'hallo']),
+      refreshing: false
     }
   }
 
   render() {
     return (
       <ListView
+        refreshControl={
+          <RefreshControl
+            refreshing={this.state.refreshing}
+            onRefresh={this._handleRefresh}
+          />
+        }
         dataSource={this.state.dataSource}
         renderRow={this._renderListRow}
       />
@@ -105,6 +113,13 @@ export default class MobilitiesListView extends Component {
         </ButtonList>
       </CardSegment>
     )
+  }
+
+  _handleRefresh = async () => {
+    this.setState({ refreshing: true })
+    await DataService.fetchAndSave()
+    const data = await DataService.getAll()
+    this.setState({ refreshing: false })
   }
 }
 
