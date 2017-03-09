@@ -42,7 +42,7 @@ export default class MobilitiesOverviewView extends Component {
         <StatusBar translucent backgroundColor="rgba(0,0,0,0.36)" />
         <MobilitiesListView
           refreshData={this.props.screenProps.refreshData}
-          mobilityData={this.props.screenProps.mobilities}
+          mobilities={this.props.screenProps.data.mobilities}
         />
       </View>
     )

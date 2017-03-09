@@ -24,7 +24,7 @@ export default class MobilitiesListView extends Component {
     })
 
     this.state = {
-      dataSource: dataSource.cloneWithRows(['halli', 'hallo']),
+      dataSource: dataSource.cloneWithRows(props.mobilities),
       refreshing: false
     }
   }
