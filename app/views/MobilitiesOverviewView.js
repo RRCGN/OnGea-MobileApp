@@ -43,6 +43,7 @@ export default class MobilitiesOverviewView extends Component {
         <MobilitiesListView
           refreshData={this.props.screenProps.refreshData}
           mobilities={this.props.screenProps.data.mobilities}
+          {...this.props}
         />
       </View>
     )

@@ -47,22 +47,22 @@ export default class MobilitiesListView extends Component {
   _renderListRow = (rowData) => (
     <View style={styles.listItem}>
       <CardView>
-        {this._renderImage()}
-        {this._renderActionButtons()}
-        {this._renderDates()}
-        {this._renderMoreButtons()}
+        {this._renderImage(rowData)}
+        {this._renderActionButtons(rowData)}
+        {this._renderDates(rowData)}
+        {this._renderMoreButtons(rowData)}
       </CardView>
     </View>
   )
 
-  _renderImage = () => {
+  _renderImage = (data) => {
     return (
-      <Touchable useForeground={true} onPress={() => this.props.navigation.navigate('Single', { title: 'Tolle Reise' })}>
+      <Touchable useForeground={true} onPress={() => this.props.navigation.navigate('Single', data)}>
         <View style={{ aspectRatio: 16/9 }}>
           <ImageCaptionContainer
-            source={require('../assets/concert.jpg')}
+            source={{ uri: data.activity.image }}
             caption={
-              <TitleOnShadow title="Tolle Reise" subtitle="nach Madrid" />
+              <TitleOnShadow title={data.activity.name} />
             } />
         </View>
       </Touchable>

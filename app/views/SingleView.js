@@ -81,15 +81,17 @@ export default class SingleView extends Component {
   }
 
   _renderTitleForeground = () => {
-    return <TitleOnShadow title="Hello" />
+    const { params } = this.props.navigation.state
+    return <TitleOnShadow title={params.activity.name} />
   }
 
   _renderTitleBackground = () => {
+    const { params } = this.props.navigation.state
     return (
       <View style={{ height: this.headerHeight, overflow: 'hidden' }}>
         <Image
           style={{ flex: 1 }}
-          source={require('../assets/concert.jpg')}
+          source={{ uri: params.activity.image }}
           width={this.headerWidth}
           height={this.headerHeight}
           resizeMode="cover"
@@ -99,6 +101,7 @@ export default class SingleView extends Component {
   }
 
   _renderStickyHeader = () => {
+    const { params } = this.props.navigation.state
     return (
       <View>
         <StatusBarBackgroundIOS />
@@ -107,7 +110,7 @@ export default class SingleView extends Component {
           ref={(navBarView) => this.navBarView = navBarView}
         >
           <View style={styles.stickyHeaderInner}>
-            <Text style={styles.toolbarTitle}>Foo bar</Text>
+            <Text style={styles.toolbarTitle}>{params.activity.name}</Text>
           </View>
         </Animatable.View>
       </View>
