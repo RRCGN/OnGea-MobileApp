@@ -36,6 +36,10 @@ export default class MobilitiesOverviewView extends Component {
     })
   }
 
+  componentDidMount() {
+    console.log(this.props)
+  }
+
   render() {
     return (
       <View>

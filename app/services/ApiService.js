@@ -3,19 +3,24 @@
  * @flow
  */
 
+
+import LoginService from './LoginService'
+
 interface ApiResponse<S> {
   json(): Promise<S>
 }
 type Params = { [key: string]: string }
 type Auth = { ok: boolean, token?: string }
+type All = any
 type AuthApiResponse = ApiResponse<{ token: string }>
 
 export default class ApiService {
   static BASE_URL = 'http://10.0.3.2:3000'
+  static AUTH_PATH = '/auth'
+  static ALL_PATH = '/all'
 
-  static async auth(username, password): Promise<Auth> {
-    const AUTH_PATH = '/auth'
-    const response = await this.call(AUTH_PATH, { username, password })
+  static async auth(username: string, password: string): Promise<Auth> {
+    const response = await this.call(this.AUTH_PATH, { username, password })
     if (!response.ok) return { ok: false }
     const json = await response.json()
     return { ok: true, token: json.token }
@@ -34,6 +39,13 @@ export default class ApiService {
     }
 
     return response
+  }
+
+  static async all(): Promise<All> {
+    const token = await LoginService.getToken()
+    const response = await this.call(this.ALL_PATH, { token })
+    const json = await response.json()
+    return json
   }
 
   static _queryString(params: Params): string {

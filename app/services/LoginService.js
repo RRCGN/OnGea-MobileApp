@@ -1,5 +1,5 @@
 /**
- * Manager for everything related to Logins.
+ * Service for everything related to Logins.
  * @flow
  */
 

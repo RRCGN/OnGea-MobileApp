@@ -12,13 +12,15 @@ import {
 import SplashScreen from 'rn-splash-screen'
 import MainTabNavigator from './navigators/MainTabNavigator'
 import LoginService from './services/LoginService'
+import DataService from './services/DataService'
 
 export default class OnGeaApp extends Component {
 
   state: {
     loaded: boolean,
     loggedIn: ?boolean,
-    token?: string
+    token?: string,
+    data?: any
   }
 
   constructor() {
@@ -38,7 +40,10 @@ export default class OnGeaApp extends Component {
     // Check if we're already logged in to show correct view.
     (async () => {
       const { loggedIn, token } = await LoginService.checkStatus()
+      const data = loggedIn ? await DataService.fetchAndSave() : undefined
+
       this.setState({
+        data,
         token,
         loggedIn,
         loaded: true
@@ -49,7 +54,7 @@ export default class OnGeaApp extends Component {
   }
 
   render() {
-    const { loggedIn, token } = this.state
+    const { loggedIn, token, data } = this.state
 
     return (
       <View style={{ flex: 1 }}>
@@ -65,7 +70,8 @@ export default class OnGeaApp extends Component {
               loggedIn,
               token,
               logout: this._handleLogout,
-              login: this._handleLogin
+              login: this._handleLogin,
+              data
             }}
           />
         }
@@ -76,6 +82,7 @@ export default class OnGeaApp extends Component {
   _handleLogout = async (): Promise<void> => {
     try {
       await LoginService.clearToken()
+      await DataService.purge()
     } catch (error) {
       console.error('Could not clear token:', error)
     }
@@ -91,7 +98,9 @@ export default class OnGeaApp extends Component {
       console.log('Error when saving token:', error)
     }
 
-    this.setState({ loggedIn: true, token })
+    const data = await DataService.fetchAndSave()
+
+    this.setState({ loggedIn: true, token, data })
     this._rerender()
   }
 
