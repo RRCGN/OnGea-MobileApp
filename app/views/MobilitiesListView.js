@@ -94,12 +94,12 @@ export default class MobilitiesListView extends Component {
     )
   }
 
-  _renderDates = () => {
+  _renderDates = (data) => {
     return (
       <CardSegment space="big">
         <TripDateList>
-          <TripDate typeText="vom" dateText="10.04.2017" />
-          <TripDate typeText="bis" dateText="16.04.2017" />
+          <TripDate type="vom" date={data.activity.dateFrom} />
+          <TripDate type="bis" date={data.activity.dateTo} />
         </TripDateList>
       </CardSegment>
     )

@@ -4,19 +4,20 @@
  */
 
 import React from 'react'
+import moment from 'moment'
 import { View, Text, StyleSheet } from 'react-native'
 
 
 type Props = {
-  typeText: string,
-  dateText: string
+  type: string,
+  date: string
 }
 
-const TripDate = ({ typeText, dateText }: Props) => {
+const TripDate = ({ type, date }: Props) => {
   return (
     <View>
-      <Text style={styles.typeText}>{typeText}</Text>
-      <Text style={styles.dateText}>{dateText}</Text>
+      <Text style={styles.typeText}>{type}</Text>
+      <Text style={styles.dateText}>{moment(date).format('DD.MM.YYYY')}</Text>
     </View>
   )
 }
