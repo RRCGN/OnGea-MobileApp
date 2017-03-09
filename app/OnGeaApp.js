@@ -71,6 +71,7 @@ export default class OnGeaApp extends Component {
               token,
               logout: this._handleLogout,
               login: this._handleLogin,
+              refreshData: this._handleRefresh,
               data
             }}
           />
@@ -102,6 +103,12 @@ export default class OnGeaApp extends Component {
 
     this.setState({ loggedIn: true, token, data })
     this._rerender()
+  }
+
+  _handleRefresh = async (): Promise<any> => {
+    await DataService.fetchAndSave()
+    const data = await DataService.getAll()
+    return data
   }
 
   _rerender() {

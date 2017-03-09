@@ -117,8 +117,7 @@ export default class MobilitiesListView extends Component {
 
   _handleRefresh = async () => {
     this.setState({ refreshing: true })
-    await DataService.fetchAndSave()
-    const data = await DataService.getAll()
+    const data = await this.props.refreshData()
     this.setState({ refreshing: false })
   }
 }
