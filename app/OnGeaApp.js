@@ -105,10 +105,11 @@ export default class OnGeaApp extends Component {
     this._rerender()
   }
 
-  _handleRefresh = async (): Promise<any> => {
+  _handleRefresh = async (): Promise<void> => {
     await DataService.fetchAndSave()
     const data = await DataService.getAll()
-    return data
+    this.setState({ data })
+    this._rerender()
   }
 
   _rerender() {

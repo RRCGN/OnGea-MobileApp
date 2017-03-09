@@ -118,7 +118,13 @@ export default class MobilitiesListView extends Component {
   _handleRefresh = async () => {
     this.setState({ refreshing: true })
     const data = await this.props.refreshData()
-    this.setState({ refreshing: false })
+
+    // FIXME: Currently the whole navigator gets re-mounted because screenProp
+    //   doesn't trigger a rerender. If this issue is closed, refreshing
+    //   needs to be set to false.
+    //   https://github.com/react-community/react-navigation/issues/577
+
+    // this.setState({ refreshing: false })
   }
 }
 
