@@ -1,0 +1,22 @@
+exports[`<StatusBarBackgroundIOS /> renders correctly 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      1291845632,
+      0,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Object {
+      "height": 60,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+      "zIndex": 1,
+    }
+  } />
+`;

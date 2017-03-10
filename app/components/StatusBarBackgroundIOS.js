@@ -10,7 +10,7 @@ import LinearGradient from 'react-native-linear-gradient'
 
 
 type Props = {
-  type?: 'light' | 'dark'
+  type?: 'light' | 'dark' // Type is currently not in use
 }
 
 const StatusBarBackgroundIOS = ({ type = 'light' }: Props) => {
