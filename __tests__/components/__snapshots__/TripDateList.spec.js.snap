@@ -1,0 +1,39 @@
+exports[`<TripDateList /> renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+      "marginLeft": -16,
+      "marginRight": -16,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "paddingBottom": 8,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+      }
+    }>
+    <TripDate
+      date="2017-04-10T02:00:00+02:00"
+      type="vom" />
+  </View>
+  <View
+    style={
+      Object {
+        "borderLeftColor": "#E0E0E0",
+        "borderLeftWidth": 1,
+        "paddingBottom": 8,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 8,
+      }
+    }>
+    <TripDate
+      date="2017-04-10T02:00:00+02:00"
+      type="vom" />
+  </View>
+</View>
+`;
