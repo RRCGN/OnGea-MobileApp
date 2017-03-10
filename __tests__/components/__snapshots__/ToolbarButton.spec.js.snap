@@ -1,0 +1,153 @@
+exports[`<ToolbarButton /> renders correctly 1`] = `
+<TouchableOpacity
+  borderless={true}
+  delayPressIn={0}
+  onPress={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "padding": 6,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "padding": 6,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "white",
+            "fontSize": 24,
+          },
+          Array [
+            undefined,
+            false,
+          ],
+          Object {
+            "fontFamily": "Ionicons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+        ]
+      }>
+      
+    </Text>
+  </View>
+</TouchableOpacity>
+`;
+
+exports[`<ToolbarButton /> renders correctly as floating button 1`] = `
+<TouchableOpacity
+  borderless={true}
+  delayPressIn={0}
+  onPress={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "padding": 6,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "padding": 6,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "white",
+            "fontSize": 24,
+          },
+          Array [
+            undefined,
+            Object {
+              "textShadowColor": "rgba(0, 0, 0, 0.4)",
+              "textShadowOffset": Object {
+                "height": 1,
+                "width": 0,
+              },
+              "textShadowRadius": 2,
+            },
+          ],
+          Object {
+            "fontFamily": "Ionicons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+        ]
+      }>
+      
+    </Text>
+  </View>
+</TouchableOpacity>
+`;
+
+exports[`<ToolbarButton /> renders correctly with onPress 1`] = `
+<TouchableOpacity
+  borderless={true}
+  delayPressIn={0}
+  onPress={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "padding": 6,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "padding": 6,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "white",
+            "fontSize": 24,
+          },
+          Array [
+            undefined,
+            false,
+          ],
+          Object {
+            "fontFamily": "Ionicons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+        ]
+      }>
+      
+    </Text>
+  </View>
+</TouchableOpacity>
+`;
