@@ -1,0 +1,189 @@
+exports[`<FlatButton /> renders correctly with custom styles 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}>
+  <View>
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 2,
+            "padding": 8,
+          },
+          Object {
+            "backgroundColor": "red",
+          },
+        ]
+      } />
+  </View>
+</View>
+`;
+
+exports[`<FlatButton /> renders correctly with icon 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}>
+  <View>
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 2,
+            "padding": 8,
+          },
+          undefined,
+        ]
+      }>
+      <View />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`<FlatButton /> renders correctly with label 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}>
+  <View>
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 2,
+            "padding": 8,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": undefined,
+            },
+            Object {
+              "color": "#2196F3",
+              "fontWeight": "bold",
+              "textAlign": "center",
+            },
+          ]
+        }>
+        FOO
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`<FlatButton /> renders correctly with label and color 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}>
+  <View>
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 2,
+            "padding": 8,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "red",
+            },
+            Object {
+              "color": "#2196F3",
+              "fontWeight": "bold",
+              "textAlign": "center",
+            },
+          ]
+        }>
+        FOO
+      </Text>
+    </View>
+  </View>
+</View>
+`;
