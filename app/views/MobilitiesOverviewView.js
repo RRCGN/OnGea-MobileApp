@@ -29,7 +29,7 @@ export default class MobilitiesOverviewView extends Component {
       right: (
         <ToolbarButton
           androidIcon="settings"
-          iosIcon="gear-a"
+          iosIcon="ios-cog-outline"
           onPress={() => navigate('Settings')}
         />
       )
