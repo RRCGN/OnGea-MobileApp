@@ -34,8 +34,7 @@ export default class ApiService {
       response = await fetch(`${this.BASE_URL}${path}${qs}`, opts)
     } catch (error) {
       console.log('Something went wrong while sending the request', error)
-      response = new Response()
-      response.ok = false
+      response = { ok: false }
     }
 
     return response

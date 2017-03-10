@@ -6,4 +6,8 @@ export default class ApiService {
       return Promise.resolve({ ok: false })
     }
   }
+
+  static async all() {
+    return Promise.resolve({ foo: 'bar' })
+  }
 }
