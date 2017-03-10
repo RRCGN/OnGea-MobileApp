@@ -9,7 +9,7 @@ import { View } from 'react-native'
 
 
 type Props = {
-  children: ReactElement<*>,
+  children: Array<ReactElement<*>>,
   justifyContent?:
     | 'flex-start' | 'center' | 'flex-end' | 'space-around' | 'space-between'
 }
