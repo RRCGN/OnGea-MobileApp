@@ -1,9 +1,17 @@
 /**
  * ListView for Mobilities
+ * @flow
  */
 
 import React, { Component } from 'react'
-import { ListView, RefreshControl, View, StyleSheet, Image, NetInfo } from 'react-native'
+import {
+  View,
+  Image,
+  NetInfo,
+  ListView,
+  StyleSheet,
+  RefreshControl
+} from 'react-native'
 import Snackbar from 'react-native-snackbar'
 import DataService from '../services/DataService'
 import FlatButton from '../components/FlatButton'
@@ -17,9 +25,24 @@ import { CardView, CardSegment } from '../components/Card'
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 
 
+type MLVProps = {
+  mobilities: any,
+  refreshData: () => void,
+  navigation: any
+}
+
+type MLVState = {
+  dataSource: any,
+  refreshing: boolean
+}
+
 export default class MobilitiesListView extends Component {
-  constructor(props) {
+  props: MLVProps
+  state: MLVState
+
+  constructor(props: MLVProps) {
     super(props)
+
     const dataSource = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     })
@@ -58,13 +81,15 @@ export default class MobilitiesListView extends Component {
 
   _renderImage = (data) => {
     return (
-      <Touchable useForeground={true} onPress={() => this.props.navigation.navigate('Single', data)}>
+      <Touchable
+        useForeground={true}
+        onPress={() => this.props.navigation.navigate('Single', data)}
+      >
         <View style={{ aspectRatio: 16/9 }}>
           <ImageCaptionContainer
             source={{ uri: data.activity.image }}
-            caption={
-              <TitleOnShadow title={data.activity.name} />
-            } />
+            caption={<TitleOnShadow title={data.activity.name} />}
+          />
         </View>
       </Touchable>
     )
@@ -79,7 +104,8 @@ export default class MobilitiesListView extends Component {
               <MaterialIcon
                 name="map"
                 style={{ color: 'rgba(0,0,0,0.54)'}}
-                size={20} />
+                size={20}
+              />
             }
           />
           <FlatButton
@@ -87,7 +113,8 @@ export default class MobilitiesListView extends Component {
               <MaterialIcon
                 name="alarm"
                 style={{ color: 'rgba(0,0,0,0.54)'}}
-                size={20} />
+                size={20}
+              />
             }
           />
         </ButtonList>
@@ -118,6 +145,8 @@ export default class MobilitiesListView extends Component {
 
   _handleRefresh = async () => {
     this.setState({ refreshing: true })
+
+    // Check network connection
     const isOnline = await NetInfo.isConnected.fetch()
     if (!isOnline) {
       this.setState({ refreshing: false })
@@ -128,6 +157,7 @@ export default class MobilitiesListView extends Component {
       return
     }
 
+    // Fetch new data
     const data = await this.props.refreshData()
 
     // FIXME: Currently the whole navigator gets re-mounted because screenProp

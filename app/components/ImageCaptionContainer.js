@@ -11,7 +11,7 @@ import TitleOnShadow from './TitleOnShadow'
 
 type Props = {
   source: ImageSource,
-  caption: ReactElement<TitleOnShadow>
+  caption: TitleOnShadow
 }
 
 const ImageCaptionContainer = ({ source, caption }: Props) => (
