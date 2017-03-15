@@ -7,6 +7,7 @@ import React, { Component } from 'react'
 import {
   View,
   Text,
+  NetInfo,
   StatusBar
 } from 'react-native'
 import SplashScreen from 'rn-splash-screen'
@@ -40,15 +41,20 @@ export default class OnGeaApp extends Component {
     // Check if we're already logged in to show correct view.
     (async () => {
       const { loggedIn, token } = await LoginService.checkStatus()
-      const data = loggedIn ? await DataService.fetchAndSave() : undefined
+      const connectionState = await NetInfo.isConnected.fetch()
+      const isOnline = connectionState === 'online'
 
-      this.setState({
-        data,
-        token,
-        loggedIn,
-        loaded: true
-      })
+      if (!loggedIn) {
+        this.setState({ loggedIn, loaded: true })
+        SplashScreen.hide()
+        return
+      }
 
+      const data = isOnline
+        ? await DataService.fetchAndSave()
+        : await DataService.getAll()
+
+      this.setState({ loggedIn, token, data, loaded: true })
       SplashScreen.hide()
     })()
   }
