@@ -14,6 +14,11 @@
 .*/Libraries/react-native/React.js
 .*/Libraries/react-native/ReactNative.js
 
+; Ignore Tests
+
+.*/__tests__/.*
+.*/__mocks__/.*
+
 [include]
 
 [libs]
