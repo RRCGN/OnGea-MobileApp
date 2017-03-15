@@ -16,8 +16,12 @@
 
 ; Ignore Tests
 
-.*/__tests__/.*
-.*/__mocks__/.*
+*/__tests__/
+*/__mocks__/
+
+; Ignore Storybook
+*/__stories__/
+*/storybook/
 
 [include]
 
