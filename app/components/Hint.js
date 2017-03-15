@@ -5,23 +5,38 @@
 
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
+import Touchable from './Touchable'
 
 
 type HintProps = {
   type?: 'nice' | 'warning' | 'alert',
   icon?: ReactElement<*>,
   text: string,
-  onPress: () => void
+  onPress?: () => void
 }
 
-const Hint = ({ type = 'nice', icon, text, onPress = () => { } }: HintProps) => (
-  <View style={[ styles.container, styles[`container_${type}`] ]}>
-    {icon &&
-      <View style={styles.icon}>{icon}</View>
-    }
-    <Text style={styles.text}>{text}</Text>
-  </View>
-)
+const Hint = ({ type = 'nice', icon, text, onPress }: HintProps) => {
+  const inner = (
+    <View style={[ styles.container, styles[`container_${type}`] ]}>
+      {icon &&
+        <View style={styles.icon}>{icon}</View>
+      }
+      <Text style={styles.text}>{text}</Text>
+    </View>
+  )
+
+  if (onPress) return (
+    <Touchable
+      rippleColor="rgba(0,0,0,0.2)"
+      useForeground
+      onPress={onPress}
+    >
+      {inner}
+    </Touchable>
+  )
+
+  return inner
+}
 
 export default Hint
 

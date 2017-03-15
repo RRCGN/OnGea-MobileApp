@@ -21,6 +21,9 @@ export default storiesOf('Hint', module)
       icon={<Icon size={18} color="white" name="airplane-takeoff" />}
     />
   ))
+  .add('Touchable Hint', () => (
+    <Hint type="nice" text="Press me!" onPress={action('hint click')} />
+  ))
   .add('Warning Hint', () => (
     <Hint
       type="warning"
