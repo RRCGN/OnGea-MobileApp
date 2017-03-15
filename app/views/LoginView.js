@@ -13,6 +13,7 @@ import ApiService from '../services/ApiService'
 import FlatButton from '../components/FlatButton'
 import AwesomeButton from 'react-native-awesome-button'
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
+import { Colors } from '../utils/constants'
 
 
 type LoginViewProps = {
@@ -66,34 +67,30 @@ export default class LoginView extends Component {
         <View style={styles.button}>
           <AwesomeButton
             buttonState={button}
-            label="Login"
-            styles={styles.formElement}
+            transitionDuration={300}
             states={{
               idle: {
-                text: 'Login',
+                text: 'LOGIN',
                 onPress: this._handleLoginPress,
-                backgroundStyle: {
-                  backgroundColor: 'blue'
-                }
+                backgroundStyle: StyleSheet.flatten(styles.buttonBackground),
+                labelStyle: StyleSheet.flatten(styles.buttonLabel)
               },
               busy: {
-                text: 'Login',
+                text: 'LOGIN',
                 spinner: true,
                 spinnerProps: {
                   animated: true,
                   color: 'white'
                 },
-                backgroundStyle: {
-                  backgroundColor: 'blue'
-                }
+                backgroundStyle: StyleSheet.flatten(styles.buttonBackground),
+                labelStyle: StyleSheet.flatten(styles.buttonLabel)
               },
               success: {
-                text: 'Logged in',
-                icon: <MaterialIcon name="check-circle" color="white" />,
+                text: 'LOGGED IN',
+                icon: <MaterialIcon name="check-circle" size={18} color="white" />,
                 iconAlignment: 'left',
-                backgroundStyle: {
-                  backgroundColor: 'blue'
-                }
+                backgroundStyle: StyleSheet.flatten(styles.buttonBackground),
+                labelStyle: StyleSheet.flatten(styles.buttonLabel)
               }
             }}
           />
@@ -133,5 +130,17 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 20
+  },
+  buttonBackground: {
+    backgroundColor: Colors.PRIMARY,
+    width: 200,
+    padding: 8,
+    borderRadius: 2
+  },
+  buttonLabel: {
+    flex: 1,
+    color: 'white',
+    fontWeight: '500',
+    textAlign: 'center'
   }
 })
