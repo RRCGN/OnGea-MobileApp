@@ -21,8 +21,10 @@ import TripDateList from '../components/TripDateList'
 import ImageCaptionContainer from '../components/ImageCaptionContainer'
 import TitleOnShadow from '../components/TitleOnShadow'
 import Touchable from '../components/Touchable'
+import Hint from '../components/Hint'
 import { CardView, CardSegment } from '../components/Card'
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
+import ComIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 
 type MLVProps = {
@@ -73,6 +75,7 @@ export default class MobilitiesListView extends Component {
       <CardView>
         {this._renderImage(rowData)}
         {this._renderActionButtons(rowData)}
+        {this._renderHint(rowData)}
         {this._renderDates(rowData)}
         {this._renderMoreButtons(rowData)}
       </CardView>
@@ -119,6 +122,18 @@ export default class MobilitiesListView extends Component {
           />
         </ButtonList>
       </CardSegment>
+    )
+  }
+
+  _renderHint = (data) => {
+    return (
+      <View style={{ marginTop: -1 }}>
+        <Hint
+          type="nice"
+          text="Dein Flug ist morgen um 18:00 Uhr."
+          icon={<ComIcon size={18} color="white" name="airplane-takeoff" />}
+        />
+      </View>
     )
   }
 
