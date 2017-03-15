@@ -38,9 +38,11 @@ export default class OnGeaApp extends Component {
     // It would look much nicer like `async componentDidMount()`, but flow
     // throws an error.
 
-    // Check if we're already logged in to show correct view.
     (async () => {
+      // Check if we're logged in
       const { loggedIn, token } = await LoginService.checkStatus()
+
+      // Check if we're online
       const connectionState = await NetInfo.isConnected.fetch()
       const isOnline = connectionState === 'online'
 
