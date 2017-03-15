@@ -3,7 +3,8 @@
  */
 
 import React, { Component } from 'react'
-import { ListView, RefreshControl, View, StyleSheet, Image } from 'react-native'
+import { ListView, RefreshControl, View, StyleSheet, Image, NetInfo } from 'react-native'
+import Snackbar from 'react-native-snackbar'
 import DataService from '../services/DataService'
 import FlatButton from '../components/FlatButton'
 import ButtonList from '../components/ButtonList'
@@ -117,6 +118,16 @@ export default class MobilitiesListView extends Component {
 
   _handleRefresh = async () => {
     this.setState({ refreshing: true })
+    const isOnline = await NetInfo.isConnected.fetch()
+    if (!isOnline) {
+      this.setState({ refreshing: false })
+      Snackbar.show({
+        title: 'Your connection is offline.',
+        duration: Snackbar.LENGTH_SHORT
+      })
+      return
+    }
+
     const data = await this.props.refreshData()
 
     // FIXME: Currently the whole navigator gets re-mounted because screenProp
