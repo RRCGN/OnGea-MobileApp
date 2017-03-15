@@ -6,11 +6,13 @@
 import React, { Component } from 'react'
 import {
   View,
+  TextInput,
   StyleSheet
 } from 'react-native'
 import ApiService from '../services/ApiService'
 import FlatButton from '../components/FlatButton'
-import TextField from 'react-native-md-textinput'
+import AwesomeButton from 'react-native-awesome-button'
+import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 
 
 type LoginViewProps = {
@@ -20,7 +22,8 @@ type LoginViewProps = {
 type LoginViewState = {
   username: string,
   password: string,
-  success: ?boolean
+  success: ?boolean,
+  button: string
 }
 
 export default class LoginView extends Component {
@@ -33,35 +36,66 @@ export default class LoginView extends Component {
 
   constructor(props: LoginViewProps) {
     super(props)
-    this.state = { username: '', password: '', success: null }
+    this.state = { username: '', password: '', success: null, button: 'idle' }
   }
 
   render() {
-    const { success } = this.state
+    const { success, button } = this.state
     const stateColor = this._getColorForSuccess(success)
 
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <TextField
+        <TextInput
+          autoCapitalize="none"
+          autoCorrect={false}
+          autoFocus={true}
           style={styles.formElement}
-          label="Username"
+          placeholder="Username"
           value={this.state.username}
           onChangeText={(username) => this.setState({ username })}
-          borderColor={stateColor}
         />
-        <TextField
+        <TextInput
+          autoCapitalize="none"
+          autoCorrect={false}
           style={styles.formElement}
-          label="Password"
+          placeholder="Password"
           secureTextEntry={true}
           value={this.state.password}
           onChangeText={(password) => this.setState({ password })}
-          borderColor={stateColor}
         />
         <View style={styles.button}>
-          <FlatButton
+          <AwesomeButton
+            buttonState={button}
             label="Login"
             styles={styles.formElement}
-            onPress={this._handleLoginPress}
+            states={{
+              idle: {
+                text: 'Login',
+                onPress: this._handleLoginPress,
+                backgroundStyle: {
+                  backgroundColor: 'blue'
+                }
+              },
+              busy: {
+                text: 'Login',
+                spinner: true,
+                spinnerProps: {
+                  animated: true,
+                  color: 'white'
+                },
+                backgroundStyle: {
+                  backgroundColor: 'blue'
+                }
+              },
+              success: {
+                text: 'Logged in',
+                icon: <MaterialIcon name="check-circle" color="white" />,
+                iconAlignment: 'left',
+                backgroundStyle: {
+                  backgroundColor: 'blue'
+                }
+              }
+            }}
           />
         </View>
       </View>
@@ -75,6 +109,7 @@ export default class LoginView extends Component {
   }
 
   _handleLoginPress = async () => {
+    this.setState({ button: 'busy' })
     const { username, password } = this.state
     const { ok, token } = await ApiService.auth(username, password)
     this.setState({ success: ok })
@@ -82,6 +117,9 @@ export default class LoginView extends Component {
     if (ok && token) {
       // Call onSuccessfulLogin from Navigator
       this.props.onSuccessfulLogin(token)
+      this.setState({ button: 'success' })
+    } else {
+      this.setState({ button: 'idle' })
     }
   }
 }
@@ -89,7 +127,9 @@ export default class LoginView extends Component {
 
 const styles = StyleSheet.create({
   formElement: {
-    width: 200
+    width: 200,
+    height: 50,
+    alignSelf: 'center'
   },
   button: {
     marginTop: 20
