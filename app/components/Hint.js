@@ -8,14 +8,18 @@ import { View, Text, StyleSheet } from 'react-native'
 
 
 type HintProps = {
+  type?: 'nice' | 'warning' | 'alert',
   icon?: ReactElement<*>,
   text: string,
   onPress: () => void
 }
 
-const Hint = ({ icon, text, onPress = () => { } }: HintProps) => (
-  <View style={{ flex: 1, position: 'relative' }}>
-    <Text>{text}</Text>
+const Hint = ({ type = 'nice', icon, text, onPress = () => { } }: HintProps) => (
+  <View style={[ styles.container, styles[`container_${type}`] ]}>
+    {icon &&
+      <View style={styles.icon}>{icon}</View>
+    }
+    <Text style={styles.text}>{text}</Text>
   </View>
 )
 
@@ -23,11 +27,27 @@ export default Hint
 
 
 const styles = StyleSheet.create({
-  image: {
+  container: {
+    flex: 0,
+    flexDirection: 'row',
+    padding: 12
+  },
+  container_nice: {
+    backgroundColor: '#8BC34A'
+  },
+  container_warning: {
+    backgroundColor: '#FFC107'
+  },
+  container_alert: {
+    backgroundColor: '#F44336'
+  },
+  text: {
     flex: 1,
-    alignSelf: 'stretch',
-    width: undefined,
-    height: undefined,
-    resizeMode: 'cover'
+    color: 'white'
+  },
+  icon: {
+    width: 18,
+    height: 18,
+    marginRight: 12
   }
 })
