@@ -15,6 +15,7 @@ import MainTabNavigator from './navigators/MainTabNavigator'
 import LoginService from './services/LoginService'
 import DataService from './services/DataService'
 
+
 export default class OnGeaApp extends Component {
 
   state: {
