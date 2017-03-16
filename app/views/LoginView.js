@@ -10,7 +10,6 @@ import {
   StyleSheet
 } from 'react-native'
 import ApiService from '../services/ApiService'
-import FlatButton from '../components/FlatButton'
 import AwesomeButton from 'react-native-awesome-button'
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 import { Colors } from '../utils/constants'

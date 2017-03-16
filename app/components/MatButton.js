@@ -18,7 +18,7 @@ type Props = {
   style?: any
 }
 
-const FlatButton = ({ onPress, label, icon, color, style }: Props) => (
+const MatButton = ({ onPress, label, icon, color, style }: Props) => (
   <Touchable onPress={onPress}>
     <View style={[ { padding: 8, borderRadius: 2 }, style ]}>
       {label &&
@@ -29,7 +29,7 @@ const FlatButton = ({ onPress, label, icon, color, style }: Props) => (
   </Touchable>
 )
 
-export default FlatButton
+export default MatButton
 
 const styles = StyleSheet.create({
   text: {

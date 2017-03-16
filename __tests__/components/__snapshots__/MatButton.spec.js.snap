@@ -1,4 +1,4 @@
-exports[`<FlatButton /> renders correctly with custom styles 1`] = `
+exports[`<MatButton /> renders correctly with custom styles 1`] = `
 <View
   accessibilityComponentType={undefined}
   accessibilityLabel={undefined}
@@ -37,7 +37,7 @@ exports[`<FlatButton /> renders correctly with custom styles 1`] = `
 </View>
 `;
 
-exports[`<FlatButton /> renders correctly with icon 1`] = `
+exports[`<MatButton /> renders correctly with icon 1`] = `
 <View
   accessibilityComponentType={undefined}
   accessibilityLabel={undefined}
@@ -76,7 +76,7 @@ exports[`<FlatButton /> renders correctly with icon 1`] = `
 </View>
 `;
 
-exports[`<FlatButton /> renders correctly with label 1`] = `
+exports[`<MatButton /> renders correctly with label 1`] = `
 <View
   accessibilityComponentType={undefined}
   accessibilityLabel={undefined}
@@ -132,7 +132,7 @@ exports[`<FlatButton /> renders correctly with label 1`] = `
 </View>
 `;
 
-exports[`<FlatButton /> renders correctly with label and color 1`] = `
+exports[`<MatButton /> renders correctly with label and color 1`] = `
 <View
   accessibilityComponentType={undefined}
   accessibilityLabel={undefined}

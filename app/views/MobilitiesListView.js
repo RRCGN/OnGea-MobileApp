@@ -14,7 +14,7 @@ import {
 } from 'react-native'
 import Snackbar from 'react-native-snackbar'
 import DataService from '../services/DataService'
-import FlatButton from '../components/FlatButton'
+import MatButton from '../components/MatButton'
 import ButtonList from '../components/ButtonList'
 import TripDate from '../components/TripDate'
 import TripDateList from '../components/TripDateList'
@@ -102,7 +102,7 @@ export default class MobilitiesListView extends Component {
     return (
       <CardSegment hasBorderBottom space="small">
         <ButtonList>
-          <FlatButton
+          <MatButton
             icon={
               <MaterialIcon
                 name="map"
@@ -111,7 +111,7 @@ export default class MobilitiesListView extends Component {
               />
             }
           />
-          <FlatButton
+          <MatButton
             icon={
               <MaterialIcon
                 name="alarm"
@@ -152,7 +152,7 @@ export default class MobilitiesListView extends Component {
     return (
       <CardSegment space="small">
         <ButtonList>
-          <FlatButton label="Ansehen" />
+          <MatButton label="Ansehen" />
         </ButtonList>
       </CardSegment>
     )
