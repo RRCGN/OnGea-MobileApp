@@ -10,7 +10,7 @@ import {
   StyleSheet
 } from 'react-native'
 import ApiService from '../services/ApiService'
-import AwesomeButton from 'react-native-awesome-button'
+import OGTextButton from '../components/OGTextButton'
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 import { Colors } from '../utils/constants'
 
@@ -63,37 +63,12 @@ export default class LoginView extends Component {
           value={this.state.password}
           onChangeText={(password) => this.setState({ password })}
         />
-        <View style={styles.button}>
-          <AwesomeButton
-            buttonState={button}
-            transitionDuration={300}
-            states={{
-              idle: {
-                text: 'LOGIN',
-                onPress: this._handleLoginPress,
-                backgroundStyle: StyleSheet.flatten(styles.buttonBackground),
-                labelStyle: StyleSheet.flatten(styles.buttonLabel)
-              },
-              busy: {
-                text: 'LOGIN',
-                spinner: true,
-                spinnerProps: {
-                  animated: true,
-                  color: 'white'
-                },
-                backgroundStyle: StyleSheet.flatten(styles.buttonBackground),
-                labelStyle: StyleSheet.flatten(styles.buttonLabel)
-              },
-              success: {
-                text: 'LOGGED IN',
-                icon: <MaterialIcon name="check-circle" size={18} color="white" />,
-                iconAlignment: 'left',
-                backgroundStyle: StyleSheet.flatten(styles.buttonBackground),
-                labelStyle: StyleSheet.flatten(styles.buttonLabel)
-              }
-            }}
-          />
-        </View>
+        <OGTextButton
+          label="Login"
+          backgroundColor={Colors.PRIMARY}
+          color="white"
+          style={styles.loginButton}
+        />
       </View>
     )
   }
@@ -127,19 +102,8 @@ const styles = StyleSheet.create({
     height: 50,
     alignSelf: 'center'
   },
-  button: {
-    marginTop: 20
-  },
-  buttonBackground: {
-    backgroundColor: Colors.PRIMARY,
+  loginButton: {
     width: 200,
-    padding: 8,
-    borderRadius: 2
-  },
-  buttonLabel: {
-    flex: 1,
-    color: 'white',
-    fontWeight: '500',
-    textAlign: 'center'
+    marginTop: 20
   }
 })

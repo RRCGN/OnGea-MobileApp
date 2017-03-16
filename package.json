@@ -15,7 +15,6 @@
     "react": "~15.4.0-rc.4",
     "react-native": "0.42.0",
     "react-native-animatable": "^1.1.0",
-    "react-native-awesome-button": "^1.8.2",
     "react-native-image-header-scroll-view": "^0.4.0",
     "react-native-linear-gradient": "^2.0.0",
     "react-native-material-bottom-navigation": "git+ssh://git@github.com/timomeh/react-native-material-bottom-navigation.git#master",
