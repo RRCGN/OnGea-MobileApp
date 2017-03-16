@@ -42,7 +42,7 @@ export default class MobilitiesTabView extends Component {
         />
         {loggedIn
           ? <MobilitiesNavigator screenProps={this.props.screenProps} />
-          : <LoginView onSuccessfulLogin={login} />
+          : <LoginView onSuccessfulLogin={login} {...this.props} />
         }
       </View>
     )

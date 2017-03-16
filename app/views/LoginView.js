@@ -16,7 +16,8 @@ import { Colors } from '../utils/constants'
 
 
 type LoginViewProps = {
-  onSuccessfulLogin: (token: string) => void
+  onSuccessfulLogin: (token: string) => void,
+  navigation: any
 }
 
 type LoginViewState = {
@@ -44,7 +45,7 @@ export default class LoginView extends Component {
     const stateColor = this._getColorForSuccess(success)
 
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#E0E0E0' }}>
         <TextInput
           autoCapitalize="none"
           autoCorrect={false}
@@ -69,6 +70,13 @@ export default class LoginView extends Component {
           color="white"
           style={styles.loginButton}
           onPress={this._handleLoginPress}
+        />
+        <OGTextButton
+          label="Zur Website"
+          backgroundColor="white"
+          color={Colors.PRIMARY}
+          style={styles.loginButton}
+          onPress={() => this.props.navigation.navigate('Web')}
         />
       </View>
     )
