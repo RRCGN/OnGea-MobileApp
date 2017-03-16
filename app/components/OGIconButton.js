@@ -22,7 +22,7 @@ const OGIconButton = ({
 }: Props) => (
   <Touchable onPress={onPress} rippleColor="rgba(0,0,0,0.2)" borderRadius={18}>
     <View style={[ styles.button, style ]}>
-      {React.cloneElement(icon, { size: 24 })}
+      {React.cloneElement(icon, { size: 20 })}
     </View>
   </Touchable>
 )
