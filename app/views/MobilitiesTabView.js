@@ -13,7 +13,8 @@ import LoginView from './LoginView'
 
 export default class MobilitiesTabView extends Component {
   static navigationOptions = {
-    tabBar: {
+    tabBar: ({ state }) => ({
+      visible: state.params && state.params.loggedIn,
       label: 'Mobilities',
       icon: ({ tintColor, focused }) => (
         <PlatformIcon
@@ -21,11 +22,17 @@ export default class MobilitiesTabView extends Component {
           androidIcon="landscape"
           size={24} color={Platform.OS === 'ios' ? tintColor : 'white' } />
       )
-    }
+    })
+  }
+
+  componentWillMount() {
+    const { loggedIn } = this.props.screenProps
+    this.props.navigation.setParams({ loggedIn })
   }
 
   render() {
     const { login, loggedIn } = this.props.screenProps
+
     return (
       <View style={{ flex: 1 }}>
         <StatusBar
@@ -33,9 +40,9 @@ export default class MobilitiesTabView extends Component {
           backgroundColor="rgba(0,0,0,0.36)"
           barStyle="light-content"
         />
-        {loggedIn ?
-          <MobilitiesNavigator screenProps={this.props.screenProps} /> :
-          <LoginView onSuccessfulLogin={login} />
+        {loggedIn
+          ? <MobilitiesNavigator screenProps={this.props.screenProps} />
+          : <LoginView onSuccessfulLogin={login} />
         }
       </View>
     )
