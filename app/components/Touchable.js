@@ -18,6 +18,7 @@ type Props = {
   onPressIn: () => void,
   onPressOut: () => void,
   rippleColor?: string,
+  borderRadius?: number,
   useForeground?: boolean,
   children: ReactElement<*>
 }
@@ -27,6 +28,7 @@ const Touchable = ({
   onPressIn = () => { },
   onPressOut = () => { },
   rippleColor,
+  borderRadius,
   useForeground = false,
   children
 }: Props) => {
@@ -34,23 +36,25 @@ const Touchable = ({
   // Use TouchableNativeFeedback for Android
   if (Platform.OS === 'android') {
     return (
-      <TouchableNativeFeedback
-        onPress={onPress}
-        onPressIn={onPressIn}
-        onPressOut={onPressOut}
-        useForeground={
-          TouchableNativeFeedback.canUseNativeForeground() ?
-            useForeground :
-            false
-        }
-        background={
-          rippleColor ?
-            TouchableNativeFeedback.Ripple(rippleColor, false) :
-            TouchableNativeFeedback.SelectableBackground()
-        }
-      >
-        {children}
-      </TouchableNativeFeedback>
+      <View style={{ borderRadius }}>
+        <TouchableNativeFeedback
+          onPress={onPress}
+          onPressIn={onPressIn}
+          onPressOut={onPressOut}
+          useForeground={
+            TouchableNativeFeedback.canUseNativeForeground() ?
+              useForeground :
+              false
+          }
+          background={
+            rippleColor ?
+              TouchableNativeFeedback.Ripple(rippleColor, borderRadius != null ? true : false) :
+              TouchableNativeFeedback.SelectableBackground()
+          }
+        >
+          {children}
+        </TouchableNativeFeedback>
+      </View>
     )
 
   }
