@@ -11,30 +11,64 @@ import { Colors } from '../utils/constants'
 
 
 type Props = {
-  onPress: Function,
+  onPress?: Function,
   label?: string,
   icon?: ReactElement<*>,
   color?: string,
+  backgroundColor?: string,
   style?: any
 }
 
-const MatButton = ({ onPress, label, icon, color, style }: Props) => (
-  <Touchable onPress={onPress}>
-    <View style={[ { padding: 8, borderRadius: 2 }, style ]}>
+const MatButton = ({
+  onPress = () => {},
+  label,
+  icon,
+  color,
+  backgroundColor,
+  style
+}: Props) => (
+  <Touchable onPress={onPress} useForeground>
+    <View
+      style={[
+        backgroundColor && styles.elevated,
+        styles.button,
+        { backgroundColor: backgroundColor || 'transparent' },
+        style
+      ]}
+    >
       {label &&
-        <Text style={[ { color }, styles.text ]}>{label.toUpperCase()}</Text>
+        <Text
+          style={[
+            styles.text,
+            { color: color || Colors.PRIMARY }
+          ]}
+        >
+          {label.toUpperCase()}
+        </Text>
       }
-      {icon}
     </View>
   </Touchable>
 )
 
 export default MatButton
 
+
 const styles = StyleSheet.create({
+  elevated: {
+    elevation: 12
+  },
+  button: {
+    paddingLeft: 16,
+    paddingRight: 16,
+    height: 36,
+    borderRadius: 2,
+    flex: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderTopWidth: 0
+  },
   text: {
     textAlign: 'center',
-    fontWeight: 'bold',
-    color: Colors.PRIMARY
+    fontWeight: 'bold'
   }
 })
