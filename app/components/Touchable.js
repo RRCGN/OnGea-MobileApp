@@ -35,28 +35,30 @@ const Touchable = ({
 
   // Use TouchableNativeFeedback for Android
   if (Platform.OS === 'android') {
-    return (
-      <View style={{ borderRadius }}>
-        <TouchableNativeFeedback
-          onPress={onPress}
-          onPressIn={onPressIn}
-          onPressOut={onPressOut}
-          useForeground={
-            TouchableNativeFeedback.canUseNativeForeground() ?
-              useForeground :
-              false
-          }
-          background={
-            rippleColor ?
-              TouchableNativeFeedback.Ripple(rippleColor, borderRadius != null ? true : false) :
-              TouchableNativeFeedback.SelectableBackground()
-          }
-        >
-          {children}
-        </TouchableNativeFeedback>
-      </View>
+    const touchable = (
+      <TouchableNativeFeedback
+        onPress={onPress}
+        onPressIn={onPressIn}
+        onPressOut={onPressOut}
+        useForeground={
+          TouchableNativeFeedback.canUseNativeForeground() ?
+            useForeground :
+            false
+        }
+        background={rippleColor
+          ? TouchableNativeFeedback.Ripple(rippleColor, borderRadius > 0 ? true : false)
+          : TouchableNativeFeedback.SelectableBackground()
+        }
+      >
+        {children}
+      </TouchableNativeFeedback>
     )
 
+    if (borderRadius > 0) {
+      return <View style={{ borderRadius }}>{touchable}</View>
+    }
+
+    return touchable
   }
 
   // Use TouchableOpacity for iOS
