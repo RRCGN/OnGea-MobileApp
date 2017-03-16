@@ -14,7 +14,8 @@ import {
 } from 'react-native'
 import Snackbar from 'react-native-snackbar'
 import DataService from '../services/DataService'
-import MatButton from '../components/MatButton'
+import OGTextButton from '../components/OGTextButton'
+import OGIconButton from '../components/OGIconButton'
 import ButtonList from '../components/ButtonList'
 import TripDate from '../components/TripDate'
 import TripDateList from '../components/TripDateList'
@@ -102,21 +103,19 @@ export default class MobilitiesListView extends Component {
     return (
       <CardSegment hasBorderBottom space="small">
         <ButtonList>
-          <MatButton
+          <OGIconButton
             icon={
               <MaterialIcon
                 name="map"
                 style={{ color: 'rgba(0,0,0,0.54)'}}
-                size={20}
               />
             }
           />
-          <MatButton
+          <OGIconButton
             icon={
               <MaterialIcon
                 name="alarm"
                 style={{ color: 'rgba(0,0,0,0.54)'}}
-                size={20}
               />
             }
           />
@@ -152,7 +151,7 @@ export default class MobilitiesListView extends Component {
     return (
       <CardSegment space="small">
         <ButtonList>
-          <MatButton label="Ansehen" />
+          <OGTextButton label="Ansehen" />
         </ButtonList>
       </CardSegment>
     )
