@@ -12,22 +12,20 @@ import { Colors } from '../utils/constants'
 
 type Props = {
   onPress?: Function,
-  label?: string,
-  icon?: ReactElement<*>,
+  label: string,
   color?: string,
   backgroundColor?: string,
   style?: any
 }
 
-const MatButton = ({
+const OGTextButton = ({
   onPress = () => {},
   label,
-  icon,
   color,
   backgroundColor,
   style
 }: Props) => (
-  <Touchable onPress={onPress} useForeground>
+  <Touchable onPress={onPress} rippleColor="rgba(0,0,0,0.5)">
     <View
       style={[
         backgroundColor && styles.elevated,
@@ -36,26 +34,19 @@ const MatButton = ({
         style
       ]}
     >
-      {label &&
-        <Text
-          style={[
-            styles.text,
-            { color: color || Colors.PRIMARY }
-          ]}
-        >
-          {label.toUpperCase()}
-        </Text>
-      }
+      <Text style={[ styles.text, { color: color || Colors.PRIMARY } ]}>
+        {label.toUpperCase()}
+      </Text>
     </View>
   </Touchable>
 )
 
-export default MatButton
+export default OGTextButton
 
 
 const styles = StyleSheet.create({
   elevated: {
-    elevation: 12
+    elevation: 2
   },
   button: {
     paddingLeft: 16,
@@ -63,9 +54,7 @@ const styles = StyleSheet.create({
     height: 36,
     borderRadius: 2,
     flex: 0,
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderTopWidth: 0
+    justifyContent: 'center'
   },
   text: {
     textAlign: 'center',

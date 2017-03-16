@@ -1,7 +1,7 @@
 import Hint from './Hint.stories'
-import MatButton from './MatButton.stories'
+import OGTextButton from './OGTextButton.stories'
 
 export default {
   Hint,
-  MatButton
+  OGTextButton
 }
