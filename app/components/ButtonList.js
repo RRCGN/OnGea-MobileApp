@@ -5,7 +5,7 @@
  */
 
 import React from 'react'
-import { View } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 
 
 type Props = {
@@ -15,11 +15,24 @@ type Props = {
 }
 
 const ButtonList = ({ justifyContent = 'flex-end', children }: Props) => (
-  <View style={{ flexDirection: 'row', justifyContent }}>
+  <View style={[ styles.container, { justifyContent } ]}>
     {React.Children.map(children, (child, i) => (
-      <View key={i} style={{ marginRight: 8 }}>{child}</View>
+      <View key={i} style={styles.item}>{child}</View>
     ))}
   </View>
 )
 
 export default ButtonList
+
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    marginLeft: -4,
+    marginRight: -4
+  },
+  item: {
+    marginRight: 4,
+    marginLeft: 4
+  }
+})
