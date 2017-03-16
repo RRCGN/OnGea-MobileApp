@@ -1,0 +1,848 @@
+exports[`Storyshots ButtonList Normal 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+          "marginLeft": -4,
+          "marginRight": -4,
+        },
+        Object {
+          "justifyContent": "flex-end",
+        },
+      ]
+    }>
+    <View
+      style={
+        Object {
+          "marginLeft": 4,
+          "marginRight": 4,
+        }
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}>
+        <View>
+          <View
+            style={
+              Array [
+                Object {
+                  "elevation": 2,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                },
+                Object {
+                  "borderRadius": 2,
+                  "flex": -1,
+                  "height": 36,
+                  "justifyContent": "center",
+                  "minWidth": 64,
+                },
+                Object {
+                  "backgroundColor": "#00796B",
+                },
+                undefined,
+              ]
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 14,
+                    "fontWeight": "bold",
+                    "textAlign": "center",
+                  },
+                  Object {
+                    "color": "white",
+                  },
+                ]
+              }>
+              BUTTON
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "marginLeft": 4,
+          "marginRight": 4,
+        }
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}>
+        <View>
+          <View
+            style={
+              Array [
+                Object {
+                  "elevation": 2,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                },
+                Object {
+                  "borderRadius": 2,
+                  "flex": -1,
+                  "height": 36,
+                  "justifyContent": "center",
+                  "minWidth": 64,
+                },
+                Object {
+                  "backgroundColor": "white",
+                },
+                undefined,
+              ]
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 14,
+                    "fontWeight": "bold",
+                    "textAlign": "center",
+                  },
+                  Object {
+                    "color": "#00796B",
+                  },
+                ]
+              }>
+              BUTTON
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Hint Alert Hint 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 0,
+          "flexDirection": "row",
+          "padding": 12,
+        },
+        Object {
+          "backgroundColor": "#F44336",
+        },
+      ]
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+          "flex": 1,
+        }
+      }>
+      This is a mad message! I\'m mad.
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Hint Alert Hint w/ icon 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 0,
+          "flexDirection": "row",
+          "padding": 12,
+        },
+        Object {
+          "backgroundColor": "#F44336",
+        },
+      ]
+    }>
+    <View
+      style={
+        Object {
+          "height": 18,
+          "marginRight": 12,
+          "width": 18,
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "white",
+              "fontSize": 18,
+            },
+            undefined,
+            Object {
+              "fontFamily": "Material Design Icons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+          ]
+        }>
+        
+      </Text>
+    </View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+          "flex": 1,
+        }
+      }>
+      This is a mad message! I\'m mad.
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Hint Nice Hint 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 0,
+          "flexDirection": "row",
+          "padding": 12,
+        },
+        Object {
+          "backgroundColor": "#8BC34A",
+        },
+      ]
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+          "flex": 1,
+        }
+      }>
+      This is a friendly message.
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Hint Nice Hint w/ icon 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 0,
+          "flexDirection": "row",
+          "padding": 12,
+        },
+        Object {
+          "backgroundColor": "#8BC34A",
+        },
+      ]
+    }>
+    <View
+      style={
+        Object {
+          "height": 18,
+          "marginRight": 12,
+          "width": 18,
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "white",
+              "fontSize": 18,
+            },
+            undefined,
+            Object {
+              "fontFamily": "Material Design Icons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+          ]
+        }>
+        
+      </Text>
+    </View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+          "flex": 1,
+        }
+      }>
+      This is a friendly message.
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Hint Touchable Hint 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}>
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "flex": 0,
+              "flexDirection": "row",
+              "padding": 12,
+            },
+            Object {
+              "backgroundColor": "#8BC34A",
+            },
+          ]
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "white",
+              "flex": 1,
+            }
+          }>
+          Press me!
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Hint Warning Hint 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 0,
+          "flexDirection": "row",
+          "padding": 12,
+        },
+        Object {
+          "backgroundColor": "#FFC107",
+        },
+      ]
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+          "flex": 1,
+        }
+      }>
+      This is a slightly confused message.
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Hint Warning Hint w/ icon 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 0,
+          "flexDirection": "row",
+          "padding": 12,
+        },
+        Object {
+          "backgroundColor": "#FFC107",
+        },
+      ]
+    }>
+    <View
+      style={
+        Object {
+          "height": 18,
+          "marginRight": 12,
+          "width": 18,
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "white",
+              "fontSize": 18,
+            },
+            undefined,
+            Object {
+              "fontFamily": "Material Design Icons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+          ]
+        }>
+        
+      </Text>
+    </View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+          "flex": 1,
+        }
+      }>
+      This is a slightly confused message.
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots OGIconButton Normal 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}>
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "borderRadius": 18,
+              "flex": 0,
+              "height": 36,
+              "justifyContent": "center",
+              "width": 36,
+            },
+            undefined,
+          ]
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={false}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "#00796B",
+                "fontSize": 18,
+              },
+              undefined,
+              Object {
+                "fontFamily": "Material Design Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+            ]
+          }>
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots OGTextButton Flat 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}>
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "paddingLeft": 8,
+              "paddingRight": 8,
+            },
+            Object {
+              "borderRadius": 2,
+              "flex": -1,
+              "height": 36,
+              "justifyContent": "center",
+              "minWidth": 64,
+            },
+            Object {
+              "backgroundColor": "transparent",
+            },
+            undefined,
+          ]
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "fontSize": 14,
+                "fontWeight": "bold",
+                "textAlign": "center",
+              },
+              Object {
+                "color": "#00796B",
+              },
+            ]
+          }>
+          BUTTON
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots OGTextButton Flat w/ custom color 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}>
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "paddingLeft": 8,
+              "paddingRight": 8,
+            },
+            Object {
+              "borderRadius": 2,
+              "flex": -1,
+              "height": 36,
+              "justifyContent": "center",
+              "minWidth": 64,
+            },
+            Object {
+              "backgroundColor": "transparent",
+            },
+            undefined,
+          ]
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "fontSize": 14,
+                "fontWeight": "bold",
+                "textAlign": "center",
+              },
+              Object {
+                "color": "red",
+              },
+            ]
+          }>
+          BUTTON
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots OGTextButton Raised 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}>
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "elevation": 2,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+            },
+            Object {
+              "borderRadius": 2,
+              "flex": -1,
+              "height": 36,
+              "justifyContent": "center",
+              "minWidth": 64,
+            },
+            Object {
+              "backgroundColor": "#00796B",
+            },
+            undefined,
+          ]
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "fontSize": 14,
+                "fontWeight": "bold",
+                "textAlign": "center",
+              },
+              Object {
+                "color": "white",
+              },
+            ]
+          }>
+          BUTTON
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
