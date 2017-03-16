@@ -15,6 +15,8 @@ import {
 
 type Props = {
   onPress: () => void,
+  onPressIn: () => void,
+  onPressOut: () => void,
   rippleColor?: string,
   useForeground?: boolean,
   children: ReactElement<*>
@@ -22,6 +24,8 @@ type Props = {
 
 const Touchable = ({
   onPress = () => { },
+  onPressIn = () => { },
+  onPressOut = () => { },
   rippleColor,
   useForeground = false,
   children
@@ -32,6 +36,8 @@ const Touchable = ({
     return (
       <TouchableNativeFeedback
         onPress={onPress}
+        onPressIn={onPressIn}
+        onPressOut={onPressOut}
         useForeground={
           TouchableNativeFeedback.canUseNativeForeground() ?
             useForeground :
@@ -43,7 +49,7 @@ const Touchable = ({
             TouchableNativeFeedback.SelectableBackground()
         }
       >
-        <View>{children}</View>
+        {children}
       </TouchableNativeFeedback>
     )
 
