@@ -25,7 +25,11 @@ const OGTextButton = ({
   backgroundColor,
   style
 }: Props) => (
-  <Touchable onPress={onPress} rippleColor="rgba(0,0,0,0.2)">
+  <Touchable
+    onPress={onPress}
+    rippleColor="rgba(0,0,0,0.5)"
+    borderRadius={backgroundColor == null ? 2 : 0}
+  >
     <View
       style={[
         backgroundColor ? styles.raisedButton : styles.flatButton,
