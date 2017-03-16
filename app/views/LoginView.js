@@ -68,6 +68,7 @@ export default class LoginView extends Component {
           backgroundColor={Colors.PRIMARY}
           color="white"
           style={styles.loginButton}
+          onPress={this._handleLoginPress}
         />
       </View>
     )
