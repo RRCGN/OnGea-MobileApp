@@ -25,10 +25,10 @@ const OGTextButton = ({
   backgroundColor,
   style
 }: Props) => (
-  <Touchable onPress={onPress} rippleColor="rgba(0,0,0,0.5)">
+  <Touchable onPress={onPress} rippleColor="rgba(0,0,0,0.2)" borderRadius={2}>
     <View
       style={[
-        backgroundColor && styles.elevated,
+        backgroundColor ? styles.raisedButton : styles.flatButton,
         styles.button,
         { backgroundColor: backgroundColor || 'transparent' },
         style
@@ -45,19 +45,25 @@ export default OGTextButton
 
 
 const styles = StyleSheet.create({
-  elevated: {
-    elevation: 2
+  raisedButton: {
+    elevation: 2,
+    paddingLeft: 16,
+    paddingRight: 16
+  },
+  flatButton: {
+    paddingLeft: 8,
+    paddingRight: 8
   },
   button: {
-    paddingLeft: 16,
-    paddingRight: 16,
     height: 36,
     borderRadius: 2,
-    flex: 0,
+    flex: -1,
+    minWidth: 64,
     justifyContent: 'center'
   },
   text: {
     textAlign: 'center',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontSize: 14
   }
 })
