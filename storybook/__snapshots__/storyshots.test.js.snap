@@ -169,6 +169,370 @@ exports[`Storyshots ButtonList Normal 1`] = `
 </View>
 `;
 
+exports[`Storyshots Card Card Segment big 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+      "padding": 20,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 2,
+        "shadowOffset": Object {
+          "height": 1,
+        },
+        "shadowOpacity": 0.18,
+        "shadowRadius": 1.4,
+      }
+    }>
+    <View
+      style={
+        Array [
+          false,
+          Object {
+            "padding": 16,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Card Card Segment big w/ border 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+      "padding": 20,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 2,
+        "shadowOffset": Object {
+          "height": 1,
+        },
+        "shadowOpacity": 0.18,
+        "shadowRadius": 1.4,
+      }
+    }>
+    <View
+      style={
+        Array [
+          Object {
+            "borderBottomColor": "#E0E0E0",
+            "borderBottomWidth": 1,
+          },
+          Object {
+            "padding": 16,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
+        Lorem ipsum
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          false,
+          Object {
+            "padding": 16,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Card Card Segment small 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+      "padding": 20,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 2,
+        "shadowOffset": Object {
+          "height": 1,
+        },
+        "shadowOpacity": 0.18,
+        "shadowRadius": 1.4,
+      }
+    }>
+    <View
+      style={
+        Array [
+          false,
+          undefined,
+          Object {
+            "padding": 8,
+          },
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Card Card Segment small w/ border 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+      "padding": 20,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 2,
+        "shadowOffset": Object {
+          "height": 1,
+        },
+        "shadowOpacity": 0.18,
+        "shadowRadius": 1.4,
+      }
+    }>
+    <View
+      style={
+        Array [
+          Object {
+            "borderBottomColor": "#E0E0E0",
+            "borderBottomWidth": 1,
+          },
+          undefined,
+          Object {
+            "padding": 8,
+          },
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
+        Lorem ipsum
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          false,
+          undefined,
+          Object {
+            "padding": 8,
+          },
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Card Card Title 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+      "padding": 20,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 2,
+        "shadowOffset": Object {
+          "height": 1,
+        },
+        "shadowOpacity": 0.18,
+        "shadowRadius": 1.4,
+      }
+    }>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}>
+      <View>
+        <View
+          style={
+            Object {
+              "aspectRatio": 1.7777777777777777,
+            }
+          }>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "position": "relative",
+              }
+            }>
+            <Image
+              source={
+                Object {
+                  "uri": "http://placehold.it/1200x900",
+                }
+              }
+              style={
+                Object {
+                  "alignSelf": "stretch",
+                  "flex": 1,
+                  "height": undefined,
+                  "resizeMode": "cover",
+                  "width": undefined,
+                }
+              } />
+            <BVLinearGradient
+              colors={
+                Array [
+                  0,
+                  3422552064,
+                ]
+              }
+              end={undefined}
+              locations={null}
+              start={undefined}
+              style={
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "paddingBottom": 16,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "paddingTop": 24,
+                  "position": "absolute",
+                  "right": 0,
+                }
+              }>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "white",
+                    },
+                    Object {
+                      "fontSize": 24,
+                    },
+                  ]
+                }>
+                Card Title
+              </Text>
+            </BVLinearGradient>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Card Card View 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+      "padding": 20,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 2,
+        "shadowOffset": Object {
+          "height": 1,
+        },
+        "shadowOpacity": 0.18,
+        "shadowRadius": 1.4,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail">
+      Lorem ipsum
+    </Text>
+  </View>
+</View>
+`;
+
 exports[`Storyshots Hint Alert Hint 1`] = `
 <View
   style={

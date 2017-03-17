@@ -14,19 +14,17 @@ import {
 } from 'react-native'
 import Snackbar from 'react-native-snackbar'
 import DataService from '../services/DataService'
+
+import Card from '../components/Card'
+import CardSegment from '../components/CardSegment'
+import CardTitle from '../components/CardTitle'
+
 import OGTextButton from '../components/OGTextButton'
 import OGIconButton from '../components/OGIconButton'
 import ButtonList from '../components/ButtonList'
+
 import TripDate from '../components/TripDate'
 import TripDateList from '../components/TripDateList'
-import ImageCaptionContainer from '../components/ImageCaptionContainer'
-import TitleOnShadow from '../components/TitleOnShadow'
-import Touchable from '../components/Touchable'
-import Hint from '../components/Hint'
-import { CardView, CardSegment } from '../components/Card'
-import CardTitle from '../components/CardTitle'
-import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
-import ComIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 
 type MLVProps = {
@@ -72,77 +70,35 @@ export default class MobilitiesListView extends Component {
     )
   }
 
-  _renderListRow = (rowData) => (
+  _renderListRow = (data) => (
     <View style={styles.listItem}>
-      <CardView>
+      <Card>
+
+        {/* Image */}
         <CardTitle
           image={{ uri: data.activity.image }}
           title={data.activity.name}
           onPress={() => this.props.navigation.navigate('Single', data)}
         />
-        {this._renderDates(rowData)}
-        {this._renderMoreButtons(rowData)}
-      </CardView>
+
+        {/* Dates */}
+        <CardSegment big>
+          <TripDateList>
+            <TripDate type="vom" date={data.activity.dateFrom} />
+            <TripDate type="bis" date={data.activity.dateTo} />
+          </TripDateList>
+        </CardSegment>
+
+        {/* Action Buttons */}
+        <CardSegment small>
+          <ButtonList>
+            <OGTextButton label="Ansehen" />
+          </ButtonList>
+        </CardSegment>
+
+      </Card>
     </View>
   )
-
-  _renderActionButtons = () => {
-    return (
-      <CardSegment hasBorderBottom space="small">
-        <ButtonList>
-          <OGIconButton
-            icon={
-              <MaterialIcon
-                name="map"
-                style={{ color: 'rgba(0,0,0,0.54)'}}
-              />
-            }
-          />
-          <OGIconButton
-            icon={
-              <MaterialIcon
-                name="alarm"
-                style={{ color: 'rgba(0,0,0,0.54)'}}
-              />
-            }
-          />
-        </ButtonList>
-      </CardSegment>
-    )
-  }
-
-  _renderHint = (data) => {
-    return (
-      <View style={{ marginTop: -1 }}>
-        <Hint
-          type="nice"
-          text="Dein Flug ist morgen um 18:00 Uhr."
-          icon={<ComIcon size={18} color="white" name="airplane-takeoff" />}
-        />
-      </View>
-    )
-  }
-
-  _renderDates = (data) => {
-    return (
-      <CardSegment space="big">
-        <TripDateList>
-          <TripDate type="vom" date={data.activity.dateFrom} />
-          <TripDate type="bis" date={data.activity.dateTo} />
-        </TripDateList>
-      </CardSegment>
-    )
-  }
-
-  _renderMoreButtons = () => {
-    return (
-      <CardSegment space="small">
-        <ButtonList>
-          <OGTextButton label="Ansehen" />
-        </ButtonList>
-      </CardSegment>
-    )
-  }
 
   _handleRefresh = async () => {
     this.setState({ refreshing: true })

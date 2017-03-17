@@ -1,5 +1,5 @@
 /**
- * Component Collection for a Material Card.
+ * Card. Simply a plain card.
  * @flow
  */
 
@@ -7,42 +7,15 @@ import React, { Component } from 'react'
 import { View, StyleSheet, Platform } from 'react-native'
 
 
-// Color Constants not from utils/constants to encapsulate card more
-const CardColors = {
-  CARD_BACKGROUND: '#FFFFFF',
-  CARD_BORDER: '#E0E0E0'
-}
-
-
-/** Card View – outer wrapper of a card */
-
-type CardViewProps = {
+type CardProps = {
   children: Array<ReactElement<*>>
 }
 
-export const CardView = ({ children }: CardViewProps) => (
+const Card = ({ children }: CardProps) => (
   <View style={styles.card}>{children}</View>
 )
 
-
-/** Card Segment – section in a card */
-
-type CardSegmentProps = {
-  hasBorderBottom?: boolean,
-  space?: 'small' | 'big',
-  children: Array<ReactElement<*>>
-}
-
-export const CardSegment = (
-  { hasBorderBottom = false, space = 'big', children }: CardSegmentProps
-) => (
-  <View
-    style={[
-      hasBorderBottom && styles.segmentWithBorder,
-      space === 'big' ? styles.segmentBigSpace : styles.segmentSmallSpace
-    ]}
-  >{children}</View>
-)
+export default Card
 
 
 const styles = StyleSheet.create({
@@ -59,17 +32,7 @@ const styles = StyleSheet.create({
         elevation: 2
       }
     }),
-    backgroundColor: CardColors.CARD_BACKGROUND,
+    backgroundColor: 'white',
     borderRadius: 2
-  },
-  segmentSmallSpace: {
-    padding: 8
-  },
-  segmentBigSpace: {
-    padding: 16
-  },
-  segmentWithBorder: {
-    borderBottomColor: CardColors.CARD_BORDER,
-    borderBottomWidth: 1
   }
 })
