@@ -24,6 +24,7 @@ import TitleOnShadow from '../components/TitleOnShadow'
 import Touchable from '../components/Touchable'
 import Hint from '../components/Hint'
 import { CardView, CardSegment } from '../components/Card'
+import CardTitle from '../components/CardTitle'
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 import ComIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 
@@ -74,28 +75,16 @@ export default class MobilitiesListView extends Component {
   _renderListRow = (rowData) => (
     <View style={styles.listItem}>
       <CardView>
-        {this._renderImage(rowData)}
+        <CardTitle
+          image={{ uri: data.activity.image }}
+          title={data.activity.name}
+          onPress={() => this.props.navigation.navigate('Single', data)}
+        />
         {this._renderDates(rowData)}
         {this._renderMoreButtons(rowData)}
       </CardView>
     </View>
   )
-
-  _renderImage = (data) => {
-    return (
-      <Touchable
-        useForeground={true}
-        onPress={() => this.props.navigation.navigate('Single', data)}
-      >
-        <View style={{ aspectRatio: 16/9 }}>
-          <ImageCaptionContainer
-            source={{ uri: data.activity.image }}
-            caption={<TitleOnShadow title={data.activity.name} />}
-          />
-        </View>
-      </Touchable>
-    )
-  }
 
   _renderActionButtons = () => {
     return (
