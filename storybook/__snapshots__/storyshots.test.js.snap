@@ -910,6 +910,138 @@ exports[`Storyshots Hint Warning Hint w/ icon 1`] = `
 </View>
 `;
 
+exports[`Storyshots OGDate Date 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "rgba(0,0,0,0.54)",
+          "fontSize": 12,
+        }
+      }>
+      from
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "rgba(0,0,0,0.87)",
+          "fontSize": 16,
+          "fontWeight": "500",
+        }
+      }>
+      10.04.2017
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots OGDate Date List 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "marginLeft": -16,
+        "marginRight": -16,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "paddingLeft": 16,
+          "paddingRight": 16,
+        }
+      }>
+      <View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+              "fontSize": 12,
+            }
+          }>
+          from
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+              "fontSize": 16,
+              "fontWeight": "500",
+            }
+          }>
+          10.04.2024
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingLeft": 16,
+          "paddingRight": 16,
+        }
+      }>
+      <View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "rgba(0,0,0,0.54)",
+              "fontSize": 12,
+            }
+          }>
+          to
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "rgba(0,0,0,0.87)",
+              "fontSize": 16,
+              "fontWeight": "500",
+            }
+          }>
+          16.04.2024
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
 exports[`Storyshots OGIconButton Normal 1`] = `
 <View
   style={

@@ -5,14 +5,14 @@
 
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
-import TripDate from './TripDate'
+import OGDate from './OGDate'
 
 
-type Props = {
-  children: Array<ReactElement<TripDate>>
+type OGDateListProps = {
+  children: Array<ReactElement<OGDate>>
 }
 
-const TripDateList = ({ children }: Props) => {
+const OGDateList = ({ children }: OGDateListProps) => {
   return (
     <View style={styles.row}>
       {children.map((child, i) => (
@@ -22,7 +22,7 @@ const TripDateList = ({ children }: Props) => {
   )
 }
 
-export default TripDateList
+export default OGDateList
 
 
 const styles = StyleSheet.create({

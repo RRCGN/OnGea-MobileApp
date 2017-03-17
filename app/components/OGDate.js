@@ -8,12 +8,12 @@ import moment from 'moment'
 import { View, Text, StyleSheet } from 'react-native'
 
 
-type Props = {
+type OGDateProps = {
   type: string,
   date: string
 }
 
-const TripDate = ({ type, date }: Props) => {
+const OGDate = ({ type, date }: OGDateProps) => {
   return (
     <View>
       <Text style={styles.typeText}>{type}</Text>
@@ -22,7 +22,7 @@ const TripDate = ({ type, date }: Props) => {
   )
 }
 
-export default TripDate
+export default OGDate
 
 
 const styles = StyleSheet.create({

@@ -1,5 +1,5 @@
 /**
- * ListView for Mobilities
+ * ListView for Mobilities.
  * @flow
  */
 
@@ -23,8 +23,8 @@ import OGTextButton from '../components/OGTextButton'
 import OGIconButton from '../components/OGIconButton'
 import ButtonList from '../components/ButtonList'
 
-import TripDate from '../components/TripDate'
-import TripDateList from '../components/TripDateList'
+import OGDate from '../components/OGDate'
+import OGDateList from '../components/OGDateList'
 
 
 type MLVProps = {
@@ -83,10 +83,10 @@ export default class MobilitiesListView extends Component {
 
         {/* Dates */}
         <CardSegment big>
-          <TripDateList>
-            <TripDate type="vom" date={data.activity.dateFrom} />
-            <TripDate type="bis" date={data.activity.dateTo} />
-          </TripDateList>
+          <OGDateList>
+            <OGDate type="vom" date={data.activity.dateFrom} />
+            <OGDate type="bis" date={data.activity.dateTo} />
+          </OGDateList>
         </CardSegment>
 
         {/* Action Buttons */}
