@@ -75,8 +75,6 @@ export default class MobilitiesListView extends Component {
     <View style={styles.listItem}>
       <CardView>
         {this._renderImage(rowData)}
-        {this._renderActionButtons(rowData)}
-        {this._renderHint(rowData)}
         {this._renderDates(rowData)}
         {this._renderMoreButtons(rowData)}
       </CardView>
