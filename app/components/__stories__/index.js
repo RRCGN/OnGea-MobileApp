@@ -4,6 +4,7 @@ import OGIconButton from './OGIconButton.stories'
 import OGDate from './OGDate.stories'
 import ButtonList from './ButtonList.stories'
 import Card from './Card.stories'
+import Section from './Section.stories'
 
 export default {
   Hint,
@@ -11,5 +12,6 @@ export default {
   OGIconButton,
   OGDate,
   Card,
-  ButtonList
+  ButtonList,
+  Section
 }

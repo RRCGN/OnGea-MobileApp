@@ -1342,3 +1342,259 @@ exports[`Storyshots OGTextButton Raised 1`] = `
   </View>
 </View>
 `;
+
+exports[`Storyshots Section Section with Custom Title Color 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "white",
+          "flex": 0,
+        },
+        Object {
+          "borderBottomColor": "rgba(0, 0, 0, 0.12)",
+          "borderBottomWidth": 1,
+        },
+      ]
+    }>
+    <View
+      style={
+        Object {
+          "flex": 0,
+          "height": 48,
+          "justifyContent": "center",
+          "paddingLeft": 16,
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "red",
+            },
+            Object {
+              "fontSize": 14,
+              "fontWeight": "bold",
+            },
+          ]
+        }>
+        Foo bar
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "paddingBottom": 16,
+            "paddingLeft": 16,
+            "paddingRight": 16,
+          },
+          false,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Section Section with Title 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "white",
+          "flex": 0,
+        },
+        Object {
+          "borderBottomColor": "rgba(0, 0, 0, 0.12)",
+          "borderBottomWidth": 1,
+        },
+      ]
+    }>
+    <View
+      style={
+        Object {
+          "flex": 0,
+          "height": 48,
+          "justifyContent": "center",
+          "paddingLeft": 16,
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgba(0, 0, 0, 0.54)",
+            },
+            Object {
+              "fontSize": 14,
+              "fontWeight": "bold",
+            },
+          ]
+        }>
+        Foo bar
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "paddingBottom": 16,
+            "paddingLeft": 16,
+            "paddingRight": 16,
+          },
+          false,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Section Section without Border 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "white",
+          "flex": 0,
+        },
+        false,
+      ]
+    }>
+    <View
+      style={
+        Object {
+          "flex": 0,
+          "height": 48,
+          "justifyContent": "center",
+          "paddingLeft": 16,
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgba(0, 0, 0, 0.54)",
+            },
+            Object {
+              "fontSize": 14,
+              "fontWeight": "bold",
+            },
+          ]
+        }>
+        Foo bar
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "paddingBottom": 16,
+            "paddingLeft": 16,
+            "paddingRight": 16,
+          },
+          false,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Section Section without Title 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "white",
+          "flex": 0,
+        },
+        Object {
+          "borderBottomColor": "rgba(0, 0, 0, 0.12)",
+          "borderBottomWidth": 1,
+        },
+      ]
+    }>
+    <View
+      style={
+        Array [
+          Object {
+            "paddingBottom": 16,
+            "paddingLeft": 16,
+            "paddingRight": 16,
+          },
+          Object {
+            "paddingTop": 16,
+          },
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      </Text>
+    </View>
+  </View>
+</View>
+`;
