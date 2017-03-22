@@ -18,6 +18,10 @@ export default class DateUtil {
         foundIndex = i
       }
     })
-    return foundIndex
+
+    return {
+      index: foundIndex,
+      foundObj: data[foundIndex]
+    }
   }
 }
