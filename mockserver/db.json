@@ -32,6 +32,8 @@
         {
           "id": 567,
           "type": "PLANE",
+          "dateFrom": "2017-04-10T12:00:00+02:00",
+          "dateTo": "2017-04-10T14:00:00+02:00",
           "origin": {
             "location": { "lat": 51, "long": 7 },
             "locationName": "Köln",
