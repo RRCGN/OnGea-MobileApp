@@ -22,6 +22,7 @@ import TitleOnShadow from '../components/TitleOnShadow'
 import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
 import OGDate from '../components/OGDate'
 import OGDateList from '../components/OGDateList'
+import OGTravelSection from '../components/OGTravelSection'
 import Section from '../components/Section'
 
 import { Colors } from '../utils/constants'
@@ -109,11 +110,11 @@ export default class SingleView extends Component {
   }
 
   _renderContent = () => {
+    const { params } = this.props.navigation.state
+
     return (
       <View>
-        <Section title="Flug"><Text>Foo bar</Text></Section>
-        <Section title="Unterkunft"><Text>Foo bar</Text></Section>
-        <Section title="Schedule"><Text>Foo bar</Text></Section>
+        <OGTravelSection data={params.travels} />
       </View>
     )
   }

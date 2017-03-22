@@ -8,12 +8,12 @@ import moment from 'moment'
 export default class DateUtil {
   static getMostRecent(data: Array<{ dateFrom: string }>): any {
     const now = moment().unix()
-    let shortestDistance = 0
+    let shortestDistance = -1
     let foundIndex = 0
     data.forEach((obj, i) => {
       const testDate = moment(obj.dateFrom).unix()
       const diff = testDate - now
-      if (diff > shortestDistance) {
+      if (shortestDistance < 0 || diff < shortestDistance) {
         shortestDistance = diff
         foundIndex = i
       }
