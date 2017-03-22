@@ -101,8 +101,8 @@ export default class SingleView extends Component {
     return (
       <View style={{ backgroundColor: 'purple', padding: 16 }}>
         <OGDateList>
-          <OGDate type="vom" date={params.activity.dateFrom} light />
-          <OGDate type="bis" date={params.activity.dateTo} light />
+          <OGDate type="vom" date={params.dateFrom} light />
+          <OGDate type="bis" date={params.dateTo} light />
         </OGDateList>
       </View>
     )
@@ -120,7 +120,7 @@ export default class SingleView extends Component {
 
   _renderTitleForeground = () => {
     const { params } = this.props.navigation.state
-    return <TitleOnShadow title={params.activity.name} />
+    return <TitleOnShadow title={params.name} />
   }
 
   _renderTitleBackground = () => {
@@ -129,7 +129,7 @@ export default class SingleView extends Component {
       <View style={{ height: this.headerHeight, overflow: 'hidden' }}>
         <Image
           style={{ flex: 1 }}
-          source={{ uri: params.activity.image }}
+          source={{ uri: params.backdrop }}
           width={this.headerWidth}
           height={this.headerHeight}
           resizeMode="cover"
@@ -148,7 +148,7 @@ export default class SingleView extends Component {
           ref={(navBarView) => this.navBarView = navBarView}
         >
           <View style={styles.stickyHeaderInner}>
-            <Text style={styles.toolbarTitle}>{params.activity.name}</Text>
+            <Text style={styles.toolbarTitle}>{params.name}</Text>
           </View>
         </Animatable.View>
       </View>

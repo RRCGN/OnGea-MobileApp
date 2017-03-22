@@ -2,6 +2,7 @@ const jsonServer = require('json-server')
 const chalk = require('chalk')
 const server = jsonServer.create()
 const router = jsonServer.router(`${__dirname}/db.json`)
+const raw = require(`${__dirname}/db.json`)
 const middlewares = jsonServer.defaults()
 
 const PORT = 3000
@@ -40,20 +41,10 @@ server.use((req, res, next) => {
 server.get('/all', (req, res, next) => {
   const user = db.users.find(user => user.id === +req.query.userId)
 
-  const mobilities = db.mobilities.filter(m => m.userId === +req.query.userId)
-  mobilities.map((mobility, i) => {
-    const activity = db.activities.find(a => a.id === mobility.activityId)
-    const organization = db.organizations.find(o => o.id === activity.organizationId)
-    activity.organization = organization
-    mobility.activity = activity
-    // callback because `map` is async
-    if (i === mobilities.length - 1) setTimeout(() => finish())
-    return mobility
+  res.json({
+    user,
+    activities: raw.activities
   })
-
-  function finish() {
-    res.json({ user, mobilities })
-  }
 })
 
 server.use(router)

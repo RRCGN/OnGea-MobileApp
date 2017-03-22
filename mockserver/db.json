@@ -8,14 +8,78 @@
     { "id": 2, "name": "Jane Doe" }
   ],
   "activities": [
-    { "id": 1, "image": "http://10.0.3.2:3000/concert.jpg", "name": "Dance Workshop", "dateFrom": "2017-04-10T02:00:00+02:00", "dateTo": "2017-04-16T02:00:00+02:00", "organizationId": 1 }
-  ],
-  "mobilities": [
-    { "id": 1, "activityId": 1, "userId": 1 },
-    { "id": 1, "activityId": 1, "userId": 2 }
-  ],
-  "organizations": [
-    { "id": 1, "name": "RRCGN" },
-    { "id": 2, "name": "RRXYZ" }
+    {
+      "id": 123,
+      "name": "Dance Workshop",
+      "backdrop": "http://10.0.3.2:3000/concert.jpg",
+      "dateFrom": "2017-04-10T12:00:00+02:00",
+      "dateTo": "2017-04-16T12:00:00+02:00",
+      "organizations": [
+        {
+          "coordinatingOrganization": {
+            "id": 234,
+            "name": "RRCGN",
+            "phone": "999-99-99"
+          },
+          "hostOrganization": {
+            "id": 234,
+            "name": "RRCGN",
+            "phone": "999-99-99"
+          }
+        }
+      ],
+      "travels": [
+        {
+          "id": 567,
+          "type": "PLANE",
+          "origin": {
+            "location": { "lat": 51, "long": 7 },
+            "locationName": "Köln",
+            "date": "2017-04-10T12:00:00+02:00",
+            "type": "FLIGHT"
+          },
+          "destination": {
+            "location": { "lat": 51, "long": 8 },
+            "locationName": "Somewhere",
+            "date": "2017-04-10T14:00:00+02:00",
+            "type": "FLIGHT"
+          }
+        }
+      ],
+      "stays": [
+        {
+          "id": 789,
+          "name": "Some Hotel",
+          "location": { "lat": 51, "long": 7 },
+          "street": "Somestreet 1",
+          "zip": "50678",
+          "town": "Cologne",
+          "region": "NRW",
+          "country": "Germany",
+          "room": "11a",
+          "dateFrom": "2017-04-10T12:00:00+02:00",
+          "dateTo": "2017-04-16T12:00:00+02:00"
+        }
+      ],
+      "schedule": [
+        {
+          "name": "Termin 1",
+          "dateFrom": "2017-04-10T16:00:00+02:00",
+          "dateTo": "2017-04-10T18:00:00+02:00"
+        },
+        {
+          "name": "Termin 2",
+          "dateFrom": "2017-04-10T18:00:00+02:00",
+          "dateTo": "2017-04-10T20:00:00+02:00"
+        }
+      ],
+      "downloads": [
+        {
+          "id": 200,
+          "name": "Check List",
+          "path": "http://example.com"
+        }
+      ]
+    }
   ]
 }

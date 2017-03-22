@@ -50,7 +50,7 @@ export default class MobilitiesListView extends Component {
     })
 
     this.state = {
-      dataSource: dataSource.cloneWithRows(props.mobilities),
+      dataSource: dataSource.cloneWithRows(props.activities),
       refreshing: false
     }
   }
@@ -76,16 +76,16 @@ export default class MobilitiesListView extends Component {
 
         {/* Image */}
         <CardTitle
-          image={{ uri: data.activity.image }}
-          title={data.activity.name}
+          image={{ uri: data.backdrop }}
+          title={data.name}
           onPress={() => this.props.navigation.navigate('Single', data)}
         />
 
         {/* Dates */}
         <CardSegment big>
           <OGDateList>
-            <OGDate type="vom" date={data.activity.dateFrom} />
-            <OGDate type="bis" date={data.activity.dateTo} />
+            <OGDate type="vom" date={data.dateFrom} />
+            <OGDate type="bis" date={data.dateTo} />
           </OGDateList>
         </CardSegment>
 
