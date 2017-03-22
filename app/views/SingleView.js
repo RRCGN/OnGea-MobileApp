@@ -3,13 +3,29 @@
  */
 
 import React, { Component } from 'react'
-import { View, Platform, StyleSheet, StatusBar, Image, Dimensions, Text } from 'react-native'
+import {
+  View,
+  Text,
+  Image,
+  Platform,
+  StatusBar,
+  Dimensions,
+  StyleSheet,
+  ScrollView
+} from 'react-native'
+import * as Animatable from 'react-native-animatable'
+import HeaderImageScrollView,
+  { TriggeringView } from 'react-native-image-header-scroll-view'
+
 import ToolbarButton from '../components/ToolbarButton'
 import TitleOnShadow from '../components/TitleOnShadow'
 import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
-import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view'
-import * as Animatable from 'react-native-animatable'
+import OGDate from '../components/OGDate'
+import OGDateList from '../components/OGDateList'
+import Section from '../components/Section'
+
 import { Colors } from '../utils/constants'
+
 
 export default class SingleView extends Component {
   static navigationOptions = {
@@ -59,23 +75,45 @@ export default class SingleView extends Component {
 
   render() {
     return (
-
-      <View style={{ flex: 1 }}>
         <HeaderImageScrollView
           maxHeight={this.headerHeight}
           minHeight={this.stickyHeaderHeight}
           renderHeader={this._renderTitleBackground}
           renderForeground={this._renderTitleForeground}
           renderFixedForeground={this._renderStickyHeader}
-          fadeOutForeground={true}
+          fadeOutForeground
         >
           <TriggeringView
-            style={{ height: 1000 }}
             onBeginHidden={this._handleStickHeader}
             onDisplay={this._handleUnstickHeader}
           >
+            {this._renderDates()}
           </TriggeringView>
+          {this._renderContent()}
+          <View style={{ height: 600 }} />
         </HeaderImageScrollView>
+    )
+  }
+
+  _renderDates = () => {
+    const { params } = this.props.navigation.state
+
+    return (
+      <View style={{ backgroundColor: 'purple', padding: 16 }}>
+        <OGDateList>
+          <OGDate type="vom" date={params.activity.dateFrom} light />
+          <OGDate type="bis" date={params.activity.dateTo} light />
+        </OGDateList>
+      </View>
+    )
+  }
+
+  _renderContent = () => {
+    return (
+      <View>
+        <Section title="Flug"><Text>Foo bar</Text></Section>
+        <Section title="Unterkunft"><Text>Foo bar</Text></Section>
+        <Section title="Schedule"><Text>Foo bar</Text></Section>
       </View>
     )
   }
