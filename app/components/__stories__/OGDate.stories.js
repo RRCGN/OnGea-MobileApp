@@ -15,6 +15,9 @@ export default storiesOf('OGDate', module)
   .add('Date', () => (
     <OGDate type="from" date="2017-04-10T02:00:00+02:00" />
   ))
+  .add('Light Date', () => (
+    <OGDate type="from" date="2017-04-10T02:00:00+02:00" light />
+  ))
   .add('Date List', () => (
     <OGDateList>
       <OGDate type="from" date="2024-04-10T12:00:00+02:00" />

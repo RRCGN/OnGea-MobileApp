@@ -926,10 +926,13 @@ exports[`Storyshots OGDate Date 1`] = `
       allowFontScaling={true}
       ellipsizeMode="tail"
       style={
-        Object {
-          "color": "rgba(0,0,0,0.54)",
-          "fontSize": 12,
-        }
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.54)",
+            "fontSize": 12,
+          },
+          false,
+        ]
       }>
       from
     </Text>
@@ -938,11 +941,14 @@ exports[`Storyshots OGDate Date 1`] = `
       allowFontScaling={true}
       ellipsizeMode="tail"
       style={
-        Object {
-          "color": "rgba(0,0,0,0.87)",
-          "fontSize": 16,
-          "fontWeight": "500",
-        }
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.87)",
+            "fontSize": 16,
+            "fontWeight": "500",
+          },
+          false,
+        ]
       }>
       10.04.2017
     </Text>
@@ -981,10 +987,13 @@ exports[`Storyshots OGDate Date List 1`] = `
           allowFontScaling={true}
           ellipsizeMode="tail"
           style={
-            Object {
-              "color": "rgba(0,0,0,0.54)",
-              "fontSize": 12,
-            }
+            Array [
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+                "fontSize": 12,
+              },
+              false,
+            ]
           }>
           from
         </Text>
@@ -993,11 +1002,14 @@ exports[`Storyshots OGDate Date List 1`] = `
           allowFontScaling={true}
           ellipsizeMode="tail"
           style={
-            Object {
-              "color": "rgba(0,0,0,0.87)",
-              "fontSize": 16,
-              "fontWeight": "500",
-            }
+            Array [
+              Object {
+                "color": "rgba(0,0,0,0.87)",
+                "fontSize": 16,
+                "fontWeight": "500",
+              },
+              false,
+            ]
           }>
           10.04.2024
         </Text>
@@ -1016,10 +1028,13 @@ exports[`Storyshots OGDate Date List 1`] = `
           allowFontScaling={true}
           ellipsizeMode="tail"
           style={
-            Object {
-              "color": "rgba(0,0,0,0.54)",
-              "fontSize": 12,
-            }
+            Array [
+              Object {
+                "color": "rgba(0,0,0,0.54)",
+                "fontSize": 12,
+              },
+              false,
+            ]
           }>
           to
         </Text>
@@ -1028,16 +1043,69 @@ exports[`Storyshots OGDate Date List 1`] = `
           allowFontScaling={true}
           ellipsizeMode="tail"
           style={
-            Object {
-              "color": "rgba(0,0,0,0.87)",
-              "fontSize": 16,
-              "fontWeight": "500",
-            }
+            Array [
+              Object {
+                "color": "rgba(0,0,0,0.87)",
+                "fontSize": 16,
+                "fontWeight": "500",
+              },
+              false,
+            ]
           }>
           16.04.2024
         </Text>
       </View>
     </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots OGDate Light Date 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.54)",
+            "fontSize": 12,
+          },
+          Object {
+            "color": "white",
+          },
+        ]
+      }>
+      from
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgba(0,0,0,0.87)",
+            "fontSize": 16,
+            "fontWeight": "500",
+          },
+          Object {
+            "color": "white",
+          },
+        ]
+      }>
+      10.04.2017
+    </Text>
   </View>
 </View>
 `;

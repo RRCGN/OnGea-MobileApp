@@ -10,14 +10,17 @@ import { View, Text, StyleSheet } from 'react-native'
 
 type OGDateProps = {
   type: string,
-  date: string
+  date: string,
+  light?: boolean
 }
 
-const OGDate = ({ type, date }: OGDateProps) => {
+const OGDate = ({ type, date, light = false }: OGDateProps) => {
   return (
     <View>
-      <Text style={styles.typeText}>{type}</Text>
-      <Text style={styles.dateText}>{moment(date).format('DD.MM.YYYY')}</Text>
+      <Text style={[ styles.typeText, light && styles.lightText ]}>{type}</Text>
+      <Text style={[ styles.dateText, light && styles.lightText ]}>
+        {moment(date).format('DD.MM.YYYY')}
+      </Text>
     </View>
   )
 }
@@ -34,5 +37,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
     color: 'rgba(0,0,0,0.87)'
+  },
+  lightText: {
+    color: 'white'
   }
 })
