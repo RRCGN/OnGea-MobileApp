@@ -14,20 +14,18 @@
       "backdrop": "http://10.0.3.2:3000/concert.jpg",
       "dateFrom": "2017-04-10T12:00:00+02:00",
       "dateTo": "2017-04-16T12:00:00+02:00",
-      "organizations": [
-        {
-          "coordinatingOrganization": {
-            "id": 234,
-            "name": "RRCGN",
-            "phone": "999-99-99"
-          },
-          "hostOrganization": {
-            "id": 234,
-            "name": "RRCGN",
-            "phone": "999-99-99"
-          }
+      "organizations": {
+        "coordinatingOrganization": {
+          "id": 234,
+          "name": "RRCGN",
+          "phone": "999-99-99"
+        },
+        "hostOrganization": {
+          "id": 234,
+          "name": "RRCGN",
+          "phone": "999-99-99"
         }
-      ],
+      },
       "travels": [
         {
           "id": 567,
