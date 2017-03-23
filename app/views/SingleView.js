@@ -83,6 +83,7 @@ export default class SingleView extends Component {
           renderForeground={this._renderTitleForeground}
           renderFixedForeground={this._renderStickyHeader}
           fadeOutForeground
+          foregroundParallaxRatio={0.8}
         >
           <TriggeringView
             onBeginHidden={this._handleStickHeader}
