@@ -5,6 +5,7 @@ import OGDate from './OGDate.stories'
 import ButtonList from './ButtonList.stories'
 import Card from './Card.stories'
 import Section from './Section.stories'
+import OGTravelDate from './OGTravelDate.stories'
 
 export default {
   Hint,
@@ -13,5 +14,6 @@ export default {
   OGDate,
   Card,
   ButtonList,
-  Section
+  Section,
+  OGTravelDate
 }

@@ -1411,6 +1411,93 @@ exports[`Storyshots OGTextButton Raised 1`] = `
 </View>
 `;
 
+exports[`Storyshots OGTravelDate Normal 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+      "padding": 30,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "flex": 0,
+        "flexDirection": "row",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "flex-start",
+          "height": 40,
+          "justifyContent": "center",
+          "marginRight": 16,
+          "width": 40,
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": undefined,
+              "fontSize": 24,
+            },
+            Object {
+              "color": "rgba(0, 0, 0, 0.54)",
+              "flex": 0,
+            },
+            Object {
+              "fontFamily": "Material Design Icons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+          ]
+        }>
+        
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignSelf": "stretch",
+          "flex": 1,
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.87)",
+          }
+        }>
+        10.04.2017 12:52
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.54)",
+          }
+        }>
+        Köln
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
 exports[`Storyshots Section Section with Custom Title Color 1`] = `
 <View
   style={
