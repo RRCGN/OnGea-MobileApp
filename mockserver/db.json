@@ -31,20 +31,19 @@
       "travels": [
         {
           "id": 567,
-          "type": "PLANE",
+          "type": "FLIGHT",
+          "number": "4U 9103",
           "dateFrom": "2017-04-10T12:00:00+02:00",
           "dateTo": "2017-04-10T14:00:00+02:00",
           "origin": {
             "location": { "lat": 51, "long": 7 },
-            "locationName": "Köln",
-            "date": "2017-04-10T12:00:00+02:00",
-            "type": "FLIGHT"
+            "locationName": "Köln Bonn Airport (CGN)",
+            "date": "2017-04-10T12:52:00+02:00"
           },
           "destination": {
             "location": { "lat": 51, "long": 8 },
-            "locationName": "Somewhere",
-            "date": "2017-04-10T14:00:00+02:00",
-            "type": "FLIGHT"
+            "locationName": "Flughafen Berlin Brandenburg (BER)",
+            "date": "2017-04-10T14:26:00+02:00"
           }
         }
       ],
