@@ -9,21 +9,21 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 
 type Props = {
-  location: string,
-  time: string,
-  icon: string
+  primary: string,
+  secondary: string,
+  icon?: string
 }
 
-const OGTravelDate = ({ location, time, icon }: Props) => (
+const OGTravelDate = ({ primary, secondary, icon }: Props) => (
   <View style={styles.container}>
     <View style={styles.left}>
       <View style={styles.iconContainer}>
-        <Icon name={icon} style={styles.icon} size={24} />
+        {icon && <Icon name={icon} style={styles.icon} size={24} />}
       </View>
     </View>
     <View style={styles.right}>
-      <Text style={styles.primary}>{time}</Text>
-      <Text style={styles.secondary}>{location}</Text>
+      <Text style={styles.primary}>{primary}</Text>
+      <Text style={styles.secondary}>{secondary}</Text>
     </View>
   </View>
 )

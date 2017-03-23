@@ -40,13 +40,13 @@ const SectionTravel = ({ recentIndex, data }) => {
     <Section title={typeLocalization[type] + (!!number ? `: ${number}` : '')}>
       <OGTravelDateList>
         <OGTravelDate
-          time={moment(dateFrom).format('DD.MM.YYYY, HH:MM [Uhr]')}
-          location={from}
+          primary={moment(dateFrom).format('DD.MM.YYYY, HH:MM [Uhr]')}
+          secondary={from}
           icon={icons[type][0]}
         />
         <OGTravelDate
-          time={moment(dateTo).format('DD.MM.YYYY, HH:MM [Uhr]')}
-          location={to}
+          primary={moment(dateTo).format('DD.MM.YYYY, HH:MM [Uhr]')}
+          secondary={to}
           icon={icons[type][1]}
         />
       </OGTravelDateList>

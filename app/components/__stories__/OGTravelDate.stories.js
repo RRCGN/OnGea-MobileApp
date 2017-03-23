@@ -14,21 +14,27 @@ export default storiesOf('OGTravelDate', module)
   ))
   .add('Normal', () => (
     <OGTravelDate
-      location="Köln"
-      time="10.04.2017, 12:52 Uhr"
+      secondary="Köln"
+      primary="10.04.2017, 12:52 Uhr"
       icon="airplane-takeoff"
+    />
+  ))
+  .add('Without Icon', () => (
+    <OGTravelDate
+      secondary="Köln"
+      primary="10.04.2017, 12:52 Uhr"
     />
   ))
   .add('List', () => (
     <OGTravelDateList>
       <OGTravelDate
-        location="Köln"
-        time="10.04.2017, 12:52 Uhr"
+        secondary="Köln"
+        primary="10.04.2017, 12:52 Uhr"
         icon="airplane-takeoff"
       />
       <OGTravelDate
-        location="Köln"
-        time="10.04.2017, 13:52 Uhr"
+        secondary="Köln"
+        primary="10.04.2017, 13:52 Uhr"
         icon="airplane-landing"
       />
     </OGTravelDateList>
