@@ -22,7 +22,7 @@ import TitleOnShadow from '../components/TitleOnShadow'
 import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
 import OGDate from '../components/OGDate'
 import OGDateList from '../components/OGDateList'
-import OGTravelSection from '../components/OGTravelSection'
+import SectionTravel from '../components/SectionTravel'
 import Section from '../components/Section'
 
 import { Colors } from '../utils/constants'
@@ -115,7 +115,7 @@ export default class SingleView extends Component {
 
     return (
       <View>
-        <OGTravelSection data={params.travels} />
+        <SectionTravel data={params.travels} />
       </View>
     )
   }

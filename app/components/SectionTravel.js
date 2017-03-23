@@ -14,7 +14,7 @@ import OGTextButton from './OGTextButton'
 import ButtonList from './ButtonList'
 
 
-const OGTravelSection = ({ recentIndex, data }) => {
+const SectionTravel = ({ recentIndex, data }) => {
   const {
     type,
     number,
@@ -57,4 +57,4 @@ const OGTravelSection = ({ recentIndex, data }) => {
   )
 }
 
-export default OGRecentData(OGTravelSection)
+export default OGRecentData(SectionTravel)
