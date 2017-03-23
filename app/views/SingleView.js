@@ -26,6 +26,7 @@ import SectionTravel from '../components/SectionTravel'
 import SectionStay from '../components/SectionStay'
 import SectionOrganization from '../components/SectionOrganization'
 import SectionDownloads from '../components/SectionDownloads'
+import SectionSchedule from '../components/SectionSchedule'
 
 import { Colors } from '../utils/constants'
 
@@ -119,6 +120,7 @@ export default class SingleView extends Component {
       <View>
         <SectionTravel data={params.travels} />
         <SectionStay data={params.stays} />
+        <SectionSchedule data={params.schedule} />
         <SectionOrganization data={params.organizations} />
         <SectionDownloads data={params.downloads} />
       </View>
