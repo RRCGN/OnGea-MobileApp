@@ -6,7 +6,9 @@
 import moment from 'moment'
 
 export default class DateUtil {
-  static getMostRecent(data: Array<{ dateFrom: string }>): any {
+  static getMostRecent(
+    data: Array<{ dateFrom: string }>
+  ): { index: number, obj: any} {
     const now = moment().unix()
     let shortestDistance = -1
     let foundIndex = 0
@@ -21,7 +23,7 @@ export default class DateUtil {
 
     return {
       index: foundIndex,
-      foundObj: data[foundIndex]
+      obj: data[foundIndex]
     }
   }
 }
