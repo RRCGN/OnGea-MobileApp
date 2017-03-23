@@ -23,7 +23,7 @@ import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
 import OGDate from '../components/OGDate'
 import OGDateList from '../components/OGDateList'
 import SectionTravel from '../components/SectionTravel'
-import Section from '../components/Section'
+import SectionStay from '../components/SectionStay'
 
 import { Colors } from '../utils/constants'
 
@@ -92,7 +92,7 @@ export default class SingleView extends Component {
             {this._renderDates()}
           </TriggeringView>
           {this._renderContent()}
-          <View style={{ height: 600 }} />
+          <View style={{ height: 400 }} />
         </HeaderImageScrollView>
     )
   }
@@ -116,6 +116,7 @@ export default class SingleView extends Component {
     return (
       <View>
         <SectionTravel data={params.travels} />
+        <SectionStay data={params.stays} />
       </View>
     )
   }
@@ -128,7 +129,7 @@ export default class SingleView extends Component {
   _renderTitleBackground = () => {
     const { params } = this.props.navigation.state
     return (
-      <View style={{ height: this.headerHeight, overflow: 'hidden' }}>
+      <View style={{ height: this.headerHeight }}>
         <Image
           style={{ flex: 1 }}
           source={{ uri: params.backdrop }}
