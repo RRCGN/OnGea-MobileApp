@@ -25,6 +25,7 @@ import OGDateList from '../components/OGDateList'
 import SectionTravel from '../components/SectionTravel'
 import SectionStay from '../components/SectionStay'
 import SectionOrganization from '../components/SectionOrganization'
+import SectionDownloads from '../components/SectionDownloads'
 
 import { Colors } from '../utils/constants'
 
@@ -119,6 +120,7 @@ export default class SingleView extends Component {
         <SectionTravel data={params.travels} />
         <SectionStay data={params.stays} />
         <SectionOrganization data={params.organizations} />
+        <SectionDownloads data={params.downloads} />
       </View>
     )
   }
