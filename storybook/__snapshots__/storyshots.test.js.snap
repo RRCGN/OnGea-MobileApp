@@ -1411,11 +1411,213 @@ exports[`Storyshots OGTextButton Raised 1`] = `
 </View>
 `;
 
+exports[`Storyshots OGTravelDate List 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+      "padding": 30,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "flex": -1,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "height": 72,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "flex": 0,
+            "flexDirection": "row",
+          }
+        }>
+        <View
+          style={
+            Object {
+              "alignSelf": "stretch",
+              "flex": 0,
+              "justifyContent": "center",
+              "width": 24,
+            }
+          }>
+          <View
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": undefined,
+                    "fontSize": 24,
+                  },
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.38)",
+                  },
+                  Object {
+                    "fontFamily": "Material Design Icons",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                ]
+              }>
+              
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "marginLeft": 32,
+            }
+          }>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "rgba(0, 0, 0, 0.87)",
+              }
+            }>
+            10.04.2017, 12:52 Uhr
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "rgba(0, 0, 0, 0.54)",
+              }
+            }>
+            Köln
+          </Text>
+        </View>
+      </View>
+    </View>
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 36,
+          "marginBottom": -18,
+          "marginLeft": 8,
+          "marginTop": -18,
+          "opacity": 0.38,
+          "width": 8,
+          "zIndex": 2,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "height": 72,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "flex": 0,
+            "flexDirection": "row",
+          }
+        }>
+        <View
+          style={
+            Object {
+              "alignSelf": "stretch",
+              "flex": 0,
+              "justifyContent": "center",
+              "width": 24,
+            }
+          }>
+          <View
+            style={
+              Object {
+                "height": 24,
+                "width": 24,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": undefined,
+                    "fontSize": 24,
+                  },
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.38)",
+                  },
+                  Object {
+                    "fontFamily": "Material Design Icons",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                ]
+              }>
+              
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "marginLeft": 32,
+            }
+          }>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "rgba(0, 0, 0, 0.87)",
+              }
+            }>
+            10.04.2017, 13:52 Uhr
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "rgba(0, 0, 0, 0.54)",
+              }
+            }>
+            Köln
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
 exports[`Storyshots OGTravelDate Normal 1`] = `
 <View
   style={
     Object {
-      "alignItems": "center",
       "backgroundColor": "#E0E0E0",
       "flex": 1,
       "justifyContent": "center",
@@ -1432,43 +1634,47 @@ exports[`Storyshots OGTravelDate Normal 1`] = `
     <View
       style={
         Object {
-          "alignItems": "center",
-          "alignSelf": "flex-start",
-          "height": 40,
+          "alignSelf": "stretch",
+          "flex": 0,
           "justifyContent": "center",
-          "marginRight": 16,
-          "width": 40,
+          "width": 24,
         }
       }>
-      <Text
-        accessible={true}
-        allowFontScaling={false}
-        ellipsizeMode="tail"
+      <View
         style={
-          Array [
-            Object {
-              "color": undefined,
-              "fontSize": 24,
-            },
-            Object {
-              "color": "rgba(0, 0, 0, 0.54)",
-              "flex": 0,
-            },
-            Object {
-              "fontFamily": "Material Design Icons",
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-            },
-          ]
+          Object {
+            "height": 24,
+            "width": 24,
+          }
         }>
-        
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={false}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 24,
+              },
+              Object {
+                "color": "rgba(0, 0, 0, 0.38)",
+              },
+              Object {
+                "fontFamily": "Material Design Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+            ]
+          }>
+          
+        </Text>
+      </View>
     </View>
     <View
       style={
         Object {
-          "alignSelf": "stretch",
-          "flex": 1,
+          "marginLeft": 32,
         }
       }>
       <Text
@@ -1480,7 +1686,7 @@ exports[`Storyshots OGTravelDate Normal 1`] = `
             "color": "rgba(0, 0, 0, 0.87)",
           }
         }>
-        10.04.2017 12:52
+        10.04.2017, 12:52 Uhr
       </Text>
       <Text
         accessible={true}

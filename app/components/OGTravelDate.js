@@ -17,7 +17,9 @@ type Props = {
 const OGTravelDate = ({ location, time, icon }: Props) => (
   <View style={styles.container}>
     <View style={styles.left}>
-      <Icon name={icon} style={styles.icon} size={24} />
+      <View style={styles.iconContainer}>
+        <Icon name={icon} style={styles.icon} size={24} />
+      </View>
     </View>
     <View style={styles.right}>
       <Text style={styles.primary}>{time}</Text>
@@ -34,21 +36,21 @@ const styles = StyleSheet.create({
     flex: 0,
     flexDirection: 'row'
   },
+  right: {
+    marginLeft: 32
+  },
   left: {
-    alignSelf: 'flex-start',
-    width: 40,
-    height: 40,
-    marginRight: 16,
-    alignItems: 'center',
+    width: 24,
+    alignSelf: 'stretch',
+    flex: 0,
     justifyContent: 'center'
   },
-  icon: {
-    flex: 0,
-    color: 'rgba(0, 0, 0, 0.54)'
+  iconContainer: {
+    width: 24,
+    height: 24
   },
-  right: {
-    flex: 1,
-    alignSelf: 'stretch'
+  icon: {
+    color: 'rgba(0, 0, 0, 0.38)'
   },
   primary: {
     color: 'rgba(0, 0, 0, 0.87)'
