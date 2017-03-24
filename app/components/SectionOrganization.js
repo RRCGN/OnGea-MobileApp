@@ -6,8 +6,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 import Section from './Section'
-import OGTravelDate from './OGTravelDate'
-import OGTravelDateList from './OGTravelDateList'
+import { List, ListItem } from './List'
 
 
 const SectionOrganization = ({ data }) => {
@@ -18,16 +17,16 @@ const SectionOrganization = ({ data }) => {
 
   return (
     <Section title="Kontakt">
-      <OGTravelDateList>
-        <OGTravelDate
+      <List>
+        <ListItem
           primary={coordinating.name}
           secondary={coordinating.phone}
         />
-        <OGTravelDate
+        <ListItem
           primary={host.name}
           secondary={host.phone}
         />
-      </OGTravelDateList>
+      </List>
     </Section>
   )
 }

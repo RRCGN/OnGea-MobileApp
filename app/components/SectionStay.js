@@ -6,12 +6,11 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import moment from 'moment'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import OGRecentData from '../containers/OGRecentData'
 import Section from './Section'
 import { Button, ButtonList } from './Button'
-import OGTravelDate from './OGTravelDate'
-import OGTravelDateList from './OGTravelDateList'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { List, ListItem } from './List'
 
 
 const SectionStay = ({ recentIndex, data }) => {
@@ -28,25 +27,25 @@ const SectionStay = ({ recentIndex, data }) => {
 
   return (
     <Section title="Unterkunft">
-      <OGTravelDateList>
-        <OGTravelDate
+      <List>
+        <ListItem
           primary={`${name}, Zimmer ${room}`}
           secondary={`${street}, ${zip} ${town}, ${country}`}
           icon="home"
         />
-      </OGTravelDateList>
-      <OGTravelDateList narrow>
-        <OGTravelDate
+      </List>
+      <List narrow>
+        <ListItem
           primary={moment(dateFrom).format('DD.MM.YYYY, HH:MM [Uhr]')}
           secondary="Check In"
           icon="arrow-right-bold"
         />
-        <OGTravelDate
+        <ListItem
           primary={moment(dateTo).format('DD.MM.YYYY, HH:MM [Uhr]')}
           secondary="Check Out"
           icon="arrow-left-bold"
         />
-      </OGTravelDateList>
+      </List>
       <ButtonList>
         <Button label="Mehr" />
       </ButtonList>

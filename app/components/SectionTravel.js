@@ -8,8 +8,7 @@ import { View, Text } from 'react-native'
 import moment from 'moment'
 import OGRecentData from '../containers/OGRecentData'
 import Section from './Section'
-import OGTravelDate from './OGTravelDate'
-import OGTravelDateList from './OGTravelDateList'
+import { List, ListItem } from './List'
 import { Button, ButtonList } from './Button'
 
 
@@ -37,18 +36,18 @@ const SectionTravel = ({ recentIndex, data }) => {
 
   return (
     <Section title={typeLocalization[type] + (!!number ? `: ${number}` : '')}>
-      <OGTravelDateList>
-        <OGTravelDate
+      <List>
+        <ListItem
           primary={moment(dateFrom).format('DD.MM.YYYY, HH:MM [Uhr]')}
           secondary={from}
           icon={icons[type][0]}
         />
-        <OGTravelDate
+        <ListItem
           primary={moment(dateTo).format('DD.MM.YYYY, HH:MM [Uhr]')}
           secondary={to}
           icon={icons[type][1]}
         />
-      </OGTravelDateList>
+      </List>
       <ButtonList>
         <Button label="Mehr" />
       </ButtonList>

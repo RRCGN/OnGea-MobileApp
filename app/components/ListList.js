@@ -5,26 +5,26 @@
 
 import React from 'react'
 import { View, Image, StyleSheet } from 'react-native'
-import OGTravelDate from './OGTravelDate'
 
 
 type Props = {
-  children: Array<ReactElement<OGTravelDate>>
+  children: Array<ReactElement<*>>,
+  travel?: boolean
 }
 
-const OGTravelDateList = ({ children }: Props) => (
+const ListList = ({ travel = false, children }: Props) => (
   <View style={styles.container}>
     {React.Children.map(children, (child, i) => (
       [
         <View key={i} style={styles.item}>{child}</View>,
-        (i < React.Children.count(children) - 1) &&
+        ((i < React.Children.count(children) - 1) && travel) &&
           <Image source={require('../assets/dots.png')} style={styles.dots} />
       ]
     ))}
   </View>
 )
 
-export default OGTravelDateList
+export default ListList
 
 
 const styles = StyleSheet.create({

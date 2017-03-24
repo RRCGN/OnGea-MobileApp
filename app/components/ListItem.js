@@ -14,7 +14,7 @@ type Props = {
   icon?: string
 }
 
-const OGTravelDate = ({ primary, secondary, icon }: Props) => (
+const ListItem = ({ primary, secondary, icon }: Props) => (
   <View style={styles.container}>
     <View style={styles.left}>
       <View style={styles.iconContainer}>
@@ -28,7 +28,7 @@ const OGTravelDate = ({ primary, secondary, icon }: Props) => (
   </View>
 )
 
-export default OGTravelDate
+export default ListItem
 
 
 const styles = StyleSheet.create({

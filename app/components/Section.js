@@ -7,7 +7,7 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
 
-type SectionProps = {
+type Props = {
   title: string,
   titleColor?: string,
   noBorder?: boolean,
@@ -19,7 +19,7 @@ const Section = ({
   titleColor = 'rgba(0, 0, 0, 0.54)',
   noBorder = false,
   children
-}: SectionProps) => (
+}: Props) => (
   <View style={[ styles.section, !noBorder && styles.border ]}>
     {title &&
       <View style={styles.subheader}>
