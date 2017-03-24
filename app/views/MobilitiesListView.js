@@ -15,12 +15,8 @@ import {
 import Snackbar from 'react-native-snackbar'
 import DataService from '../services/DataService'
 
-import Card from '../components/Card'
-import CardSegment from '../components/CardSegment'
-import CardTitle from '../components/CardTitle'
-
+import { Card, CardSegment, CardTitle } from '../components/Card'
 import { Button, ButtonList } from '../components/Button'
-
 import OGDate from '../components/OGDate'
 import OGDateList from '../components/OGDateList'
 

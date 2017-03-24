@@ -2,9 +2,7 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import { storiesOf, action } from '@kadira/react-native-storybook'
 
-import Card from '../Card'
-import CardSegment from '../CardSegment'
-import CardTitle from '../CardTitle'
+import { Card, CardSegment, CardTitle } from '../Card'
 
 
 export default storiesOf('Card', module)
@@ -18,14 +16,14 @@ export default storiesOf('Card', module)
       <Text>Lorem ipsum</Text>
     </Card>
   ))
-  .add('Card Segment small', () => (
+  .add('Card Segment, small', () => (
     <Card>
       <CardSegment small>
         <Text>Lorem ipsum</Text>
       </CardSegment>
     </Card>
   ))
-  .add('Card Segment small w/ border', () => (
+  .add('Card Segment, small, border', () => (
     <Card>
       <CardSegment small hasBorderBottom>
         <Text>Lorem ipsum</Text>
@@ -35,14 +33,14 @@ export default storiesOf('Card', module)
       </CardSegment>
     </Card>
   ))
-  .add('Card Segment big', () => (
+  .add('Card Segment, big', () => (
     <Card>
       <CardSegment big>
         <Text>Lorem ipsum</Text>
       </CardSegment>
     </Card>
   ))
-  .add('Card Segment big w/ border', () => (
+  .add('Card Segment, big, border', () => (
     <Card>
       <CardSegment big hasBorderBottom>
         <Text>Lorem ipsum</Text>

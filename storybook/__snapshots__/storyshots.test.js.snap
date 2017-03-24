@@ -470,7 +470,7 @@ exports[`Storyshots Button Text Button, Raised 1`] = `
 </View>
 `;
 
-exports[`Storyshots Card Card Segment big 1`] = `
+exports[`Storyshots Card Card Segment, big 1`] = `
 <View
   style={
     Object {
@@ -513,7 +513,7 @@ exports[`Storyshots Card Card Segment big 1`] = `
 </View>
 `;
 
-exports[`Storyshots Card Card Segment big w/ border 1`] = `
+exports[`Storyshots Card Card Segment, big, border 1`] = `
 <View
   style={
     Object {
@@ -576,7 +576,7 @@ exports[`Storyshots Card Card Segment big w/ border 1`] = `
 </View>
 `;
 
-exports[`Storyshots Card Card Segment small 1`] = `
+exports[`Storyshots Card Card Segment, small 1`] = `
 <View
   style={
     Object {
@@ -619,7 +619,7 @@ exports[`Storyshots Card Card Segment small 1`] = `
 </View>
 `;
 
-exports[`Storyshots Card Card Segment small w/ border 1`] = `
+exports[`Storyshots Card Card Segment, small, border 1`] = `
 <View
   style={
     Object {

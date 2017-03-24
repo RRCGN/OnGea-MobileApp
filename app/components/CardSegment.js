@@ -7,34 +7,37 @@ import React, { Component } from 'react'
 import { View, StyleSheet, Platform } from 'react-native'
 
 
-type CardSegmentProps = {
+type Props = {
   hasBorderBottom?: boolean,
   children: Array<ReactElement<*>>
 }
 
-type CardSegmentSmall = {
+type SmallProps = {
   small: boolean,
   big?: null
 }
 
-type CardSegmentBig = {
+type BigProps = {
   small?: null,
   big: boolean
 }
+
 
 const CardSegment = ({
   hasBorderBottom = false,
   small,
   big,
   children
-}: CardSegmentProps & (CardSegmentSmall | CardSegmentBig)) => (
+}: Props & (SmallProps | BigProps)) => (
   <View
     style={[
       hasBorderBottom && styles.segmentWithBorder,
       big && styles.segmentBigSpace,
       small && styles.segmentSmallSpace
     ]}
-  >{children}</View>
+  >
+    {children}
+  </View>
 )
 
 export default CardSegment

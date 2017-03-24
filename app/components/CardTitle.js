@@ -11,14 +11,14 @@ import TitleOnShadow from './TitleOnShadow'
 import ImageCaptionContainer from './ImageCaptionContainer'
 
 
-type CardTitleProps = {
+type Props = {
   image: ImageSource,
   title: string,
   onPress: () => void
 }
 
 
-const CardTitle = ({ image, title, onPress = () => {} }: CardTitleProps) => (
+const CardTitle = ({ image, title, onPress = () => {} }: Props) => (
   <Touchable
     rippleColor="rgba(0,0,0,0.5)"
     useForeground={true}
