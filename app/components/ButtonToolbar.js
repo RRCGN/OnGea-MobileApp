@@ -17,7 +17,7 @@ type Props = {
   onPress?: () => void
 }
 
-const ToolbarButton = ({
+const ButtonToolbar = ({
   androidIcon,
   iosIcon,
   floating = false,
@@ -43,7 +43,7 @@ const ToolbarButton = ({
   )
 }
 
-export default ToolbarButton
+export default ButtonToolbar
 
 
 const styles = StyleSheet.create({

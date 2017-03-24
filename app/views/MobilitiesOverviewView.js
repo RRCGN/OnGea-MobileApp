@@ -7,7 +7,7 @@ import { Platform, StatusBar, View } from 'react-native'
 import { NavigationActions } from 'react-navigation'
 import MobilitiesListView from './MobilitiesListView'
 import { Colors } from '../utils/constants'
-import ToolbarButton from '../components/ToolbarButton'
+import {ToolbarButton} from '../components/Button'
 
 export default class MobilitiesOverviewView extends Component {
   static navigationOptions = {

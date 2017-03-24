@@ -17,7 +17,8 @@ import * as Animatable from 'react-native-animatable'
 import HeaderImageScrollView,
   { TriggeringView } from 'react-native-image-header-scroll-view'
 
-import ToolbarButton from '../components/ToolbarButton'
+import { ToolbarButton } from '../components/Button'
+
 import TitleOnShadow from '../components/TitleOnShadow'
 import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
 import OGDate from '../components/OGDate'
