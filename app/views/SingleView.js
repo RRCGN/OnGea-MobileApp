@@ -17,12 +17,11 @@ import * as Animatable from 'react-native-animatable'
 import HeaderImageScrollView,
   { TriggeringView } from 'react-native-image-header-scroll-view'
 
-import { ToolbarButton } from '../components/Button'
+import ToolbarButton from '../components/ToolbarButton'
 
 import TitleOnShadow from '../components/TitleOnShadow'
 import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
-import OGDate from '../components/OGDate'
-import OGDateList from '../components/OGDateList'
+import DateRange from '../components/DateRange'
 import SectionTravel from '../subviews/SectionTravel'
 import SectionStay from '../subviews/SectionStay'
 import SectionOrganization from '../subviews/SectionOrganization'
@@ -106,10 +105,7 @@ export default class SingleView extends Component {
 
     return (
       <View style={{ backgroundColor: 'purple', padding: 16 }}>
-        <OGDateList>
-          <OGDate type="vom" date={params.dateFrom} light />
-          <OGDate type="bis" date={params.dateTo} light />
-        </OGDateList>
+        <DateRange light from={params.dateFrom} to={params.dateTo} />
       </View>
     )
   }
