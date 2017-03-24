@@ -9,9 +9,9 @@ import {
   TextInput,
   StyleSheet
 } from 'react-native'
-import ApiService from '../services/ApiService'
-import OGTextButton from '../components/OGTextButton'
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
+import ApiService from '../services/ApiService'
+import { Button } from '../components/Button'
 import { Colors } from '../utils/constants'
 
 
@@ -64,14 +64,14 @@ export default class LoginView extends Component {
           value={this.state.password}
           onChangeText={(password) => this.setState({ password })}
         />
-        <OGTextButton
+        <Button
           label="Login"
           backgroundColor={Colors.PRIMARY}
           color="white"
           style={styles.loginButton}
           onPress={this._handleLoginPress}
         />
-        <OGTextButton
+        <Button
           label="Zur Website"
           backgroundColor="white"
           color={Colors.PRIMARY}

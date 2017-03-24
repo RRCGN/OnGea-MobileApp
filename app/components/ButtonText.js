@@ -11,14 +11,14 @@ import { Colors } from '../utils/constants'
 
 
 type Props = {
-  onPress?: Function,
+  onPress?: () => void,
   label: string,
   color?: string,
   backgroundColor?: string,
   style?: any
 }
 
-const OGTextButton = ({
+const ButtonText = ({
   onPress = () => {},
   label,
   color,
@@ -45,7 +45,7 @@ const OGTextButton = ({
   </Touchable>
 )
 
-export default OGTextButton
+export default ButtonText
 
 
 const styles = StyleSheet.create({

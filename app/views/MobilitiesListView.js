@@ -19,9 +19,7 @@ import Card from '../components/Card'
 import CardSegment from '../components/CardSegment'
 import CardTitle from '../components/CardTitle'
 
-import OGTextButton from '../components/OGTextButton'
-import OGIconButton from '../components/OGIconButton'
-import ButtonList from '../components/ButtonList'
+import { Button, ButtonList } from '../components/Button'
 
 import OGDate from '../components/OGDate'
 import OGDateList from '../components/OGDateList'
@@ -92,7 +90,7 @@ export default class MobilitiesListView extends Component {
         {/* Action Buttons */}
         <CardSegment small>
           <ButtonList>
-            <OGTextButton label="Ansehen" />
+            <Button label="Ansehen" />
           </ButtonList>
         </CardSegment>
 

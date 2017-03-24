@@ -10,16 +10,12 @@ import { Colors } from '../utils/constants'
 
 
 type Props = {
-  onPress?: Function,
+  onPress?: () => void,
   icon: ReactElement<*>,
   style?: any
 }
 
-const OGIconButton = ({
-  onPress = () => {},
-  icon,
-  style
-}: Props) => (
+const ButtonIcon = ({ icon, style, onPress = () => {} }: Props) => (
   <Touchable onPress={onPress} rippleColor="rgba(0,0,0,0.2)" borderRadius={18}>
     <View style={[ styles.button, style ]}>
       {React.cloneElement(icon, { size: 18 })}
@@ -27,7 +23,7 @@ const OGIconButton = ({
   </Touchable>
 )
 
-export default OGIconButton
+export default ButtonIcon
 
 
 const styles = StyleSheet.create({

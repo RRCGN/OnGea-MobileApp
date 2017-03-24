@@ -8,8 +8,7 @@ import { View, Text, StyleSheet } from 'react-native'
 import moment from 'moment'
 import OGRecentData from '../containers/OGRecentData'
 import Section from './Section'
-import OGTextButton from './OGTextButton'
-import ButtonList from './ButtonList'
+import { Button, ButtonList } from './Button'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 
@@ -25,7 +24,7 @@ const SectionStay = ({ recentIndex, data }) => {
       <Text>{name}</Text>
       <Text>{dateFrom}, {dateTo}</Text>
       <ButtonList>
-        <OGTextButton label="Zeitplan" />
+        <Button label="Zeitplan" />
       </ButtonList>
     </Section>
   )

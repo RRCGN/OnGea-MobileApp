@@ -1,4 +1,4 @@
-exports[`Storyshots ButtonList Normal 1`] = `
+exports[`Storyshots Button Button List 1`] = `
 <View
   style={
     Object {
@@ -163,6 +163,307 @@ exports[`Storyshots ButtonList Normal 1`] = `
             </Text>
           </View>
         </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Button Icon Button 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}>
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "borderRadius": 18,
+              "flex": 0,
+              "height": 36,
+              "justifyContent": "center",
+              "width": 36,
+            },
+            undefined,
+          ]
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={false}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "#00796B",
+                "fontSize": 18,
+              },
+              undefined,
+              Object {
+                "fontFamily": "Material Design Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+            ]
+          }>
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Button Text Button, Flat 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}>
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "paddingLeft": 8,
+              "paddingRight": 8,
+            },
+            Object {
+              "borderRadius": 2,
+              "flex": -1,
+              "height": 36,
+              "justifyContent": "center",
+              "minWidth": 64,
+            },
+            Object {
+              "backgroundColor": "transparent",
+            },
+            undefined,
+          ]
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "fontSize": 14,
+                "fontWeight": "bold",
+                "textAlign": "center",
+              },
+              Object {
+                "color": "#00796B",
+              },
+            ]
+          }>
+          BUTTON
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Button Text Button, Flat, colored 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}>
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "paddingLeft": 8,
+              "paddingRight": 8,
+            },
+            Object {
+              "borderRadius": 2,
+              "flex": -1,
+              "height": 36,
+              "justifyContent": "center",
+              "minWidth": 64,
+            },
+            Object {
+              "backgroundColor": "transparent",
+            },
+            undefined,
+          ]
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "fontSize": 14,
+                "fontWeight": "bold",
+                "textAlign": "center",
+              },
+              Object {
+                "color": "red",
+              },
+            ]
+          }>
+          BUTTON
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Button Text Button, Raised 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}>
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "elevation": 2,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+            },
+            Object {
+              "borderRadius": 2,
+              "flex": -1,
+              "height": 36,
+              "justifyContent": "center",
+              "minWidth": 64,
+            },
+            Object {
+              "backgroundColor": "#00796B",
+            },
+            undefined,
+          ]
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "fontSize": 14,
+                "fontWeight": "bold",
+                "textAlign": "center",
+              },
+              Object {
+                "color": "white",
+              },
+            ]
+          }>
+          BUTTON
+        </Text>
       </View>
     </View>
   </View>
@@ -1106,307 +1407,6 @@ exports[`Storyshots OGDate Light Date 1`] = `
       }>
       10.04.2017
     </Text>
-  </View>
-</View>
-`;
-
-exports[`Storyshots OGIconButton Normal 1`] = `
-<View
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#E0E0E0",
-      "flex": 1,
-      "justifyContent": "center",
-    }
-  }>
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}>
-    <View>
-      <View
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "borderRadius": 18,
-              "flex": 0,
-              "height": 36,
-              "justifyContent": "center",
-              "width": 36,
-            },
-            undefined,
-          ]
-        }>
-        <Text
-          accessible={true}
-          allowFontScaling={false}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "#00796B",
-                "fontSize": 18,
-              },
-              undefined,
-              Object {
-                "fontFamily": "Material Design Icons",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-            ]
-          }>
-          
-        </Text>
-      </View>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`Storyshots OGTextButton Flat 1`] = `
-<View
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#E0E0E0",
-      "flex": 1,
-      "justifyContent": "center",
-    }
-  }>
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}>
-    <View>
-      <View
-        style={
-          Array [
-            Object {
-              "paddingLeft": 8,
-              "paddingRight": 8,
-            },
-            Object {
-              "borderRadius": 2,
-              "flex": -1,
-              "height": 36,
-              "justifyContent": "center",
-              "minWidth": 64,
-            },
-            Object {
-              "backgroundColor": "transparent",
-            },
-            undefined,
-          ]
-        }>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "fontSize": 14,
-                "fontWeight": "bold",
-                "textAlign": "center",
-              },
-              Object {
-                "color": "#00796B",
-              },
-            ]
-          }>
-          BUTTON
-        </Text>
-      </View>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`Storyshots OGTextButton Flat w/ custom color 1`] = `
-<View
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#E0E0E0",
-      "flex": 1,
-      "justifyContent": "center",
-    }
-  }>
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}>
-    <View>
-      <View
-        style={
-          Array [
-            Object {
-              "paddingLeft": 8,
-              "paddingRight": 8,
-            },
-            Object {
-              "borderRadius": 2,
-              "flex": -1,
-              "height": 36,
-              "justifyContent": "center",
-              "minWidth": 64,
-            },
-            Object {
-              "backgroundColor": "transparent",
-            },
-            undefined,
-          ]
-        }>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "fontSize": 14,
-                "fontWeight": "bold",
-                "textAlign": "center",
-              },
-              Object {
-                "color": "red",
-              },
-            ]
-          }>
-          BUTTON
-        </Text>
-      </View>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`Storyshots OGTextButton Raised 1`] = `
-<View
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#E0E0E0",
-      "flex": 1,
-      "justifyContent": "center",
-    }
-  }>
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "opacity": 1,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}>
-    <View>
-      <View
-        style={
-          Array [
-            Object {
-              "elevation": 2,
-              "paddingLeft": 16,
-              "paddingRight": 16,
-            },
-            Object {
-              "borderRadius": 2,
-              "flex": -1,
-              "height": 36,
-              "justifyContent": "center",
-              "minWidth": 64,
-            },
-            Object {
-              "backgroundColor": "#00796B",
-            },
-            undefined,
-          ]
-        }>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "fontSize": 14,
-                "fontWeight": "bold",
-                "textAlign": "center",
-              },
-              Object {
-                "color": "white",
-              },
-            ]
-          }>
-          BUTTON
-        </Text>
-      </View>
-    </View>
   </View>
 </View>
 `;

@@ -10,8 +10,7 @@ import OGRecentData from '../containers/OGRecentData'
 import Section from './Section'
 import OGTravelDate from './OGTravelDate'
 import OGTravelDateList from './OGTravelDateList'
-import OGTextButton from './OGTextButton'
-import ButtonList from './ButtonList'
+import { Button, ButtonList } from './Button'
 
 
 const SectionTravel = ({ recentIndex, data }) => {
@@ -51,7 +50,7 @@ const SectionTravel = ({ recentIndex, data }) => {
         />
       </OGTravelDateList>
       <ButtonList>
-        <OGTextButton label="Mehr" />
+        <Button label="Mehr" />
       </ButtonList>
     </Section>
   )
