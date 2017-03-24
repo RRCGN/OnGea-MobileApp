@@ -27,7 +27,7 @@ exports[`<ToolbarButton /> renders correctly 1`] = `
       style={
         Array [
           Object {
-            "color": "white",
+            "color": "rgba(255, 255, 255, 1)",
             "fontSize": 24,
           },
           Array [
@@ -76,7 +76,7 @@ exports[`<ToolbarButton /> renders correctly as floating button 1`] = `
       style={
         Array [
           Object {
-            "color": "white",
+            "color": "rgba(255, 255, 255, 1)",
             "fontSize": 24,
           },
           Array [
@@ -132,7 +132,7 @@ exports[`<ToolbarButton /> renders correctly with onPress 1`] = `
       style={
         Array [
           Object {
-            "color": "white",
+            "color": "rgba(255, 255, 255, 1)",
             "fontSize": 24,
           },
           Array [

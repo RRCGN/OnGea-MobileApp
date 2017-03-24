@@ -483,7 +483,7 @@ exports[`Storyshots Card Card Segment, big 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "white",
+        "backgroundColor": "rgba(255, 255, 255, 1)",
         "borderRadius": 2,
         "shadowOffset": Object {
           "height": 1,
@@ -526,7 +526,7 @@ exports[`Storyshots Card Card Segment, big, border 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "white",
+        "backgroundColor": "rgba(255, 255, 255, 1)",
         "borderRadius": 2,
         "shadowOffset": Object {
           "height": 1,
@@ -539,7 +539,7 @@ exports[`Storyshots Card Card Segment, big, border 1`] = `
       style={
         Array [
           Object {
-            "borderBottomColor": "#E0E0E0",
+            "borderBottomColor": "rgba(0, 0, 0, 0.12)",
             "borderBottomWidth": 1,
           },
           Object {
@@ -589,7 +589,7 @@ exports[`Storyshots Card Card Segment, small 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "white",
+        "backgroundColor": "rgba(255, 255, 255, 1)",
         "borderRadius": 2,
         "shadowOffset": Object {
           "height": 1,
@@ -632,7 +632,7 @@ exports[`Storyshots Card Card Segment, small, border 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "white",
+        "backgroundColor": "rgba(255, 255, 255, 1)",
         "borderRadius": 2,
         "shadowOffset": Object {
           "height": 1,
@@ -645,7 +645,7 @@ exports[`Storyshots Card Card Segment, small, border 1`] = `
       style={
         Array [
           Object {
-            "borderBottomColor": "#E0E0E0",
+            "borderBottomColor": "rgba(0, 0, 0, 0.12)",
             "borderBottomWidth": 1,
           },
           undefined,
@@ -695,7 +695,7 @@ exports[`Storyshots Card Card Title 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "white",
+        "backgroundColor": "rgba(255, 255, 255, 1)",
         "borderRadius": 2,
         "shadowOffset": Object {
           "height": 1,
@@ -784,7 +784,7 @@ exports[`Storyshots Card Card Title 1`] = `
                   Array [
                     Object {
                       "backgroundColor": "transparent",
-                      "color": "white",
+                      "color": "rgba(255, 255, 255, 1)",
                     },
                     Object {
                       "fontSize": 24,
@@ -815,7 +815,7 @@ exports[`Storyshots Card Card View 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "white",
+        "backgroundColor": "rgba(255, 255, 255, 1)",
         "borderRadius": 2,
         "shadowOffset": Object {
           "height": 1,
@@ -862,7 +862,7 @@ exports[`Storyshots Hint Alert Hint 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "white",
+          "color": "rgba(255, 255, 255, 1)",
           "flex": 1,
         }
       }>
@@ -929,7 +929,7 @@ exports[`Storyshots Hint Alert Hint w/ icon 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "white",
+          "color": "rgba(255, 255, 255, 1)",
           "flex": 1,
         }
       }>
@@ -967,7 +967,7 @@ exports[`Storyshots Hint Nice Hint 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "white",
+          "color": "rgba(255, 255, 255, 1)",
           "flex": 1,
         }
       }>
@@ -1034,7 +1034,7 @@ exports[`Storyshots Hint Nice Hint w/ icon 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "white",
+          "color": "rgba(255, 255, 255, 1)",
           "flex": 1,
         }
       }>
@@ -1094,7 +1094,7 @@ exports[`Storyshots Hint Touchable Hint 1`] = `
           ellipsizeMode="tail"
           style={
             Object {
-              "color": "white",
+              "color": "rgba(255, 255, 255, 1)",
               "flex": 1,
             }
           }>
@@ -1134,7 +1134,7 @@ exports[`Storyshots Hint Warning Hint 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "white",
+          "color": "rgba(255, 255, 255, 1)",
           "flex": 1,
         }
       }>
@@ -1201,7 +1201,7 @@ exports[`Storyshots Hint Warning Hint w/ icon 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "white",
+          "color": "rgba(255, 255, 255, 1)",
           "flex": 1,
         }
       }>
@@ -1779,7 +1779,7 @@ exports[`Storyshots OGDate Date 1`] = `
       style={
         Array [
           Object {
-            "color": "rgba(0,0,0,0.54)",
+            "color": "rgba(0, 0, 0, 0.54)",
             "fontSize": 12,
           },
           false,
@@ -1794,7 +1794,7 @@ exports[`Storyshots OGDate Date 1`] = `
       style={
         Array [
           Object {
-            "color": "rgba(0,0,0,0.87)",
+            "color": "rgba(0, 0, 0, 0.87)",
             "fontSize": 16,
             "fontWeight": "500",
           },
@@ -1840,7 +1840,7 @@ exports[`Storyshots OGDate Date List 1`] = `
           style={
             Array [
               Object {
-                "color": "rgba(0,0,0,0.54)",
+                "color": "rgba(0, 0, 0, 0.54)",
                 "fontSize": 12,
               },
               false,
@@ -1855,7 +1855,7 @@ exports[`Storyshots OGDate Date List 1`] = `
           style={
             Array [
               Object {
-                "color": "rgba(0,0,0,0.87)",
+                "color": "rgba(0, 0, 0, 0.87)",
                 "fontSize": 16,
                 "fontWeight": "500",
               },
@@ -1881,7 +1881,7 @@ exports[`Storyshots OGDate Date List 1`] = `
           style={
             Array [
               Object {
-                "color": "rgba(0,0,0,0.54)",
+                "color": "rgba(0, 0, 0, 0.54)",
                 "fontSize": 12,
               },
               false,
@@ -1896,7 +1896,7 @@ exports[`Storyshots OGDate Date List 1`] = `
           style={
             Array [
               Object {
-                "color": "rgba(0,0,0,0.87)",
+                "color": "rgba(0, 0, 0, 0.87)",
                 "fontSize": 16,
                 "fontWeight": "500",
               },
@@ -1929,7 +1929,7 @@ exports[`Storyshots OGDate Light Date 1`] = `
       style={
         Array [
           Object {
-            "color": "rgba(0,0,0,0.54)",
+            "color": "rgba(0, 0, 0, 0.54)",
             "fontSize": 12,
           },
           Object {
@@ -1946,7 +1946,7 @@ exports[`Storyshots OGDate Light Date 1`] = `
       style={
         Array [
           Object {
-            "color": "rgba(0,0,0,0.87)",
+            "color": "rgba(0, 0, 0, 0.87)",
             "fontSize": 16,
             "fontWeight": "500",
           },

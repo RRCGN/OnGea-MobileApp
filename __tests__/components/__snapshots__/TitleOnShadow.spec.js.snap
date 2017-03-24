@@ -29,7 +29,7 @@ exports[`<TitleOnShadow /> renders correctly 1`] = `
       Array [
         Object {
           "backgroundColor": "transparent",
-          "color": "white",
+          "color": "rgba(255, 255, 255, 1)",
         },
         Object {
           "fontSize": 24,
@@ -46,7 +46,7 @@ exports[`<TitleOnShadow /> renders correctly 1`] = `
       Array [
         Object {
           "backgroundColor": "transparent",
-          "color": "white",
+          "color": "rgba(255, 255, 255, 1)",
         },
         Object {
           "fontSize": 14,
@@ -89,7 +89,7 @@ exports[`<TitleOnShadow /> renders correctly without subtitle 1`] = `
       Array [
         Object {
           "backgroundColor": "transparent",
-          "color": "white",
+          "color": "rgba(255, 255, 255, 1)",
         },
         Object {
           "fontSize": 24,
