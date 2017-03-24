@@ -5,6 +5,7 @@
 
 import React, { Component } from 'react'
 import { View, StyleSheet, Platform } from 'react-native'
+import { Colors } from '../utils/constants'
 
 
 type Props = {
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
     padding: 16
   },
   segmentWithBorder: {
-    borderBottomColor: '#E0E0E0',
+    borderBottomColor: Colors.DARK_DIVIDER,
     borderBottomWidth: 1
   }
 })

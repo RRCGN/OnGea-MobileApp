@@ -5,6 +5,7 @@
 
 import React, { Component } from 'react'
 import { View, StyleSheet, Platform } from 'react-native'
+import { Colors } from '../utils/constants'
 
 
 type Props = {
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
         elevation: 2
       }
     }),
-    backgroundColor: 'white',
+    backgroundColor: Colors.LIGHT_PRIMARY,
     borderRadius: 2
   }
 })

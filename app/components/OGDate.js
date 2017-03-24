@@ -6,6 +6,7 @@
 import React from 'react'
 import moment from 'moment'
 import { View, Text, StyleSheet } from 'react-native'
+import { Colors } from '../utils/constants'
 
 
 type OGDateProps = {
@@ -31,12 +32,12 @@ export default OGDate
 const styles = StyleSheet.create({
   typeText: {
     fontSize: 12,
-    color: 'rgba(0,0,0,0.54)'
+    color: Colors.DARK_SECONDARY
   },
   dateText: {
     fontSize: 16,
     fontWeight: '500',
-    color: 'rgba(0,0,0,0.87)'
+    color: Colors.DARK_PRIMARY
   },
   lightText: {
     color: 'white'

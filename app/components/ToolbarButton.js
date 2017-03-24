@@ -6,6 +6,7 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import TouchableItem from 'react-navigation/src/views/TouchableItem'
+import { Colors } from '../utils/constants'
 import PlatformIcon from './PlatformIcon'
 
 
@@ -34,8 +35,8 @@ const ToolbarButton = ({
           androidIcon={androidIcon}
           iosIcon={iosIcon}
           size={24}
-          color="white"
-          style={[styles.icon, floating && styles.floating]}
+          color={Colors.LIGHT_PRIMARY}
+          style={[ styles.icon, floating && styles.floating ]}
         />
       </View>
     </TouchableItem>

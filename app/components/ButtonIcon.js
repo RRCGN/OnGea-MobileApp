@@ -16,7 +16,11 @@ type Props = {
 }
 
 const ButtonIcon = ({ icon, style, onPress = () => {} }: Props) => (
-  <Touchable onPress={onPress} rippleColor="rgba(0,0,0,0.2)" borderRadius={18}>
+  <Touchable
+    onPress={onPress}
+    rippleColor={Colors.RIPPLE_DARK}
+    borderRadius={18}
+  >
     <View style={[ styles.button, style ]}>
       {React.cloneElement(icon, { size: 18 })}
     </View>

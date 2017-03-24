@@ -8,9 +8,9 @@ import { View, Text, StyleSheet } from 'react-native'
 import moment from 'moment'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import findMostRecentData from '../containers/recent-data'
-import Section from '../Section'
-import { Button, ButtonList } from '../Button'
-import { List, ListItem } from '../List'
+import Section from '../components/Section'
+import { Button, ButtonList } from '../components/Button'
+import { List, ListItem } from '../components/List'
 
 
 const SectionStay = ({ recentIndex, data }) => {
@@ -54,13 +54,3 @@ const SectionStay = ({ recentIndex, data }) => {
 }
 
 export default findMostRecentData(SectionStay)
-
-
-const styles = StyleSheet.create({
-  primary: {
-    color: 'rgba(0, 0, 0, 0.87)'
-  },
-  secondary: {
-    color: 'rgba(0, 0, 0, 0.54)'
-  }
-})

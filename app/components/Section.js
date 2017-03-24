@@ -5,6 +5,7 @@
 
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
+import { Colors } from '../utils/constants'
 
 
 type Props = {
@@ -16,7 +17,7 @@ type Props = {
 
 const Section = ({
   title,
-  titleColor = 'rgba(0, 0, 0, 0.54)',
+  titleColor = Colors.DARK_SECONDARY,
   noBorder = false,
   children
 }: Props) => (
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
   },
   border: {
     borderBottomWidth: 1,
-    borderBottomColor: 'rgba(0, 0, 0, 0.12)'
+    borderBottomColor: Colors.DARK_DIVIDER
   },
   subheader: {
     height: 48,

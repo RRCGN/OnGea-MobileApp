@@ -27,7 +27,7 @@ const ButtonText = ({
 }: Props) => (
   <Touchable
     onPress={onPress}
-    rippleColor="rgba(0,0,0,0.5)"
+    rippleColor={Colors.RIPPLE_DARK}
     borderRadius={backgroundColor == null ? 2 : 0}
   >
     <View

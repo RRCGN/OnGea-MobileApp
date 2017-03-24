@@ -7,6 +7,7 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
+import { Colors } from '../utils/constants'
 
 
 type Props = {
@@ -16,7 +17,7 @@ type Props = {
 
 const TitleOnShadow = ({ title, subtitle }: Props) => (
   <LinearGradient
-    colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.8)']}
+    colors={[ 'rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.8)' ]}
     style={styles.overlay}
   >
     <Text style={[styles.text, styles.title]}>{title}</Text>
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
     paddingRight: 16
   },
   text: {
-    color: 'white',
+    color: Colors.LIGHT_PRIMARY,
     backgroundColor: 'transparent'
   },
   title: {

@@ -6,6 +6,7 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { Colors } from '../utils/constants'
 
 
 type Props = {
@@ -50,12 +51,12 @@ const styles = StyleSheet.create({
     height: 24
   },
   icon: {
-    color: 'rgba(0, 0, 0, 0.38)'
+    color: Colors.DARK_TERTIARY
   },
   primary: {
-    color: 'rgba(0, 0, 0, 0.87)'
+    color: Colors.DARK_PRIMARY
   },
   secondary: {
-    color: 'rgba(0, 0, 0, 0.54)'
+    color: Colors.DARK_SECONDARY
   }
 })

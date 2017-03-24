@@ -6,6 +6,7 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import Touchable from './Touchable'
+import { Colors } from '../utils/constants'
 
 
 type HintProps = {
@@ -27,7 +28,7 @@ const Hint = ({ type = 'nice', icon, text, onPress }: HintProps) => {
 
   if (onPress) return (
     <Touchable
-      rippleColor="rgba(0,0,0,0.2)"
+      rippleColor={Colors.RIPPLE_DARK}
       useForeground
       onPress={onPress}
     >
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
   },
   text: {
     flex: 1,
-    color: 'white'
+    color: Colors.LIGHT_PRIMARY
   },
   icon: {
     width: 18,

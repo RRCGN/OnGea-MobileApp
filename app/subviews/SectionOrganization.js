@@ -5,8 +5,8 @@
 
 import React from 'react'
 import { View, Text } from 'react-native'
-import Section from '../Section'
-import { List, ListItem } from '../List'
+import Section from '../components/Section'
+import { List, ListItem } from '../components/List'
 
 
 const SectionOrganization = ({ data }) => {

@@ -7,9 +7,9 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import moment from 'moment'
 import findMostRecentData from '../containers/recent-data'
-import Section from '../Section'
-import { List, ListItem } from '../List'
-import { Button, ButtonList } from '../Button'
+import Section from '../components/Section'
+import { List, ListItem } from '../components/List'
+import { Button, ButtonList } from '../components/Button'
 
 
 const SectionTravel = ({ recentIndex, data }) => {

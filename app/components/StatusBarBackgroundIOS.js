@@ -17,7 +17,7 @@ const StatusBarBackgroundIOS = ({ type = 'light' }: Props) => {
   if (Platform.OS === 'ios') {
     return (
       <LinearGradient
-        colors={['rgba(0, 0, 0, 0.3)', 'rgba(0, 0, 0, 0)']}
+        colors={[ 'rgba(0, 0, 0, 0.3)', 'rgba(0, 0, 0, 0)' ]}
         style={styles.background}
       />
     )
