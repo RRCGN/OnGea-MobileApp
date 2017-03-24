@@ -6,10 +6,9 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import moment from 'moment'
-import OGRecentData from '../containers/OGRecentData'
-import Section from './Section'
-import { Button, ButtonList } from './Button'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import findMostRecentData from '../containers/recent-data'
+import Section from '../Section'
+import { Button, ButtonList } from '../Button'
 
 
 const SectionStay = ({ recentIndex, data }) => {
@@ -30,7 +29,7 @@ const SectionStay = ({ recentIndex, data }) => {
   )
 }
 
-export default OGRecentData(SectionStay)
+export default findMostRecentData(SectionStay)
 
 
 const styles = StyleSheet.create({

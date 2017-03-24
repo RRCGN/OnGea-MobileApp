@@ -7,17 +7,17 @@ import React, { Component } from 'react'
 import DateUtils from '../utils/date-utils'
 
 
-export type OGDataProps = {
+export type DataDate = {
   data: any
 }
 
-export default function OGRecentData(
-  WrappedComponent: ReactClass<OGDataProps>
+export default function FindMostRecentData(
+  WrappedComponent: ReactClass<DataDate>
 ): ReactClass<{}> {
   return class extends Component {
     state: { mostRecentDateIndex: number }
 
-    constructor(props: OGDataProps) {
+    constructor(props: DataDate) {
       super(props)
 
       const { index } = DateUtils.getMostRecent(props.data)

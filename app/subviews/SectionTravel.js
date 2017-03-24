@@ -6,10 +6,10 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 import moment from 'moment'
-import OGRecentData from '../containers/OGRecentData'
-import Section from './Section'
-import { List, ListItem } from './List'
-import { Button, ButtonList } from './Button'
+import findMostRecentData from '../containers/recent-data'
+import Section from '../Section'
+import { List, ListItem } from '../List'
+import { Button, ButtonList } from '../Button'
 
 
 const SectionTravel = ({ recentIndex, data }) => {
@@ -55,4 +55,4 @@ const SectionTravel = ({ recentIndex, data }) => {
   )
 }
 
-export default OGRecentData(SectionTravel)
+export default findMostRecentData(SectionTravel)
