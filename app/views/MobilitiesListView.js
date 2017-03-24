@@ -17,8 +17,7 @@ import DataService from '../services/DataService'
 
 import { Card, CardSegment, CardTitle } from '../components/Card'
 import { Button, ButtonList } from '../components/Button'
-import OGDate from '../components/OGDate'
-import OGDateList from '../components/OGDateList'
+import DateRange from '../components/DateRange'
 
 
 type MLVProps = {
@@ -77,10 +76,7 @@ export default class MobilitiesListView extends Component {
 
         {/* Dates */}
         <CardSegment big>
-          <OGDateList>
-            <OGDate type="vom" date={data.dateFrom} />
-            <OGDate type="bis" date={data.dateTo} />
-          </OGDateList>
+          <DateRange from={data.dateFrom} to={data.dateTo} />
         </CardSegment>
 
         {/* Action Buttons */}

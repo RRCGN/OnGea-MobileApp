@@ -834,6 +834,328 @@ exports[`Storyshots Card Card View 1`] = `
 </View>
 `;
 
+exports[`Storyshots DateRange Date Range, dark 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 0,
+        },
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+          undefined,
+        ],
+      ]
+    }>
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.54)",
+            "fontSize": 12,
+          }
+        }>
+        vom
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.87)",
+            "fontSize": 16,
+            "fontWeight": "bold",
+          }
+        }>
+        10.04.2017
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.54)",
+            "fontSize": 12,
+          }
+        }>
+        bis
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.87)",
+            "fontSize": 16,
+            "fontWeight": "bold",
+          }
+        }>
+        16.04.2017
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots DateRange Date Range, light 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 0,
+        },
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+          undefined,
+        ],
+      ]
+    }>
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(255, 255, 255, 0.7)",
+            "fontSize": 12,
+          }
+        }>
+        vom
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(255, 255, 255, 1)",
+            "fontSize": 16,
+            "fontWeight": "bold",
+          }
+        }>
+        10.04.2017
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(255, 255, 255, 0.7)",
+            "fontSize": 12,
+          }
+        }>
+        bis
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(255, 255, 255, 1)",
+            "fontSize": 16,
+            "fontWeight": "bold",
+          }
+        }>
+        16.04.2017
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots DateRange Single Date, dark 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 0,
+        },
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+          undefined,
+        ],
+      ]
+    }>
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.54)",
+            "fontSize": 12,
+          }
+        }>
+        am
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.87)",
+            "fontSize": 16,
+            "fontWeight": "bold",
+          }
+        }>
+        10.04.2017
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots DateRange Single Date, light 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#E0E0E0",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 0,
+        },
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+          undefined,
+        ],
+      ]
+    }>
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+          },
+          undefined,
+        ]
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(255, 255, 255, 0.7)",
+            "fontSize": 12,
+          }
+        }>
+        am
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(255, 255, 255, 1)",
+            "fontSize": 16,
+            "fontWeight": "bold",
+          }
+        }>
+        10.04.2017
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
 exports[`Storyshots Hint Alert Hint 1`] = `
 <View
   style={
@@ -1757,206 +2079,6 @@ exports[`Storyshots List List, Travel 1`] = `
         </View>
       </View>
     </View>
-  </View>
-</View>
-`;
-
-exports[`Storyshots OGDate Date 1`] = `
-<View
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#E0E0E0",
-      "flex": 1,
-      "justifyContent": "center",
-    }
-  }>
-  <View>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "rgba(0, 0, 0, 0.54)",
-            "fontSize": 12,
-          },
-          false,
-        ]
-      }>
-      from
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "rgba(0, 0, 0, 0.87)",
-            "fontSize": 16,
-            "fontWeight": "500",
-          },
-          false,
-        ]
-      }>
-      10.04.2017
-    </Text>
-  </View>
-</View>
-`;
-
-exports[`Storyshots OGDate Date List 1`] = `
-<View
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#E0E0E0",
-      "flex": 1,
-      "justifyContent": "center",
-    }
-  }>
-  <View
-    style={
-      Object {
-        "flexDirection": "row",
-        "marginLeft": -16,
-        "marginRight": -16,
-      }
-    }>
-    <View
-      style={
-        Object {
-          "paddingLeft": 16,
-          "paddingRight": 16,
-        }
-      }>
-      <View>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgba(0, 0, 0, 0.54)",
-                "fontSize": 12,
-              },
-              false,
-            ]
-          }>
-          from
-        </Text>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgba(0, 0, 0, 0.87)",
-                "fontSize": 16,
-                "fontWeight": "500",
-              },
-              false,
-            ]
-          }>
-          10.04.2024
-        </Text>
-      </View>
-    </View>
-    <View
-      style={
-        Object {
-          "paddingLeft": 16,
-          "paddingRight": 16,
-        }
-      }>
-      <View>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgba(0, 0, 0, 0.54)",
-                "fontSize": 12,
-              },
-              false,
-            ]
-          }>
-          to
-        </Text>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgba(0, 0, 0, 0.87)",
-                "fontSize": 16,
-                "fontWeight": "500",
-              },
-              false,
-            ]
-          }>
-          16.04.2024
-        </Text>
-      </View>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`Storyshots OGDate Light Date 1`] = `
-<View
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#E0E0E0",
-      "flex": 1,
-      "justifyContent": "center",
-    }
-  }>
-  <View>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "rgba(0, 0, 0, 0.54)",
-            "fontSize": 12,
-          },
-          Object {
-            "color": "white",
-          },
-        ]
-      }>
-      from
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "rgba(0, 0, 0, 0.87)",
-            "fontSize": 16,
-            "fontWeight": "500",
-          },
-          Object {
-            "color": "white",
-          },
-        ]
-      }>
-      10.04.2017
-    </Text>
   </View>
 </View>
 `;

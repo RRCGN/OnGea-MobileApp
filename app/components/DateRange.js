@@ -1,0 +1,62 @@
+/**
+ * Component to display a date with some text above it.
+ * @flow
+ */
+
+import React from 'react'
+import moment from 'moment'
+import { Row, Column, Flex } from './Layout'
+import { View, Text, StyleSheet } from 'react-native'
+import { Colors } from '../utils/constants'
+
+
+type Props = {
+  from: string,
+  to?: string,
+  light?: boolean
+}
+
+
+const DateRange = ({ from, to, light = false }: Props) => {
+  const secondary = light ? styles.light_s : styles.dark_s
+  const primary = light ? styles.light_p : styles.dark_p
+
+  return (
+    <Row flex={0}>
+      <Flex>
+        <Text style={secondary}>{to ? 'vom' : 'am'}</Text>
+        <Text style={primary}>{moment(from).format('DD.MM.YYYY')}</Text>
+      </Flex>
+      {to &&
+        <Flex>
+          <Text style={secondary}>bis</Text>
+          <Text style={primary}>{moment(to).format('DD.MM.YYYY')}</Text>
+        </Flex>
+      }
+    </Row>
+  )
+}
+
+export default DateRange
+
+
+const styles = StyleSheet.create({
+  dark_s: {
+    fontSize: 12,
+    color: Colors.DARK_SECONDARY
+  },
+  dark_p: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: Colors.DARK_PRIMARY
+  },
+  light_s: {
+    fontSize: 12,
+    color: Colors.LIGHT_SECONDARY
+  },
+  light_p: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: Colors.LIGHT_PRIMARY
+  },
+})
