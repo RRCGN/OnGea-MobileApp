@@ -15,7 +15,7 @@ import ListManager from '../components/ListManager'
 import ListItemFancy from '../components/ListItemFancy'
 
 
-const SectionStay = ({ recentIndex, data }) => {
+const SectionStay = ({ recentIndex, data, navigation }) => {
   const {
     name,
     street,
@@ -59,7 +59,10 @@ const SectionStay = ({ recentIndex, data }) => {
         )}
       />
       <ButtonFlatGrid>
-        <Button label="Mehr" />
+        <Button
+          label="Mehr"
+          onPress={() => navigation.navigate('Detail', data)}
+        />
       </ButtonFlatGrid>
     </Section>
   )

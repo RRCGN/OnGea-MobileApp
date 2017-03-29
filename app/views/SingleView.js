@@ -115,9 +115,9 @@ export default class SingleView extends Component {
 
     return (
       <View>
-        <SectionTravel data={params.travels} />
-        <SectionStay data={params.stays} />
-        <SectionSchedule data={params.schedule} />
+        <SectionTravel data={params.travels} navigation={this.props.navigation} />
+        <SectionStay data={params.stays} navigation={this.props.navigation} />
+        <SectionSchedule data={params.schedule} navigation={this.props.navigation} />
         <SectionOrganization data={params.organizations} />
         <SectionDownloads data={params.downloads} />
       </View>

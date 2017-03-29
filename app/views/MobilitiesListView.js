@@ -83,7 +83,10 @@ export default class MobilitiesListView extends Component {
         {/* Action Buttons */}
         <CardSegment big>
           <ButtonFlatGrid>
-            <Button label="Ansehen" />
+            <Button
+              label="Ansehen"
+              onPress={() => this.props.navigation.navigate('Single', data)}
+            />
           </ButtonFlatGrid>
         </CardSegment>
 

@@ -13,7 +13,7 @@ import ButtonFlatGrid from '../components/ButtonFlatGrid'
 import ListItemStandard from '../components/ListItemStandard'
 
 
-const SectionStay = ({ recentIndex, data }) => {
+const SectionStay = ({ recentIndex, data, navigation }) => {
   const {
     name,
     dateFrom,
@@ -30,7 +30,10 @@ const SectionStay = ({ recentIndex, data }) => {
         secondary={`${dateFromString} bis ${dateToString}`}
       />
       <ButtonFlatGrid>
-        <Button label="Zeitplan" />
+        <Button
+          label="Zeitplan"
+          onPress={() => navigation.navigate('Detail', data)}
+        />
       </ButtonFlatGrid>
     </Section>
   )
