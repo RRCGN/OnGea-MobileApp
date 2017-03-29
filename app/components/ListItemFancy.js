@@ -4,7 +4,7 @@
  */
 
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, Image, StyleSheet } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Colors } from '../utils/constants'
 
@@ -12,10 +12,11 @@ import { Colors } from '../utils/constants'
 type Props = {
   primary: string,
   secondary: string,
-  icon?: string
+  icon?: string,
+  isLinked?: boolean
 }
 
-const ListItem = ({ primary, secondary, icon }: Props) => (
+const ListItemFancy = ({ primary, secondary, icon, isLinked = false }: Props) => (
   <View style={styles.container}>
     <View style={styles.left}>
       <View style={styles.iconContainer}>
@@ -26,23 +27,28 @@ const ListItem = ({ primary, secondary, icon }: Props) => (
       <Text style={styles.primary}>{primary}</Text>
       <Text style={styles.secondary}>{secondary}</Text>
     </View>
+    {isLinked &&
+      <Image source={require('../assets/dots.png')} style={styles.dots} />
+    }
   </View>
 )
 
-export default ListItem
+export default ListItemFancy
 
 
 const styles = StyleSheet.create({
   container: {
     flex: 0,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    position: 'relative',
+    height: 72,
+    alignItems: 'center'
   },
   right: {
     marginLeft: 32
   },
   left: {
     width: 24,
-    alignSelf: 'stretch',
     flex: 0,
     justifyContent: 'center'
   },
@@ -58,5 +64,14 @@ const styles = StyleSheet.create({
   },
   secondary: {
     color: Colors.DARK_SECONDARY
+  },
+  dots: {
+    position: 'absolute',
+    top: 54,
+    left: 8,
+    width: 8,
+    height: 36,
+    zIndex: 2,
+    opacity: 0.38
   }
 })
