@@ -13,36 +13,21 @@ type FlexProps = {
   style?: any
 }
 
-type RowColumnProps = {
-  children?: ReactElement<*>,
-  style?: any,
-  props: FlexProps
-}
 
-type DirectionProps = {
-  children?: ReactElement<*>,
-  type: 'row' | 'column',
-  style?: any,
-  props: FlexProps
-}
-
-
-const Flex = ({ children, flex = 1, style }: FlexProps) => (
+const Flex = ({ flex = 1, style, children }: FlexProps) => (
   <View style={[ { flex }, style ]}>{children}</View>
 )
 
-const Direction = ({ children, type, style, ...props }: DirectionProps) => (
-  <Flex style={[ { flexDirection: type }, style ]} {...props}>
+const Row = ({ flex = 1, style, children }: FlexProps) => (
+  <View style={[ { flex, flexDirection: 'row' }, style ]}>
     {children}
-  </Flex>
+  </View>
 )
 
-const Row = ({ children, ...props }: RowColumnProps) => (
-  <Direction type="row" {...props}>{children}</Direction>
-)
-
-const Column = ({ children, ...props }: RowColumnProps) => (
-  <Direction type="row" {...props}>{children}</Direction>
+const Column = ({ flex = 1, style, children }: FlexProps) => (
+  <View style={[ { flex, flexDirection: 'column' }, style ]}>
+    {children}
+  </View>
 )
 
 
