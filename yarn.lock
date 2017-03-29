@@ -5306,6 +5306,10 @@ react-native-linear-gradient@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.0.0.tgz#7442c00e1fcd9fca329119dcbaf744d12bcd1b5a"
 
+react-native-maps@^0.13.1:
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.13.1.tgz#ed2a7e62f155a51f43c49742eba5bc313eaf2f1e"
+
 "react-native-material-bottom-navigation@git+ssh://git@github.com/timomeh/react-native-material-bottom-navigation.git#master":
   version "0.4.0"
   resolved "git+ssh://git@github.com/timomeh/react-native-material-bottom-navigation.git#c0bb6d129cc013ee06c7a8b5ce0929a28a3055a8"

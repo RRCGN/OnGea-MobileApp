@@ -18,6 +18,7 @@
     "react-native-fetch-blob": "^0.10.2",
     "react-native-image-header-scroll-view": "^0.4.0",
     "react-native-linear-gradient": "^2.0.0",
+    "react-native-maps": "^0.13.1",
     "react-native-material-bottom-navigation": "git+ssh://git@github.com/timomeh/react-native-material-bottom-navigation.git#master",
     "react-native-md-textinput": "^2.0.4",
     "react-native-snackbar": "^0.3.1",
