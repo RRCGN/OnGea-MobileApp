@@ -8,8 +8,11 @@ import { View, Text } from 'react-native'
 import moment from 'moment'
 import findMostRecentData from '../containers/recent-data'
 import Section from '../components/Section'
-import { List, ListItem } from '../components/List'
-import { Button, ButtonList } from '../components/Button'
+import Button from '../components/ButtonText'
+import ButtonFlatGrid from '../components/ButtonFlatGrid'
+import { Row } from '../components/Layout'
+import ListManager from '../components/ListManager'
+import ListItemFancy from '../components/ListItemFancy'
 
 
 const SectionTravel = ({ recentIndex, data }) => {
@@ -34,23 +37,36 @@ const SectionTravel = ({ recentIndex, data }) => {
     OTHER: [ 'home', 'flag-triangle' ]
   }
 
+  const items = [
+    {
+      date: moment(dateFrom).format('DD.MM.YYYY, HH:MM [Uhr]'),
+      location: from,
+      icon: icons[type][0]
+    },
+    {
+      date: moment(dateTo).format('DD.MM.YYYY, HH:MM [Uhr]'),
+      location: to,
+      icon: icons[type][1]
+    }
+  ]
+
   return (
     <Section title={typeLocalization[type] + (!!number ? `: ${number}` : '')}>
-      <List>
-        <ListItem
-          primary={moment(dateFrom).format('DD.MM.YYYY, HH:MM [Uhr]')}
-          secondary={from}
-          icon={icons[type][0]}
-        />
-        <ListItem
-          primary={moment(dateTo).format('DD.MM.YYYY, HH:MM [Uhr]')}
-          secondary={to}
-          icon={icons[type][1]}
-        />
-      </List>
-      <ButtonList>
+      <ListManager
+        items={items}
+        renderItem={(item, i) => (
+          <ListItemFancy
+            key={i}
+            primary={item.date}
+            secondary={item.location}
+            icon={item.icon}
+            isLinked={i === 0}
+          />
+        )}
+      />
+      <ButtonFlatGrid>
         <Button label="Mehr" />
-      </ButtonList>
+      </ButtonFlatGrid>
     </Section>
   )
 }

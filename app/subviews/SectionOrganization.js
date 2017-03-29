@@ -6,27 +6,39 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 import Section from '../components/Section'
-import { List, ListItem } from '../components/List'
+import ListManager from '../components/ListManager'
+import ListItemStandard from '../components/ListItemStandard'
 
 
 const SectionOrganization = ({ data }) => {
   const {
     coordinatingOrganization: coordinating,
-    hostOrganization: host
+    hostOrganization: hosting
   } = data
+
+  const items = [
+    {
+      name: coordinating.name,
+      contact: coordinating.phone
+    },
+    {
+      name: hosting.name,
+      contact: hosting.phone
+    }
+  ]
 
   return (
     <Section title="Kontakt">
-      <List>
-        <ListItem
-          primary={coordinating.name}
-          secondary={coordinating.phone}
-        />
-        <ListItem
-          primary={host.name}
-          secondary={host.phone}
-        />
-      </List>
+      <ListManager
+        items={items}
+        renderItem={(item, i) => (
+          <ListItemStandard
+            key={i}
+            primary={item.name}
+            secondary={item.contact}
+          />
+        )}
+      />
     </Section>
   )
 }

@@ -16,7 +16,8 @@ import Snackbar from 'react-native-snackbar'
 import DataService from '../services/DataService'
 
 import { Card, CardSegment, CardTitle } from '../components/Card'
-import { Button, ButtonList } from '../components/Button'
+import Button from '../components/ButtonText'
+import ButtonFlatGrid from '../components/ButtonFlatGrid'
 import DateRange from '../components/DateRange'
 
 
@@ -80,10 +81,10 @@ export default class MobilitiesListView extends Component {
         </CardSegment>
 
         {/* Action Buttons */}
-        <CardSegment small>
-          <ButtonList>
+        <CardSegment big>
+          <ButtonFlatGrid>
             <Button label="Ansehen" />
-          </ButtonList>
+          </ButtonFlatGrid>
         </CardSegment>
 
       </Card>
