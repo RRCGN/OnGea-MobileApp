@@ -15,6 +15,12 @@ import {
 } from 'react-native'
 
 import ToolbarButton from '../components/ToolbarButton'
+import ToolbarFancy from '../components/ToolbarFancy'
+import Section from '../components/Section'
+import SectionShortTravel from '../subviews/SectionShortTravel'
+import SectionAllTravel from '../subviews/SectionAllTravel'
+import SectionShortStay from '../subviews/SectionShortStay'
+import SectionShortSchedule from '../subviews/SectionShortSchedule'
 import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
 
 import { Colors } from '../utils/constants'
@@ -53,13 +59,67 @@ export default class SingleView extends Component {
   }
 
   render() {
-    return (
-      <View>
+    const { params } = this.props.navigation.state
 
+    return (
+      <View style={styles.background}>
+        <StatusBarBackgroundIOS />
+        <ToolbarFancy image={{ uri: params.image }} title={params.title} />
+        <ScrollView>
+          {this._renderSummary()}
+          {this._renderAll()}
+        </ScrollView>
       </View>
     )
+  }
+
+  _renderSummary = () => {
+    const { params } = this.props.navigation.state
+
+    switch (params.type) {
+      case 'TRAVEL':
+        return (
+          <SectionShortTravel
+            data={params.data}
+            noBorder={params.data.length === 1}
+          />
+        )
+      case 'STAY':
+        return (
+          <SectionShortStay
+            data={params.data}
+            noBorder={params.data.length === 1}
+          />
+        )
+      case 'SCHEDULE':
+        return <SectionShortSchedule data={params.data} />
+    }
+  }
+
+  _renderAll = () => {
+    const { params } = this.props.navigation.state
+
+    switch (params.type) {
+      case 'TRAVEL':
+        return this._renderTravel()
+      case 'STAY':
+        return null
+      case 'SCHEDULE':
+        return null
+    }
+  }
+
+  _renderTravel = () => {
+    const { params } = this.props.navigation.state
+
+    if (params.data.length === 1) return null
+    return <SectionAllTravel data={params.data} />
   }
 }
 
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    backgroundColor: 'white'
+  }
 })

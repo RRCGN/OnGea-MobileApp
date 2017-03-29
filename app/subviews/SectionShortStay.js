@@ -9,13 +9,11 @@ import moment from 'moment'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import findMostRecentData from '../containers/recent-data'
 import Section from '../components/Section'
-import Button from '../components/ButtonText'
-import ButtonFlatGrid from '../components/ButtonFlatGrid'
 import ListManager from '../components/ListManager'
 import ListItemFancy from '../components/ListItemFancy'
 
 
-const SectionStay = ({ recentIndex, data, navigation }) => {
+const SectionShortStay = ({ recentIndex, data, footer, noBorder = false }) => {
   const {
     name,
     street,
@@ -34,19 +32,19 @@ const SectionStay = ({ recentIndex, data, navigation }) => {
       icon: 'home'
     },
     {
-      primary: moment(dateFrom).format('DD.MM.YYYY, HH:MM [Uhr]'),
+      primary: moment(dateFrom).format('DD.MM.YYYY, hh:mm [Uhr]'),
       secondary: 'Check In',
       icon: 'arrow-right-bold'
     },
     {
-      primary: moment(dateTo).format('DD.MM.YYYY, HH:MM [Uhr]'),
+      primary: moment(dateTo).format('DD.MM.YYYY, hh:mm [Uhr]'),
       secondary: 'Check Out',
       icon: 'arrow-left-bold'
     }
   ]
 
   return (
-    <Section title="Unterkunft">
+    <Section title="Unterkunft" noBorder={noBorder}>
       <ListManager
         items={items}
         renderItem={(item, i) => (
@@ -58,14 +56,9 @@ const SectionStay = ({ recentIndex, data, navigation }) => {
           />
         )}
       />
-      <ButtonFlatGrid>
-        <Button
-          label="Mehr"
-          onPress={() => navigation.navigate('Detail', data)}
-        />
-      </ButtonFlatGrid>
+      {footer}
     </Section>
   )
 }
 
-export default findMostRecentData(SectionStay)
+export default findMostRecentData(SectionShortStay)

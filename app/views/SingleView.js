@@ -22,11 +22,13 @@ import ToolbarButton from '../components/ToolbarButton'
 import TitleOnShadow from '../components/TitleOnShadow'
 import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
 import DateRange from '../components/DateRange'
-import SectionTravel from '../subviews/SectionTravel'
-import SectionStay from '../subviews/SectionStay'
+import SectionShortTravel from '../subviews/SectionShortTravel'
+import SectionShortStay from '../subviews/SectionShortStay'
 import SectionOrganization from '../subviews/SectionOrganization'
 import SectionDownloads from '../subviews/SectionDownloads'
-import SectionSchedule from '../subviews/SectionSchedule'
+import SectionShortSchedule from '../subviews/SectionShortSchedule'
+import Button from '../components/ButtonText'
+import ButtonFlatGrid from '../components/ButtonFlatGrid'
 
 import { Colors } from '../utils/constants'
 
@@ -112,12 +114,48 @@ export default class SingleView extends Component {
 
   _renderContent = () => {
     const { params } = this.props.navigation.state
+    const { navigation } = this.props
+
+    const genericParams = {
+      image: params.backdrop,
+      title: params.name
+    }
 
     return (
       <View>
-        <SectionTravel data={params.travels} navigation={this.props.navigation} />
-        <SectionStay data={params.stays} navigation={this.props.navigation} />
-        <SectionSchedule data={params.schedule} navigation={this.props.navigation} />
+        <SectionShortTravel
+          data={params.travels}
+          footer={
+            <ButtonFlatGrid>
+              <Button
+                label="Mehr"
+                onPress={() => navigation.navigate('Detail', { type: 'TRAVEL', data: params.travels, ...genericParams })}
+              />
+            </ButtonFlatGrid>
+          }
+        />
+        <SectionShortStay
+          data={params.stays}
+          footer={
+            <ButtonFlatGrid>
+              <Button
+                label="Mehr"
+                onPress={() => navigation.navigate('Detail', { type: 'STAY', data: params.stays, ...genericParams })}
+              />
+            </ButtonFlatGrid>
+          }
+        />
+        <SectionShortSchedule
+          data={params.schedule}
+          footer={
+            <ButtonFlatGrid>
+              <Button
+                label="Zeitplan"
+                onPress={() => navigation.navigate('Detail', { type: 'SCHEDULE', data: params.stays, ...genericParams })}
+              />
+            </ButtonFlatGrid>
+          }
+        />
         <SectionOrganization data={params.organizations} />
         <SectionDownloads data={params.downloads} />
       </View>

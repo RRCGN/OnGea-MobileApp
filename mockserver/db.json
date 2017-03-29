@@ -35,13 +35,26 @@
           "dateTo": "2017-04-10T14:00:00+02:00",
           "origin": {
             "location": { "lat": 51, "long": 7 },
-            "locationName": "Köln Bonn Airport (CGN)",
-            "date": "2017-04-10T12:52:00+02:00"
+            "locationName": "Köln Bonn Airport (CGN)"
           },
           "destination": {
             "location": { "lat": 51, "long": 8 },
-            "locationName": "Flughafen Berlin Brandenburg (BER)",
-            "date": "2017-04-10T14:26:00+02:00"
+            "locationName": "Flughafen Berlin Brandenburg (BER)"
+          }
+        },
+        {
+          "id": 576,
+          "type": "TRAIN",
+          "number": "ICE123",
+          "dateFrom": "2017-04-12T15:16:00+02:00",
+          "dateTo": "2017-04-12T16:45:00+02:00",
+          "origin": {
+            "location": { "lat": 51, "long": 7 },
+            "locationName": "Berlin HBF"
+          },
+          "destination": {
+            "location": { "lat": 51, "long": 8 },
+            "locationName": "Potsdam HBF"
           }
         }
       ],
