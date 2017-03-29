@@ -24,9 +24,9 @@ type Props = {
 }
 
 const Touchable = ({
-  onPress = () => { },
-  onPressIn = () => { },
-  onPressOut = () => { },
+  onPress,
+  onPressIn,
+  onPressOut,
   rippleColor = null,
   borderRadius = 0,
   useForeground = false,
@@ -45,6 +45,7 @@ const Touchable = ({
           ? TouchableNativeFeedback.Ripple(rippleColor, borderRadius > 0 ? true : false)
           : TouchableNativeFeedback.SelectableBackground()
         }
+        disabled={!onPress}
         onPress={onPress}
         onPressIn={onPressIn}
         onPressOut={onPressOut}
