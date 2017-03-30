@@ -89,6 +89,7 @@
         {
           "id": 200,
           "name": "Check List",
+          "size": 1572864,
           "path": "http://example.com"
         }
       ]
