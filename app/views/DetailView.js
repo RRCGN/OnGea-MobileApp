@@ -89,6 +89,7 @@ export default class SingleView extends Component {
           <SectionShortStay
             data={params.data}
             noBorder={params.data.length === 1}
+            navigation={params.navigation}
           />
         )
       case 'SCHEDULE':

@@ -10,8 +10,10 @@ import {
   StatusBar
 } from 'react-native'
 import MapView from 'react-native-maps'
+import * as Animatable from 'react-native-animatable'
 
 import ToolbarButton from '../components/ToolbarButton'
+import ListItemFancy from '../components/ListItemFancy'
 import { Colors } from '../utils/constants'
 
 
@@ -47,6 +49,30 @@ export default class SingleView extends Component {
     }
   }
 
+  constructor(props) {
+    super(props)
+
+    const { params } = props.navigation.state
+
+    this.state = {
+      initCoords: {
+        latitude: params.location.lat,
+        longitude: params.location.long,
+        latitudeDelta: 0.02,
+        longitudeDelta: 0.01
+      },
+      icon: {
+        name: params.icon
+      }
+    }
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.refs.panel.transitionTo({ translateY: 0 }, 300, 'ease-out')
+    }, 500)
+  }
+
   render() {
     const { params } = this.props.navigation.state
 
@@ -54,16 +80,55 @@ export default class SingleView extends Component {
       <View style={styles.container}>
         <MapView
           style={styles.map}
-          initialRegion={{
-            latitude: 37.78825,
-            longitude: -122.4324,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-          }}
-        />
+          toolbarEnabled={false}
+          initialRegion={this.state.initCoords}
+          onRegionChange={this._handleRegionChange}
+          onMarkerPress={this._handleItemPress}
+          ref="map"
+        >
+          <MapView.Marker
+            coordinate={this.state.initCoords}
+          />
+        </MapView>
+        <Animatable.View
+          style={styles.panel}
+          ref="panel"
+        >
+          <ListItemFancy
+            primary={params.primary}
+            secondary={params.secondary}
+            icon={this.state.icon.name}
+            iconColor={this.state.icon.color}
+            onPress={this._handleItemPress}
+          />
+        </Animatable.View>
       </View>
     )
   }
+
+  _handleItemPress = () => {
+    const { params } = this.props.navigation.state
+
+    this.refs.map.animateToRegion(this.state.initCoords)
+  }
+
+  _handleRegionChange = (region) => {
+    const { params } = this.props.navigation.state
+    const { initCoords } = this.state
+
+    console.log(region);
+
+    if (
+        (Math.round(region.latitude * 1000) / 1000 === initCoords.latitude) &&
+        (Math.round(region.longitude * 1000) / 1000 === initCoords.longitude)
+      ) {
+      this.setState({ icon: { name: params.icon, color: null }})
+    } else {
+      this.setState({ icon: { name: 'map-marker-radius', color: '#2196F3' }})
+    }
+  }
+
+
 }
 
 const styles = StyleSheet.create({
@@ -72,5 +137,16 @@ const styles = StyleSheet.create({
   },
   map: {
     ...StyleSheet.absoluteFillObject
+  },
+  panel: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    paddingLeft: 16,
+    paddingRight: 16,
+    backgroundColor: 'white',
+    elevation: 8,
+    transform: [{ translateY: 80 }]
   }
 })
