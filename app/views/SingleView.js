@@ -125,6 +125,7 @@ export default class SingleView extends Component {
       <View>
         <SectionShortTravel
           data={params.travels}
+          navigation={navigation}
           footer={
             <ButtonFlatGrid>
               <Button
@@ -136,6 +137,7 @@ export default class SingleView extends Component {
         />
         <SectionShortStay
           data={params.stays}
+          navigation={navigation}
           footer={
             <ButtonFlatGrid>
               <Button
@@ -147,6 +149,7 @@ export default class SingleView extends Component {
         />
         <SectionShortSchedule
           data={params.schedule}
+          navigation={navigation}
           footer={
             <ButtonFlatGrid>
               <Button

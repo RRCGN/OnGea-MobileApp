@@ -13,7 +13,7 @@ import ListManager from '../components/ListManager'
 import ListItemFancy from '../components/ListItemFancy'
 
 
-const SectionShortStay = ({ recentIndex, data, footer, noBorder = false }) => {
+const SectionShortStay = ({ recentIndex, data, footer, noBorder = false, navigation }) => {
   const {
     name,
     street,
@@ -22,14 +22,16 @@ const SectionShortStay = ({ recentIndex, data, footer, noBorder = false }) => {
     country,
     room,
     dateFrom,
-    dateTo
+    dateTo,
+    location
   } = data[recentIndex]
 
   const items = [
     {
       primary: `${name}, Zimmer ${room}`,
       secondary: `${street}, ${zip} ${town}, ${country}`,
-      icon: 'home'
+      icon: 'home',
+      location
     },
     {
       primary: moment(dateFrom).format('DD.MM.YYYY, hh:mm [Uhr]'),
@@ -53,6 +55,7 @@ const SectionShortStay = ({ recentIndex, data, footer, noBorder = false }) => {
             primary={item.primary}
             secondary={item.secondary}
             icon={item.icon}
+            onPress={item.location && (() => navigation.navigate('Map'))}
           />
         )}
       />

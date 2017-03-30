@@ -14,9 +14,9 @@ import {
 
 
 type Props = {
-  onPress: () => void,
-  onPressIn: () => void,
-  onPressOut: () => void,
+  onPress: ?() => void,
+  onPressIn: ?() => void,
+  onPressOut: ?() => void,
   rippleColor?: ?string,
   borderRadius?: number,
   useForeground?: boolean,

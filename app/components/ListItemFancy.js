@@ -6,6 +6,7 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import Touchable from './Touchable'
 import { Colors } from '../utils/constants'
 
 
@@ -13,20 +14,25 @@ type Props = {
   primary: string,
   secondary: string,
   icon?: string,
-  isLinked?: boolean
+  isLinked?: boolean,
+  onPress?: any
 }
 
-const ListItemFancy = ({ primary, secondary, icon, isLinked = false }: Props) => (
-  <View style={styles.container}>
-    <View style={styles.left}>
-      <View style={styles.iconContainer}>
-        {icon && <Icon name={icon} style={styles.icon} size={24} />}
+const ListItemFancy = ({ primary, secondary, icon, isLinked = false, onPress }: Props) => (
+  <View>
+    <Touchable onPress={onPress}>
+      <View style={styles.container}>
+        <View style={styles.left}>
+          <View style={styles.iconContainer}>
+            {icon && <Icon name={icon} style={styles.icon} size={24} />}
+          </View>
+        </View>
+        <View style={styles.right}>
+          <Text style={styles.primary}>{primary}</Text>
+          <Text style={styles.secondary}>{secondary}</Text>
+        </View>
       </View>
-    </View>
-    <View style={styles.right}>
-      <Text style={styles.primary}>{primary}</Text>
-      <Text style={styles.secondary}>{secondary}</Text>
-    </View>
+    </Touchable>
     {isLinked &&
       <Image source={require('../assets/dots.png')} style={styles.dots} />
     }
@@ -42,7 +48,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     position: 'relative',
     height: 72,
-    alignItems: 'center'
+    alignItems: 'center',
+    marginLeft: -16,
+    marginRight: -16,
+    paddingLeft: 16
   },
   right: {
     marginLeft: 32
