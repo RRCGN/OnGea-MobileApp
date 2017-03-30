@@ -92,6 +92,13 @@
           "size": 1572864,
           "filename": "checklist.pdf",
           "path": "https://stlab.adobe.com/wiki/images/d/d3/Test.pdf"
+        },
+        {
+          "id": 201,
+          "name": "PackListe",
+          "size": 2572864,
+          "filename": "packing.pdf",
+          "path": "https://stlab.adobe.com/wiki/images/d/d3/Test.pdf"
         }
       ]
     }
