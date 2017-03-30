@@ -90,7 +90,8 @@
           "id": 200,
           "name": "Check List",
           "size": 1572864,
-          "path": "http://example.com"
+          "filename": "checklist.pdf",
+          "path": "https://stlab.adobe.com/wiki/images/d/d3/Test.pdf"
         }
       ]
     }
