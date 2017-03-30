@@ -15,16 +15,17 @@ type Props = {
   secondary: string,
   icon?: string,
   isLinked?: boolean,
-  onPress?: any
+  onPress?: any,
+  iconColor?: string
 }
 
-const ListItemFancy = ({ primary, secondary, icon, isLinked = false, onPress }: Props) => (
+const ListItemFancy = ({ primary, secondary, icon, isLinked = false, onPress, iconColor }: Props) => (
   <View>
     <Touchable onPress={onPress}>
       <View style={styles.container}>
         <View style={styles.left}>
           <View style={styles.iconContainer}>
-            {icon && <Icon name={icon} style={styles.icon} size={24} />}
+            {icon && <Icon name={icon} style={[ styles.icon, { color: iconColor } ]} size={24} />}
           </View>
         </View>
         <View style={styles.right}>

@@ -55,7 +55,7 @@ const SectionShortStay = ({ recentIndex, data, footer, noBorder = false, navigat
             primary={item.primary}
             secondary={item.secondary}
             icon={item.icon}
-            onPress={item.location && (() => navigation.navigate('Map'))}
+            onPress={item.location && (() => navigation.navigate('Map', item))}
           />
         )}
       />
