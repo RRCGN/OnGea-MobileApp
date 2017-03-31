@@ -20,6 +20,8 @@ export default class ApiService {
     : 'http://10.0.3.2:3000'
   static AUTH_PATH = '/auth'
   static ALL_PATH = '/all'
+  static NOTIFICATION_PATH = '/notifications'
+  static NOTIFICATION_RECEIVED_PATH = '/notifications/received'
 
   static async auth(username: string, password: string): Promise<Auth> {
     const response = await this.call(this.AUTH_PATH, { username, password })
@@ -40,6 +42,13 @@ export default class ApiService {
     }
 
     return response
+  }
+
+  static async notifications() {
+    const token = await LoginService.getToken()
+    const response = await this.call(this.NOTIFICATION_PATH, { token })
+    const json = await response.json()
+    return json
   }
 
   static async all(): Promise<All> {

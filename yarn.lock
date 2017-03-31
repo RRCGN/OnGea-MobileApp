@@ -5276,6 +5276,14 @@ react-native-animatable@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.1.0.tgz#1ca3e8a00e441979d5711805651ff62a2d3b245a"
 
+react-native-background-fetch@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-background-fetch/-/react-native-background-fetch-2.0.3.tgz#f85c67a2a62cdb770c6273c8a9d9b5e1a822599e"
+
+react-native-background-job@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-background-job/-/react-native-background-job-1.1.2.tgz#9cec4ef9171d3c53b77e8983c188c01d83303668"
+
 react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-native-dismiss-keyboard/-/react-native-dismiss-keyboard-1.0.0.tgz#32886242b3f2317e121f3aeb9b0a585e2b879b49"

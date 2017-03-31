@@ -11,9 +11,11 @@ import {
   StatusBar
 } from 'react-native'
 import SplashScreen from 'rn-splash-screen'
+
 import MainTabNavigator from './navigators/MainTabNavigator'
 import LoginService from './services/LoginService'
 import DataService from './services/DataService'
+import NotificationService from './services/NotificationService'
 
 
 export default class OnGeaApp extends Component {
@@ -32,6 +34,11 @@ export default class OnGeaApp extends Component {
       loaded: false,
       loggedIn: null
     }
+  }
+
+  componentWillMount() {
+    this.notificationService = new NotificationService()
+    this.notificationService.register()
   }
 
   componentDidMount() {
