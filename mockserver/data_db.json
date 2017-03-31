@@ -2,94 +2,136 @@
   "activities": [
     {
       "id": 123,
-      "name": "Dance Workshop",
-      "backdrop": "http://10.0.3.2:3000/concert.jpg",
-      "dateFrom": "2017-04-10T12:00:00+02:00",
-      "dateTo": "2017-04-16T12:00:00+02:00",
+      "name": "The ROOTS & ROUTES Experience 2017",
+      "backdrop": "http://10.0.3.2:3000/rrxp17.jpg",
+      "dateFrom": "2017-08-14T19:00:00+02:00",
+      "dateTo": "2017-08-31T11:00:00+02:00",
       "organizations": {
         "coordinatingOrganization": {
           "id": 234,
-          "name": "RRXYZ",
-          "phone": "123-45-67"
+          "name": "ROOTS & ROUTES Cologne e. V.",
+          "phone": "+49 177 3685187"
         },
         "hostOrganization": {
           "id": 234,
-          "name": "RRCGN",
-          "phone": "999-99-99"
+          "name": "ROOTS & ROUTES Cologne e. V.",
+          "phone": "+49 177 3685187"
         }
       },
       "travels": [
         {
           "id": 567,
           "type": "FLIGHT",
-          "number": "4U 9103",
-          "dateFrom": "2017-04-10T12:00:00+02:00",
-          "dateTo": "2017-04-10T14:00:00+02:00",
+          "number": "4U 602",
+          "dateFrom": "2017-08-14T08:00:00+02:00",
+          "dateTo": "2017-08-14T10:05:00+02:00",
           "origin": {
-            "location": { "lat": 51, "long": 7 },
-            "locationName": "Köln Bonn Airport (CGN)"
+            "location": { "lat": 38.7755936, "long": -9.1353667 },
+            "locationName": "Aeroporto de Lisboa (LIS)"
           },
           "destination": {
-            "location": { "lat": 51, "long": 8 },
-            "locationName": "Flughafen Berlin Brandenburg (BER)"
+            "location": { "lat": 50.8707202, "long": 7.1385457 },
+            "locationName": "Flughafen Köln/Bonn (CGN)"
+          }
+        },
+        {
+          "id": 568,
+          "type": "TRAIN",
+          "number": "IC 2202",
+          "dateFrom": "2017-08-14T12:49:00+02:00",
+          "dateTo": "2017-08-14T16:04:00+02:00",
+          "origin": {
+            "location": { "lat": 50.8707202, "long": 7.1385457 },
+            "locationName": "Flughafen Köln/Bonn (CGN)"
+          },
+          "destination": {
+            "location": { "lat": 52.2151478, "long": 7.0196916 },
+            "locationName": "Bahnhof Gronau(Westf)"
+          }
+        },
+        {
+          "id": 568,
+          "type": "TRAIN",
+          "number": "IC 2202",
+          "dateFrom": "2017-08-31T09:15:00+02:00",
+          "dateTo": "2017-08-14T12:44:00+02:00",
+          "origin": {
+            "location": { "lat": 52.2151478, "long": 7.0196916 },
+            "locationName": "Bahnhof Gronau(Westf)"
+          },
+          "destination": {
+            "location": { "lat": 50.8707202, "long": 7.1385457 },
+            "locationName": "Flughafen Köln/Bonn (CGN)"
           }
         },
         {
           "id": 576,
-          "type": "TRAIN",
-          "number": "ICE123",
-          "dateFrom": "2017-04-12T15:16:00+02:00",
-          "dateTo": "2017-04-12T16:45:00+02:00",
+          "type": "FLIGHT",
+          "number": "4U 602",
+          "dateFrom": "2017-08-31T16:45:00+02:00",
+          "dateTo": "2017-04-12T20:30:00+02:00",
           "origin": {
-            "location": { "lat": 51, "long": 7 },
-            "locationName": "Berlin HBF"
+            "location": { "lat": 50.8707202, "long": 7.1385457 },
+            "locationName": "Flughafen Köln/Bonn (CGN)"
           },
           "destination": {
-            "location": { "lat": 51, "long": 8 },
-            "locationName": "Potsdam HBF"
+            "location": { "lat": 38.7755936, "long": -9.1353667 },
+            "locationName": "Aeroporto de Lisboa (LIS)"
           }
         }
       ],
       "stays": [
         {
           "id": 789,
-          "name": "Some Hotel",
-          "location": { "lat": 51, "long": 7 },
-          "street": "Somestreet 1",
-          "zip": "50678",
-          "town": "Cologne",
+          "name": "Landesmusikakademie NRW Burg Nienborg",
+          "location": { "lat": 52.1328163, "long": 7.1014735 },
+          "street": "Steinweg 2",
+          "zip": "48619",
+          "town": "Heek-Nienborg",
           "region": "NRW",
           "country": "Germany",
-          "room": "11a",
-          "dateFrom": "2017-04-10T12:00:00+02:00",
-          "dateTo": "2017-04-16T12:00:00+02:00"
+          "room": "13",
+          "dateFrom": "2017-08-16T13:00:00+02:00",
+          "dateTo": "2017-08-16T08:00:00+02:00"
         }
       ],
       "schedule": [
         {
-          "name": "Termin 1",
-          "dateFrom": "2017-04-10T16:00:00+02:00",
-          "dateTo": "2017-04-10T18:00:00+02:00"
+          "name": "Dinner",
+          "dateFrom": "2017-08-14T17:00:00+02:00",
+          "dateTo": "2017-08-14T18:30:00+02:00"
         },
         {
-          "name": "Termin 2",
-          "dateFrom": "2017-04-10T18:00:00+02:00",
-          "dateTo": "2017-04-10T20:00:00+02:00"
+          "name": "Meet and Greet",
+          "dateFrom": "2017-08-14T18:30:00+02:00"
+        },
+        {
+          "name": "Getting started in artistic disciplines",
+          "dateFrom": "2017-08-15T08:30:00+02:00",
+          "dateTo": "2017-08-15T10:30:00+02:00"
+        },
+        {
+          "name": "Lunch",
+          "dateFrom": "2017-08-15T10:30:00+02:00"
+        },
+        {
+          "name": "Mixed creation group working phase II",
+          "dateFrom": "2017-08-16T12:00:00+02:00"
         }
       ],
       "downloads": [
         {
           "id": 200,
-          "name": "Check List",
+          "name": "Checklist",
           "size": 1572864,
           "filename": "checklist.pdf",
           "path": "https://stlab.adobe.com/wiki/images/d/d3/Test.pdf"
         },
         {
           "id": 201,
-          "name": "PackListe",
+          "name": "Schedule",
           "size": 2572864,
-          "filename": "packing.pdf",
+          "filename": "schedule.pdf",
           "path": "https://stlab.adobe.com/wiki/images/d/d3/Test.pdf"
         }
       ]

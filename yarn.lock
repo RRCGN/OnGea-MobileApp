@@ -5258,9 +5258,9 @@ react-native-push-notification@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/react-native-push-notification/-/react-native-push-notification-2.2.1.tgz#9b392cee8f5223a1e1772c9a88c95742549fcfc3"
 
-react-native-snackbar@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/react-native-snackbar/-/react-native-snackbar-0.3.1.tgz#d2d778473262cff359a2260b7090cf178d8b7579"
+react-native-snackbar@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/react-native-snackbar/-/react-native-snackbar-0.3.2.tgz#abc9bd69adc5d5540065b7226aa0b9bb1d83a52a"
 
 react-native-tab-view@^0.0.57:
   version "0.0.57"
