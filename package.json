@@ -25,6 +25,7 @@
     "react-native-maps": "^0.13.1",
     "react-native-material-bottom-navigation": "git+ssh://git@github.com/timomeh/react-native-material-bottom-navigation.git#master",
     "react-native-md-textinput": "^2.0.4",
+    "react-native-mime-types": "^2.2.0",
     "react-native-push-notification": "^2.2.1",
     "react-native-snackbar": "^0.3.1",
     "react-native-vector-icons": "^4.0.0",

@@ -97,7 +97,7 @@ export default class SingleView extends Component {
             {this._renderDates()}
           </TriggeringView>
           {this._renderContent()}
-          <View style={{ height: 400 }} />
+          <View style={{ height: this.headerHeight }} />
         </HeaderImageScrollView>
     )
   }

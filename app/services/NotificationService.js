@@ -67,6 +67,7 @@ export default class NotificationService {
 
     BackgroundJob.schedule({
       jobKey,
+      warn: false,
       timeout: 30000
     })
   }

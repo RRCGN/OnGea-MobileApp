@@ -53,19 +53,16 @@ export default class SectionDownloads extends Component {
   }
 
   _openFile = (id) => {
-    alert(id)
-    if (this.state.downloads[id] != null)
-      console.log(this.state.downloads[id])
+    FileService.openFile(id)
   }
 
   _downloadFile = async ({ id, url, filename }) => {
     try {
       await FileService.downloadAndStore({ id, url, filename })
       const downloads = await FileService.getDownloads()
-      console.log('file downloaded', downloads)
       this.setState({ downloads })
     } catch (e) {
-      alert('Error!')
+      console.log('download file error', e)
     }
   }
 }
