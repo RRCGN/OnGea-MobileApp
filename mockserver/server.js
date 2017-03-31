@@ -23,6 +23,8 @@ app.get('/auth', (req, res) => {
 })
 
 
+app.use(express.static(__dirname + '/public'))
+
 app.get('/data', (req, res) => {
   res.json(dataDB)
 })
