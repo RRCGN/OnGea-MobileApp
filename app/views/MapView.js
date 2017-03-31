@@ -58,8 +58,8 @@ export default class SingleView extends Component {
       initCoords: {
         latitude: params.location.lat,
         longitude: params.location.long,
-        latitudeDelta: 0.02,
-        longitudeDelta: 0.01
+        latitudeDelta: 0.01,
+        longitudeDelta: 0.005
       },
       icon: {
         name: params.icon
