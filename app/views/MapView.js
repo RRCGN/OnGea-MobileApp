@@ -116,11 +116,14 @@ export default class SingleView extends Component {
     const { params } = this.props.navigation.state
     const { initCoords } = this.state
 
-    console.log(region);
+    function round(value, decimalPlaces = 3) {
+      const places = Math.pow(10, decimalPlaces)
+      return Math.round(value * places) / places
+    }
 
     if (
-        (Math.round(region.latitude * 1000) / 1000 === initCoords.latitude) &&
-        (Math.round(region.longitude * 1000) / 1000 === initCoords.longitude)
+        (round(region.latitude) === round(initCoords.latitude)) &&
+        (round(region.longitude) === round(initCoords.longitude))
       ) {
       this.setState({ icon: { name: params.icon, color: null }})
     } else {
