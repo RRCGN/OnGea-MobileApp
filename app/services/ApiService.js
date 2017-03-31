@@ -15,7 +15,7 @@ type All = any
 type AuthApiResponse = ApiResponse<{ token: string }>
 
 export default class ApiService {
-  static BASE_URL = 'http://ongea-mockserver.apps.railslabs.com/'
+  static BASE_URL = 'http://ongea-mockserver.apps.railslabs.com'
   static AUTH_PATH = '/auth'
   static ALL_PATH = '/data'
   static NOTIFICATION_PATH = '/notifications'
