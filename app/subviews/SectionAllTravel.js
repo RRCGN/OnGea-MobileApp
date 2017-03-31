@@ -20,8 +20,6 @@ const SectionAllTravel = ({ data }) => {
     OTHER: [ 'home', 'flag-triangle' ]
   }
 
-  console.log(data)
-
   return (
     <Section title="Travels">
       <ListManager

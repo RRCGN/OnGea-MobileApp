@@ -19,6 +19,7 @@ import ToolbarFancy from '../components/ToolbarFancy'
 import Section from '../components/Section'
 import SectionShortTravel from '../subviews/SectionShortTravel'
 import SectionAllTravel from '../subviews/SectionAllTravel'
+import SectionAllSchedule from '../subviews/SectionAllSchedule'
 import SectionShortStay from '../subviews/SectionShortStay'
 import SectionShortSchedule from '../subviews/SectionShortSchedule'
 import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
@@ -93,7 +94,7 @@ export default class SingleView extends Component {
           />
         )
       case 'SCHEDULE':
-        return <SectionShortSchedule data={params.data} />
+        return null
     }
   }
 
@@ -106,7 +107,7 @@ export default class SingleView extends Component {
       case 'STAY':
         return null
       case 'SCHEDULE':
-        return null
+        return this._renderSchedule()
     }
   }
 
@@ -115,6 +116,12 @@ export default class SingleView extends Component {
 
     if (params.data.length === 1) return null
     return <SectionAllTravel data={params.data} />
+  }
+
+  _renderSchedule = () => {
+    const { params } = this.props.navigation.state
+
+    return <SectionAllSchedule data={params.data} />
   }
 }
 

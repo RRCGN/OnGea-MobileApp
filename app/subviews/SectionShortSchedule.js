@@ -25,7 +25,7 @@ const SectionShortSchedule = ({ recentIndex, data, footer }) => {
     <Section title="Next Event">
       <ListItemStandard
         primary={name}
-        secondary={dateFromString + (dateToString && ` – ${dateToString}`)}
+        secondary={dateFromString + (dateToString ? ` – ${dateToString}` : '')}
       />
       {footer}
     </Section>

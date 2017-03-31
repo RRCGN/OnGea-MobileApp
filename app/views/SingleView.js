@@ -106,7 +106,7 @@ export default class SingleView extends Component {
     const { params } = this.props.navigation.state
 
     return (
-      <View style={{ backgroundColor: 'purple', padding: 16 }}>
+      <View style={{ backgroundColor: '#7B1FA2', padding: 16 }}>
         <DateRange light from={params.dateFrom} to={params.dateTo} />
       </View>
     )
@@ -154,7 +154,7 @@ export default class SingleView extends Component {
             <ButtonFlatGrid>
               <Button
                 label="Schedule"
-                onPress={() => navigation.navigate('Detail', { type: 'SCHEDULE', data: params.stays, ...genericParams })}
+                onPress={() => navigation.navigate('Detail', { type: 'SCHEDULE', data: params.schedule, ...genericParams })}
               />
             </ButtonFlatGrid>
           }
