@@ -55,7 +55,8 @@ const styles = StyleSheet.create({
     paddingLeft: 16
   },
   right: {
-    marginLeft: 32
+    marginLeft: 32,
+    flex: 1
   },
   left: {
     width: 24,
