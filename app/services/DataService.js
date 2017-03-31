@@ -24,7 +24,11 @@ export default class DataService {
   }
 
   static async fetchAndSave(): Promise<ApiData> {
-    const data = await ApiService.all()
+    const { ok, data } = await ApiService.all()
+    if (!ok) {
+      return this.getAll()
+    }
+
     try {
       await this.save(data)
     } catch (error) {

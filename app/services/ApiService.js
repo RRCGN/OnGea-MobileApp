@@ -19,9 +19,8 @@ export default class ApiService {
     ? 'http://127.0.0.1:3000'
     : 'http://10.0.3.2:3000'
   static AUTH_PATH = '/auth'
-  static ALL_PATH = '/all'
+  static ALL_PATH = '/data'
   static NOTIFICATION_PATH = '/notifications'
-  static NOTIFICATION_RECEIVED_PATH = '/notifications/received'
 
   static async auth(username: string, password: string): Promise<Auth> {
     const response = await this.call(this.AUTH_PATH, { username, password })
@@ -54,8 +53,9 @@ export default class ApiService {
   static async all(): Promise<All> {
     const token = await LoginService.getToken()
     const response = await this.call(this.ALL_PATH, { token })
+    if (!response.ok) return { ok: false }
     const json = await response.json()
-    return json
+    return { ok: true, data: json }
   }
 
   static _queryString(params: Params): string {

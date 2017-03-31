@@ -22,7 +22,7 @@ export default class NotificationService {
   }
 
   async checkNewNotifications() {
-    const notifications = await ApiService.notifications()
+    const { notifications } = await ApiService.notifications()
 
     notifications.forEach(notification => {
       this.sendLocalNotification(notification)

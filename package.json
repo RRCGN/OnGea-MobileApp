@@ -10,6 +10,7 @@
     "storybook": "storybook start -p 7007"
   },
   "dependencies": {
+    "express": "^4.15.2",
     "filesize": "^3.5.6",
     "getstorybook": "^1.7.0",
     "moment": "^2.17.1",
@@ -38,7 +39,6 @@
     "enzyme": "^2.7.1",
     "enzyme-to-json": "^1.5.0",
     "jest": "18.1.0",
-    "json-server": "^0.9.5",
     "nodemon": "^1.11.0",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
