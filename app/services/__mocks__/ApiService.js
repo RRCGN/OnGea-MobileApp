@@ -8,6 +8,6 @@ export default class ApiService {
   }
 
   static async all() {
-    return Promise.resolve({ foo: 'bar' })
+    return Promise.resolve({ ok: true, data: { foo: 'bar' } })
   }
 }
