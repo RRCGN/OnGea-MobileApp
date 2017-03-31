@@ -46,6 +46,8 @@ export default class ApiService {
   static async notifications() {
     const token = await LoginService.getToken()
     const response = await this.call(this.NOTIFICATION_PATH, { token })
+    if (!response.ok) return { notifications: [] }
+
     const json = await response.json()
     return json
   }
