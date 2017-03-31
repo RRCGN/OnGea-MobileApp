@@ -873,7 +873,7 @@ exports[`Storyshots DateRange Date Range, dark 1`] = `
             "fontSize": 12,
           }
         }>
-        vom
+        from
       </Text>
       <Text
         accessible={true}
@@ -908,7 +908,7 @@ exports[`Storyshots DateRange Date Range, dark 1`] = `
             "fontSize": 12,
           }
         }>
-        bis
+        to
       </Text>
       <Text
         accessible={true}
@@ -967,7 +967,7 @@ exports[`Storyshots DateRange Date Range, light 1`] = `
             "fontSize": 12,
           }
         }>
-        vom
+        from
       </Text>
       <Text
         accessible={true}
@@ -1002,7 +1002,7 @@ exports[`Storyshots DateRange Date Range, light 1`] = `
             "fontSize": 12,
           }
         }>
-        bis
+        to
       </Text>
       <Text
         accessible={true}
@@ -1061,7 +1061,7 @@ exports[`Storyshots DateRange Single Date, dark 1`] = `
             "fontSize": 12,
           }
         }>
-        am
+        on
       </Text>
       <Text
         accessible={true}
@@ -1120,7 +1120,7 @@ exports[`Storyshots DateRange Single Date, light 1`] = `
             "fontSize": 12,
           }
         }>
-        am
+        on
       </Text>
       <Text
         accessible={true}
