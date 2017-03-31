@@ -11,7 +11,7 @@ import ToolbarButton from '../components/ToolbarButton'
 
 export default class MobilitiesOverviewView extends Component {
   static navigationOptions = {
-    title: 'Meine Mobilities',
+    title: 'My Activities',
     header: ({ navigate }) => ({
       style: {
         backgroundColor: Colors.PRIMARY,

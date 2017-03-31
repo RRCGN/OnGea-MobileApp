@@ -32,14 +32,14 @@ export default class SectionDownloads extends Component {
     const { downloads } = this.state
 
     return (
-      <Section title="Dateien">
+      <Section title="Files">
         <ListManager
           items={this.props.data}
           renderItem={(item, i) => (
             <ListItemFancy
               key={i}
               primary={item.name}
-              secondary={filesize(item.size) + (downloads[item.id] ? ', Offline verfügbar' : '')}
+              secondary={filesize(item.size) + (downloads[item.id] ? ', offline available' : '')}
               icon={downloads[item.id] ? 'file' : 'download'}
               onPress={downloads[item.id]
                 ? () => this._openFile(item.id)

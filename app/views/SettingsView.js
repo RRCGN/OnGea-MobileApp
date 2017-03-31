@@ -8,7 +8,7 @@ import { View, Button } from 'react-native'
 
 export default class SettingsView extends Component {
   static navigationOptions = {
-    title: 'Einstellungen'
+    title: 'Settings'
   }
 
   render() {

@@ -22,10 +22,10 @@ const SectionShortSchedule = ({ recentIndex, data, footer }) => {
   const dateToString = moment(dateTo).format('hh:mm [Uhr]')
 
   return (
-    <Section title="Nächste Veranstaltung">
+    <Section title="Next Event">
       <ListItemStandard
         primary={name}
-        secondary={`${dateFromString} bis ${dateToString}`}
+        secondary={`${dateFromString} - ${dateToString}`}
       />
       {footer}
     </Section>

@@ -129,7 +129,7 @@ export default class SingleView extends Component {
           footer={
             <ButtonFlatGrid>
               <Button
-                label="Mehr"
+                label="More"
                 onPress={() => navigation.navigate('Detail', { type: 'TRAVEL', data: params.travels, ...genericParams })}
               />
             </ButtonFlatGrid>
@@ -141,7 +141,7 @@ export default class SingleView extends Component {
           footer={
             <ButtonFlatGrid>
               <Button
-                label="Mehr"
+                label="More"
                 onPress={() => navigation.navigate('Detail', { type: 'STAY', data: params.stays, ...genericParams })}
               />
             </ButtonFlatGrid>
@@ -153,7 +153,7 @@ export default class SingleView extends Component {
           footer={
             <ButtonFlatGrid>
               <Button
-                label="Zeitplan"
+                label="Schedule"
                 onPress={() => navigation.navigate('Detail', { type: 'SCHEDULE', data: params.stays, ...genericParams })}
               />
             </ButtonFlatGrid>

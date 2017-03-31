@@ -72,7 +72,7 @@ export default class LoginView extends Component {
           onPress={this._handleLoginPress}
         />
         <Button
-          label="Zur Website"
+          label="Go to Website"
           backgroundColor="white"
           color={Colors.PRIMARY}
           style={styles.loginButton}

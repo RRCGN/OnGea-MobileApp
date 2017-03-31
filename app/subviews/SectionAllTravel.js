@@ -23,19 +23,19 @@ const SectionAllTravel = ({ data }) => {
   console.log(data)
 
   return (
-    <Section title="Alle Reisedaten">
+    <Section title="Travels">
       <ListManager
         items={data}
         renderItem={(item, i) => (
           <View key={i}>
             <ListItemFancy
-              primary={moment(item.dateFrom).format('DD.MM.YYYY, hh:mm [Uhr]')}
+              primary={moment(item.dateFrom).format('DD.MM.YYYY, hh:mm')}
               secondary={`${item.number}, ${item.origin.locationName}`}
               icon={icons[item.type][0]}
               isLinked
             />
             <ListItemFancy
-              primary={moment(item.dateTo).format('DD.MM.YYYY, hh:mm [Uhr]')}
+              primary={moment(item.dateTo).format('DD.MM.YYYY, hh:mm')}
               secondary={item.destination.locationName}
               icon={icons[item.type][1]}
               seperator

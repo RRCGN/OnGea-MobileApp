@@ -46,7 +46,7 @@ const SectionShortStay = ({ recentIndex, data, footer, noBorder = false, navigat
   ]
 
   return (
-    <Section title="Unterkunft" noBorder={noBorder}>
+    <Section title="Accomodation" noBorder={noBorder}>
       <ListManager
         items={items}
         renderItem={(item, i) => (

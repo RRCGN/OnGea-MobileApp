@@ -24,9 +24,9 @@ const SectionShortTravel = ({ recentIndex, data, footer, noBorder }) => {
   } = data[recentIndex]
 
   const typeLocalization = {
-    FLIGHT: 'Nächster Flug',
-    TRAIN: 'Nächster Zug',
-    OTHER: 'Nächste Reise'
+    FLIGHT: 'Next Flight',
+    TRAIN: 'Next Trail',
+    OTHER: 'Next Trip'
   }
 
   const icons = {
@@ -37,12 +37,12 @@ const SectionShortTravel = ({ recentIndex, data, footer, noBorder }) => {
 
   const items = [
     {
-      date: moment(dateFrom).format('DD.MM.YYYY, hh:mm [Uhr]'),
+      date: moment(dateFrom).format('DD.MM.YYYY, hh:mm'),
       location: from,
       icon: icons[type][0]
     },
     {
-      date: moment(dateTo).format('DD.MM.YYYY, hh:mm [Uhr]'),
+      date: moment(dateTo).format('DD.MM.YYYY, hh:mm'),
       location: to,
       icon: icons[type][1]
     }

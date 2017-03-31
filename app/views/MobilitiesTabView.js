@@ -15,7 +15,7 @@ export default class MobilitiesTabView extends Component {
   static navigationOptions = {
     tabBar: ({ state }) => ({
       visible: state.params && state.params.loggedIn,
-      label: 'Mobilities',
+      label: 'Activities',
       icon: ({ tintColor, focused }) => (
         <PlatformIcon
           iosIcon={focused ? 'ios-bonfire' : 'ios-bonfire-outline'}

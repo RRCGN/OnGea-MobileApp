@@ -24,12 +24,12 @@ const DateRange = ({ from, to, light = false }: Props) => {
   return (
     <Row flex={0}>
       <Flex>
-        <Text style={secondary}>{to ? 'vom' : 'am'}</Text>
+        <Text style={secondary}>{to ? 'from' : 'on'}</Text>
         <Text style={primary}>{moment(from).format('DD.MM.YYYY')}</Text>
       </Flex>
       {to &&
         <Flex>
-          <Text style={secondary}>bis</Text>
+          <Text style={secondary}>to</Text>
           <Text style={primary}>{moment(to).format('DD.MM.YYYY')}</Text>
         </Flex>
       }

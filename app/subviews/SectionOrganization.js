@@ -28,7 +28,7 @@ const SectionOrganization = ({ data }) => {
   ]
 
   return (
-    <Section title="Kontakt">
+    <Section title="Contact">
       <ListManager
         items={items}
         renderItem={(item, i) => (
