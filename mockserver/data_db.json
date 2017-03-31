@@ -92,7 +92,7 @@
           "country": "Germany",
           "room": "13",
           "dateFrom": "2017-08-16T13:00:00+02:00",
-          "dateTo": "2017-08-16T08:00:00+02:00"
+          "dateTo": "2017-08-31T08:00:00+02:00"
         }
       ],
       "schedule": [
@@ -128,11 +128,18 @@
           "path": "https://stlab.adobe.com/wiki/images/d/d3/Test.pdf"
         },
         {
-          "id": 201,
+          "id": 203,
           "name": "Schedule",
           "size": 2572864,
           "filename": "schedule.pdf",
           "path": "https://stlab.adobe.com/wiki/images/d/d3/Test.pdf"
+        },
+        {
+          "id": 202,
+          "name": "Floor Plan",
+          "size": 250000,
+          "filename": "floorplan.jpg",
+          "path": "http://www.freegreatpicture.com/files/157/1562-cute-little-cat.jpg"
         }
       ]
     }
