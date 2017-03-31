@@ -29,6 +29,7 @@ app.get('/data', (req, res) => {
 
 
 app.get('/notifications', (req, res) => {
+  console.log('Notifications are polling')
   res.json({ notifications: notiDB })
   notiDB = []
 })
