@@ -29,13 +29,13 @@ const SectionAllTravel = ({ data }) => {
         renderItem={(item, i) => (
           <View key={i}>
             <ListItemFancy
-              primary={moment(item.dateFrom).format('DD.MM.YYYY, hh:mm')}
+              primary={moment(item.dateFrom).format('DD.MM.YYYY, HH:mm')}
               secondary={`${item.number}, ${item.origin.locationName}`}
               icon={icons[item.type][0]}
               isLinked
             />
             <ListItemFancy
-              primary={moment(item.dateTo).format('DD.MM.YYYY, hh:mm')}
+              primary={moment(item.dateTo).format('DD.MM.YYYY, HH:mm')}
               secondary={item.destination.locationName}
               icon={icons[item.type][1]}
               seperator

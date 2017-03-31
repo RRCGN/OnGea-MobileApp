@@ -37,12 +37,12 @@ const SectionShortTravel = ({ recentIndex, data, footer, noBorder }) => {
 
   const items = [
     {
-      date: moment(dateFrom).format('DD.MM.YYYY, hh:mm'),
+      date: moment(dateFrom).format('DD.MM.YYYY, HH:mm'),
       location: from,
       icon: icons[type][0]
     },
     {
-      date: moment(dateTo).format('DD.MM.YYYY, hh:mm'),
+      date: moment(dateTo).format('DD.MM.YYYY, HH:mm'),
       location: to,
       icon: icons[type][1]
     }

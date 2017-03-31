@@ -18,14 +18,14 @@ const SectionShortSchedule = ({ recentIndex, data, footer }) => {
     dateTo
   } = data[recentIndex]
 
-  const dateFromString = moment(dateFrom).format('DD.MM.YYYY, hh:mm [Uhr]')
-  const dateToString = moment(dateTo).format('hh:mm [Uhr]')
+  const dateFromString = moment(dateFrom).format('DD.MM.YYYY, HH:mm')
+  const dateToString = dateTo ? moment(dateTo).format('HH:mm') : null
 
   return (
     <Section title="Next Event">
       <ListItemStandard
         primary={name}
-        secondary={`${dateFromString} - ${dateToString}`}
+        secondary={dateFromString + (dateToString && ` – ${dateToString}`)}
       />
       {footer}
     </Section>

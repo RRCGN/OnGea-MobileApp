@@ -34,12 +34,12 @@ const SectionShortStay = ({ recentIndex, data, footer, noBorder = false, navigat
       location
     },
     {
-      primary: moment(dateFrom).format('DD.MM.YYYY, hh:mm [Uhr]'),
+      primary: moment(dateFrom).format('DD.MM.YYYY, HH:mm'),
       secondary: 'Check In',
       icon: 'arrow-right-bold'
     },
     {
-      primary: moment(dateTo).format('DD.MM.YYYY, hh:mm [Uhr]'),
+      primary: moment(dateTo).format('DD.MM.YYYY, HH:mm'),
       secondary: 'Check Out',
       icon: 'arrow-left-bold'
     }
