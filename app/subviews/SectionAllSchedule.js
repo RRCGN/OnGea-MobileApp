@@ -48,6 +48,7 @@ const SectionAllSchedule = ({ data }) => {
           )
         }}
       />
+      <View style={{ marginBottom: -18 }} />
     </Section>
   )
 }
