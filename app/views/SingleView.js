@@ -195,7 +195,7 @@ export default class SingleView extends Component {
           ref={(navBarView) => this.navBarView = navBarView}
         >
           <View style={styles.stickyHeaderInner}>
-            <Text style={styles.toolbarTitle}>{params.name}</Text>
+            <Text numberOfLines={2} style={styles.toolbarTitle}>{params.name}</Text>
           </View>
         </Animatable.View>
       </View>
@@ -222,7 +222,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     ...Platform.select({
       android: {
-        marginLeft: 55
+        marginLeft: 55,
+        paddingRight: 16
       }
     })
   },

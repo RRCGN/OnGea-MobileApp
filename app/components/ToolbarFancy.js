@@ -4,14 +4,14 @@
  */
 
 import React from 'react'
-import { View, Image, Text, StyleSheet, Platform } from 'react-native'
+import { View, Image, Text, StyleSheet, Platform, StatusBar } from 'react-native'
 
 
 const ToolbarFancy = ({ image, title }) => (
   <View style={styles.container}>
     <Image style={styles.image} source={image}>
       <View style={styles.overlay} />
-      <Text style={styles.title}>{title}</Text>
+      <Text numberOfLines={2} style={styles.title}>{title}</Text>
     </Image>
   </View>
 )
@@ -26,7 +26,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
+    flex: 1,
     resizeMode: 'cover',
+    justifyContent: 'center',
     width: null,
     ...Platform.select({
       ios: {
@@ -34,9 +36,10 @@ const styles = StyleSheet.create({
         height: 64
       },
       android: {
-        paddingTop: 40,
+        paddingTop: StatusBar.currentHeight,
         height: 80,
-        paddingLeft: 55
+        paddingLeft: 55,
+        paddingRight: 18
       }
     })
   },
@@ -45,6 +48,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.3)'
   },
   title: {
+    flex: 0,
     color: 'white',
     backgroundColor: 'transparent',
     textShadowColor: 'rgba(0, 0, 0, 0.4)',
