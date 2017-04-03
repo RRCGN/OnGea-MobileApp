@@ -33,6 +33,10 @@ const MainScreenTabNavigator = TabNavigator({
     bottomNavigationOptions: {
       labelColor: 'white',
       rippleColor: 'white',
+      style: {
+        borderTopWidth: 0,
+        elevation: 8
+      },
       tabs: {
         Mobilities: {
           barBackgroundColor: '#00796B'
