@@ -31,6 +31,8 @@ export default class ApiService {
     const qs = this._queryString(params)
     let response
 
+    console.info('API', `${this.BASE_URL}${path}${qs}`, opts)
+
     try {
       response = await fetch(`${this.BASE_URL}${path}${qs}`, opts)
     } catch (error) {

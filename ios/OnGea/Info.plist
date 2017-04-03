@@ -47,6 +47,11 @@
           <key>NSExceptionAllowsInsecureHTTPLoads</key>
           <true/>
         </dict>
+        <key>ongea-mockserver.apps.railslabs.com</key>
+        <dict>
+          <key>NSExceptionAllowsInsecureHTTPLoads</key>
+          <true/>
+        </dict>
         <key>rootsnroutes.eu</key>
         <dict>
           <key>NSExceptionAllowsInsecureHTTPLoads</key>
