@@ -17,7 +17,7 @@ type Props = {
   onPress: ?() => void,
   onPressIn: ?() => void,
   onPressOut: ?() => void,
-  rippleColor?: ?string,
+  rippleColor?: string,
   borderRadius?: number,
   useForeground?: boolean,
   children: ReactElement<*>
@@ -27,7 +27,7 @@ const Touchable = ({
   onPress,
   onPressIn,
   onPressOut,
-  rippleColor = null,
+  rippleColor,
   borderRadius = 0,
   useForeground = false,
   children
@@ -66,8 +66,9 @@ const Touchable = ({
     return (
       <TouchableOpacity
         onPress={onPress}
-        nPressIn={onPressIn}
+        onPressIn={onPressIn}
         onPressOut={onPressOut}
+        disabled={!onPress}
       >
         <View>{children}</View>
       </TouchableOpacity>
