@@ -12,7 +12,6 @@ import {
   StyleSheet,
   RefreshControl
 } from 'react-native'
-import Snackbar from 'react-native-snackbar'
 import DataService from '../services/DataService'
 
 import { Card, CardSegment, CardTitle } from '../components/Card'
@@ -101,10 +100,11 @@ export default class MobilitiesListView extends Component {
     const isOnline = await NetInfo.isConnected.fetch()
     if (!isOnline) {
       this.setState({ refreshing: false })
+      /* TODO: Snackbar replacement
       Snackbar.show({
         title: 'Your connection is offline.',
         duration: Snackbar.LENGTH_SHORT
-      })
+      })*/
       return
     }
 

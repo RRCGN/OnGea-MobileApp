@@ -7,7 +7,6 @@ import com.pilloxa.backgroundjob.BackgroundJobPackage;
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
-import com.azendoo.reactnativesnackbar.SnackbarPackage;
 import com.mehcode.reactnative.splashscreen.SplashScreenPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -36,7 +35,6 @@ public class MainApplication extends Application implements ReactApplication {
             new ReactNativePushNotificationPackage(),
             new MapsPackage(),
             new RNFetchBlobPackage(),
-            new SnackbarPackage(),
             new SplashScreenPackage(),
             new LinearGradientPackage(),
             new VectorIconsPackage()

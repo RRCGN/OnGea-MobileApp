@@ -5194,10 +5194,6 @@ react-native-animatable@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.1.0.tgz#1ca3e8a00e441979d5711805651ff62a2d3b245a"
 
-react-native-background-fetch@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/react-native-background-fetch/-/react-native-background-fetch-2.0.3.tgz#f85c67a2a62cdb770c6273c8a9d9b5e1a822599e"
-
 react-native-background-job@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/react-native-background-job/-/react-native-background-job-1.1.2.tgz#9cec4ef9171d3c53b77e8983c188c01d83303668"
@@ -5226,9 +5222,9 @@ react-native-fetch-blob@^0.10.2:
     base-64 "0.1.0"
     glob "^7.0.6"
 
-react-native-image-header-scroll-view@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/react-native-image-header-scroll-view/-/react-native-image-header-scroll-view-0.4.0.tgz#aa3c8140ef1272434ca2883ba35c50d93f1abbd3"
+react-native-image-header-scroll-view@0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/react-native-image-header-scroll-view/-/react-native-image-header-scroll-view-0.4.1.tgz#671b34c73f03a73cd923232b89aab19695d3b90d"
   dependencies:
     lodash "^4.17.4"
 
@@ -5257,10 +5253,6 @@ react-native-mime-types@^2.2.0:
 react-native-push-notification@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/react-native-push-notification/-/react-native-push-notification-2.2.1.tgz#9b392cee8f5223a1e1772c9a88c95742549fcfc3"
-
-react-native-snackbar@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/react-native-snackbar/-/react-native-snackbar-0.3.2.tgz#abc9bd69adc5d5540065b7226aa0b9bb1d83a52a"
 
 react-native-tab-view@^0.0.57:
   version "0.0.57"

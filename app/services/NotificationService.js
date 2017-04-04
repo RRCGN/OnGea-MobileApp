@@ -5,7 +5,7 @@
 
 import { Platform } from 'react-native'
 import PushNotification from 'react-native-push-notification'
-import BackgroundFetch from 'react-native-background-fetch' // ios only
+// import BackgroundFetch from 'react-native-background-fetch' // ios only
 import BackgroundJob from 'react-native-background-job' // android only
 import ApiService from './ApiService'
 
@@ -37,7 +37,7 @@ export default class NotificationService {
     })
 
     this.startForegroundPolling()
-    this.startBackgroundPolling()
+    // this.startBackgroundPolling()
   }
 
   unregister() {
@@ -76,7 +76,7 @@ export default class NotificationService {
     BackgroundJob.cancelAll()
   }
 
-  startIOSBackgroundPolling() {
+  /*startIOSBackgroundPolling() {
     BackgroundFetch.configure({
       stopOnTerminate: false
     }, async () => {
@@ -85,11 +85,11 @@ export default class NotificationService {
     }, (error) => {
       console.log('IOS Background Fetch failure', error)
     })
-  }
+  }*/
 
-  stopIOSBackgroundPolling() {
+  /*stopIOSBackgroundPolling() {
     BackgroundFetch.stop()
-  }
+  }*/
 
   startForegroundPolling() {
     this.foregroundPollingTimer = setInterval(async () => {
