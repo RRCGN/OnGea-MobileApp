@@ -16,6 +16,10 @@ OnGea Apps for iOS and Android, written in react-native.
 - `react-native run-ios` for iOS (will start the iOS Simulator)
 - `react-native run-android` for Android (need a virtual or connected device)
 
+## TODOs
+
+See https://github.com/railslove/ongea-app/projects/2
+
 ## App Code
 
 Everything for our app is located in `/app`.
