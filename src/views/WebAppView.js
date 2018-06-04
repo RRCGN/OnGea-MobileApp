@@ -1,24 +1,17 @@
-/**
- * Screen for OnGea WebView
- * @flow
- */
-
-import React, { Component } from 'react'
-import { Text, View, StatusBar, Platform, WebView } from 'react-native'
+import React from 'react'
+import { View, StatusBar, Platform, WebView } from 'react-native'
 import PlatformIcon from '../components/PlatformIcon'
 
-export default class WebViewScreen extends Component {
+export default class WebViewScreen extends React.Component {
   static navigationOptions = {
     title: 'Web',
-    tabBar: {
-      label: 'Web',
-      icon: ({ tintColor, focused }) => (
-        <PlatformIcon
-          iosIcon={focused ? 'ios-globe' : 'ios-globe-outline'}
-          androidIcon="public"
-          size={24} color={Platform.OS === 'ios' ? tintColor : 'white' } />
-      )
-    }
+    tabBarLabel: 'Web',
+    tabBarIcon: ({ tintColor, focused }) => (
+      <PlatformIcon
+        iosIcon={focused ? 'ios-globe' : 'ios-globe-outline'}
+        androidIcon="public"
+        size={24} color={Platform.OS === 'ios' ? tintColor : 'white' } />
+    )
   }
 
   render() {

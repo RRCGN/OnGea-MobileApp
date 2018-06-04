@@ -8,7 +8,8 @@
     "server": "nodemon --watch mockserver mockserver/server.js",
     "test": "jest",
     "storybook": "storybook start -p 7007",
-    "react-native-maps-fix": "node scripts/react-native-map-bug-fix.js"
+    "react-native-maps-fix": "node scripts/react-native-map-bug-fix.js",
+    "postversion": "react-native-version"
   },
   "dependencies": {
     "express": "^4.15.2",
@@ -43,6 +44,7 @@
     "nodemon": "^1.11.0",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-native-version": "^2.6.2",
     "react-scripts": "0.9.5",
     "react-test-renderer": "~15.4.0-rc.4",
     "replace-in-file": "^3.4.0",

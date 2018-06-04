@@ -1,9 +1,3 @@
-/**
- * Contents of Mobilities Tab. Nested Navigator.
- * Mobilities Tab renders a StackNavigator, see MobilitiesNavigator.
- * @flow
- */
-
 import React, { Component } from 'react'
 import { View, StatusBar, Platform } from 'react-native'
 import MobilitiesNavigator from '../navigators/MobilitiesNavigator'
@@ -13,16 +7,13 @@ import LoginView from './LoginView'
 
 export default class MobilitiesTabView extends Component {
   static navigationOptions = {
-    tabBar: ({ state }) => ({
-      visible: state.params && state.params.loggedIn,
-      label: 'Activities',
-      icon: ({ tintColor, focused }) => (
+    tabBarLabel: 'Activities',
+    tabBarIcon: ({ tintColor, focused }) => (
         <PlatformIcon
           iosIcon={focused ? 'ios-bonfire' : 'ios-bonfire-outline'}
           androidIcon="landscape"
           size={24} color={Platform.OS === 'ios' ? tintColor : 'white' } />
       )
-    })
   }
 
   componentWillMount() {
