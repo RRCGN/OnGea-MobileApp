@@ -1,3 +1,4 @@
+// react-native-maps are not used ATM
 const replace = require('replace-in-file')
 
 const options1 = {
