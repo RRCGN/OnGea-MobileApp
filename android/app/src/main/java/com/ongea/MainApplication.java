@@ -3,14 +3,13 @@ package com.ongea;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
-import com.pilloxa.backgroundjob.BackgroundJobPackage;
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
-import com.airbnb.android.react.maps.MapsPackage;
-import com.RNFetchBlob.RNFetchBlobPackage;
 import com.mehcode.reactnative.splashscreen.SplashScreenPackage;
-import com.BV.LinearGradient.LinearGradientPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
+import com.BV.LinearGradient.LinearGradientPackage;
+import com.RNFetchBlob.RNFetchBlobPackage;
+import com.pilloxa.backgroundjob.BackgroundJobPackage;
+import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -32,14 +31,13 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new ReactNativeConfigPackage(),
-            new BackgroundJobPackage(),
             new ReactNativePushNotificationPackage(),
-            new MapsPackage(),
-            new RNFetchBlobPackage(),
             new SplashScreenPackage(),
+            new VectorIconsPackage(),
             new LinearGradientPackage(),
-            new VectorIconsPackage()
+            new RNFetchBlobPackage(),
+            new BackgroundJobPackage(),
+            new ReactNativeConfigPackage()
       );
     }
   };

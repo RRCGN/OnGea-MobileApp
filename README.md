@@ -16,11 +16,25 @@ OnGea App for iOS and Android
   - iOS: `$ react-native run-ios` (will start the iOS Simulator)
   - Android: `$ react-native run-android` (need a virtual or connected device)
 
+
+You may face some issues when building for Android, check :point_down: [Known issues and its hacks](#known-issues-and-its-hacks)
+
 ## Production:
 
 ## TODOs
 
 See https://github.com/railslove/ongea-app/projects/2
+
+## Known issues and its hacks
+
+### react-native-maps
+`react-native-maps` has `compileOnly()` issue on android build, since it uses [docs.gradle.org/3.0/release-notes](https://docs.gradle.org/3.0/release-notes.html) and the app gradle is version 2.
+
+You can skip this issue by implementing `build.gradle` of the `modules`, check [react-native-maps#2188#issuecomment-385420099](https://github.com/react-community/react-native-maps/issues/2188#issuecomment-385420099)
+
+**Thae Hack:**
+run `$ yarn run react-native-maps-fix` at the root of project.
+
 
 ## App Code
 
