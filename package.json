@@ -49,6 +49,12 @@
     "standard": "^10.0.1",
     "storyshots": "^3.2.2"
   },
-  "standard": { "plugins": [ "flowtype" ] },
-  "jest": { "preset": "react-native" }
+  "standard": {
+    "plugins": [
+      "flowtype"
+    ]
+  },
+  "jest": {
+    "preset": "react-native"
+  }
 }
