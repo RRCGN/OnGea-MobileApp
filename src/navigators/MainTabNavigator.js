@@ -1,9 +1,3 @@
-/**
- * Main Navigation (Tab Navigator)
- * Two Tabs for WebView and Mobilities Overview
- */
-
-import React from 'react'
 import { Platform } from 'react-native'
 import { TabNavigator, TabView } from 'react-navigation'
 import { NavigationComponent } from 'react-native-material-bottom-navigation'
@@ -19,9 +13,7 @@ const MainScreenTabNavigator = TabNavigator({
     screen: WebAppView
   }
 }, {
-  tabBarComponent: Platform.OS === 'ios' ?
-                    TabView.TabBarBottom :
-                    NavigationComponent,
+  tabBarComponent: Platform.OS === 'ios' ? TabView.TabBarBottom : NavigationComponent,
   tabBarPosition: 'bottom',
   swipeEnabled: false,
   tabBarOptions: {

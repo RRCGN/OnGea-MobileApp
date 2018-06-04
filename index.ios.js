@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native'
-import OnGeaApp from './src/OnGeaApp'
+import RootView from './src/RootView'
 
-AppRegistry.registerComponent('OnGea', () => OnGeaApp)
+AppRegistry.registerComponent('OnGea', () => RootView)

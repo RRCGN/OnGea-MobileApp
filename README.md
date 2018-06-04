@@ -40,7 +40,7 @@ run `$ yarn run react-native-maps-fix` at the root of project.
 
 Everything for our app is located in `/src`.
 
-- **`app/OnGeaApp.js`**  
+- **`app/RootView.js`**  
   Main entry point
 - **`app/components`**  
   Reusable Components

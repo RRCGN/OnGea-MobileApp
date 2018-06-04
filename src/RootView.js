@@ -1,12 +1,6 @@
-/**
- * Main App
- * @flow
- */
-
-import React, { Component } from 'react'
+import React from 'react'
 import {
   View,
-  Text,
   NetInfo,
   StatusBar
 } from 'react-native'
@@ -18,22 +12,16 @@ import DataService from './services/DataService'
 import NotificationService from './services/NotificationService'
 
 
-export default class OnGeaApp extends Component {
-
-  state: {
-    loaded: boolean,
-    loggedIn: ?boolean,
-    token?: string,
-    data?: any
+class RootView extends React.Component {
+  constructor(props) {
+    super(props)
   }
 
-  constructor() {
-    super()
-
-    this.state = {
-      loaded: false,
-      loggedIn: null
-    }
+  state = {
+    loaded: false,
+    loggedIn: null,
+    token: null,
+    data: null
   }
 
   componentWillMount() {
@@ -108,7 +96,12 @@ export default class OnGeaApp extends Component {
   _handleLogin = async (token: string): Promise<void> => {
     try {
       await LoginService.saveToken(token)
-    } catch (error) {
+
+    } catch (
+      error
+    )
+
+    {
       console.log('Error when saving token:', error)
     }
 
@@ -138,5 +131,9 @@ export default class OnGeaApp extends Component {
 
 // $FlowFixMe: uuugh flow doesn't know about ignoredYellowBox why
 console.ignoredYellowBox = [
-   'Behaviour of screenProps has changed',
+  'Behaviour of screenProps has changed'
 ]
+
+
+
+export default RootView
