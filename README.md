@@ -1,20 +1,20 @@
 # OnGea App
-
-OnGea Apps for iOS and Android, written in react-native.
+OnGea App for iOS and Android
 
 ## Dependencies
 
-- react-native
+- `react-native`
 
-## Installation
+## Development
 
-1. Install dependencies: `yarn install`
-2. Link native dependencies: `react-native link`
+- Install dependencies: `$ yarn install`
 
-## Run
+- With the packager is running `$ yarn start` do following:
 
-- `react-native run-ios` for iOS (will start the iOS Simulator)
-- `react-native run-android` for Android (need a virtual or connected device)
+  - iOS: `$ react-native run-ios` (will start the iOS Simulator)
+  - Android: `$ react-native run-android` (need a virtual or connected device)
+
+## Production:
 
 ## TODOs
 
@@ -22,7 +22,7 @@ See https://github.com/railslove/ongea-app/projects/2
 
 ## App Code
 
-Everything for our app is located in `/app`.
+Everything for our app is located in `/src`.
 
 - **`app/OnGeaApp.js`**  
   Main entry point
