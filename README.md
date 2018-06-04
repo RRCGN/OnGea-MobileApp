@@ -9,6 +9,8 @@ OnGea App for iOS and Android
 
 - Install dependencies: `$ yarn install`
 
+- Copy `.env.example` to `.env` with credentials.
+
 - With the packager is running `$ yarn start` do following:
 
   - iOS: `$ react-native run-ios` (will start the iOS Simulator)
