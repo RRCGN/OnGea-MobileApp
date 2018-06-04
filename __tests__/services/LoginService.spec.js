@@ -1,6 +1,6 @@
 import 'react-native'
 import '../../__mocks__/AsyncStorage'
-import LoginService from '../../app/services/LoginService'
+import LoginService from '../../src/services/LoginService'
 
 describe('LoginService', () => {
   const TEST_TOKEN = 'mock token'

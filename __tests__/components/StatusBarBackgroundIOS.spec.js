@@ -1,6 +1,6 @@
 import 'react-native'
 import React from 'react'
-import StatusBarBackgroundIOS from '../../app/components/StatusBarBackgroundIOS'
+import StatusBarBackgroundIOS from '../../src/components/StatusBarBackgroundIOS'
 
 import renderer from 'react-test-renderer'
 

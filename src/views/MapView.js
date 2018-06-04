@@ -9,7 +9,7 @@ import {
   Platform,
   StatusBar
 } from 'react-native'
-import MapView from 'react-native-maps'
+// import MapView from 'react-native-maps'
 import * as Animatable from 'react-native-animatable'
 
 import ToolbarButton from '../components/ToolbarButton'
@@ -78,7 +78,7 @@ export default class SingleView extends Component {
 
     return (
       <View style={styles.container}>
-        <MapView
+        {/* <MapView
           style={styles.map}
           toolbarEnabled={false}
           initialRegion={this.state.initCoords}
@@ -89,7 +89,7 @@ export default class SingleView extends Component {
           <MapView.Marker
             coordinate={this.state.initCoords}
           />
-        </MapView>
+        </MapView> */}
         <Animatable.View
           style={styles.panel}
           ref="panel"

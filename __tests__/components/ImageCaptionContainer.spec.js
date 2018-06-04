@@ -3,8 +3,8 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
 
-import TitleOnShadow from '../../app/components/TitleOnShadow'
-import ImageCaptionContainer from '../../app/components/ImageCaptionContainer'
+import TitleOnShadow from '../../src/components/TitleOnShadow'
+import ImageCaptionContainer from '../../src/components/ImageCaptionContainer'
 
 import renderer from 'react-test-renderer'
 

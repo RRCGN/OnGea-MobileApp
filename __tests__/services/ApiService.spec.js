@@ -1,5 +1,5 @@
 import 'react-native'
-import ApiService from '../../app/services/ApiService'
+import ApiService from '../../src/services/ApiService'
 
 describe('ApiService', () => {
   describe('_queryString(params)', () => {

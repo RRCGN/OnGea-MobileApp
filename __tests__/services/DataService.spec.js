@@ -1,8 +1,8 @@
 import 'react-native'
 import '../../__mocks__/AsyncStorage'
-import DataService from '../../app/services/DataService'
+import DataService from '../../src/services/DataService'
 
-jest.mock('../../app/services/ApiService')
+jest.mock('../../src/services/ApiService')
 const AsyncStorage = require('AsyncStorage')
 
 describe('DataService', () => {

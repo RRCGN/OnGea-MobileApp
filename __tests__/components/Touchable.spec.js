@@ -1,6 +1,6 @@
 import { View } from 'react-native'
 import React from 'react'
-import Touchable from '../../app/components/Touchable'
+import Touchable from '../../src/components/Touchable'
 
 import renderer from 'react-test-renderer'
 
