@@ -10,9 +10,9 @@ import { View, Image, Text, StyleSheet, Platform, StatusBar } from 'react-native
 const ToolbarFancy = ({ image, title }) => (
   <View style={styles.container}>
     <Image style={styles.image} source={image}>
-      <View style={styles.overlay} />
-      <Text numberOfLines={2} style={styles.title}>{title}</Text>
     </Image>
+    <View style={styles.overlay} />
+    <Text numberOfLines={2} style={styles.title}>{title}</Text>
   </View>
 )
 

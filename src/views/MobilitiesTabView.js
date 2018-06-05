@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { View, StatusBar, Platform } from 'react-native'
+import PropTypes from 'prop-types'
 import MobilitiesNavigator from '../navigators/MobilitiesNavigator'
 import PlatformIcon from '../components/PlatformIcon'
 import LoginView from './LoginView'
 
 
-export default class MobilitiesTabView extends Component {
+class MobilitiesTabView extends Component {
   static navigationOptions = {
     tabBarLabel: 'Activities',
     tabBarIcon: ({ tintColor, focused }) => (
@@ -23,7 +24,6 @@ export default class MobilitiesTabView extends Component {
 
   render() {
     const { login, loggedIn } = this.props.screenProps
-
     return (
       <View style={{ flex: 1 }}>
         <StatusBar
@@ -39,3 +39,7 @@ export default class MobilitiesTabView extends Component {
     )
   }
 }
+
+MobilitiesTabView.propTypes = { screenProps: PropTypes.object, navigation: PropTypes.object }
+
+export default MobilitiesTabView

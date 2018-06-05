@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
-import {
-  View,
-  TextInput,
-  StyleSheet
-} from 'react-native'
+import { ActivityIndicator, StyleSheet, TextInput, View } from 'react-native'
 import ApiService from '../services/ApiService'
 import { Button } from '../components/Button'
 import { Colors } from '../utils/constants'
@@ -24,12 +20,6 @@ export default class LoginView extends Component {
   props: LoginViewProps
   state: LoginViewState
 
-  static defaultProps = {
-    onSubmit: async () => {
-      console.log('sumbit')
-    }
-  }
-
   constructor(props: LoginViewProps) {
     super(props)
     this.state = { username: '', password: '', success: null, button: 'idle' }
@@ -38,7 +28,6 @@ export default class LoginView extends Component {
   render() {
     const { success, button } = this.state
     const stateColor = this._getColorForSuccess(success)
-
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#E0E0E0' }}>
         <TextInput
@@ -59,20 +48,27 @@ export default class LoginView extends Component {
           value={this.state.password}
           onChangeText={(password) => this.setState({ password })}
         />
-        <Button
-          label="Login"
-          backgroundColor={Colors.PRIMARY}
-          color="white"
-          style={styles.loginButton}
-          onPress={this._handleLoginPress}
-        />
-        <Button
-          label="Go to Website"
-          backgroundColor="white"
-          color={Colors.PRIMARY}
-          style={styles.loginButton}
-          onPress={() => this.props.navigation.navigate('Web')}
-        />
+          <View style={styles.loginButtonContainer}>
+            {button === 'busy'
+            ? (<ActivityIndicator
+              animating={this.state.visible}
+              style={[styles.centering]}
+              size="small"
+              color={Colors.PRIMARY} />)
+            : (<Button
+                label="Login"
+                backgroundColor={Colors.PRIMARY}
+                color="white"
+                style={styles.loginButton}
+                onPress={this._handleLoginPress} />) }
+          </View>
+          <Button
+            label="Go to Website"
+            backgroundColor="white"
+            color={Colors.PRIMARY}
+            style={styles.loginButton}
+            onPress={() => this.props.navigation.navigate('Web')} />}
+
       </View>
     )
   }
@@ -106,8 +102,12 @@ const styles = StyleSheet.create({
     height: 50,
     alignSelf: 'center'
   },
+  loginButtonContainer: {
+    height: 65,
+    alignContent: 'center',
+    justifyContent: 'center'
+  },
   loginButton: {
-    width: 200,
-    marginTop: 20
+    width: 200
   }
 })

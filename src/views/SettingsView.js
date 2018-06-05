@@ -1,39 +1,29 @@
-/**
- * Settings View
- * @flow
- */
-
 import React, { Component } from 'react'
 import { View, Platform, StatusBar } from 'react-native'
+import PropTypes from 'prop-types'
 import ToolbarButton from '../components/ToolbarButton'
 import Button from '../components/ButtonText'
 import { Colors } from '../utils/constants'
 
-export default class SettingsView extends Component {
-  static navigationOptions = {
-    title: 'Settings',
-    header: ({ goBack }) => ({
-      style: {
+class SettingsView extends Component {
+  static navigationOptions = ({navigation}) => {
+    return {
+      title: 'Settings',
+      headerStyle: {
         backgroundColor: Colors.PRIMARY,
         elevation: 5,
         ...Platform.select({
           'android': {
             paddingTop: StatusBar.currentHeight,
-            height: 56 + StatusBar.currentHeight
-          }
-        })
+            height: 56 + StatusBar.currentHeight } })
       },
-      titleStyle: {
-        color: Colors.WHITE
-      },
-      left: (
+      headerTitleStyle: { color: Colors.WHITE },
+      headerLeft: (
         <ToolbarButton
           androidIcon="arrow-back"
           iosIcon="ios-arrow-back"
-          onPress={() => goBack(null)}
-        />
-      )
-    })
+          onPress={() => navigation.goBack(null)} /> )
+    }
   }
 
   render() {
@@ -44,3 +34,9 @@ export default class SettingsView extends Component {
     )
   }
 }
+
+
+SettingsView.propTypes = { screenProps: PropTypes.object }
+
+
+export default SettingsView

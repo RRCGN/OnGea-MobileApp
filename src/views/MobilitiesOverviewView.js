@@ -1,19 +1,14 @@
-/**
- * Mobilities Overview
- */
-
 import React, { Component } from 'react'
 import { Platform, StatusBar, View } from 'react-native'
-import { NavigationActions } from 'react-navigation'
 import MobilitiesListView from './MobilitiesListView'
 import { Colors } from '../utils/constants'
 import ToolbarButton from '../components/ToolbarButton'
 
 export default class MobilitiesOverviewView extends Component {
-  static navigationOptions = {
-    title: 'My Activities',
-    header: ({ navigate }) => ({
-      style: {
+  static navigationOptions = ({navigation}) => {
+    return {
+      title: 'My Activities',
+      headerStyle: {
         backgroundColor: Colors.PRIMARY,
         elevation: 5,
         ...Platform.select({
@@ -23,17 +18,16 @@ export default class MobilitiesOverviewView extends Component {
           }
         })
       },
-      titleStyle: {
+      headerTitleStyle: {
         color: Colors.WHITE
       },
-      right: (
+      headerRight: (
         <ToolbarButton
           androidIcon="more-vert"
           iosIcon="ios-cog"
-          onPress={() => navigate('Settings')}
-        />
+          onPress={ () => navigation.navigate('Settings') } />
       )
-    })
+    }
   }
 
   render() {

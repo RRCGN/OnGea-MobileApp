@@ -1,9 +1,3 @@
-/**
- * Wrapper for all API related Requests.
- * @flow
- */
-
-import { Platform } from 'react-native'
 import LoginService from './LoginService'
 
 interface ApiResponse<S> {
@@ -20,12 +14,20 @@ export default class ApiService {
   static ALL_PATH = '/data'
   static NOTIFICATION_PATH = '/notifications'
 
+
+// WARNING: it is for debugging
+// auth method always preform login
+
   static async auth(username: string, password: string): Promise<Auth> {
-    const response = await this.call(this.AUTH_PATH, { username, password })
-    if (!response.ok) return { ok: false }
-    const json = await response.json()
-    return { ok: true, token: json.token }
+    // const response = await this.call(this.AUTH_PATH, { username, password })
+    // if (!response.ok) return { ok: false }
+    // const json = await response.json()
+    return { ok: true, token: 'json.token' }
   }
+
+
+
+
 
   static async call(path: string, params: Params, opts?: any): Promise<Response> {
     const qs = this._queryString(params)

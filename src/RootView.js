@@ -81,7 +81,8 @@ class RootView extends React.Component {
     )
   }
 
-  _handleLogout = async (): Promise<void> => {
+  _handleLogout = async () => {
+    console.log('wwowo')
     try {
       await LoginService.clearToken()
       await DataService.purge()
@@ -93,25 +94,16 @@ class RootView extends React.Component {
     this._rerender()
   }
 
-  _handleLogin = async (token: string): Promise<void> => {
-    try {
-      await LoginService.saveToken(token)
-
-    } catch (
-      error
-    )
-
-    {
-      console.log('Error when saving token:', error)
-    }
+  _handleLogin = async (token) => {
+    try { await LoginService.saveToken(token) }
+    catch (e) { console.log('Error when saving token:', e)}
 
     const data = await DataService.fetchAndSave()
-
     this.setState({ loggedIn: true, token, data })
     this._rerender()
   }
 
-  _handleRefresh = async (): Promise<void> => {
+  _handleRefresh = async () => {
     await DataService.fetchAndSave()
     const data = await DataService.getAll()
     this.setState({ data })
@@ -130,8 +122,11 @@ class RootView extends React.Component {
 
 
 // $FlowFixMe: uuugh flow doesn't know about ignoredYellowBox why
-
-console.ignoredYellowBox = ['Remote debugger', 'Behaviour of screenProps has changed']
+console.ignoredYellowBox = [
+  'Remote debugger',
+  'Behaviour of screenProps has changed',
+  'Warning: isMounted(...) is deprecated'
+]
 
 
 

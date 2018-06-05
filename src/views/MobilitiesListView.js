@@ -1,23 +1,11 @@
-/**
- * ListView for Mobilities.
- * @flow
- */
-
 import React, { Component } from 'react'
-import {
-  View,
-  Image,
-  NetInfo,
-  ListView,
-  StyleSheet,
-  RefreshControl
-} from 'react-native'
-import DataService from '../services/DataService'
-
+import { ListView, NetInfo, RefreshControl, StyleSheet, View } from 'react-native'
+import PropTypes from 'prop-types'
 import { Card, CardSegment, CardTitle } from '../components/Card'
 import Button from '../components/ButtonText'
 import ButtonFlatGrid from '../components/ButtonFlatGrid'
 import DateRange from '../components/DateRange'
+
 
 
 type MLVProps = {
@@ -31,7 +19,7 @@ type MLVState = {
   refreshing: boolean
 }
 
-export default class MobilitiesListView extends Component {
+class MobilitiesListView extends Component {
   props: MLVProps
   state: MLVState
 
@@ -129,3 +117,7 @@ const styles = StyleSheet.create({
     // of the last card, ignoring everything else.
   }
 })
+
+MobilitiesListView.propTypes = { screenProps: PropTypes.object }
+
+export default MobilitiesListView
