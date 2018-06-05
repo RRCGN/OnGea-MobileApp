@@ -27,13 +27,15 @@ In order to deploy the app for public, there is need to post (bump - incrument) 
 to Bump (incrument) version number (both Android & iOS) run:  
 `$ yarn postversion`
 
+
+
 You need to commit changes to git also adding a tag for the commit (since it is a new version).
 
-- `$ git commit -m "version x"`  
+- `$ git commit -m "version X"`  
 
 - Create `tag` and push it to repository:
 
-  `$ git tag Vx` - you can use `-a` flag to add tag description
+  `$ git tag vX` - you can use `-a` flag to add tag description
   `$ git push --tags`
 ### Stores Credentials Setup
 :see_no_evil:
