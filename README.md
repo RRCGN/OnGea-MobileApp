@@ -27,6 +27,13 @@ In order to deploy the app for public, there is need to post (bump - incrument) 
 to Bump (incrument) version number (both Android & iOS) run:  
 `$ yarn postversion`
 
+### Deploy
+
+### Android
+
+To deply to Play Store, run `$ run fastlane deploy` inside `/android/`.
+You may need to review and roll the version out manually after deployment.
+
 
 
 You need to commit changes to git also adding a tag for the commit (since it is a new version).
@@ -36,10 +43,20 @@ You need to commit changes to git also adding a tag for the commit (since it is 
 - Create `tag` and push it to repository:
 
   `$ git tag vX` - you can use `-a` flag to add tag description
-  `$ git push --tags`
-### Stores Credentials Setup
-:see_no_evil:
+  `$ git push --tags` (`$ git push` before)
 
+### Stores Credentials Setup
+
+#### Android
+The following steps are needed to be able to build for production and deploy it:
+
+- get the `my-release-key.keystore` for the app and copy it into: `android/app/my-release-key.keystore`
+
+- copy `google.play.credentials.json.example` -> `google.play.credentials.json` with the correct credentials.
+
+#### iOS
+
+:see_no_evil:
 
 ## TODOs
 
