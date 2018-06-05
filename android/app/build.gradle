@@ -92,7 +92,7 @@ android {
         applicationId "com.ongea"
         minSdkVersion 21
         targetSdkVersion 16
-        versionCode 3
+        versionCode 1
         versionName "0.0.1"
         ndk {
             abiFilters "armeabi-v7a", "x86"
