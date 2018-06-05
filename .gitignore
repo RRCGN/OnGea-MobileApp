@@ -52,6 +52,6 @@ google.play.credentials.json
 # For more information about the recommended setup visit:
 # https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Gitignore.md
 
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots
+android/fastlane/report.xml
+android/fastlane/Preview.html
+android/fastlane/screenshots
