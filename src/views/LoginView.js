@@ -1,19 +1,12 @@
-/**
- * View for Login.
- * @flow
- */
-
 import React, { Component } from 'react'
 import {
   View,
   TextInput,
   StyleSheet
 } from 'react-native'
-import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 import ApiService from '../services/ApiService'
 import { Button } from '../components/Button'
 import { Colors } from '../utils/constants'
-
 
 type LoginViewProps = {
   onSuccessfulLogin: (token: string) => void,
@@ -32,7 +25,9 @@ export default class LoginView extends Component {
   state: LoginViewState
 
   static defaultProps = {
-    onSubmit: async () => { }
+    onSubmit: async () => {
+      console.log('sumbit')
+    }
   }
 
   constructor(props: LoginViewProps) {

@@ -1,11 +1,12 @@
 import { Platform } from 'react-native'
-import { TabNavigator, TabView } from 'react-navigation'
+import { createBottomTabNavigator } from 'react-navigation'
+import { TabView } from 'react-native-tab-view'
 import { NavigationComponent } from 'react-native-material-bottom-navigation'
 import WebAppView from '../views/WebAppView'
 import MobilitiesTabView from '../views/MobilitiesTabView'
 import { Colors } from '../utils/constants'
 
-const MainScreenTabNavigator = TabNavigator({
+const MainScreenTabNavigator = createBottomTabNavigator({
   Mobilities: {
     screen: MobilitiesTabView
   },

@@ -29,7 +29,7 @@ to Bump (incrument) version number (both Android & iOS) run:
 
 ### Deploy
 
-### Android
+#### Android
 
 To deply to Play Store, run `$ run fastlane deploy` inside `/android/`.
 You may need to review and roll the version out manually after deployment.
@@ -44,6 +44,10 @@ You need to commit changes to git also adding a tag for the commit (since it is 
 
   `$ git tag vX` - you can use `-a` flag to add tag description
   `$ git push --tags` (`$ git push` before)
+
+#### iOS
+
+:see_no_evil:
 
 ### Stores Credentials Setup
 

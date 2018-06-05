@@ -130,9 +130,9 @@ class RootView extends React.Component {
 
 
 // $FlowFixMe: uuugh flow doesn't know about ignoredYellowBox why
-console.ignoredYellowBox = [
-  'Behaviour of screenProps has changed'
-]
+
+console.ignoredYellowBox = ['Remote debugger', 'Behaviour of screenProps has changed']
+
 
 
 
