@@ -9,7 +9,7 @@
     "test": "jest",
     "storybook": "storybook start -p 7007",
     "react-native-maps-fix": "node scripts/react-native-map-bug-fix.js",
-    "postversion": "react-native-version"
+    "postversion": "react-native-version --never-amend"
   },
   "dependencies": {
     "express": "^4.15.2",

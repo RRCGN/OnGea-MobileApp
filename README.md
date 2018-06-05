@@ -20,6 +20,24 @@ OnGea App for iOS and Android
 You may face some issues when building for Android, check :point_down: [Known issues and its hacks](#known-issues-and-its-hacks)
 
 ## Production:
+In order to deploy the app for public, there is need to post (bump - incrument) the app version, build and then deploy to distribution services (Google Play or App Store).
+:point_up_2: This stage comes after setting the correct credentials. Check [Stores Credentials Setup](#stores-credentials-setup)
+
+### Post Version
+to Bump (incrument) version number (both Android & iOS) run:  
+`$ yarn postversion`
+
+You need to commit changes to git also adding a tag for the commit (since it is a new version).
+
+- `$ git commit -m "version x"`  
+
+- Create `tag` and push it to repository:
+
+  `$ git tag Vx` - you can use `-a` flag to add tag description
+  `$ git push --tags`
+### Stores Credentials Setup
+:see_no_evil:
+
 
 ## TODOs
 
@@ -32,7 +50,7 @@ See https://github.com/railslove/ongea-app/projects/2
 
 You can skip this issue by implementing `build.gradle` of the `modules`, check [react-native-maps#2188#issuecomment-385420099](https://github.com/react-community/react-native-maps/issues/2188#issuecomment-385420099)
 
-**Thae Hack:**
+**Da Hack:**
 run `$ yarn run react-native-maps-fix` at the root of project.
 
 
