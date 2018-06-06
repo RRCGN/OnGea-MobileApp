@@ -26,9 +26,8 @@ describe('LoginService', () => {
   describe('saveToken(token)', async () => {
     it('saves the token', async () => {
       await LoginService.saveToken(TEST_TOKEN)
-      const token = await LoginService.getToken()
-
-      expect(token).toEqual(TEST_TOKEN)
+      const tokens = await LoginService.getTokens()
+      expect(tokens.token).toEqual(TEST_TOKEN)
     })
   })
 

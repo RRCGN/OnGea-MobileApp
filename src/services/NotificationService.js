@@ -36,8 +36,7 @@ export default class NotificationService {
       }
     })
 
-    this.startForegroundPolling()
-    // this.startBackgroundPolling()
+    // this.startForegroundPolling()
   }
 
   unregister() {

@@ -47,7 +47,7 @@
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 			</dict>
-			<key>ongea-mockserver.apps.railslabs.com</key>
+			<key>ongeastage.nano-dev.de</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>

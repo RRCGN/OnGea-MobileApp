@@ -11,6 +11,7 @@ import LoginService from './services/LoginService'
 import DataService from './services/DataService'
 import NotificationService from './services/NotificationService'
 
+import { asyncStorageDebugger } from './utils/debugger'
 
 class RootView extends React.Component {
   constructor(props) {
@@ -20,7 +21,8 @@ class RootView extends React.Component {
   state = {
     loaded: false,
     loggedIn: null,
-    token: null,
+    token: '',
+    logoutToken: '',
     data: null
   }
 
@@ -30,33 +32,32 @@ class RootView extends React.Component {
   }
 
   componentDidMount() {
-    // Facebook/Flow doesn't allow async on lifecycle methods.
-    // It would look much nicer like `async componentDidMount()`, but flow
-    // throws an error.
-
     // Check logged in status, online status and save into state
-    (async () => {
-      const { loggedIn, token } = await LoginService.checkStatus()
-      const isOnline = await NetInfo.isConnected.fetch()
+    this.proofStatus()
+  }
 
-      if (!loggedIn) {
-        this.setState({ loggedIn, loaded: true })
-        SplashScreen.hide()
-        return
-      }
+  proofStatus = async () => {
+    // await LoginService.clearTokens()
+    // asyncStorageDebugger()
 
-      const data = isOnline
-        ? await DataService.fetchAndSave()
-        : await DataService.getAll()
+    const { loggedIn, token, logoutToken } = await LoginService.checkStatus()
+    const isOnline = await NetInfo.isConnected.fetch()
 
-      this.setState({ loggedIn, token, data, loaded: true })
+    if (!loggedIn) {
+      this.setState({ loggedIn, loaded: true })
       SplashScreen.hide()
-    })()
+      return
+    }
+
+    const data = isOnline
+      ? await DataService.fetchAndSave()
+      : await DataService.getAll()
+    this.setState({ loggedIn, token, logoutToken, data, loaded: true })
+    SplashScreen.hide()
   }
 
   render() {
-    const { loggedIn, token, data } = this.state
-
+    const { loggedIn, token, logoutToken, data } = this.state
     return (
       <View style={{ flex: 1 }}>
         <StatusBar
@@ -64,12 +65,12 @@ class RootView extends React.Component {
           backgroundColor="transparent"
           barStyle="light-content"
         />
-
         {this.state.loaded &&
           <MainTabNavigator
             screenProps={{
               loggedIn,
               token,
+              logoutToken,
               logout: this._handleLogout,
               login: this._handleLogin,
               refreshData: this._handleRefresh,
@@ -82,9 +83,8 @@ class RootView extends React.Component {
   }
 
   _handleLogout = async () => {
-    console.log('wwowo')
     try {
-      await LoginService.clearToken()
+      await LoginService.clearTokens()
       await DataService.purge()
     } catch (error) {
       console.error('Could not clear token:', error)
@@ -94,12 +94,12 @@ class RootView extends React.Component {
     this._rerender()
   }
 
-  _handleLogin = async (token) => {
-    try { await LoginService.saveToken(token) }
+  _handleLogin = async (tokens) => {
+    try { await LoginService.saveTokens(tokens) }
     catch (e) { console.log('Error when saving token:', e)}
 
     const data = await DataService.fetchAndSave()
-    this.setState({ loggedIn: true, token, data })
+    this.setState({ ...tokens, loggedIn: true, data })
     this._rerender()
   }
 

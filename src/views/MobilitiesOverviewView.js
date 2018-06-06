@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { Platform, StatusBar, View } from 'react-native'
+import { StatusBar, Platform, View } from 'react-native'
 import MobilitiesListView from './MobilitiesListView'
 import { Colors } from '../utils/constants'
 import ToolbarButton from '../components/ToolbarButton'
-
 export default class MobilitiesOverviewView extends Component {
   static navigationOptions = ({navigation}) => {
     return {
@@ -36,7 +35,8 @@ export default class MobilitiesOverviewView extends Component {
         <StatusBar translucent backgroundColor="rgba(0,0,0,0.36)" />
         <MobilitiesListView
           refreshData={this.props.screenProps.refreshData}
-          activities={this.props.screenProps.data.activities}
+          // activities={this.props.screenProps.data.activities}
+          activities={{}}
           {...this.props}
         />
       </View>

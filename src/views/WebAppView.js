@@ -16,12 +16,20 @@ export default class WebViewScreen extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: '#d52319' }}>
+      <View style={styles.container}>
         <WebView
           source={{ uri: 'http://rootsnroutes.eu' }}
           style={{ marginTop: StatusBar.currentHeight }}
         />
       </View>
     )
+  }
+}
+
+const styles = {
+  container: {
+    paddingTop: 50,
+    flex: 1,
+    backgroundColor: '#d52319'
   }
 }

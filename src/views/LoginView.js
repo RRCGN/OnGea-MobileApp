@@ -1,35 +1,26 @@
 import React, { Component } from 'react'
-import { ActivityIndicator, StyleSheet, TextInput, View } from 'react-native'
+import { ActivityIndicator, StyleSheet, Text, TextInput, View } from 'react-native'
 import ApiService from '../services/ApiService'
 import { Button } from '../components/Button'
 import { Colors } from '../utils/constants'
 
-type LoginViewProps = {
-  onSuccessfulLogin: (token: string) => void,
-  navigation: any
-}
-
-type LoginViewState = {
-  username: string,
-  password: string,
-  success: ?boolean,
-  button: string
-}
-
 export default class LoginView extends Component {
-  props: LoginViewProps
-  state: LoginViewState
 
-  constructor(props: LoginViewProps) {
-    super(props)
-    this.state = { username: '', password: '', success: null, button: 'idle' }
+  state = {
+    username: '',
+    password: '',
+    success: false,
+    button: '',
+    message: ''
   }
 
   render() {
-    const { success, button } = this.state
-    const stateColor = this._getColorForSuccess(success)
+    const { button, message } = this.state
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#E0E0E0' }}>
+        <View style={styles.messagesContainer}>
+          <Text>{message}</Text>
+        </View>
         <TextInput
           autoCapitalize="none"
           autoCorrect={false}
@@ -73,24 +64,17 @@ export default class LoginView extends Component {
     )
   }
 
-  _getColorForSuccess = (success) => {
-    if (success == true) return 'green'
-    else if (success == false) return 'red'
-    else return undefined
-  }
-
   _handleLoginPress = async () => {
-    this.setState({ button: 'busy' })
+    this.setState({ button: 'busy', message: '' })
     const { username, password } = this.state
-    const { ok, token } = await ApiService.auth(username, password)
+    const { ok, token, logoutToken, message } = await ApiService.auth(username, password)
     this.setState({ success: ok })
-
     if (ok && token) {
       // Call onSuccessfulLogin from Navigator
-      this.props.onSuccessfulLogin(token)
+      this.props.onSuccessfulLogin({token, logoutToken})
       this.setState({ button: 'success' })
     } else {
-      this.setState({ button: 'idle' })
+      this.setState({ button: 'idle', message: message})
     }
   }
 }

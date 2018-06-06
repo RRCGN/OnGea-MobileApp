@@ -31,7 +31,8 @@ class MobilitiesListView extends Component {
     })
 
     this.state = {
-      dataSource: dataSource.cloneWithRows(props.activities),
+      // dataSource: dataSource.cloneWithRows(props.activities),
+      dataSource: dataSource.cloneWithRows({}),
       refreshing: false
     }
   }
