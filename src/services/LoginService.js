@@ -4,18 +4,13 @@ const LOGOUT_TOKEN_KEY = '@AuthStore:logoutToken'
 class LoginService {
 
   static saveTokens = async (tokens) => {
-    console.log({tokens})
     try {
-      // await AsyncStorage.setItem(TOKEN_KEY, 'I like to save it.')
       await AsyncStorage.setItem(TOKEN_KEY, tokens.token, () => {
         AsyncStorage.mergeItem(LOGOUT_TOKEN_KEY, tokens.logoutToken)
       })
     } catch (e) {
       console.log('Erorr setting AsyncStorage items: ' + e)
     }
-    // await AsyncStorage.setItem(TOKEN_KEY, tokens.token, () => {
-    //   AsyncStorage.mergeItem(TOKEN_KEY, tokens.logoutToken)
-    // })
   }
 
   static getTokens = async () => {

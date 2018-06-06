@@ -32,7 +32,7 @@ class SettingsView extends Component {
   handleLogout = async () => {
     const { screenProps } = this.props
     if (await ApiService.logout(screenProps.logoutToken)) {
-      this.props.screenProps.logout
+      this.props.screenProps.logout()
     } else {
       console.log('cannot logout - server side')
       // managing sad-path need to be done from server side

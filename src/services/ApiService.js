@@ -40,9 +40,8 @@ class ApiService {
   }
 
   static async logout (logoutToken) {
-    return await fetch(Config.LOGOUT_URI + `&token=${logoutToken}`)
+    return await fetch(Config.LOGOUT_URI + `&token=${logoutToken}`, this.postData({}))
       .then((response) => {
-        console.log({response})
         return (response.status == 204)
       })
       .catch((error) =>{

@@ -38,7 +38,7 @@ class RootView extends React.Component {
 
   proofStatus = async () => {
     // await LoginService.clearTokens()
-    // asyncStorageDebugger()
+    asyncStorageDebugger()
 
     const { loggedIn, token, logoutToken } = await LoginService.checkStatus()
     const isOnline = await NetInfo.isConnected.fetch()
