@@ -9,8 +9,8 @@ import DateRange from '../components/DateRange'
 import SectionShortTravel from '../subviews/SectionShortTravel'
 import SectionShortStay from '../subviews/SectionShortStay'
 import SectionOrganization from '../subviews/SectionOrganization'
-import SectionDownloads from '../subviews/SectionDownloads'
-import SectionShortSchedule from '../subviews/SectionShortSchedule'
+import Section from '../components/Section'
+import ParticipationFee from '../subviews/ParticipationFee'
 import Button from '../components/ButtonText'
 import ButtonFlatGrid from '../components/ButtonFlatGrid'
 import PropTypes from 'prop-types'
@@ -61,6 +61,23 @@ class SingleView extends Component {
     return (activitiesJSON[0])
   }
 
+  participationFeeData() {
+    const {
+      participationFee,
+      participationFeeCurrency,
+      participationFeeReducedActive,
+      participationFeeReducedCurrency,
+      participationFeeReduced
+    } = this.getActivityContent()
+    return ({
+      participationFee: String(participationFee),
+      participationFeeCurrency: String(participationFeeCurrency),
+      participationFeeReducedActive: String(participationFeeReducedActive),
+      participationFeeReducedCurrency: String(participationFeeReducedCurrency),
+      participationFeeReduced: String(participationFeeReduced)
+    })
+  }
+
   _handleStickHeader = () => {
     this.navBarView.fadeIn(200)
   }
@@ -105,12 +122,6 @@ class SingleView extends Component {
     const mobilities = mobilitiesJSON
     const activity = this.getActivityContent()
     const {coordinationOrganisation, hostOrganisation} = activity
-    const genericParams = {
-      image: activity.image.url,
-      title: activity.title,
-      subtitle: activity.subtitle,
-      uuid: activity.uuid
-    }
     return (
       <View>
         <SectionShortTravel
@@ -152,7 +163,10 @@ class SingleView extends Component {
             </ButtonFlatGrid>
           }
         /> */}
-        <SectionOrganization data={{ coordinationOrganisation, hostOrganisation }} />
+        <Section title="Fees">
+          <ParticipationFee {...this.participationFeeData()} />
+        </Section>
+        <SectionOrganization data={{coordinationOrganisation, hostOrganisation}} />
         {/* <SectionDownloads data={params.data.downloads} /> */}
       </View>
     )
