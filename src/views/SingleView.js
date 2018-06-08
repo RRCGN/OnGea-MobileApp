@@ -56,7 +56,7 @@ class SingleView extends Component {
   componentWillMount() {
     this.headerWidth = Dimensions.get('window').width
     this.headerHeight = this.headerWidth * (2/3)
-    this.stickyHeaderHeight = Platform.OS === 'ios' ? 64 : 80
+    this.stickyHeaderHeight = Platform.OS === 'ios' ? 86 : 80
   }
 
   getActivityContent() {
@@ -126,7 +126,6 @@ class SingleView extends Component {
     const {coordinationOrganisation, hostOrganisation} = activity
     return (
       <View>
-        <SectionOrganization data={{coordinationOrganisation, hostOrganisation}} />
         <Section title="Description">
           <Description description = { activity.description } />
         </Section>
@@ -175,7 +174,7 @@ class SingleView extends Component {
         <Section title="Fees">
           <ParticipationFee {...this.participationFeeData()} />
         </Section>
-
+        <SectionOrganization data={{coordinationOrganisation, hostOrganisation}} />
         {/* <SectionDownloads data={params.data.downloads} /> */}
       </View>
     )
