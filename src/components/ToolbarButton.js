@@ -13,6 +13,7 @@ import PlatformIcon from './PlatformIcon'
 type Props = {
   androidIcon: string,
   iosIcon: string,
+  iconColor: string,
   floating?: boolean,
   onPress?: () => void
 }
@@ -20,6 +21,7 @@ type Props = {
 const ButtonToolbar = ({
   androidIcon,
   iosIcon,
+  iconColor,
   floating = false,
   onPress = () => { }
 }: Props) => {
@@ -35,7 +37,7 @@ const ButtonToolbar = ({
           androidIcon={androidIcon}
           iosIcon={iosIcon}
           size={24}
-          color={Colors.LIGHT_PRIMARY}
+          color={iconColor ? iconColor : Colors.LIGHT_PRIMARY}
           style={[ styles.icon, floating && styles.floating ]}
         />
       </View>

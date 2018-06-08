@@ -9,10 +9,11 @@ type Props = {
   label: string,
   color?: string,
   backgroundColor?: string,
-  style?: any
+  style?: any,
+  textStyle?: any
 }
 
-const ButtonText = ({ onPress = () => {}, label, color, backgroundColor, style }: Props) => (
+const ButtonText = ({ onPress = () => {}, label, color, backgroundColor, style, textStyle }: Props) => (
   <Touchable
     onPress={onPress}
     rippleColor={Colors.RIPPLE_DARK}
@@ -26,7 +27,7 @@ const ButtonText = ({ onPress = () => {}, label, color, backgroundColor, style }
         style
       ]}
     >
-      <Text style={[ styles.text, { color: color || Colors.PRIMARY } ]}>
+      <Text style={[ styles.text, { color: color || Colors.PRIMARY }, textStyle ]}>
         {label.toUpperCase()}
       </Text>
     </View>

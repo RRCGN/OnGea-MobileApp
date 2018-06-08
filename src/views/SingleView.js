@@ -126,6 +126,7 @@ class SingleView extends Component {
     const {coordinationOrganisation, hostOrganisation} = activity
     return (
       <View>
+        <SectionOrganization data={{coordinationOrganisation, hostOrganisation}} />
         <Section title="Description">
           <Description description = { activity.description } />
         </Section>
@@ -174,7 +175,7 @@ class SingleView extends Component {
         <Section title="Fees">
           <ParticipationFee {...this.participationFeeData()} />
         </Section>
-        <SectionOrganization data={{coordinationOrganisation, hostOrganisation}} />
+
         {/* <SectionDownloads data={params.data.downloads} /> */}
       </View>
     )

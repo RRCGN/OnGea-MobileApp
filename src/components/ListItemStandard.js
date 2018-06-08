@@ -1,10 +1,6 @@
-/**
- * TripDate Shows Time, Location and Icon for a Travel
- * @flow
- */
-
 import React from 'react'
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
+import Button from '../components/ButtonText'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Colors } from '../utils/constants'
 
@@ -13,15 +9,25 @@ type Props = {
   primary: string,
   secondary: string,
   big?: boolean,
+  interactive?: boolean,
+  onPress: func,
   style: {}
 }
 
-const ListItemStandard = ({ primary, secondary, big = false, style}: Props) => (
-  <View style={[ styles.container, big && styles.big, style ]}>
-    <Text style={styles.primary}>{primary}</Text>
-    <Text style={styles.secondary}>{secondary}</Text>
-  </View>
-)
+const ListItemStandard = ({ primary, secondary, big = false, interactive, onPress, style}: Props) => {
+  const handlePress = () => {
+    interactive ? onPress() : () => {}
+  }
+  return (
+    <View style={[ styles.container, big && styles.big, style ]}>
+      {!interactive
+        ? (<Text style={styles.primary}>{primary}</Text>)
+        : (<Button label={primary} onPress={handlePress} textStyle={{textAlign: 'left'}} />)
+      }
+      <Text style={styles.secondary}>{secondary}</Text>
+    </View>
+  )
+}
 
 export default ListItemStandard
 
