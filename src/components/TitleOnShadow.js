@@ -18,8 +18,7 @@ type Props = {
 const TitleOnShadow = ({ title, subtitle }: Props) => (
   <LinearGradient
     colors={[ 'rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.8)' ]}
-    style={styles.overlay}
-  >
+    style={styles.overlay}>
     <Text style={[styles.text, styles.title]}>{title}</Text>
     {subtitle && <Text style={[styles.text, styles.subtitle]}>{subtitle}</Text>}
   </LinearGradient>

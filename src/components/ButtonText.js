@@ -1,9 +1,3 @@
-/**
- * Flat Button (no background) with touch feedback.
- * Can display an Icon or Text.
- * @flow
- */
-
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import Touchable from './Touchable'
@@ -18,13 +12,7 @@ type Props = {
   style?: any
 }
 
-const ButtonText = ({
-  onPress = () => {},
-  label,
-  color,
-  backgroundColor,
-  style
-}: Props) => (
+const ButtonText = ({ onPress = () => {}, label, color, backgroundColor, style }: Props) => (
   <Touchable
     onPress={onPress}
     rippleColor={Colors.RIPPLE_DARK}

@@ -65,13 +65,14 @@ export default class LoginView extends Component {
   }
 
   _handleLoginPress = async () => {
+    const { onSuccessfulLogin } = this.props
     this.setState({ button: 'busy', message: '' })
     const { username, password } = this.state
     const { ok, token, logoutToken, message } = await ApiService.auth(username, password)
     this.setState({ success: ok })
     if (ok && token) {
       // Call onSuccessfulLogin from Navigator
-      this.props.onSuccessfulLogin({token, logoutToken})
+      onSuccessfulLogin({token, logoutToken})
       this.setState({ button: 'success' })
     } else {
       this.setState({ button: 'idle', message: message})

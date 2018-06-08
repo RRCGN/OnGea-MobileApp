@@ -1,29 +1,22 @@
-/**
- *
- * @flow
- */
-
 import React from 'react'
-import { View, Text } from 'react-native'
+import {View} from 'react-native'
+import PropTypes from 'prop-types'
 import Section from '../components/Section'
 import ListManager from '../components/ListManager'
 import ListItemStandard from '../components/ListItemStandard'
 
 
-const SectionOrganization = ({ data }) => {
-  const {
-    coordinatingOrganization: coordinating,
-    hostOrganization: hosting
-  } = data
+const SectionOrganization = (props) => {
+  const { coordinationOrganisation, hostOrganisation } = props.data
 
   const items = [
     {
-      name: coordinating.name,
-      contact: coordinating.phone
+      title: coordinationOrganisation.title,
+      contact: coordinationOrganisation.id
     },
     {
-      name: hosting.name,
-      contact: hosting.phone
+      title: hostOrganisation.title,
+      contact: hostOrganisation.id
     }
   ]
 
@@ -34,7 +27,7 @@ const SectionOrganization = ({ data }) => {
         renderItem={(item, i) => (
           <ListItemStandard
             key={i}
-            primary={item.name}
+            primary={item.title}
             secondary={item.contact}
           />
         )}
@@ -43,4 +36,7 @@ const SectionOrganization = ({ data }) => {
   )
 }
 
+SectionOrganization.propTypes = {
+  data: PropTypes.object
+}
 export default SectionOrganization

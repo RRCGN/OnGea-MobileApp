@@ -1,8 +1,3 @@
-/**
- *
- * @flow
- */
-
 import React from 'react'
 import { View, Text } from 'react-native'
 import moment from 'moment'
@@ -12,16 +7,16 @@ import { Row } from '../components/Layout'
 import ListManager from '../components/ListManager'
 import ListItemFancy from '../components/ListItemFancy'
 
-
-const SectionShortTravel = ({ recentIndex, data, footer, noBorder }) => {
-  const {
-    type,
-    number,
-    dateFrom,
-    dateTo,
-    origin: { locationName: from },
-    destination: { locationName: to }
-  } = data[recentIndex]
+const SectionShortTravel = ({ travelIndex, data, footer, noBorder }) => {
+  const travelData = data.filter( (travel) => (travel.id === travelIndex))
+  // const {
+  //   dateFrom,
+  //   dateTo,
+  //   type,
+  //   id,
+  //   fromCountry,
+  //   toCountry
+  // } = data[recentIndex]
 
   const typeLocalization = {
     FLIGHT: 'Next Flight',
@@ -34,22 +29,26 @@ const SectionShortTravel = ({ recentIndex, data, footer, noBorder }) => {
     TRAIN: [ 'train', 'train' ],
     OTHER: [ 'home', 'flag-triangle' ]
   }
-
-  const items = [
-    {
-      date: moment(dateFrom).format('DD.MM.YYYY, HH:mm'),
-      location: from,
-      icon: icons[type][0]
-    },
-    {
-      date: moment(dateTo).format('DD.MM.YYYY, HH:mm'),
-      location: to,
-      icon: icons[type][1]
-    }
-  ]
+  //
+  // const items = [
+  //   {
+  //     date: moment(dateFrom).format('DD.MM.YYYY, HH:mm'),
+  //     location: fromCountry,
+  //     icon: icons['FLIGHT'][0] // this should be implemented
+  //   },
+  //   {
+  //     date: moment(dateTo).format('DD.MM.YYYY, HH:mm'),
+  //     location: toCountry,
+  //     icon: icons['FLIGHT'][1] // this should be implemented
+  //   }
+  // ]
 
   return (
-    <Section title={typeLocalization[type] + (!!number ? `: ${number}` : '')} noBorder={noBorder}>
+    <View />
+  )
+
+  returns (
+    <Section title={typeLocalization[type] + (!!id ? `: ${id}` : '')} noBorder={noBorder}>
       <ListManager
         items={items}
         renderItem={(item, i) => (
@@ -67,4 +66,4 @@ const SectionShortTravel = ({ recentIndex, data, footer, noBorder }) => {
   )
 }
 
-export default findMostRecentData(SectionShortTravel)
+export default SectionShortTravel

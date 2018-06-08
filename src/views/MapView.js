@@ -21,34 +21,28 @@ export default class SingleView extends Component {
   static navigationOptions = ({navigation}) => {
     return  {
       title: '',
+      titleStyle: { color: '#FFFFFF' },
+      headerStyle: {
+        borderRadius: 0,
+        backgroundColor: 'transparent',
+        marginBottom: Platform.OS === 'ios' ? -64 : -56 - StatusBar.currentHeight,
+        zIndex: 1,
+        elevation: 0,
+        ...Platform.select({
+          android: {
+            marginTop: StatusBar.currentHeight
+          }
+        })
+      },
+      left: (
+        <ToolbarButton
+          androidIcon="arrow-back"
+          iosIcon="ios-arrow-back"
+          floating={true}
+          onPress={() => navigation.goBack(null)}
+        />
+      )
     }
-    // header: ({ goBack, state }) => {
-    //   return {
-    //     style: {
-    //       borderRadius: 0,
-    //       backgroundColor: 'transparent',
-    //       marginBottom: Platform.OS === 'ios' ? -64 : -56 - StatusBar.currentHeight,
-    //       zIndex: 1,
-    //       elevation: 0,
-    //       ...Platform.select({
-    //         android: {
-    //           marginTop: StatusBar.currentHeight
-    //         }
-    //       })
-    //     },
-    //     titleStyle: {
-    //       color: 'white'
-    //     },
-    //     left: (
-    //       <ToolbarButton
-    //         androidIcon="arrow-back"
-    //         iosIcon="ios-arrow-back"
-    //         floating={true}
-    //         onPress={() => goBack(null)}
-    //       />
-    //     )
-    //   }
-    // }
   }
 
   constructor(props) {

@@ -2,8 +2,10 @@ import LoginService from './LoginService'
 import Config from 'react-native-config'
 
 type Params = { [key: string]: string }
-type All = any
-// type AuthApiResponse = ApiResponse<{ token: string }>
+
+const urlWithToken = (url, token) => {
+  return (`${url}&token=${token}`)
+}
 
 class ApiService {
   static BASE_URL = 'http://ongea-mockserver.apps.railslabs.com'
@@ -15,15 +17,23 @@ class ApiService {
     return {
       body: JSON.stringify(data),
       cache: 'no-cache',
-      // credentials: 'same-origin', // include, same-origin, *omit
       headers: { 'content-type': 'application/json' },
       method: 'POST'
+    }
+  }
+
+  static getRequestData () {
+    return {
+      cache: 'no-cache',
+      headers: { 'content-type': 'application/json' },
+      method: 'GET'
     }
   }
 
 
   static async auth (name, pass) {
     console.log('auth.....')
+    name = pass = 'api'
     return await fetch(Config.LOGIN_URI, this.postData({name, pass}))
       .then((response) => response.json())
       .then((responseJson) => {
@@ -40,7 +50,7 @@ class ApiService {
   }
 
   static async logout (logoutToken) {
-    return await fetch(Config.LOGOUT_URI + `&token=${logoutToken}`, this.postData({}))
+    return await fetch(urlWithToken(Config.LOGOUT_URI, logoutToken), this.postData({}))
       .then((response) => {
         return (response.status == 204)
       })
@@ -67,7 +77,7 @@ class ApiService {
   }
 
   static async notifications() {
-    const token = await LoginService.getTokens()
+    const { token } = await LoginService.getTokens()
     const response = await this.call(this.NOTIFICATION_PATH, { token })
     if (!response.ok) return { notifications: [] }
 
@@ -75,12 +85,21 @@ class ApiService {
     return json
   }
 
-  static async all(): Promise<All> {
-    const token = await LoginService.getTokens()
-    const response = await this.call(this.ALL_PATH, { token })
-    if (!response.ok) return { ok: false }
-    const json = await response.json()
-    return { ok: true, data: json }
+  static all = async () => {
+    // const {token} = await LoginService.getTokens()
+    return await fetch(Config.DATA_URI, ApiService.getRequestData())
+      .then((response) => {
+        console.log(response)
+        if (!response.ok) return ({ ok: false, data: {} })
+        return response.json()
+      })
+      .then((data) => {
+        return { ok: true, data }
+      })
+      .catch((error) =>{
+        console.error(error)
+        return { ok: false, data: {} }
+      })
   }
 
   static _queryString(params: Params): string {

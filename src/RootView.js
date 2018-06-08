@@ -14,13 +14,10 @@ import NotificationService from './services/NotificationService'
 import { asyncStorageDebugger } from './utils/debugger'
 
 class RootView extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   state = {
     loaded: false,
-    loggedIn: null,
+    loggedIn: false,
     token: '',
     logoutToken: '',
     data: null
@@ -38,7 +35,7 @@ class RootView extends React.Component {
 
   proofStatus = async () => {
     // await LoginService.clearTokens()
-    asyncStorageDebugger()
+    // asyncStorageDebugger()
 
     const { loggedIn, token, logoutToken } = await LoginService.checkStatus()
     const isOnline = await NetInfo.isConnected.fetch()
@@ -52,8 +49,11 @@ class RootView extends React.Component {
     const data = isOnline
       ? await DataService.fetchAndSave()
       : await DataService.getAll()
-    this.setState({ loggedIn, token, logoutToken, data, loaded: true })
+    this.setState({ loggedIn, token, logoutToken, data: data.data, loaded: true })
     SplashScreen.hide()
+  }
+  reloadHandler = async () => {
+    await this._fetchDataFromApi()
   }
 
   render() {
@@ -67,10 +67,12 @@ class RootView extends React.Component {
         />
         {this.state.loaded &&
           <MainTabNavigator
+
             screenProps={{
               loggedIn,
               token,
               logoutToken,
+              reloadHandler: this.reloadHandler,
               logout: this._handleLogout,
               login: this._handleLogin,
               refreshData: this._handleRefresh,
@@ -91,31 +93,24 @@ class RootView extends React.Component {
     }
 
     this.setState({ loggedIn: false, token: '' })
-    this._rerender()
   }
 
   _handleLogin = async (tokens) => {
     try { await LoginService.saveTokens(tokens) }
     catch (e) { console.log('Error when saving token:', e)}
+    this.setState({ ...tokens })
+    this._fetchDataFromApi()
+  }
 
-    const data = await DataService.fetchAndSave()
-    this.setState({ ...tokens, loggedIn: true, data })
-    this._rerender()
+  _fetchDataFromApi = async () => {
+    const responseData = await DataService.fetchAndSave()
+    this.setState({ loggedIn: true, data: responseData.data })
   }
 
   _handleRefresh = async () => {
     await DataService.fetchAndSave()
-    const data = await DataService.getAll()
-    this.setState({ data })
-    this._rerender()
-  }
-
-  _rerender() {
-    // FIXME: changing screenProps doesn't trigger a re-render, bug in
-    //   react-navigation. Solution is to re-render the navigator itself.
-    //   https://github.com/react-community/react-navigation/issues/577
-    this.setState({ loaded: false })
-    this.setState({ loaded: true })
+    const responseData = await DataService.getAll()
+    this.setState({ data: responseData.data })
   }
 
 }
@@ -125,9 +120,12 @@ class RootView extends React.Component {
 console.ignoredYellowBox = [
   'Remote debugger',
   'Behaviour of screenProps has changed',
-  'Warning: isMounted(...) is deprecated'
+  'Warning: isMounted(...) is deprecated',
+  'You should only render one navigator explicitly' // check the comment bellow
 ]
 
+// in relation to rendering navigation issue, check the link - later should be implemented
+// https://reactnavigation.org/docs/en/common-mistakes.html#explicitly-rendering-more-than-one-navigator
 
 
 

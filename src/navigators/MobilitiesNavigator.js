@@ -6,14 +6,15 @@ import SettingsView from '../views/SettingsView'
 import DetailView from '../views/DetailView'
 import MapView from '../views/MapView'
 
-const MobilitiesNavigator = createStackNavigator({
-  Overview: { screen: MobilitiesOverviewView },
-  Single: { screen: SingleView },
-  Map: { screen: MapView },
-  Detail: { screen: DetailView },
-  Settings: { screen: SettingsView }
-}, {
-  headerMode: Platform.OS === 'ios' ? 'float' : 'screen'
-})
+const MobilitiesNavigator = createStackNavigator(
+  {
+    Overview: { screen: MobilitiesOverviewView },
+    Single: { screen: SingleView },
+    Map: { screen: MapView },
+    Detail: { screen: DetailView },
+    Settings: { screen: SettingsView } },
+  {
+    initialRouteName: 'Overview',
+    headerMode: Platform.OS === 'ios' ? 'float' : 'screen' })
 
 export default MobilitiesNavigator

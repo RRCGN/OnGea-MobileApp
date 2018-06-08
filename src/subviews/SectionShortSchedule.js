@@ -1,23 +1,10 @@
-/**
- *
- * @flow
- */
-
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
 import moment from 'moment'
-import findMostRecentData from '../containers/recent-data'
 import Section from '../components/Section'
 import ListItemStandard from '../components/ListItemStandard'
 
-
 const SectionShortSchedule = ({ recentIndex, data, footer }) => {
-  const {
-    name,
-    dateFrom,
-    dateTo
-  } = data[recentIndex]
-
+  const { name, dateFrom, dateTo } = data[recentIndex]
   const dateFromString = moment(dateFrom).format('DD.MM.YYYY, HH:mm')
   const dateToString = dateTo ? moment(dateTo).format('HH:mm') : null
 
@@ -32,4 +19,4 @@ const SectionShortSchedule = ({ recentIndex, data, footer }) => {
   )
 }
 
-export default findMostRecentData(SectionShortSchedule)
+export default SectionShortSchedule

@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
-import { StatusBar, Platform, View } from 'react-native'
+import { StatusBar, Platform, Text, View } from 'react-native'
 import MobilitiesListView from './MobilitiesListView'
-import { Colors } from '../utils/constants'
+import PropTypes from 'prop-types'
 import ToolbarButton from '../components/ToolbarButton'
-export default class MobilitiesOverviewView extends Component {
+import Button from '../components/ButtonText'
+
+import { Colors } from '../utils/constants'
+class MobilitiesOverviewView extends Component {
   static navigationOptions = ({navigation}) => {
     return {
       title: 'My Activities',
@@ -29,17 +32,34 @@ export default class MobilitiesOverviewView extends Component {
     }
   }
 
+
+  noDataFound() {
+    const { data } = this.props.screenProps
+    return Object.keys(data).length === 0 && data.constructor === Object
+  }
+
   render() {
+    const { screenProps } = this.props
     return (
       <View>
         <StatusBar translucent backgroundColor="rgba(0,0,0,0.36)" />
-        <MobilitiesListView
-          refreshData={this.props.screenProps.refreshData}
-          // activities={this.props.screenProps.data.activities}
-          activities={{}}
-          {...this.props}
-        />
+        {(this.noDataFound())
+          ? (
+            <View>
+              <Text style={{margin: 10}}>failed loading data!</Text>
+              <Button label='reload' onPress={this.props.screenProps.reloadHandler}/>
+            </View> )
+          : (<MobilitiesListView
+            refreshData={screenProps.refreshData}
+            activities={screenProps.data}
+            {...this.props} />)}
       </View>
     )
   }
 }
+
+MobilitiesOverviewView.propTypes = {
+  screenProps: PropTypes.object
+}
+
+export default MobilitiesOverviewView

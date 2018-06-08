@@ -1,23 +1,8 @@
-/**
- * Dashboard Overview
- */
-
 import React, { Component } from 'react'
-import {
-  View,
-  Text,
-  Image,
-  Platform,
-  StatusBar,
-  Dimensions,
-  StyleSheet
-} from 'react-native'
+import { Dimensions, Image, Platform, StatusBar,Text, StyleSheet, View} from 'react-native'
 import * as Animatable from 'react-native-animatable'
-import HeaderImageScrollView,
-  { TriggeringView } from 'react-native-image-header-scroll-view'
-
+import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view'
 import ToolbarButton from '../components/ToolbarButton'
-
 import TitleOnShadow from '../components/TitleOnShadow'
 import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
 import DateRange from '../components/DateRange'
@@ -28,11 +13,8 @@ import SectionDownloads from '../subviews/SectionDownloads'
 import SectionShortSchedule from '../subviews/SectionShortSchedule'
 import Button from '../components/ButtonText'
 import ButtonFlatGrid from '../components/ButtonFlatGrid'
-
-import { Colors } from '../utils/constants'
-
-
-export default class SingleView extends Component {
+import PropTypes from 'prop-types'
+class SingleView extends Component {
   static navigationOptions = ({navigation}) => {
     return {
       title: '',
@@ -42,7 +24,7 @@ export default class SingleView extends Component {
       headerStyle: {
         borderRadius: 0,
         backgroundColor: 'transparent',
-        marginBottom: Platform.OS === 'ios' ? -64 : -56 - StatusBar.currentHeight,
+        marginBottom: Platform.OS === 'ios' ? -86 : -56 - StatusBar.currentHeight,
         zIndex: 1,
         elevation: 0,
         ...Platform.select({
@@ -99,11 +81,11 @@ export default class SingleView extends Component {
   }
 
   _renderDates = () => {
-    const { params } = this.props.navigation.state
+    const { data } = this.props.navigation.state.params
 
     return (
       <View style={{ backgroundColor: '#7B1FA2', padding: 16 }}>
-        <DateRange light from={params.dateFrom} to={params.dateTo} />
+        <DateRange light from={data.dateFrom} to={data.dateTo} />
       </View>
     )
   }
@@ -111,16 +93,19 @@ export default class SingleView extends Component {
   _renderContent = () => {
     const { params } = this.props.navigation.state
     const { navigation } = this.props
-
+    const {coordinationOrganisation, hostOrganisation, mobilities} = params.data
     const genericParams = {
       image: params.backdrop,
-      title: params.name
+      title: params.title,
+      subtitle: params.subtitle,
+      uuid: params.uuid
     }
 
     return (
       <View>
         <SectionShortTravel
-          data={params.travels}
+          data={mobilities}
+          travelIndex={params.data.id}
           navigation={navigation}
           footer={
             <ButtonFlatGrid>
@@ -131,7 +116,7 @@ export default class SingleView extends Component {
             </ButtonFlatGrid>
           }
         />
-        <SectionShortStay
+        {/* <SectionShortStay
           data={params.stays}
           navigation={navigation}
           footer={
@@ -142,8 +127,8 @@ export default class SingleView extends Component {
               />
             </ButtonFlatGrid>
           }
-        />
-        <SectionShortSchedule
+        /> */}
+        {/* <SectionShortSchedule
           data={params.schedule}
           navigation={navigation}
           footer={
@@ -154,16 +139,16 @@ export default class SingleView extends Component {
               />
             </ButtonFlatGrid>
           }
-        />
-        <SectionOrganization data={params.organizations} />
-        <SectionDownloads data={params.downloads} />
+        /> */}
+        <SectionOrganization data={{ coordinationOrganisation, hostOrganisation }} />
+        {/* <SectionDownloads data={params.data.downloads} /> */}
       </View>
     )
   }
 
   _renderTitleForeground = () => {
     const { params } = this.props.navigation.state
-    return <TitleOnShadow title={params.name} />
+    return <TitleOnShadow title={params.data.title} subtitle={params.data.subtitle} />
   }
 
   _renderTitleBackground = () => {
@@ -172,7 +157,7 @@ export default class SingleView extends Component {
       <View style={{ height: this.headerHeight }}>
         <Image
           style={{ flex: 1 }}
-          source={{ uri: params.backdrop }}
+          source={{ uri: params.data.backdrop }}
           width={this.headerWidth}
           height={this.headerHeight}
           resizeMode="cover"
@@ -188,10 +173,9 @@ export default class SingleView extends Component {
         <StatusBarBackgroundIOS />
         <Animatable.View
           style={styles.stickyHeader}
-          ref={(navBarView) => this.navBarView = navBarView}
-        >
+          ref={(navBarView) => this.navBarView = navBarView}>
           <View style={styles.stickyHeaderInner}>
-            <Text numberOfLines={2} style={styles.toolbarTitle}>{params.name}</Text>
+            <Text numberOfLines={2} style={styles.toolbarTitle}>{params.data.title}</Text>
           </View>
         </Animatable.View>
       </View>
@@ -243,3 +227,9 @@ const styles = StyleSheet.create({
     })
   }
 })
+
+SingleView.propTypes = {
+  navigation: PropTypes.object
+}
+
+export default SingleView

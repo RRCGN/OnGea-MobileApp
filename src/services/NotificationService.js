@@ -36,7 +36,7 @@ export default class NotificationService {
       }
     })
 
-    // this.startForegroundPolling()
+    this.startForegroundPolling()
   }
 
   unregister() {
@@ -91,12 +91,13 @@ export default class NotificationService {
   }*/
 
   startForegroundPolling() {
-    this.foregroundPollingTimer = setInterval(async () => {
-      await this.checkNewNotifications()
-    }, 30 * 1000)
+    return
+    // this.foregroundPollingTimer = setInterval(async () => {
+    //   await this.checkNewNotifications()
+    // }, 2 * 1000)
   }
 
   stopForegroundPolling() {
-    clearInterval(this.foregroundPollingTimer)
+    // clearInterval(this.foregroundPollingTimer)
   }
 }

@@ -1,8 +1,3 @@
-/**
- *
- * @flow
- */
-
 import React, { Component } from 'react'
 import DateUtils from '../utils/date-utils'
 

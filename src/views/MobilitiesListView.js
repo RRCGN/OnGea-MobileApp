@@ -7,7 +7,6 @@ import ButtonFlatGrid from '../components/ButtonFlatGrid'
 import DateRange from '../components/DateRange'
 
 
-
 type MLVProps = {
   mobilities: any,
   refreshData: () => void,
@@ -29,17 +28,16 @@ class MobilitiesListView extends Component {
     const dataSource = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     })
-
+    const { activities } = this.props
     this.state = {
-      // dataSource: dataSource.cloneWithRows(props.activities),
-      dataSource: dataSource.cloneWithRows({}),
-      refreshing: false
-    }
+      dataSource: dataSource.cloneWithRows(activities || []),
+      refreshing: false }
   }
 
   render() {
     return (
       <ListView
+        enableEmptySections={true}
         refreshControl={
           <RefreshControl
             refreshing={this.state.refreshing}
@@ -51,17 +49,14 @@ class MobilitiesListView extends Component {
       />
     )
   }
-
   _renderListRow = (data) => (
     <View style={styles.listItem}>
       <Card>
-
         {/* Image */}
         <CardTitle
           image={{ uri: data.backdrop }}
           title={data.name}
-          onPress={() => this.props.navigation.navigate('Single', data)}
-        />
+          onPress={() => this.props.navigation.navigate('Single', {data})} />
 
         {/* Dates */}
         <CardSegment big>
@@ -73,8 +68,7 @@ class MobilitiesListView extends Component {
           <ButtonFlatGrid>
             <Button
               label="View"
-              onPress={() => this.props.navigation.navigate('Single', data)}
-            />
+              onPress={() => this.props.navigation.navigate('Single', {data})} />
           </ButtonFlatGrid>
         </CardSegment>
 

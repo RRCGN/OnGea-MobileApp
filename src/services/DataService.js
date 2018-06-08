@@ -1,45 +1,27 @@
-/**
- * Service for all Data-related stuff.
- * @flow
- */
-
 import { AsyncStorage } from 'react-native'
 import ApiService from './ApiService'
 
+const DATA_KEY = '@DataStore:data'
 
-type ApiData = any
+class DataService {
 
-export default class DataService {
-  static DATA_KEY: string = '@DataStore:data'
+  static save = async (json) => {
+    await AsyncStorage.setItem(DATA_KEY, JSON.stringify(json)) }
 
-  static async save(json: any): Promise<void> {
-    await AsyncStorage.setItem(this.DATA_KEY, JSON.stringify(json))
-  }
-
-  static async getAll(): Promise<any> {
-    const data = await AsyncStorage.getItem(this.DATA_KEY)
+  static getAll = async () => {
+    const data = await AsyncStorage.getItem(DATA_KEY)
     if (data == null) return null
+    return JSON.parse(data) }
 
-    return JSON.parse(data)
-  }
-
-  static async fetchAndSave(): Promise<ApiData> {
+  static fetchAndSave = async () => {
     const { ok, data } = await ApiService.all()
-    if (!ok) {
-      return this.getAll()
-    }
+    if (!ok) { return DataService.getAll() }
+    try { await DataService.save(data) }
+    catch (error) { console.error('Could not save data:', error) }
+    return data }
 
-    try {
-      await this.save(data)
-    } catch (error) {
-      console.error('Could not save data:', error)
-    } finally {
-      return data
-    }
-  }
-
-  static async purge(): Promise<void> {
-    await AsyncStorage.removeItem(this.DATA_KEY)
-  }
-
+  static purge = async () => {
+    await AsyncStorage.removeItem(DATA_KEY) }
 }
+
+export default DataService

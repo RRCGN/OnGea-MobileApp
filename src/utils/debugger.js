@@ -1,4 +1,5 @@
 import { AsyncStorage } from 'react-native'
+import ApiService from '../services/ApiService'
 
 const asyncStorageDebugger = async () => {
   console.log('debugging AsyncStorage.....')
@@ -14,6 +15,13 @@ const asyncStorageDebugger = async () => {
   })
 }
 
+const loadDataDebugger = async () => {
+  console.log('debugging load data.....')
+  const data = await ApiService.all()
+  console.log(data)
+}
+
 export {
-  asyncStorageDebugger
+  asyncStorageDebugger,
+  loadDataDebugger
 }
