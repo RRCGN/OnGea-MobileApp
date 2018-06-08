@@ -39,7 +39,7 @@ class SettingsView extends Component {
       // it MUST be logout from server, then to be able logout in client-side
       // that is because if the user is logged at the server side, cannot login again and get token :/
     }
-    this.props.screenProps.logout()
+    this.props.screenProps.logout() // debug
   }
 
   render() {

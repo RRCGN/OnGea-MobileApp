@@ -54,7 +54,7 @@ class MobilitiesListView extends Component {
       <Card>
         {/* Image */}
         <CardTitle
-          image={{ uri: data.backdrop }}
+          image={{ uri: data.image.url }}
           title={data.name}
           onPress={() => this.props.navigation.navigate('Single', {data})} />
 

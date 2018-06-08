@@ -36,6 +36,8 @@ class RootView extends React.Component {
   proofStatus = async () => {
     // await LoginService.clearTokens()
     // asyncStorageDebugger()
+    // this._handleLogout()
+
 
     const { loggedIn, token, logoutToken } = await LoginService.checkStatus()
     const isOnline = await NetInfo.isConnected.fetch()
@@ -84,6 +86,20 @@ class RootView extends React.Component {
     )
   }
 
+  _fetchDataFromApi = async () => {
+    console.log('responseData')
+    const responseData = await DataService.fetchAndSave()
+    console.log({responseData})
+    this.setState({ loggedIn: true, data: responseData.data })
+  }
+
+  _handleLogin = async (tokens) => {
+    try { await LoginService.saveTokens(tokens) }
+    catch (e) { console.log('Error when saving token:', e)}
+    this.setState({ ...tokens })
+    await this._fetchDataFromApi()
+  }
+
   _handleLogout = async () => {
     try {
       await LoginService.clearTokens()
@@ -95,17 +111,8 @@ class RootView extends React.Component {
     this.setState({ loggedIn: false, token: '' })
   }
 
-  _handleLogin = async (tokens) => {
-    try { await LoginService.saveTokens(tokens) }
-    catch (e) { console.log('Error when saving token:', e)}
-    this.setState({ ...tokens })
-    this._fetchDataFromApi()
-  }
 
-  _fetchDataFromApi = async () => {
-    const responseData = await DataService.fetchAndSave()
-    this.setState({ loggedIn: true, data: responseData.data })
-  }
+
 
   _handleRefresh = async () => {
     await DataService.fetchAndSave()

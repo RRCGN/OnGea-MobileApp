@@ -12,11 +12,12 @@ import { Colors } from '../utils/constants'
 type Props = {
   primary: string,
   secondary: string,
-  big?: boolean
+  big?: boolean,
+  style: {}
 }
 
-const ListItemStandard = ({ primary, secondary, big = false }: Props) => (
-  <View style={[ styles.container, big && styles.big ]}>
+const ListItemStandard = ({ primary, secondary, big = false, style}: Props) => (
+  <View style={[ styles.container, big && styles.big, style ]}>
     <Text style={styles.primary}>{primary}</Text>
     <Text style={styles.secondary}>{secondary}</Text>
   </View>
@@ -30,7 +31,6 @@ const styles = StyleSheet.create({
     flex: 0,
     flexDirection: 'column',
     justifyContent: 'center',
-    position: 'relative',
     height: 50
   },
   big: {

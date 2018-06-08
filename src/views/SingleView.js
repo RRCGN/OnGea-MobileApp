@@ -14,6 +14,12 @@ import SectionShortSchedule from '../subviews/SectionShortSchedule'
 import Button from '../components/ButtonText'
 import ButtonFlatGrid from '../components/ButtonFlatGrid'
 import PropTypes from 'prop-types'
+
+
+const mobilitiesJSON = require('../services/temp/mobilities.json')
+const activitiesJSON = require('../services/temp/activities.json')
+
+
 class SingleView extends Component {
   static navigationOptions = ({navigation}) => {
     return {
@@ -50,6 +56,10 @@ class SingleView extends Component {
     this.stickyHeaderHeight = Platform.OS === 'ios' ? 64 : 80
   }
 
+  getActivityContent() {
+    return (activitiesJSON[0])
+  }
+
   _handleStickHeader = () => {
     this.navBarView.fadeIn(200)
   }
@@ -81,31 +91,33 @@ class SingleView extends Component {
   }
 
   _renderDates = () => {
-    const { data } = this.props.navigation.state.params
-
+    const activity = this.getActivityContent()
     return (
       <View style={{ backgroundColor: '#7B1FA2', padding: 16 }}>
-        <DateRange light from={data.dateFrom} to={data.dateTo} />
+        <DateRange light from={activity.dateFrom} to={activity.dateTo} />
       </View>
     )
   }
 
   _renderContent = () => {
-    const { params } = this.props.navigation.state
-    const { navigation } = this.props
-    const {coordinationOrganisation, hostOrganisation, mobilities} = params.data
+    const mobilities = mobilitiesJSON
+    const activity = this.getActivityContent()
+    const {coordinationOrganisation, hostOrganisation} = activity
+    console.log({activity})
     const genericParams = {
-      image: params.backdrop,
-      title: params.title,
-      subtitle: params.subtitle,
-      uuid: params.uuid
+      image: activity.image.url,
+      title: activity.title,
+      subtitle: activity.subtitle,
+      uuid: activity.uuid
     }
+    // const { params } = this.props.navigation.state
+    const { navigation } = this.props
 
     return (
       <View>
         <SectionShortTravel
           data={mobilities}
-          travelIndex={params.data.id}
+          travelIndex={activity.id}
           navigation={navigation}
           footer={
             <ButtonFlatGrid>
@@ -147,17 +159,17 @@ class SingleView extends Component {
   }
 
   _renderTitleForeground = () => {
-    const { params } = this.props.navigation.state
-    return <TitleOnShadow title={params.data.title} subtitle={params.data.subtitle} />
+    const {title, subtitle} = this.getActivityContent()
+    return <TitleOnShadow title={title} subtitle={subtitle} />
   }
 
   _renderTitleBackground = () => {
-    const { params } = this.props.navigation.state
+    const {image} = this.getActivityContent()
     return (
       <View style={{ height: this.headerHeight }}>
         <Image
           style={{ flex: 1 }}
-          source={{ uri: params.data.backdrop }}
+          source={{ uri: image.url }}
           width={this.headerWidth}
           height={this.headerHeight}
           resizeMode="cover"
@@ -167,7 +179,7 @@ class SingleView extends Component {
   }
 
   _renderStickyHeader = () => {
-    const { params } = this.props.navigation.state
+    const {title} = this.getActivityContent()
     return (
       <View>
         <StatusBarBackgroundIOS />
@@ -175,7 +187,7 @@ class SingleView extends Component {
           style={styles.stickyHeader}
           ref={(navBarView) => this.navBarView = navBarView}>
           <View style={styles.stickyHeaderInner}>
-            <Text numberOfLines={2} style={styles.toolbarTitle}>{params.data.title}</Text>
+            <Text numberOfLines={2} style={styles.toolbarTitle}>{title}</Text>
           </View>
         </Animatable.View>
       </View>

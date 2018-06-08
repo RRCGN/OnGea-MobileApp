@@ -14,6 +14,7 @@ class DataService {
     return JSON.parse(data) }
 
   static fetchAndSave = async () => {
+    console.log('all')
     const { ok, data } = await ApiService.all()
     if (!ok) { return DataService.getAll() }
     try { await DataService.save(data) }

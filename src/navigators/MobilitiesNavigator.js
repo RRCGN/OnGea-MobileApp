@@ -14,7 +14,7 @@ const MobilitiesNavigator = createStackNavigator(
     Detail: { screen: DetailView },
     Settings: { screen: SettingsView } },
   {
-    initialRouteName: 'Overview',
+    initialRouteName: 'Single',
     headerMode: Platform.OS === 'ios' ? 'float' : 'screen' })
 
 export default MobilitiesNavigator

@@ -1,6 +1,6 @@
 import LoginService from './LoginService'
 import Config from 'react-native-config'
-
+const activitiesJSON = require('./temp/activities.json')
 type Params = { [key: string]: string }
 
 const urlWithToken = (url, token) => {
@@ -33,16 +33,17 @@ class ApiService {
 
   static async auth (name, pass) {
     console.log('auth.....')
-    name = pass = 'api'
+    // name = pass = 'api' // debug
     return await fetch(Config.LOGIN_URI, this.postData({name, pass}))
-      .then((response) => response.json())
+      // .then((response) => response.json())
       .then((responseJson) => {
-        if (responseJson.csrf_token) {
-          // success login :/
-          return { ok: true, token: responseJson.csrf_token , logoutToken: responseJson.logout_token, message: ''}
-        } else {
-          return { ok: false, token: '', logoutToken: '', message: responseJson.message }
-        }
+        return { ok: true, token: 'responseJson.csrf_token' , logoutToken: 'responseJson.logout_token', message: ''}
+        // if (responseJson.csrf_token) {
+        //   // success login :/
+        //   return { ok: true, token: responseJson.csrf_token , logoutToken: responseJson.logout_token, message: ''}
+        // } else {
+        //   return { ok: false, token: '', logoutToken: '', message: responseJson.message }
+        // }
       })
       .catch((error) =>{
         console.error(error)
@@ -86,12 +87,24 @@ class ApiService {
   }
 
   static all = async () => {
+
+    // Since API not stable ATM, this could be a temp solution for developemnt
     // const {token} = await LoginService.getTokens()
+
     return await fetch(Config.DATA_URI, ApiService.getRequestData())
       .then((response) => {
+
         console.log(response)
-        if (!response.ok) return ({ ok: false, data: {} })
-        return response.json()
+        console.log(activitiesJSON)
+
+        // #### This is where static files are loaded ####
+        return ({ ok: true, data: activitiesJSON })
+
+        // ### this is fetching content from API ###
+
+        // if (!response.ok) return ({ ok: false, data: {} })
+        // return response.json()
+
       })
       .then((data) => {
         return { ok: true, data }

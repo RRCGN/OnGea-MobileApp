@@ -11,7 +11,7 @@
   },
   "plugins": [ "react" ],
   "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "globals": { "console": true, "fetch": true, "__DEV__": true },
+  "globals": { "console": true, "fetch": true, "__DEV__": true, "require": true },
   "rules": {
     "comma-dangle": ["error", "never"],
     "react/jsx-uses-vars": 1,
