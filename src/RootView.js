@@ -87,9 +87,7 @@ class RootView extends React.Component {
   }
 
   _fetchDataFromApi = async () => {
-    console.log('responseData')
     const responseData = await DataService.fetchAndSave()
-    console.log({responseData})
     this.setState({ loggedIn: true, data: responseData.data })
   }
 

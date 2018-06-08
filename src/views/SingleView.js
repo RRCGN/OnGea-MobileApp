@@ -18,6 +18,7 @@ import PropTypes from 'prop-types'
 
 const mobilitiesJSON = require('../services/temp/mobilities.json')
 const activitiesJSON = require('../services/temp/activities.json')
+const staysJSON = require('../services/temp/stays.json')
 
 
 class SingleView extends Component {
@@ -100,46 +101,45 @@ class SingleView extends Component {
   }
 
   _renderContent = () => {
+    const { navigation } = this.props
     const mobilities = mobilitiesJSON
     const activity = this.getActivityContent()
     const {coordinationOrganisation, hostOrganisation} = activity
-    console.log({activity})
     const genericParams = {
       image: activity.image.url,
       title: activity.title,
       subtitle: activity.subtitle,
       uuid: activity.uuid
     }
-    // const { params } = this.props.navigation.state
-    const { navigation } = this.props
-
     return (
       <View>
         <SectionShortTravel
-          data={mobilities}
+          mobilities={mobilities}
           travelIndex={activity.id}
           navigation={navigation}
           footer={
             <ButtonFlatGrid>
               <Button
                 label="More"
-                onPress={() => navigation.navigate('Detail', { type: 'TRAVEL', data: params.travels, ...genericParams })}
+                // onPress={() => navigation.navigate('Detail', { type: 'TRAVEL', data: params.travels, ...genericParams })}
+                onPress={() => {}}
               />
             </ButtonFlatGrid>
           }
         />
-        {/* <SectionShortStay
-          data={params.stays}
+        <SectionShortStay
+          stays={staysJSON}
           navigation={navigation}
           footer={
             <ButtonFlatGrid>
               <Button
                 label="More"
-                onPress={() => navigation.navigate('Detail', { type: 'STAY', data: params.stays, ...genericParams })}
+                // onPress={() => navigation.navigate('Detail', { type: 'STAY', data: params.stays, ...genericParams })}
+                onPress={ () => {} }
               />
             </ButtonFlatGrid>
           }
-        /> */}
+        />
         {/* <SectionShortSchedule
           data={params.schedule}
           navigation={navigation}

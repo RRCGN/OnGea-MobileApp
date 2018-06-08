@@ -7,16 +7,10 @@ import { Row } from '../components/Layout'
 import ListManager from '../components/ListManager'
 import ListItemFancy from '../components/ListItemFancy'
 
-const SectionShortTravel = ({ travelIndex, data, footer, noBorder }) => {
-  const travelData = data.filter( (travel) => (travel.id === travelIndex))
-  // const {
-  //   dateFrom,
-  //   dateTo,
-  //   type,
-  //   id,
-  //   fromCountry,
-  //   toCountry
-  // } = data[recentIndex]
+const SectionShortTravel = ({ travelIndex, mobilities, footer, noBorder }) => {
+  const getMobilitiesContent = () => {
+    return mobilities
+  }
 
   const typeLocalization = {
     FLIGHT: 'Next Flight',
@@ -29,33 +23,16 @@ const SectionShortTravel = ({ travelIndex, data, footer, noBorder }) => {
     TRAIN: [ 'train', 'train' ],
     OTHER: [ 'home', 'flag-triangle' ]
   }
-  //
-  // const items = [
-  //   {
-  //     date: moment(dateFrom).format('DD.MM.YYYY, HH:mm'),
-  //     location: fromCountry,
-  //     icon: icons['FLIGHT'][0] // this should be implemented
-  //   },
-  //   {
-  //     date: moment(dateTo).format('DD.MM.YYYY, HH:mm'),
-  //     location: toCountry,
-  //     icon: icons['FLIGHT'][1] // this should be implemented
-  //   }
-  // ]
 
   return (
-    <View />
-  )
-
-  returns (
-    <Section title={typeLocalization[type] + (!!id ? `: ${id}` : '')} noBorder={noBorder}>
+    <Section title={typeLocalization['TRAIN'][0]} noBorder={noBorder}>
       <ListManager
-        items={items}
+        items={getMobilitiesContent()}
         renderItem={(item, i) => (
           <ListItemFancy
             key={i}
-            primary={item.date}
-            secondary={item.location}
+            primary={moment(item.dateFrom).format('DD.MM.YYYY')}
+            secondary={item.fromCountry}
             icon={item.icon}
             isLinked={i === 0}
           />

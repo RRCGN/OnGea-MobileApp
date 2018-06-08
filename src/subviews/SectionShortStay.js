@@ -7,31 +7,33 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import moment from 'moment'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import findMostRecentData from '../containers/recent-data'
 import Section from '../components/Section'
 import ListManager from '../components/ListManager'
 import ListItemFancy from '../components/ListItemFancy'
 
 
-const SectionShortStay = ({ recentIndex, data, footer, noBorder = false, navigation }) => {
+const SectionShortStay = ({ recentIndex, stays, footer, noBorder = false, navigation }) => {
+  const getStayscontent = () => {
+    return (stays[0])
+  }
   const {
-    name,
-    street,
-    zip,
-    town,
-    country,
-    room,
+    event,
+    // street,
+    // zip,
+    // town,
+    // country,
+    roomNumber,
     dateFrom,
     dateTo,
     location
-  } = data[recentIndex]
+  } = getStayscontent()
 
   const items = [
     {
-      primary: `${name}, Zimmer ${room}`,
-      secondary: `${street}, ${zip} ${town}, ${country}`,
+      primary: `${event}, Zimmer ${roomNumber}`,
+      secondary: 'ADRESS',
       icon: 'home',
-      location
+      location: `lat: ${location.lat} - ${location.lng}`
     },
     {
       primary: moment(dateFrom).format('DD.MM.YYYY, HH:mm'),
@@ -64,4 +66,4 @@ const SectionShortStay = ({ recentIndex, data, footer, noBorder = false, navigat
   )
 }
 
-export default findMostRecentData(SectionShortStay)
+export default SectionShortStay
