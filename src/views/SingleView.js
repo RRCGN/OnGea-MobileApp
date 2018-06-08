@@ -10,6 +10,8 @@ import SectionShortTravel from '../subviews/SectionShortTravel'
 import SectionShortStay from '../subviews/SectionShortStay'
 import SectionOrganization from '../subviews/SectionOrganization'
 import Section from '../components/Section'
+import Description from '../subviews/Description'
+import MainWorkingLanguage from '../subviews/MainWorkingLanguage'
 import ParticipationFee from '../subviews/ParticipationFee'
 import Button from '../components/ButtonText'
 import ButtonFlatGrid from '../components/ButtonFlatGrid'
@@ -124,6 +126,12 @@ class SingleView extends Component {
     const {coordinationOrganisation, hostOrganisation} = activity
     return (
       <View>
+        <Section title="Description">
+          <Description description = { activity.description } />
+        </Section>
+        <Section title="Main Working Languages">
+          <MainWorkingLanguage data = { activity.mainWorkingLanguage } />
+        </Section>
         <SectionShortTravel
           mobilities={mobilities}
           travelIndex={activity.id}
