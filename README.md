@@ -67,6 +67,8 @@ The following steps are needed to be able to build for production and deploy it:
 
 #### iOS
 
+- Copy `ios/fastlane/Appfile.example` to `ios/fastlane/Appfile` with the correct details.
+
 :see_no_evil:
 
 ## TODOs
