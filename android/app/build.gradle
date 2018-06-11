@@ -2,6 +2,12 @@ apply plugin: "com.android.application"
 
 import com.android.build.OutputFile
 
+project.ext.envConfigFiles = [
+        debug: ".env",
+        release: ".env.production",
+]
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
 /**
  * The react.gradle file registers a task for each build variant (e.g. bundleDebugJsAndAssets
  * and bundleReleaseJsAndAssets).
@@ -66,8 +72,6 @@ import com.android.build.OutputFile
  */
 
 apply from: "../../node_modules/react-native/react.gradle"
-apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
-
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -108,12 +112,10 @@ android {
     }
     signingConfigs {
         release {
-            if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
-                storeFile file(MYAPP_RELEASE_STORE_FILE)
-                storePassword MYAPP_RELEASE_STORE_PASSWORD
-                keyAlias MYAPP_RELEASE_KEY_ALIAS
-                keyPassword MYAPP_RELEASE_KEY_PASSWORD
-            }
+            storeFile file(ONGEA_RELEASE_STORE_FILE)
+            storePassword project.env.get("ONGEA_RELEASE_STORE_PASSWORD")
+            keyAlias ONGEA_RELEASE_KEY_ALIAS
+            keyPassword project.env.get("ONGEA_RELEASE_KEY_PASSWORD")
         }
     }
     buildTypes {

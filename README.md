@@ -20,6 +20,9 @@ OnGea App for iOS and Android
 You may face some issues when building for Android, check :point_down: [Known issues and its hacks](#known-issues-and-its-hacks)
 
 ## Production:
+
+### Deploy
+
 In order to deploy the app for public, there is need to post (bump - incrument) the app version, build and then deploy to distribution services (Google Play or App Store).
 :point_up_2: This stage comes after setting the correct credentials. Check [Stores Credentials Setup](#stores-credentials-setup)
 
@@ -31,7 +34,7 @@ to Bump (incrument) version number (both Android & iOS) run:
 
 #### Android
 
-To deply to Play Store, run `$ run fastlane deploy` inside `/android/`.
+To deply to Play Store, run `$ run fastlane deploy` inside `android/`.
 You may need to review and roll the version out manually after deployment.
 
 
@@ -49,14 +52,18 @@ You need to commit changes to git also adding a tag for the commit (since it is 
 
 :see_no_evil:
 
-### Stores Credentials Setup
+### Stores Credentials
 
 #### Android
 The following steps are needed to be able to build for production and deploy it:
 
-- get the `my-release-key.keystore` for the app and copy it into: `android/app/my-release-key.keystore`
+- Copy `.env.example` to `.env.production` with correct credentials.
+
+- Copy `ongea-release-key.keystore` into `/android/app/`  
+  **Connect** Ongea product owner or amed@railslove.com for credentials and `release-key`.
 
 - copy `google.play.credentials.json.example` -> `google.play.credentials.json` with the correct credentials.
+  **check** this link to get previous file: [#collect-your-google-credentials](https://docs.fastlane.tools/getting-started/android/setup/#collect-your-google-credentials)
 
 #### iOS
 
@@ -65,6 +72,9 @@ The following steps are needed to be able to build for production and deploy it:
 ## TODOs
 
 See https://github.com/railslove/ongea-app/projects/2
+
+## ENV Files
+For production builld, you need `.env.production` and for development it's `.env`
 
 ## Known issues and its hacks
 

@@ -58,8 +58,7 @@ export default class LoginView extends Component {
             backgroundColor="white"
             color={Colors.PRIMARY}
             style={styles.loginButton}
-            onPress={() => this.props.navigation.navigate('Web')} />}
-
+            onPress={() => this.props.navigation.navigate('Web')} />
       </View>
     )
   }
