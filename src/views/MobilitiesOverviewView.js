@@ -28,6 +28,12 @@ class MobilitiesOverviewView extends Component {
           androidIcon="more-vert"
           iosIcon="ios-cog"
           onPress={ () => navigation.navigate('Settings') } />
+      ),
+      headerLeft: (
+        <ToolbarButton
+          androidIcon="add"
+          iosIcon="ios-add"
+          onPress={ () => navigation.navigate('UploadImages') } />
       )
     }
   }
