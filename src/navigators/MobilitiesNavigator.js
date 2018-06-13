@@ -17,7 +17,7 @@ const MobilitiesNavigator = createStackNavigator(
     UploadImages: { screen: UploadImagesView }
   },
   {
-    initialRouteName: 'UploadImages',
+    initialRouteName: 'Overview',
     headerMode: Platform.OS === 'ios' ? 'float' : 'screen' })
 
 export default MobilitiesNavigator

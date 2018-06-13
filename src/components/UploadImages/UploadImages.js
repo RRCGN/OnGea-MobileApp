@@ -1,5 +1,6 @@
 import React from 'react'
 import { ActivityIndicator, Image, View } from 'react-native'
+import PropTypes from 'prop-types'
 import PhotoUpload from 'react-native-photo-upload'
 const addImage = require('../../assets/uploader-add-image.png')
 const loadingImage = require('../../assets/uploader-loading-image.png')
@@ -11,24 +12,30 @@ class UploadImages extends React.Component {
     images: [],
     selecting: false
   }
-  UploadImages = () => {
-    console.log('Hey! you are doing something')
-  }
+
+
   addImage() {
     const { images } = this.state
     console.log('adding an image')
     this.setState({images: images.push({title: 'a title'})})
   }
+
   onStartHandling () {
     this.setState({selecting: true})
   }
-  onResponseHandling () {
+
+  onResponseHandling (object) {
+    console.log({object})
+    const {appendImageContent} = this.props
     this.setState({selecting: false})
+    appendImageContent(object)
   }
+
   render() {
     const { images, selecting } = this.state
+    const { style } = this.props
     return (
-      <View style={{ flex: 1, padding: 1 }}>
+      <View style={{ flex: 1, padding: 1 , ...style}}>
        <PhotoUpload
          onPhotoSelect={(object) => {console.log('onPhotoSelect', {object})}}
          onTapCustomButton={(object) => {console.log('onTapCustomButton', {object})}}
@@ -75,5 +82,11 @@ const styles = {
     zIndex: 2
   }
 }
+
+UploadImages.propTypes = {
+  appendImageContent: PropTypes.func,
+  style: PropTypes.any
+}
+
 
 export default UploadImages

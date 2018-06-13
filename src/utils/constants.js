@@ -19,5 +19,7 @@ export const Colors = {
   LIGHT_DIVIDER: 'rgba(255, 255, 255, 0.12)',
 
   RIPPLE_DARK: 'rgba(0, 0, 0, 0.26)',
-  RIPPLE_LIGHT: 'rgba(255, 255, 255, 0.26)'
+  RIPPLE_LIGHT: 'rgba(255, 255, 255, 0.26)',
+  RED: 'red',
+  GREEN: 'green'
 }

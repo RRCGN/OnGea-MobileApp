@@ -10,30 +10,34 @@ type Props = {
   color?: string,
   backgroundColor?: string,
   style?: any,
-  textStyle?: any
+  textStyle?: any,
+  disabled: bool
 }
 
-const ButtonText = ({ onPress = () => {}, label, color, backgroundColor, style, textStyle }: Props) => (
-  <Touchable
-    onPress={onPress}
-    rippleColor={Colors.RIPPLE_DARK}
-    borderRadius={backgroundColor == null ? 2 : 0}
-  >
-    <View
-      style={[
-        backgroundColor ? styles.raisedButton : styles.flatButton,
-        styles.button,
-        { backgroundColor: backgroundColor || 'transparent' },
-        style
-      ]}
-    >
-      <Text style={[ styles.text, { color: color || Colors.PRIMARY }, textStyle ]}>
-        {label.toUpperCase()}
-      </Text>
-    </View>
-  </Touchable>
-)
-
+const ButtonText = ({ onPress = () => {}, label, color, backgroundColor, style, textStyle, disabled}: Props) => {
+  const handlePress = () => {
+    disabled ? () => {} : onPress()
+  }
+  return (
+    <Touchable
+      disabled={disabled}
+      onPress={() => {handlePress()} }
+      rippleColor={Colors.RIPPLE_DARK}
+      borderRadius={backgroundColor == null ? 2 : 0} >
+      <View
+        style={[
+          backgroundColor ? styles.raisedButton : styles.flatButton,
+          styles.button,
+          { backgroundColor: backgroundColor || 'transparent' },
+          style,
+          disabled ? styles.disabled : {} ]} >
+        <Text style={[ styles.text, { color: color || Colors.PRIMARY }, textStyle ]}>
+          {label.toUpperCase()}
+        </Text>
+      </View>
+    </Touchable>
+  )
+}
 export default ButtonText
 
 
@@ -46,6 +50,9 @@ const styles = StyleSheet.create({
   flatButton: {
     paddingLeft: 8,
     paddingRight: 8
+  },
+  disabled: {
+    opacity: 0.3
   },
   button: {
     height: 36,
