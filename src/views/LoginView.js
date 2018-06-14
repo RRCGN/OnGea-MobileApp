@@ -15,11 +15,17 @@ export default class LoginView extends Component {
   }
 
   render() {
-    const { button, message } = this.state
+    const { button, message, success } = this.state
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#E0E0E0' }}>
         <View style={styles.messagesContainer}>
-          <Text>{message}</Text>
+          {success
+          ? (<ActivityIndicator
+            animating={this.state.visible}
+            style={[styles.centering]}
+            size="small"
+            color={Colors.PRIMARY} />)
+          : (<Text style={styles.messagesText}>{message}</Text>) }
         </View>
         <TextInput
           autoCapitalize="none"
@@ -85,6 +91,12 @@ const styles = StyleSheet.create({
     width: 200,
     height: 50,
     alignSelf: 'center'
+  },
+  messagesContainer:{
+    height: 20
+  },
+  messagesText: {
+    color: Colors.RED
   },
   loginButtonContainer: {
     height: 65,
