@@ -50,7 +50,10 @@ You need to commit changes to git also adding a tag for the commit (since it is 
 
 #### iOS
 
-:see_no_evil:
+- After copying `fastlane` credentials for the first time (check Stores Credentials),   
+you need to change the version number (check Post Version)
+then run `$ fastlane deploy` at `ios/` to deply it to the store.  
+The app is signign and pushing to `AppStoreConnect`, please check your iOS developemnt certificates.
 
 ### Stores Credentials
 

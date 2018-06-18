@@ -46,6 +46,7 @@ buck-out/
 .env
 .env.production
 ios/fastlane/Appfile
+ios/*.zip
 google.play.credentials.json
 # fastlane
 #
