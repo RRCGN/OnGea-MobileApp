@@ -45,6 +45,9 @@ class SettingsView extends Component {
   render() {
     return (
       <View style={{ flex: 1, padding: 18 }}>
+        <View style={{ padding: 18 }} />
+        <Button label="Show Maps" onPress={ () => { this.props.navigation.navigate('ShowMap') } } />
+        <View style={{ padding: 18 }} />
         <Button label="Logout" onPress={ () => { this.handleLogout() } } />
         { __DEV__ && (
           <View style={{paddingTop: 50}}>

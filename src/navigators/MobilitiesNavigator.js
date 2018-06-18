@@ -19,7 +19,7 @@ const MobilitiesNavigator = createStackNavigator(
     ShowMap: { screen: ShowMapView }
   },
   {
-    initialRouteName: 'ShowMap',
+    initialRouteName: 'Overview',
     headerMode: Platform.OS === 'ios' ? 'float' : 'screen' })
 
 export default MobilitiesNavigator

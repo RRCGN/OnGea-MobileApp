@@ -52,12 +52,12 @@ export default class LoginView extends Component {
               style={[styles.centering]}
               size="small"
               color={Colors.PRIMARY} />)
-            : (<Button
+            : ( !success && <Button
                 label="Login"
                 backgroundColor={Colors.PRIMARY}
                 color="white"
                 style={styles.loginButton}
-                onPress={this._handleLoginPress} />) }
+                onPress={this._handleLoginPress} /> ) }
           </View>
           <Button
             label="Go to Website"

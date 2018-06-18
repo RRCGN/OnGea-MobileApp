@@ -22,7 +22,7 @@ class Page extends React.Component {
           backgroundColor={colors.primary.pink}
           statusBarColor={colors.primary.pinkDark}
           statusBarTextTheme={'light-content'}
-          label={this.props.label}
+          label={this.props.label || 'OnGea map examples' }
           onBack={this.props.onDismissExample}
         />
 

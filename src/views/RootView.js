@@ -1,17 +1,12 @@
 import React from 'react'
-import {
-  View,
-  NetInfo,
-  StatusBar
-} from 'react-native'
-import SplashScreen from 'rn-splash-screen'
+import { NetInfo, StatusBar, View } from 'react-native'
 
-import MainTabNavigator from './navigators/MainTabNavigator'
-import LoginService from './services/LoginService'
-import DataService from './services/DataService'
-import NotificationService from './services/NotificationService'
+import MainTabNavigator from '../navigators/MainTabNavigator'
+import LoginService from '../services/LoginService'
+import DataService from '../services/DataService'
+import NotificationService from '../services/NotificationService'
 
-import { asyncStorageDebugger } from './utils/debugger'
+// import { asyncStorageDebugger } from '../utils/debugger'
 
 class RootView extends React.Component {
 
@@ -27,7 +22,9 @@ class RootView extends React.Component {
     this.notificationService = new NotificationService()
     this.notificationService.register()
   }
-
+  agreementAccepted () {
+    return true
+  }
   componentDidMount() {
     // Check logged in status, online status and save into state
     this.proofStatus()
@@ -44,7 +41,6 @@ class RootView extends React.Component {
 
     if (!loggedIn) {
       this.setState({ loggedIn, loaded: true })
-      SplashScreen.hide()
       return
     }
 
@@ -52,7 +48,7 @@ class RootView extends React.Component {
       ? await DataService.fetchAndSave()
       : await DataService.getAll()
     this.setState({ loggedIn, token, logoutToken, data: data.data, loaded: true })
-    SplashScreen.hide()
+
   }
   reloadHandler = async () => {
     await this._fetchDataFromApi()
@@ -67,9 +63,8 @@ class RootView extends React.Component {
           backgroundColor="transparent"
           barStyle="light-content"
         />
-        {this.state.loaded &&
+        {this.state.loaded && (
           <MainTabNavigator
-
             screenProps={{
               loggedIn,
               token,
@@ -78,10 +73,7 @@ class RootView extends React.Component {
               logout: this._handleLogout,
               login: this._handleLogin,
               refreshData: this._handleRefresh,
-              data
-            }}
-          />
-        }
+              data }} />)}
       </View>
     )
   }
@@ -119,19 +111,5 @@ class RootView extends React.Component {
   }
 
 }
-
-
-// $FlowFixMe: uuugh flow doesn't know about ignoredYellowBox why
-console.ignoredYellowBox = [
-  'Remote debugger',
-  'Behaviour of screenProps has changed',
-  'Warning: isMounted(...) is deprecated',
-  'You should only render one navigator explicitly' // check the comment bellow
-]
-
-// in relation to rendering navigation issue, check the link - later should be implemented
-// https://reactnavigation.org/docs/en/common-mistakes.html#explicitly-rendering-more-than-one-navigator
-
-
 
 export default RootView
