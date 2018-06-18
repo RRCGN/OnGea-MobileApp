@@ -6,6 +6,7 @@ import com.facebook.react.ReactApplication;
 import com.rnfs.RNFSPackage;
 import fr.bamlab.rnimageresizer.ImageResizerPackage;
 import com.imagepicker.ImagePickerPackage;
+import com.mapbox.rctmgl.RCTMGLPackage;
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 import com.mehcode.reactnative.splashscreen.SplashScreenPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -43,7 +44,8 @@ public class MainApplication extends Application implements ReactApplication {
             new LinearGradientPackage(),
             new RNFetchBlobPackage(),
             new BackgroundJobPackage(),
-            new ReactNativeConfigPackage()
+            new ReactNativeConfigPackage(),
+            new RCTMGLPackage()
       );
     }
   };

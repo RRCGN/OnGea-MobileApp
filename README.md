@@ -105,6 +105,9 @@ Everything for our app is located in `/src`.
   Utilities, Constants, ...
 - **`app/views`**  
   All single Screens, which are embedded in the navigators
+### Mapbox
+
+Check [mapbox.com/account](https://www.mapbox.com/account/) to get `MAPBOX_ACCESS_TOKEN`
 
 ### Storybook
 
