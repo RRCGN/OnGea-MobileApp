@@ -37,9 +37,9 @@ export default class AgreementAcceptenceView extends React.Component {
               <AgreementAcceptenceContent agreementText={agreementText}/>
             </View>
             <View style={styles.wrapperFooter}>
-              <Text style={styles.subTitle}>
+              <View style={styles.acceptButtonContainer}>
                 <Button label='ACCEPT' onPress={ () => { agreementAcceptHandler() }}/>
-              </Text>
+              </View>
             </View>
           </View>
         </ScrollView>
@@ -78,6 +78,9 @@ const styles = {
     textAlign: 'left',
     marginBottom: 20
   },
+  acceptButtonContainer: {
+    padding: 12
+  },
   line: {
     borderBottomColor: '#EEEEEE',
     borderBottomWidth: 1,
@@ -88,6 +91,9 @@ const styles = {
 
 AgreementAcceptenceView.propTypes = {
   agreementText: PropTypes.any
+}
+AgreementAcceptenceView.propTypes = {
+  agreementAcceptHandler: PropTypes.any
 }
 
 const AgreementAcceptenceContent = ({agreementText}) => (
@@ -141,6 +147,10 @@ const AgreementAcceptenceContent = ({agreementText}) => (
     </View>
   </View>
 )
+
+AgreementAcceptenceContent.propTypes = {
+  agreementText: PropTypes.object
+}
 
 const contentStyles = {
   container: {

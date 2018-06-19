@@ -58,3 +58,7 @@ google.play.credentials.json
 android/fastlane/report.xml
 android/fastlane/Preview.html
 android/fastlane/screenshots
+ios/fastlane/report.xml
+ios/fastlane/Preview.html
+ios/fastlane/screenshots
+/ios/*.zip
