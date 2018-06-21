@@ -1,6 +1,6 @@
 import LoginService from './LoginService'
 import Config from 'react-native-config'
-const activitiesJSON = require('./temp/activities.json')
+const activitiesJSON = require('../api-data-structure/activities.json')
 type Params = { [key: string]: string }
 
 const urlWithToken = (url, token) => {
