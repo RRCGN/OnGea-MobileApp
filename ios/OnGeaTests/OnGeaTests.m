@@ -11,7 +11,7 @@
 #import <XCTest/XCTest.h>
 
 #import <React/RCTLog.h>
-#import <React/RCTRootView.h>
+#import <React/RCTRoot.h>
 
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React Native!"
@@ -37,7 +37,7 @@
 
 - (void)testRendersWelcomeScreen
 {
-  UIViewController *vc = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+  UIViewController *vc = [[[[UIApplication sharedApplication] delegate] window] RootController];
   NSDate *date = [NSDate dateWithTimeIntervalSinceNow:TIMEOUT_SECONDS];
   BOOL foundElement = NO;
 

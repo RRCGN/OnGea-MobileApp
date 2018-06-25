@@ -1,7 +1,7 @@
 import React from 'react'
 import { AsyncStorage, View, Text } from 'react-native'
-import RootView from './views/RootView'
-import AgreementAcceptenceView from './views/AgreementAcceptenceView'
+import Root from './views/Root'
+import AgreementAcceptence from './views/AgreementAcceptence'
 import SplashScreen from 'rn-splash-screen'
 import fileHash from './utils/fileHash'
 const agreementText = require('./strings/agreements.json')
@@ -49,8 +49,8 @@ class App extends React.Component {
     const { agreementAccepted } = this.state
     return (
       agreementAccepted
-        ? <RootView />
-        : <AgreementAcceptenceView agreementText={agreementText} hash={fileHash(agreementText)} agreementAcceptHandler = {this.agreementAcceptHandler} /> )
+        ? <Root />
+        : <AgreementAcceptence agreementText={agreementText} hash={fileHash(agreementText)} agreementAcceptHandler = {this.agreementAcceptHandler} /> )
   }
 }
 

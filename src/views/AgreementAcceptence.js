@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import PlatformIcon from '../components/PlatformIcon'
 import Button from '../components/ButtonText'
 import fonts from '../utils/fonts.js'
-export default class AgreementAcceptenceView extends React.Component {
+export default class AgreementAcceptence extends React.Component {
   static navigationOptions = { title: 'Web', tabBarLabel: 'Privacy Policy of OnGea app' }
 
   render() {
@@ -89,10 +89,10 @@ const styles = {
   }
 }
 
-AgreementAcceptenceView.propTypes = {
+AgreementAcceptence.propTypes = {
   agreementText: PropTypes.any
 }
-AgreementAcceptenceView.propTypes = {
+AgreementAcceptence.propTypes = {
   agreementAcceptHandler: PropTypes.any
 }
 

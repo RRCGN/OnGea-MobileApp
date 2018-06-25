@@ -24,7 +24,7 @@ const activitiesJSON = require('../api-data-structure/activities.json')
 const staysJSON =  require('../api-data-structure/stays.json')
 
 
-class SingleActivityView extends Component {
+class Activity extends Component {
   static navigationOptions = ({navigation}) => {
     return {
       title: '',
@@ -258,8 +258,8 @@ const styles = StyleSheet.create({
   }
 })
 
-SingleActivityView.propTypes = {
+Activity.propTypes = {
   navigation: PropTypes.object
 }
 
-export default SingleActivityView
+export default Activity

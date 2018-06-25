@@ -4,7 +4,7 @@ import ApiService from '../services/ApiService'
 import { Button } from '../components/Button'
 import { Colors } from '../utils/constants'
 
-export default class LoginView extends Component {
+export default class Login extends Component {
 
   state = {
     username: '',

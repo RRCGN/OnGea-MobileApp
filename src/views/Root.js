@@ -8,7 +8,7 @@ import NotificationService from '../services/NotificationService'
 
 // import { asyncStorageDebugger } from '../utils/debugger'
 
-class RootView extends React.Component {
+class Root extends React.Component {
 
   state = {
     loaded: false,
@@ -112,4 +112,4 @@ class RootView extends React.Component {
 
 }
 
-export default RootView
+export default Root

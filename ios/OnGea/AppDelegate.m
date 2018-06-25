@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 
 #import <React/RCTBundleURLProvider.h>
-#import <React/RCTRootView.h>
+#import <React/RCTRoot.h>
 #import "RCTPushNotificationManager.h"
 
 @implementation AppDelegate
@@ -21,16 +21,16 @@
 
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
 
-  RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
+  RCTRoot *Root = [[RCTRoot alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"OnGea"
                                                initialProperties:nil
                                                    launchOptions:launchOptions];
-  rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
+  Root.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  UIViewController *rootViewController = [UIViewController new];
-  rootViewController.view = rootView;
-  self.window.rootViewController = rootViewController;
+  UIViewController *RootController = [UIViewController new];
+  RootController.view = Root;
+  self.window.RootController = RootController;
   [self.window makeKeyAndVisible];
   return YES;
 }

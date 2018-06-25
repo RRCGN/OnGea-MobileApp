@@ -3,7 +3,7 @@ import { View, StatusBar, Platform } from 'react-native'
 import PropTypes from 'prop-types'
 import MobilitiesNavigator from '../navigators/MobilitiesNavigator'
 import PlatformIcon from '../components/PlatformIcon'
-import LoginView from './LoginView'
+import Login from './Login'
 
 
 class MobilitiesTabView extends Component {
@@ -33,7 +33,7 @@ class MobilitiesTabView extends Component {
         />
         {loggedIn
           ? <MobilitiesNavigator screenProps={this.props.screenProps} />
-          : <LoginView onSuccessfulLogin={login} {...this.props} />
+          : <Login onSuccessfulLogin={login} {...this.props} />
         }
       </View>
     )

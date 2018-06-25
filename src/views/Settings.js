@@ -8,7 +8,7 @@ import { Colors } from '../utils/constants'
 import ApiService from '../services/ApiService'
 import { asyncStorageDebugger, loadDataDebugger } from '../utils/debugger'
 
-class SettingsView extends Component {
+class Settings extends Component {
   static navigationOptions = ({navigation}) => {
     return {
       title: 'Settings',
@@ -61,7 +61,7 @@ class SettingsView extends Component {
 }
 
 
-SettingsView.propTypes = { screenProps: PropTypes.object }
+Settings.propTypes = { screenProps: PropTypes.object }
 
 
-export default SettingsView
+export default Settings

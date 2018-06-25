@@ -2,7 +2,7 @@ import { Platform } from 'react-native'
 import { createBottomTabNavigator } from 'react-navigation'
 import { TabView } from 'react-native-tab-view'
 import { NavigationComponent } from 'react-native-material-bottom-navigation'
-import WebAppView from '../views/WebAppView'
+import WebApp from '../views/WebApp'
 import MobilitiesTabView from '../views/MobilitiesTabView'
 import { Colors } from '../utils/constants'
 
@@ -11,7 +11,7 @@ const MainScreenTabNavigator = createBottomTabNavigator({
     screen: MobilitiesTabView
   },
   Web: {
-    screen: WebAppView
+    screen: WebApp
   }
 }, {
   tabBarComponent: Platform.OS === 'ios' ? TabView.TabBarBottom : NavigationComponent,

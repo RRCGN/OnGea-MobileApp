@@ -7,7 +7,7 @@ import Button from '../components/ButtonText'
 import generalStyles from '../utils/styles'
 
 import { Colors } from '../utils/constants'
-class MobilitiesOverviewView extends Component {
+class ActivitiesOverview extends Component {
   static navigationOptions = ({navigation}) => {
     return {
       title: 'My Activities',
@@ -56,8 +56,8 @@ class MobilitiesOverviewView extends Component {
   }
 }
 
-MobilitiesOverviewView.propTypes = {
+ActivitiesOverview.propTypes = {
   screenProps: PropTypes.object
 }
 
-export default MobilitiesOverviewView
+export default ActivitiesOverview
