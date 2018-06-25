@@ -1,7 +1,7 @@
 import { Platform } from 'react-native'
 import { createStackNavigator } from 'react-navigation'
 import MobilitiesOverviewView from '../views/MobilitiesOverviewView'
-import SingleView from '../views/SingleView'
+import SingleActivityView from '../views/SingleActivityView'
 import DetailView from '../views/DetailView'
 import MapView from '../views/MapView'
 import SettingsView from '../views/SettingsView'
@@ -11,7 +11,7 @@ import ShowMapView from '../views/ShowMapView'
 const MobilitiesNavigator = createStackNavigator(
   {
     Overview: { screen: MobilitiesOverviewView },
-    Single: { screen: SingleView },
+    SingleActivity: { screen: SingleActivityView },
     Map: { screen: MapView },
     Detail: { screen: DetailView },
     Settings: { screen: SettingsView },

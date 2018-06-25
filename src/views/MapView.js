@@ -17,7 +17,7 @@ import ListItemFancy from '../components/ListItemFancy'
 import { Colors } from '../utils/constants'
 
 
-export default class SingleView extends Component {
+export default class SingleActivityView extends Component {
   static navigationOptions = ({navigation}) => {
     return  {
       title: '',

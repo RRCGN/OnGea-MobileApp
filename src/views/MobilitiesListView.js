@@ -56,7 +56,7 @@ class MobilitiesListView extends Component {
         <CardTitle
           image={{ uri: data.image.url }}
           title={data.name}
-          onPress={() => this.props.navigation.navigate('Single', {data})} />
+          onPress={() => this.props.navigation.navigate('SingleActivity', {data})} />
 
         {/* Dates */}
         <CardSegment big>
@@ -68,7 +68,7 @@ class MobilitiesListView extends Component {
           <ButtonFlatGrid>
             <Button
               label="View"
-              onPress={() => this.props.navigation.navigate('Single', {data})} />
+              onPress={() => this.props.navigation.navigate('SingleActivity', {data})} />
           </ButtonFlatGrid>
         </CardSegment>
 

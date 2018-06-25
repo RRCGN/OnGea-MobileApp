@@ -5,7 +5,7 @@ import Section from '../components/Section'
 import ListManager from '../components/ListManager'
 import ListItemStandard from '../components/ListItemStandard'
 import ToolbarButton from '../components/ToolbarButton'
-const organizationJSON = require('../services/temp/organization.json')
+const organizationJSON = require('../api-data-structure//organization.json')
 import { Colors } from '../utils/constants'
 import Communications from 'react-native-communications'
 

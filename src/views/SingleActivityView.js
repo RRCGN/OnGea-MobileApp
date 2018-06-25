@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Dimensions, Image, Platform, StatusBar,Text, StyleSheet, View} from 'react-native'
+import { Dimensions, Image, Platform, Text, StyleSheet, View, StatusBar} from 'react-native'
 import * as Animatable from 'react-native-animatable'
 import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view'
 import ToolbarButton from '../components/ToolbarButton'
@@ -16,14 +16,15 @@ import ParticipationFee from '../subviews/ParticipationFee'
 import Button from '../components/ButtonText'
 import ButtonFlatGrid from '../components/ButtonFlatGrid'
 import PropTypes from 'prop-types'
+import generalStyles from '../utils/styles'
+
+const mobilitiesJSON = require('../api-data-structure/mobilities.json')
+const activitiesJSON = require('../api-data-structure/activities.json')
+
+const staysJSON =  require('../api-data-structure/stays.json')
 
 
-const mobilitiesJSON = require('../services/temp/mobilities.json')
-const activitiesJSON = require('../services/temp/activities.json')
-const staysJSON = require('../services/temp/stays.json')
-
-
-class SingleView extends Component {
+class SingleActivityView extends Component {
   static navigationOptions = ({navigation}) => {
     return {
       title: '',
@@ -31,16 +32,11 @@ class SingleView extends Component {
         color: 'white'
       },
       headerStyle: {
+        ...generalStyles.headerStyle,
         borderRadius: 0,
         backgroundColor: 'transparent',
         marginBottom: Platform.OS === 'ios' ? -86 : -56 - StatusBar.currentHeight,
-        zIndex: 1,
-        elevation: 0,
-        ...Platform.select({
-          android: {
-            marginTop: StatusBar.currentHeight
-          }
-        })
+        zIndex: 1
       },
       headerLeft: (
         <ToolbarButton
@@ -262,8 +258,8 @@ const styles = StyleSheet.create({
   }
 })
 
-SingleView.propTypes = {
+SingleActivityView.propTypes = {
   navigation: PropTypes.object
 }
 
-export default SingleView
+export default SingleActivityView

@@ -1,25 +1,17 @@
 import React, { Component } from 'react'
-import { StatusBar, Platform, Text, View } from 'react-native'
+import { StatusBar, Text, View } from 'react-native'
 import MobilitiesListView from './MobilitiesListView'
 import PropTypes from 'prop-types'
 import ToolbarButton from '../components/ToolbarButton'
 import Button from '../components/ButtonText'
+import generalStyles from '../utils/styles'
 
 import { Colors } from '../utils/constants'
 class MobilitiesOverviewView extends Component {
   static navigationOptions = ({navigation}) => {
     return {
       title: 'My Activities',
-      headerStyle: {
-        backgroundColor: Colors.PRIMARY,
-        elevation: 5,
-        ...Platform.select({
-          'android': {
-            paddingTop: StatusBar.currentHeight,
-            height: 56 + StatusBar.currentHeight
-          }
-        })
-      },
+      headerStyle: generalStyles.headerStyle,
       headerTitleStyle: {
         color: Colors.WHITE
       },

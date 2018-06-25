@@ -1,6 +1,6 @@
-const styles = {
+const fonts = {
   title: {
     fontSize: 18
   }
 }
-export default styles
+export default fonts
