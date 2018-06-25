@@ -1,4 +1,4 @@
-import { getStorybookUI, configure } from '@kadira/react-native-storybook'
+import { getStorybookUI, configure } from '@storybook/react-native'
 
 configure(() => {
   require('../src/components/__stories__/')

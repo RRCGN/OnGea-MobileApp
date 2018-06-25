@@ -1,6 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
-import { storiesOf, action } from '@kadira/react-native-storybook'
+import { storiesOf } from '@storybook/react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Button, ButtonList, IconButton } from '../Button'
 

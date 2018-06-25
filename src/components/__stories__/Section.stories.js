@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import { storiesOf, action } from '@kadira/react-native-storybook'
+import { storiesOf } from '@storybook/react-native'
 
 import Section from '../Section'
 

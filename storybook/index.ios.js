@@ -1,4 +1,4 @@
-import { AppRegistry } from 'react-native';
+import { AppRegistry } from 'react-native'
 import StorybookUI from './storybook'
 
-AppRegistry.registerComponent('OnGea', () => StorybookUI);
+AppRegistry.registerComponent('OnGea', () => StorybookUI)
