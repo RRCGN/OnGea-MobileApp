@@ -3,7 +3,7 @@ import colors from './colors'
 
 const styles = {
   headerStyle: {
-    backgroundColor: colors.PRIMARY,
+    backgroundColor: colors.primaryGreen,
     elevation: 5,
     ...Platform.select({
       'android': {

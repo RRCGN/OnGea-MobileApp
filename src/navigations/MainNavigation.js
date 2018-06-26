@@ -7,8 +7,9 @@ import MapView from '../views/MapView'
 import Settings from '../views/Settings'
 import UploadImagesView from '../views/UploadImagesView'
 import ShowMapView from '../views/ShowMapView'
-
-const MobilitiesNavigator = createStackNavigator(
+import colors from '../utils/colors'
+import generalStyles from '../utils/styles'
+const MainNavigation = createStackNavigator(
   {
     Overview: { screen: ActivitiesOverview },
     SingleActivity: { screen: Activity },
@@ -20,6 +21,12 @@ const MobilitiesNavigator = createStackNavigator(
   },
   {
     initialRouteName: 'Overview',
-    headerMode: Platform.OS === 'ios' ? 'float' : 'screen' })
+    headerMode: Platform.OS === 'ios' ? 'float' : 'screen',
+    navigationOptions: {
+      headerStyle: generalStyles.headerStyle,
+      headerTitleStyle: { color: colors.white }
+    }
+  }
+)
 
-export default MobilitiesNavigator
+export default MainNavigation

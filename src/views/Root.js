@@ -1,115 +1,90 @@
 import React from 'react'
-import { NetInfo, StatusBar, View } from 'react-native'
+import { StatusBar, View } from 'react-native'
+import SplashScreen from 'rn-splash-screen'
+import PropTypes from 'prop-types'
 
-import MainTabNavigator from '../navigators/MainTabNavigator'
-import LoginService from '../services/LoginService'
-import DataService from '../services/DataService'
-import NotificationService from '../services/NotificationService'
+import AgreementAcceptenceView from './AgreementAcceptence'
+import LoginNavigation from '../navigations/LoginNavigation'
+import MainTabNavigation from '../navigations/MainTabNavigation'
 
-// import { asyncStorageDebugger } from '../utils/debugger'
+import fileHash from '../utils/fileHash'
+
+const agreementText = require('../strings/agreements.json')
+const agreementtextFingerprint = fileHash(agreementText)
 
 class Root extends React.Component {
+  constructor(props) {
+    super(props)
+    this.agreementAcceptHandler = this.agreementAcceptHandler.bind(this)
+  }
 
   state = {
-    loaded: false,
-    loggedIn: false,
-    token: '',
-    logoutToken: '',
-    data: null
+    appLoaded: true,
+    agreementAccepted: false
   }
 
-  componentWillMount() {
-    this.notificationService = new NotificationService()
-    this.notificationService.register()
-  }
-  agreementAccepted () {
-    return true
-  }
-  componentDidMount() {
-    // Check logged in status, online status and save into state
-    this.proofStatus()
+  componentDidMount () {
+    this.checkAgreementAcceptance()
   }
 
-  proofStatus = async () => {
-    // await LoginService.clearTokens()
-    // asyncStorageDebugger()
-    // this._handleLogout()
-
-
-    const { loggedIn, token, logoutToken } = await LoginService.checkStatus()
-    const isOnline = await NetInfo.isConnected.fetch()
-
-    if (!loggedIn) {
-      this.setState({ loggedIn, loaded: true })
-      return
-    }
-
-    const data = isOnline
-      ? await DataService.fetchAndSave()
-      : await DataService.getAll()
-    this.setState({ loggedIn, token, logoutToken, data: data.data, loaded: true })
-
+  checkAgreementAcceptance () {
+    this.setState({
+      appLoaded: true,
+      agreementAccepted: this.props.agreement.textFingerprint == agreementtextFingerprint
+    })
+    SplashScreen.hide()
   }
-  reloadHandler = async () => {
-    await this._fetchDataFromApi()
+
+  agreementAcceptHandler () {
+    this.props.acceptAgreement(agreementtextFingerprint)
+    this.setState({agreementAccepted: true})
   }
 
   render() {
-    const { loggedIn, token, logoutToken, data } = this.state
-    return (
-      <View style={{ flex: 1 }}>
-        <StatusBar
-          translucent
-          backgroundColor="transparent"
-          barStyle="light-content"
-        />
-        {this.state.loaded && (
-          <MainTabNavigator
-            screenProps={{
-              loggedIn,
-              token,
-              logoutToken,
-              reloadHandler: this.reloadHandler,
-              logout: this._handleLogout,
-              login: this._handleLogin,
-              refreshData: this._handleRefresh,
-              data }} />)}
-      </View>
-    )
-  }
-
-  _fetchDataFromApi = async () => {
-    const responseData = await DataService.fetchAndSave()
-    this.setState({ loggedIn: true, data: responseData.data })
-  }
-
-  _handleLogin = async (tokens) => {
-    try { await LoginService.saveTokens(tokens) }
-    catch (e) { console.log('Error when saving token:', e)}
-    this.setState({ ...tokens })
-    await this._fetchDataFromApi()
-  }
-
-  _handleLogout = async () => {
-    try {
-      await LoginService.clearTokens()
-      await DataService.purge()
-    } catch (error) {
-      console.error('Could not clear token:', error)
+    const { appLoaded, agreementAccepted } = this.state
+    const { auth } = this.props
+    if (appLoaded) {
+      return (
+        <View style={{flex: 1}}>
+             <StatusBar
+               backgroundColor="blue"
+               barStyle="light-content"
+             />
+          { agreementAccepted
+            ? ( <View style={{flex: 1}}>
+                  { auth.logged
+                    ? ( <MainTabNavigation />)
+                    : ( <LoginNavigation /> ) }
+                </View> )
+            : ( <AgreementAcceptenceView
+                  agreementText={agreementText}
+                  hash={fileHash(agreementText)}
+                  agreementAcceptHandler = {this.agreementAcceptHandler} />
+              )}
+        </View>
+      )
+    } else {
+      return <View />
     }
-
-    this.setState({ loggedIn: false, token: '' })
   }
-
-
-
-
-  _handleRefresh = async () => {
-    await DataService.fetchAndSave()
-    const responseData = await DataService.getAll()
-    this.setState({ data: responseData.data })
-  }
-
 }
 
-export default Root
+Root.propTypes = {
+  agreement: PropTypes.object,
+  auth: PropTypes.object,
+  acceptAgreement: PropTypes.func
+}
+import { connect } from 'react-redux'
+
+const mapStateToProps = state => ({
+  agreement: state.agreement,
+  auth: state.auth
+})
+
+import { acceptAgreement } from '../redux/actions'
+
+const mapDispatchToProps = (dispatch) => ({
+  acceptAgreement: (props) => { dispatch(acceptAgreement(props)) }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Root)

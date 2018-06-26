@@ -1,20 +1,17 @@
 import React, { Component } from 'react'
 import { StatusBar, Text, View } from 'react-native'
-import MobilitiesListView from './MobilitiesListView'
+// import MobilitiesListView from './MobilitiesListView'
 import PropTypes from 'prop-types'
 import ToolbarButton from '../components/ToolbarButton'
-import Button from '../components/ButtonText'
-import generalStyles from '../utils/styles'
+import PurgeStore from '../components/debug/PurgeStore'
+// import Button from '../components/ButtonText'
+// import generalStyles from '../utils/styles'
+// import Login from './Login'
 
-import { Colors } from '../utils/constants'
 class ActivitiesOverview extends Component {
   static navigationOptions = ({navigation}) => {
     return {
       title: 'My Activities',
-      headerStyle: generalStyles.headerStyle,
-      headerTitleStyle: {
-        color: Colors.WHITE
-      },
       headerRight: (
         <ToolbarButton
           androidIcon="more-vert"
@@ -30,34 +27,36 @@ class ActivitiesOverview extends Component {
     }
   }
 
-
-  noDataFound() {
-    const { data } = this.props.screenProps
-    return Object.keys(data).length === 0 && data.constructor === Object
+  componentWillMount() {
   }
 
   render() {
-    const { screenProps } = this.props
     return (
       <View>
-        <StatusBar translucent backgroundColor="rgba(0,0,0,0.36)" />
-        {(this.noDataFound())
-          ? (
-            <View>
-              <Text style={{margin: 10}}>failed loading data!</Text>
-              <Button label='reload' onPress={this.props.screenProps.reloadHandler}/>
-            </View> )
-          : (<MobilitiesListView
-            refreshData={screenProps.refreshData}
-            activities={screenProps.data}
-            {...this.props} />)}
+        {/* <Button title='Press me' onPress={() => {console.log(this.props)}} /> */}
+        {/* <Button title='Login' onPress={() => {}} /> */}
+        <PurgeStore />
       </View>
     )
   }
 }
 
 ActivitiesOverview.propTypes = {
-  screenProps: PropTypes.object
+  login: PropTypes.func
 }
 
-export default ActivitiesOverview
+import { connect } from 'react-redux'
+
+const mapStateToProps = state => ({
+  agreement: state.agreement,
+  auth: state.auth
+})
+
+import { acceptAgreement, login } from '../redux/actions'
+
+const mapDispatchToProps = (dispatch) => ({
+  acceptAgreement: (props) => { dispatch(acceptAgreement(props)) },
+  login: (props) => { dispatch(login(props)) }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ActivitiesOverview)
