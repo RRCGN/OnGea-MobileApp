@@ -1,7 +1,7 @@
 import Config from 'react-native-config'
 class Uploader {
 
-  static postData (data) {
+  static postRequestData (data) {
     return {
       body: JSON.stringify(data),
       cache: 'no-cache',

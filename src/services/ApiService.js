@@ -13,7 +13,7 @@ class ApiService {
   static ALL_PATH = '/data'
   static NOTIFICATION_PATH = '/notifications'
 
-  static postData (data) {
+  static postRequestData (data) {
     return {
       body: JSON.stringify(data),
       cache: 'no-cache',
@@ -34,7 +34,7 @@ class ApiService {
   static async auth (name, pass) {
     console.log('auth.....')
     // name = pass = 'api' // debug
-    return await fetch(Config.LOGIN_URI, this.postData({name, pass}))
+    return await fetch(Config.LOGIN_URI, this.postRequestData({name, pass}))
       // .then((response) => response.json())
       .then((responseJson) => {
         return { ok: true, token: 'responseJson.csrf_token' , logoutToken: 'responseJson.logout_token', message: ''}
@@ -51,7 +51,7 @@ class ApiService {
   }
 
   static async logout (logoutToken) {
-    return await fetch(urlWithToken(Config.LOGOUT_URI, logoutToken), this.postData({}))
+    return await fetch(urlWithToken(Config.LOGOUT_URI, logoutToken), this.postRequestData({}))
       .then((response) => {
         return (response.status == 204)
       })
