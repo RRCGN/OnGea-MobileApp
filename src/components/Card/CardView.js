@@ -1,11 +1,6 @@
-/**
- * Card. Simply a plain card.
- * @flow
- */
-
-import React, { Component } from 'react'
+import React from 'react'
 import { View, StyleSheet, Platform } from 'react-native'
-import { Colors } from '../utils/constants'
+import colors from '../../utils/colors'
 
 
 type Props = {
@@ -33,7 +28,7 @@ const styles = StyleSheet.create({
         elevation: 2
       }
     }),
-    backgroundColor: Colors.LIGHT_PRIMARY,
+    backgroundColor: colors.primaryLight,
     borderRadius: 2
   }
 })

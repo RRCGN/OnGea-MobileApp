@@ -28,9 +28,6 @@ class Activity extends Component {
   static navigationOptions = ({navigation}) => {
     return {
       title: '',
-      titleStyle: {
-        color: 'white'
-      },
       headerStyle: {
         ...generalStyles.headerStyle,
         borderRadius: 0,

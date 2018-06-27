@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import { storiesOf, action } from '@storybook/react-native'
 
-import { Card, CardSegment, CardTitle } from '../Card'
+import { Card, CardSegment, CardTitle } from '../Card/'
 
 
 export default storiesOf('Card', module)

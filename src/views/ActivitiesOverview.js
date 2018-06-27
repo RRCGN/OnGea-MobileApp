@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import { StatusBar, Text, View } from 'react-native'
-// import MobilitiesListView from './MobilitiesListView'
-import PropTypes from 'prop-types'
+import ActivitiesList from '../subviews/activities/ActivitiesList'
 import ToolbarButton from '../components/ToolbarButton'
-import PurgeStore from '../components/debug/PurgeStore'
-// import Button from '../components/ButtonText'
-// import generalStyles from '../utils/styles'
-// import Login from './Login'
+import PropTypes from 'prop-types'
 
 class ActivitiesOverview extends Component {
+  static propTypes = {
+    navigation: PropTypes.object,
+    loadContent: PropTypes.func,
+    content: PropTypes.object
+  }
   static navigationOptions = ({navigation}) => {
     return {
       title: 'My Activities',
@@ -27,36 +27,43 @@ class ActivitiesOverview extends Component {
     }
   }
 
-  componentWillMount() {
+  constructor(props) {
+    super(props)
+    this.handleRefresh = this.handleRefresh.bind(this)
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleRefresh() {
+    this.props.loadContent()
+  }
+
+  handleClick (activityObject) {
+    this.props.navigation.navigate('SingleActivity', {activityObject})
   }
 
   render() {
+    const { content } = this.props
     return (
-      <View>
-        {/* <Button title='Press me' onPress={() => {console.log(this.props)}} /> */}
-        {/* <Button title='Login' onPress={() => {}} /> */}
-        <PurgeStore />
-      </View>
+      <ActivitiesList
+        activitiesArray={content.activities}
+        isRefreshing = {content.isLoading}
+        handleRefresh = {this.handleRefresh}
+        handleClick = {this.handleClick}
+      />
     )
   }
-}
-
-ActivitiesOverview.propTypes = {
-  login: PropTypes.func
 }
 
 import { connect } from 'react-redux'
 
 const mapStateToProps = state => ({
-  agreement: state.agreement,
-  auth: state.auth
+  content: state.content
 })
 
-import { acceptAgreement, login } from '../redux/actions'
+import { loadContent } from '../redux/actions'
 
 const mapDispatchToProps = (dispatch) => ({
-  acceptAgreement: (props) => { dispatch(acceptAgreement(props)) },
-  login: (props) => { dispatch(login(props)) }
+  loadContent: (props) => { dispatch(loadContent(props)) }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ActivitiesOverview)

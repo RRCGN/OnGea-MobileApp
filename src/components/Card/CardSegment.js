@@ -1,16 +1,10 @@
-/**
- * Card Segment.
- * @flow
- */
-
-import React, { Component } from 'react'
-import { View, StyleSheet, Platform } from 'react-native'
-import { Colors } from '../utils/constants'
-
+import React from 'react'
+import { View, StyleSheet } from 'react-native'
+import colors from '../../utils/colors'
 
 type Props = {
   hasBorderBottom?: boolean,
-  children: Array<ReactElement<*>>
+  children: Array
 }
 
 type SmallProps = {
@@ -52,7 +46,7 @@ const styles = StyleSheet.create({
     padding: 16
   },
   segmentWithBorder: {
-    borderBottomColor: Colors.DARK_DIVIDER,
+    borderBottomColor: colors.darkDivider,
     borderBottomWidth: 1
   }
 })

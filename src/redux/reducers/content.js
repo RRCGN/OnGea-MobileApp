@@ -16,9 +16,8 @@ export default function content(state = initialState, action = {}) {
       ...initialState
     })
   case types.LOAD_CONTENT:
-    console.log('content is loading ')
-    return ({ isLoading: false, isLoaded: true, activities: activitiesJSON})
-
+    // console.log('content is loading ')
+    // return ({ isLoading: false, isLoaded: true, activities: activitiesJSON})
     return handle(state, action, {
       start: _state => {
         console.log('start....')
@@ -26,20 +25,24 @@ export default function content(state = initialState, action = {}) {
       },
       finish: _state => {
         console.log('finish!')
-        return ({..._state, isLoading: false})
+        // curent return is for offline content
+        return ({ isLoading: false, isLoaded: true, activities: activitiesJSON})
+
+        // return ({..._state, isLoading: false})
       },
-      success: _state => {
-        console.log('success => ', payload)
-        if (payload.status === 'ok') {
-          return { ..._state, isLoaded: true, activities: payload.data }
-        } else {
-          return { ..._state, isLoaded: false}
-        }
-      },
-      failure: _state => {
-        console.warn('Loading Data failure', payload)
-        return { ..._state, isLoaded: false}
-      }
+
+      // success: _state => {
+      //   console.log('success => ', payload)
+      //   if (payload.status === 'ok') {
+      //     return { ..._state, isLoaded: true, activities: payload.data }
+      //   } else {
+      //     return { ..._state, isLoaded: false}
+      //   }
+      // },
+      // failure: _state => {
+      //   console.warn('Loading Data failure', payload)
+      //   return { ..._state, isLoaded: false}
+      // }
     })
   default:
     return state
