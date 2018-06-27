@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react'
 import { ListView, NetInfo, RefreshControl, StyleSheet, View } from 'react-native'
 import PropTypes from 'prop-types'
@@ -57,12 +58,10 @@ class MobilitiesListView extends Component {
           image={{ uri: data.image.url }}
           title={data.name}
           onPress={() => this.props.navigation.navigate('SingleActivity', {data})} />
-
         {/* Dates */}
         <CardSegment big>
           <DateRange from={data.dateFrom} to={data.dateTo} />
         </CardSegment>
-
         {/* Action Buttons */}
         <CardSegment big>
           <ButtonFlatGrid>
@@ -71,7 +70,6 @@ class MobilitiesListView extends Component {
               onPress={() => this.props.navigation.navigate('SingleActivity', {data})} />
           </ButtonFlatGrid>
         </CardSegment>
-
       </Card>
     </View>
   )

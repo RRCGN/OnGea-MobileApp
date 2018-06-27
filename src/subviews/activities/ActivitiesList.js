@@ -1,6 +1,6 @@
 import React from 'react'
 import { FlatList } from 'react-native'
-import Activity from './Activity'
+import ActivityCard from './ActivityCard'
 import ActivitiesEmpty from './ActivitiesEmpty'
 import PropTypes from 'prop-types'
 
@@ -13,7 +13,7 @@ class ActivitiesList extends React.Component {
     handleClick: PropTypes.func
   }
 
-  _renderItem = ({item}) => <Activity activityObject={item} handleClick={this.props.handleClick} />
+  _renderItem = ({item}) => <ActivityCard activityObject={item} handleClick={this.props.handleClick} />
   _keyExtractor = (activity) => activity.id.toString()
 
   render () {

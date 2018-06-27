@@ -4,4 +4,4 @@ import StorybookUI from './storybook'
 AppRegistry.registerComponent('OnGea', () => StorybookUI)
 
 
-console.ignoredYellowBox = [ 'Remote debugger' ]
+console.ignoredYellowBox = [ 'Remote debugger', 'Warning: isMounted(...) is deprecated' ]
