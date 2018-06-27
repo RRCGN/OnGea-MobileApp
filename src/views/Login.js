@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { ActivityIndicator, StyleSheet, Text, TextInput, View } from 'react-native'
 import PropTypes from 'prop-types'
-
 import { Button } from '../components/Button'
-import PurgeStore from '../components/debug/PurgeStore'
 import colors from '../utils/colors'
 
 class Login extends Component {
@@ -19,17 +17,9 @@ class Login extends Component {
     this.props.resetAuth()
   }
 
-  componentWillReceiveProps (props) {
-    const {logged, isLoggingFailed} = props.auth
-    const {loadContent} = props
-    // if (logged && isLoggingFailed) {
-    //   loadContent()
-    // }
-  }
-
   handleLogin () {
     console.log('handleLogin')
-    // this.props.resetAuth()
+    this.props.resetAuth()
     const { username, password } = this.state
     // if (username == '' && password == '') return true
     this.props.login({username, password})
@@ -104,8 +94,7 @@ Login.propTypes = {
   content: PropTypes.object,
   auth: PropTypes.object,
   resetAuth: PropTypes.func,
-  login: PropTypes.func,
-  loadContent: PropTypes.func
+  login: PropTypes.func
 }
 const styles = StyleSheet.create({
   container: {
@@ -147,12 +136,11 @@ const mapStateToProps = state => ({
   content: state.content
 })
 
-import { login, resetAuth, loadContent } from '../redux/actions'
+import { login, resetAuth } from '../redux/actions'
 
 const mapDispatchToProps = (dispatch) => ({
   login: (props) => { dispatch(login(props)) },
-  resetAuth: (props) => { dispatch(resetAuth(props)) },
-  loadContent: (props) => { dispatch(loadContent(props)) }
+  resetAuth: (props) => { dispatch(resetAuth(props)) }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)

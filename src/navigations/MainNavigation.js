@@ -20,7 +20,8 @@ const MainNavigation = createStackNavigator(
     ShowMap: { screen: ShowMapView }
   },
   {
-    initialRouteName: 'Overview',
+    // initialRouteName: 'Overview',
+    initialRouteName: 'Settings',
     headerMode: Platform.OS === 'ios' ? 'float' : 'screen',
     navigationOptions: {
       headerStyle: generalStyles.headerStyle,

@@ -3,9 +3,13 @@ import { View } from 'react-native'
 import PropTypes from 'prop-types'
 import ToolbarButton from '../components/ToolbarButton'
 import Button from '../components/ButtonText'
-import { asyncStorageDebugger, loadDataDebugger } from '../utils/debugger'
+import DebugBoard from '..//components/debug/DebugBoard'
 
 class Settings extends Component {
+  static propTypes = {
+    logout: PropTypes.func,
+    flushContent: PropTypes.func
+  }
   static navigationOptions = ({navigation}) => {
     return {
       title: 'Settings',
@@ -19,19 +23,17 @@ class Settings extends Component {
 
   handleLogout() {
     this.props.logout()
+    this.props.flushContent()
   }
 
   render() {
     return (
       <View style={{ flex: 1, padding: 18 }}>
         <View style={{ padding: 18 }} />
-        <Button label="Show Maps" onPress={ () => { this.props.navigation.navigate('ShowMap') } } />
-        <View style={{ padding: 18 }} />
         <Button label="Logout" onPress={ () => { this.handleLogout() } } />
         { __DEV__ && (
           <View style={{paddingTop: 50}}>
-            <Button label='Debug Async Storage' onPress={() => {asyncStorageDebugger()}} />
-            <Button label='Load content' onPress={() => {loadDataDebugger()}} />
+            <DebugBoard />
           </View>
         )}
       </View>
@@ -39,18 +41,16 @@ class Settings extends Component {
   }
 }
 
-
-Settings.propTypes = { logout: PropTypes.func }
-
 import { connect } from 'react-redux'
 
 const mapStateToProps = state => ({
   auth: state.auth
 })
 
-import { logout } from '../redux/actions'
+import { logout, flushContent } from '../redux/actions'
 
 const mapDispatchToProps = (dispatch) => ({
-  logout: (props) => { dispatch(logout(props)) }
+  logout: (props) => { dispatch(logout(props)) },
+  flushContent: (props) => { dispatch(flushContent(props)) }
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Settings)

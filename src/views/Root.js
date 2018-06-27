@@ -13,6 +13,13 @@ const agreementText = require('../strings/agreements.json')
 const agreementtextFingerprint = fileHash(agreementText)
 
 class Root extends React.Component {
+  static propTypes = {
+    agreement: PropTypes.object,
+    auth: PropTypes.object,
+    acceptAgreement: PropTypes.func,
+    loadContent: PropTypes.func
+  }
+
   constructor(props) {
     super(props)
     this.agreementAcceptHandler = this.agreementAcceptHandler.bind(this)
@@ -38,6 +45,17 @@ class Root extends React.Component {
   agreementAcceptHandler () {
     this.props.acceptAgreement(agreementtextFingerprint)
     this.setState({agreementAccepted: true})
+  }
+
+  componentWillReceiveProps (nexProps) {
+    // whenever app-state is from not-logged to logged - user login
+    if (!this.props.auth.logged && nexProps.auth.logged) {
+      this._userDidLogin()
+    }
+  }
+
+  _userDidLogin() {
+    this.props.loadContent()
   }
 
   render() {
@@ -69,11 +87,6 @@ class Root extends React.Component {
   }
 }
 
-Root.propTypes = {
-  agreement: PropTypes.object,
-  auth: PropTypes.object,
-  acceptAgreement: PropTypes.func
-}
 import { connect } from 'react-redux'
 
 const mapStateToProps = state => ({
@@ -81,10 +94,11 @@ const mapStateToProps = state => ({
   auth: state.auth
 })
 
-import { acceptAgreement } from '../redux/actions'
+import { acceptAgreement, loadContent } from '../redux/actions'
 
 const mapDispatchToProps = (dispatch) => ({
-  acceptAgreement: (props) => { dispatch(acceptAgreement(props)) }
+  acceptAgreement: (props) => { dispatch(acceptAgreement(props)) },
+  loadContent: (props) => { dispatch(loadContent(props)) }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Root)

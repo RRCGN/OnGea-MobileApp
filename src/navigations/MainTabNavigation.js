@@ -11,7 +11,7 @@ import PlatformIcon from '../components/PlatformIcon'
 const MainTabNavigation = createBottomTabNavigator({
   Mobilities: {
     screen: MainNavigation,
-    navigationOptions: ({navigation}) => ({
+    navigationOptions: () => ({
       tabBarLabel: 'Activities',
       tabBarIcon: ({ tintColor, focused }) => (
       <PlatformIcon
@@ -23,9 +23,9 @@ const MainTabNavigation = createBottomTabNavigator({
   },
   Web: {
     screen: WebApp,
-    navigationOptions: ({navigation}) => ({
+    navigationOptions: () => ({
       tabBarLabel: 'Activities',
-      tabBarIcon: ({ tintColor, focused }) => (
+      tabBarIcon: ({tintColor, focused }) => (
          <PlatformIcon
            iosIcon={focused ? 'ios-bonfire' : 'ios-bonfire-outline'}
            androidIcon="landscape"

@@ -36,6 +36,6 @@ export const loadContent = (accessToken) => {
   }
 }
 
-export const resetContent = () => {
-  return { type: types.RESET_CONTENT }
+export const flushContent = () => {
+  return { type: types.FLUSH_CONTENT }
 }

@@ -71,7 +71,7 @@ export default function auth(state = initialState, action = {}) {
       logged: false,
       isLogging: false,
       isLoggingFailed: false,
-      message: 'You are now logged out!'
+      message: ''
     })
     return handle(state, action, {
       success: _state => {

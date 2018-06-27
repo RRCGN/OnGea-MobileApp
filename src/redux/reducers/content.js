@@ -11,12 +11,12 @@ const initialState = {
 export default function content(state = initialState, action = {}) {
   const { type, payload } = action
   switch (type) {
-  case types.RESET_CONTENT:
+  case types.FLUSH_CONTENT:
     return ({
       ...initialState
     })
   case types.LOAD_CONTENT:
-
+    console.log('content is loading ')
     return ({ isLoading: false, isLoaded: true, activities: activitiesJSON})
 
     return handle(state, action, {
