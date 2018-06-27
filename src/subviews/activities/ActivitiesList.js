@@ -20,7 +20,7 @@ class ActivitiesList extends React.Component {
     const { activitiesArray, isRefreshing, handleRefresh } = this.props
     return (
         <FlatList
-          ListEmptyComponent={() => <ActivitiesEmpty />}
+          ListEmptyComponent={() => <ActivitiesEmpty isRefreshing={isRefreshing} />}
           data={activitiesArray}
           renderItem={this._renderItem}
           keyExtractor={this._keyExtractor}
