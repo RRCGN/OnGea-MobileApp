@@ -6,6 +6,7 @@ SplashScreen && SplashScreen.hide()
 configure(() => {
   require('../src/components/__stories__/')
   require('../src/views/__stories__/')
+  require('../src/subviews/__stories__/')
 }, module)
 
 export default getStorybookUI({ port: 7007, host: '127.0.0.1' })

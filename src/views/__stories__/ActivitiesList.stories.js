@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react-native'
-import ViewDecorator from './ViewDecorator'
+import ViewDecorator from '../../components/__stories__/ViewDecorator'
 import ActivitiesList from '../../subviews/activities/ActivitiesList'
 import Activity from '../../subviews/activities/Activity'
 const activitiesJSON = require('../../api-data-structure/activities.json')

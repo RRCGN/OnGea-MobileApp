@@ -1,18 +1,12 @@
-/**
- *
- * @flow
- */
-
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Colors } from '../utils/constants'
-
 
 type Props = {
   title: string,
   titleColor?: string,
   noBorder?: boolean,
-  children: Array<ReactElement<*>>
+  children: any
 }
 
 const Section = ({

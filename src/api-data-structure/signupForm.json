@@ -1,0 +1,58 @@
+[
+  { "field_ongea_signup_nickname":
+      { "a": true, "b": true, "c": false, "d": false} },
+  { "field_ongea_signup_birthdate":
+      { "a": true, "b": true, "c": true, "d": false} },
+  { "field_ongea_signup_gender":
+      { "a": true, "b": true, "c": true, "d": false} },
+  { "field_ongea_signup_aboutme":
+      { "a": true, "b": false, "c": true, "d": true} },
+  { "field_ongea_signup_street":
+      { "a": true, "b": false, "c": true, "d": true} },
+  { "field_ongea_signup_postcode":
+      { "a": true, "b": false, "c": true, "d": true} },
+  { "field_ongea_signup_town":
+      { "a": true, "b": false, "c": true, "d": true} },
+  { "field_ongea_signup_region":
+      { "a": false, "b": false, "c": false, "d": true} },
+  { "field_ongea_signup_country":
+      { "a": false, "b": true, "c": false, "d": true} },
+  { "field_ongea_signup_phone":
+      { "a": false, "b": true, "c": false, "d": true} },
+  { "field_ongea_signup_passid":
+      { "a": false, "b": true, "c": false, "d": true} },
+  { "field_ongea_signup_issuedon":
+      { "a": false, "b": true, "c": false, "d": false} },
+  { "field_ongea_signup_expireson":
+      { "a": false, "b": true, "c": false, "d": false} },
+  { "field_ongea_signup_nationality":
+      { "a": false, "b": true, "c": false, "d": false} },
+  { "field_ongea_signup_website":
+      { "a": false, "b": true, "c": false, "d": false} },
+  { "field_ongea_signup_profilepic":
+      { "a": false, "b": true, "c": false, "d": false} },
+  { "field_ongea_signup_emergcon":
+      { "a": false, "b": true, "c": false, "d": true} },
+  { "field_ongea_signup_emphone":
+      { "a": false, "b": true, "c": false, "d": false} },
+  { "field_ongea_signup_skillsrelated":
+      { "a": false, "b": true, "c": false, "d": false} },
+  { "field_ongea_signup_exampleof":
+      { "a": false, "b": false, "c": false, "d": false} },
+  { "field_ongea_signup_foodoptions":
+      { "a": false, "b": false, "c": false, "d": false} },
+  { "field_ongea_signup_foodreq":
+      { "a": false, "b": false, "c": false, "d": false} },
+  { "field_ongea_signup_skills":
+      { "a": false, "b": false, "c": false, "d": true} },
+  { "field_ongea_signup_skillsdetails":
+      { "a": false, "b": false, "c": false, "d": true} },
+  { "field_ongea_signup_motiviation":
+      { "a": true, "b": false, "c": false, "d": true} },
+  { "field_ongea_signup_hearabout":
+      { "a": true, "b": false, "c": false, "d": false} },
+  { "field_ongea_signup_roomreq":
+      { "a": true, "b": false, "c": false, "d": false} },
+  { "field_ongea_signup_canshare":
+      { "a": true, "b": false, "c": false, "d": false} }
+]
