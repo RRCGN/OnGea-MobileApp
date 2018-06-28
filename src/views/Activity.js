@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Dimensions, Image, Platform, Text, StyleSheet, View, StatusBar} from 'react-native'
 import * as Animatable from 'react-native-animatable'
-import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view'
+// import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view'
 import ToolbarButton from '../components/ToolbarButton'
 import TitleOnShadow from '../components/TitleOnShadow'
 import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
@@ -17,6 +17,13 @@ import Button from '../components/ButtonText'
 import ButtonFlatGrid from '../components/ButtonFlatGrid'
 import PropTypes from 'prop-types'
 import generalStyles from '../utils/styles'
+
+
+
+import ActivityHeader from '../subviews/activities/ActivityHeader'
+
+
+
 
 const mobilitiesJSON = require('../api-data-structure/mobilities.json')
 const activitiesJSON = require('../api-data-structure/activities.json')
@@ -46,12 +53,6 @@ class Activity extends Component {
     }
   }
 
-  componentWillMount() {
-    this.headerWidth = Dimensions.get('window').width
-    this.headerHeight = this.headerWidth * (2/3)
-    this.stickyHeaderHeight = Platform.OS === 'ios' ? 86 : 80
-  }
-
   getActivityContent() {
     return (activitiesJSON[0])
   }
@@ -73,37 +74,7 @@ class Activity extends Component {
     })
   }
 
-  _handleStickHeader = () => {
-    this.navBarView.fadeIn(200)
-  }
-
-  _handleUnstickHeader = () => {
-    this.navBarView.fadeOut(200)
-  }
-
-  render() {
-    return (
-        <HeaderImageScrollView
-          maxHeight={this.headerHeight}
-          minHeight={this.stickyHeaderHeight}
-          renderHeader={this._renderTitleBackground}
-          renderForeground={this._renderTitleForeground}
-          renderFixedForeground={this._renderStickyHeader}
-          fadeOutForeground
-          foregroundParallaxRatio={0.8}
-        >
-          <TriggeringView
-            onBeginHidden={this._handleStickHeader}
-            onDisplay={this._handleUnstickHeader}
-          >
-            {this._renderDates()}
-          </TriggeringView>
-          {this._renderContent()}
-        </HeaderImageScrollView>
-    )
-  }
-
-  _renderDates = () => {
+  renderDates = () => {
     const activity = this.getActivityContent()
     return (
       <View style={{ backgroundColor: '#7B1FA2', padding: 16 }}>
@@ -111,6 +82,16 @@ class Activity extends Component {
       </View>
     )
   }
+
+  render() {
+    return (
+      <ActivityHeader activityObject={this.getActivityContent()} renderDates={this.renderDates}>
+        {this._renderContent()}
+      </ActivityHeader>
+    )
+  }
+
+
 
   _renderContent = () => {
     const { navigation } = this.props
@@ -172,88 +153,7 @@ class Activity extends Component {
       </View>
     )
   }
-
-  _renderTitleForeground = () => {
-    const {title, subtitle} = this.getActivityContent()
-    return <TitleOnShadow title={title} subtitle={subtitle} />
-  }
-
-  _renderTitleBackground = () => {
-    const {image} = this.getActivityContent()
-    return (
-      <View style={{ height: this.headerHeight }}>
-        <Image
-          style={{ flex: 1 }}
-          source={{ uri: image.url }}
-          width={this.headerWidth}
-          height={this.headerHeight}
-          resizeMode="cover"
-        />
-      </View>
-    )
-  }
-
-  _renderStickyHeader = () => {
-    const {title} = this.getActivityContent()
-    return (
-      <View>
-        <StatusBarBackgroundIOS />
-        <Animatable.View
-          style={styles.stickyHeader}
-          ref={(navBarView) => this.navBarView = navBarView}>
-          <View style={styles.stickyHeaderInner}>
-            <Text numberOfLines={2} style={styles.toolbarTitle}>{title}</Text>
-          </View>
-        </Animatable.View>
-      </View>
-    )
-  }
 }
-
-const styles = StyleSheet.create({
-  stickyHeader: {
-    opacity: 0,
-    ...Platform.select({
-      ios: {
-        marginTop: 19,
-        height: 46
-      },
-      android: {
-        marginTop: 24,
-        height: 56
-      }
-    })
-  },
-  stickyHeaderInner: {
-    flex: 1,
-    justifyContent: 'center',
-    ...Platform.select({
-      android: {
-        marginLeft: 55,
-        paddingRight: 16
-      }
-    })
-  },
-  toolbarTitle: {
-    color: 'white',
-    backgroundColor: 'transparent',
-    textShadowColor: 'rgba(0, 0, 0, 0.4)',
-    textShadowRadius: 2,
-    textShadowOffset: { width: 0, height: 1 },
-    ...Platform.select({
-      ios: {
-        fontWeight: '600',
-        fontSize: 16,
-        alignSelf: 'center'
-      },
-      android: {
-        fontWeight: '500',
-        fontSize: 17,
-        alignSelf: 'flex-start'
-      }
-    })
-  }
-})
 
 Activity.propTypes = {
   navigation: PropTypes.object

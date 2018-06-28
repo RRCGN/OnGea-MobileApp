@@ -13,24 +13,24 @@ const MainTabNavigation = createBottomTabNavigator({
     screen: MainNavigation,
     navigationOptions: () => ({
       tabBarLabel: 'Activities',
-      tabBarIcon: ({ tintColor, focused }) => (
-      <PlatformIcon
-            iosIcon={focused ? 'ios-globe' : 'ios-globe-outline'}
-            androidIcon="public"
-            size={24} color={Platform.OS === 'ios' ? tintColor : 'white' } />
-        )
-    })
-  },
-  Web: {
-    screen: WebApp,
-    navigationOptions: () => ({
-      tabBarLabel: 'Activities',
       tabBarIcon: ({tintColor, focused }) => (
          <PlatformIcon
            iosIcon={focused ? 'ios-bonfire' : 'ios-bonfire-outline'}
            androidIcon="landscape"
            size={24} color={Platform.OS === 'ios' ? tintColor : 'white' } />
        )
+    })
+  },
+  Web: {
+    screen: WebApp,
+    navigationOptions: () => ({
+      tabBarLabel: 'Website',
+      tabBarIcon: ({ tintColor, focused }) => (
+      <PlatformIcon
+            iosIcon={focused ? 'ios-globe' : 'ios-globe-outline'}
+            androidIcon="public"
+            size={24} color={Platform.OS === 'ios' ? tintColor : 'white' } />
+        )
     })
   }
 }, {
