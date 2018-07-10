@@ -1,7 +1,3 @@
-/**
- * Constants
- */
-
 export const Colors = {
   PRIMARY: '#00796B',
   PRIMARY_LIGHT: '#009688',

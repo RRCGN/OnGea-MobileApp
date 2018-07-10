@@ -3,7 +3,9 @@ import { View } from 'react-native'
 import PropTypes from 'prop-types'
 import ToolbarButton from '../components/ToolbarButton'
 import Button from '../components/ButtonText'
-import DebugBoard from '..//components/debug/DebugBoard'
+import DebugBoard from '../components/debug/DebugBoard'
+import SignupForm from '../subviews/SignupForm'
+const formData = require('../api-data-structure/signupForm.json')
 
 class Settings extends Component {
   static propTypes = {
@@ -29,6 +31,7 @@ class Settings extends Component {
   render() {
     return (
       <View style={{ flex: 1, padding: 18 }}>
+        <SignupForm formData={formData}/>
         <View style={{ padding: 18 }} />
         <Button label="Logout" onPress={ () => { this.handleLogout() } } />
         { __DEV__ && (
