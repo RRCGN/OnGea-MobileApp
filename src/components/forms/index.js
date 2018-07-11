@@ -1,7 +1,9 @@
 import Progress from './Progress'
-// import DatePicker from './DatePicker'
+import Form from './Form'
+import fieldsStruct from './fieldsStruct'
 
 export {
   Progress,
-  // DatePicker
+  Form,
+  fieldsStruct
 }

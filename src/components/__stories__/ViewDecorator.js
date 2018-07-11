@@ -19,7 +19,9 @@ ViewDecorator.propTypes = {
 const styles = {
   wrapper: { flex: 1 },
   container: {
-    backgroundColor: colors.grayLight
+    backgroundColor: colors.grayLight,
+    paddingHorizontal: 20,
+    paddingVertical: 10
   }
 }
 
