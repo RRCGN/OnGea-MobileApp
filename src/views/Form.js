@@ -28,9 +28,7 @@ class Settings extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, padding: 18 }}>
-        <SignupForm formData={formData}/>
-      </View>
+      <SignupForm formData={formData}/>
     )
   }
 }

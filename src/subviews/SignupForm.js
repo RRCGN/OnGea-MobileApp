@@ -1,8 +1,8 @@
 import React from 'react'
 import { TouchableHighlight, View, Text } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-
-import { Progress, Form, fieldsStruct } from '../components/forms'
+import colors from '../utils/colors'
+import {Form, fieldsStruct, FormHeader } from '../components/forms'
 const REQUIRED = 'in-required'
 const OPTIONAL = 'in-optional'
 const LATER = 'in-later'
@@ -56,22 +56,12 @@ class SignupForm extends React.Component {
     return (
       <KeyboardAwareScrollView>
         <View style={styles.container}>
-          <View style={styles.header}>
-            <View style={styles.titleContainer}>
-              <Text>Required </Text>
-            </View>
-            <View style={styles.progressContainer}>
-              <Progress current={1} total={3} />
-            </View>
-          </View>
+          <FormHeader currentStep={1}/>
           <View style={styles.body}>
-             <View style={styles.container}>
-          {/* display */}
-          <Form fields={fieldsStruct(this.selectAllField())}/>
-          <TouchableHighlight style={styles.button} onPress={this.onPress} underlayColor='#99d9f4'>
-            <Text style={styles.buttonText}>Save</Text>
-          </TouchableHighlight>
-        </View>
+            <Form fields={fieldsStruct(this.selectAllField())}/>
+            <TouchableHighlight style={styles.button} onPress={this.onPress} underlayColor='#99d9f4'>
+              <Text style={styles.buttonText}>Save</Text>
+            </TouchableHighlight>
           </View>
         </View>
       </KeyboardAwareScrollView>
@@ -81,25 +71,9 @@ class SignupForm extends React.Component {
 
 const styles = {
   container: {},
-  header: {
-    height: 50,
-    flexDirection: 'row'
-  },
-  progressContainer: {
-    height: 50,
-    width: 100,
-    flex: 0,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'pink'
-  },
-  titleContainer: {
-    height: 50,
-    flex: 1,
-    justifyContent: 'center',
-    paddingLeft: 10
-  },
   body: {
+    paddingHorizontal: 20,
+    marginVertical: 30,
     flexDirection: 'column'
   }
 }
