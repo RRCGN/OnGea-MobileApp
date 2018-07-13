@@ -8,11 +8,12 @@ const Progress = ({currentStep}: props) => (
   <View style={styles.wrapper}>
     <View style={styles.header}>
       <View style={styles.titleContainer}>
-        <Text style={ currentStep == 1 ? styles.activeTitle : styles.inactiveTitle }>Required </Text>
-        <Text style={ currentStep == 2 ? styles.activeTitle : styles.inactiveTitle }>Also Required </Text>
-        <Text style={ currentStep == 3 ? styles.activeTitle : styles.inactiveTitle }>Optional </Text>
+        <Text style={ currentStep == 1 ? styles.activeTitle : styles.inactiveTitle }>1 - Required information </Text>
+        <Text style={ currentStep == 2 ? styles.activeTitle : styles.inactiveTitle }>2 - Required information</Text>
+        <Text style={ currentStep == 3 ? styles.activeTitle : styles.inactiveTitle }>3 - Optional </Text>
       </View>
       <View style={styles.progressContainer}>
+        <Text style={styles.stepText}>step</Text>
         <Text style={styles.stepText}>{`${currentStep}/3`}</Text>
       </View>
     </View>
@@ -27,12 +28,12 @@ const Progress = ({currentStep}: props) => (
 const styles = {
   wrapper: {
     flexDirection: 'column',
-    paddingLeft: 5,
+    paddingLeft: 15,
     paddingTop: 10,
-    backgroundColor: colors.purple
+    backgroundColor: colors.primaryGreen
   },
   header: {
-    height: 50,
+    height: 60,
     flexDirection: 'row'
   },
   footer: {
@@ -40,7 +41,7 @@ const styles = {
     paddingVertical: 20
   },
   progressContainer: {
-    height: 50,
+    height: 90,
     width: 100,
     flex: 0,
     justifyContent: 'center',
@@ -51,7 +52,7 @@ const styles = {
     fontSize: 18
   },
   titleContainer: {
-    height: 50,
+    height: 70,
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center'
