@@ -7,8 +7,7 @@
     "server:no-auth": "nodemon --watch mockserver mockserver/server.js --no-auth",
     "server": "nodemon --watch mockserver mockserver/server.js",
     "test": "jest",
-    "storybook": "storybook start -p 7007",
-    "react-native-maps-fix": "node scripts/react-native-map-bug-fix.js"
+    "storybook": "storybook start -p 7007"
   },
   "dependencies": {
     "@mapbox/react-native-mapbox-gl": "^6.1.2-beta2",

@@ -83,14 +83,7 @@ For production builld, you need `.env.production` and for development it's `.env
 
 ## Known issues and its hacks
 
-### react-native-maps
-`react-native-maps` has `compileOnly()` issue on android build, since it uses [docs.gradle.org/3.0/release-notes](https://docs.gradle.org/3.0/release-notes.html) and the app gradle is version 2.
-
-You can skip this issue by implementing `build.gradle` of the `modules`, check [react-native-maps#2188#issuecomment-385420099](https://github.com/react-community/react-native-maps/issues/2188#issuecomment-385420099)
-
-**Da Hack:**
-run `$ yarn run react-native-maps-fix` at the root of project.
-
+:phone:
 
 ## App Code
 
