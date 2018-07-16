@@ -12,7 +12,7 @@ class Settings extends Component {
   }
   static navigationOptions = ({navigation}) => {
     return {
-      title: 'Settings',
+      title: 'theForm',
       headerLeft: (
         <ToolbarButton
           androidIcon="arrow-back"

@@ -1,13 +1,14 @@
 import fieldsStruct from '../fieldsStruct'
-
+import { REQUIRED, OPTIONAL, LATER } from '../../../subviews/SignupForm.js'
 describe('Ctrating form struct', () => {
   it('parses and varifies api response to struct', () => {
+    
     const apiData = [
-      'field_ongea_signup_nickname': 'in-required',
-      'field_ongea_signup_birthdate': 'in-required',
-      'field_ongea_signup_gender': 'in-required',
-      'field_ongea_signup_aboutme': 'in-required',
-      'field_ongea_signup_street': 'in-optional'
+      'field_ongea_signup_nickname': REQUIRED,
+      'field_ongea_signup_birthdate': REQUIRED,
+      'field_ongea_signup_gender': REQUIRED,
+      'field_ongea_signup_aboutme': REQUIRED,
+      'field_ongea_signup_street': OPTIONAL
     ]
 
     const { meta } = fieldsStruct(apiData)

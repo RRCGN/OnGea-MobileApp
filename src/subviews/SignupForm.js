@@ -2,9 +2,11 @@ import React from 'react'
 import { TouchableHighlight, View, Text } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import {Form, fieldsStruct, FormHeader } from '../components/forms'
-const REQUIRED = 'in-required'
-const OPTIONAL = 'in-optional'
-const LATER = 'in-later'
+
+// values are exported to tests
+export const REQUIRED = 'in-required'
+export const OPTIONAL = 'in-optional'
+export const LATER = 'in-later'
 
 class SignupForm extends React.Component {
   props: { formData: Array }
