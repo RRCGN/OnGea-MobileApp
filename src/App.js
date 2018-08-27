@@ -1,24 +1,26 @@
 import React from 'react'
-
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
-import redux from '../src/redux'
 
+import configureStore from '../src/redux/configure-store'
 import RootView from './views/Root'
 
+const { store, persistor } = configureStore()
 
-const App = () => (
-  <Provider store={redux.store}>
-    <PersistGate loading={null} persistor={redux.persistor}>
-      <RootView />
-    </PersistGate>
-  </Provider>
-)
-
+class App extends React.PureComponent {
+  render() {
+    return (
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <RootView />
+        </PersistGate>
+      </Provider>
+    )
+  }
+}
 
 console.ignoredYellowBox = [
   'Remote debugger',
-  // 'Behaviour of screenProps has changed',
   'Warning: isMounted(...) is deprecated'
 ]
 

@@ -1,69 +1,78 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+
+import { fetchActivities } from '../redux/ducks/activities'
 import ActivitiesList from '../subviews/activities/ActivitiesList'
 import ToolbarButton from '../components/ToolbarButton'
-import PropTypes from 'prop-types'
 
 class ActivitiesOverview extends Component {
   static propTypes = {
-    navigation: PropTypes.object,
-    loadContent: PropTypes.func,
-    content: PropTypes.object
+    navigation: PropTypes.object.isRequired,
+    fetchActivities: PropTypes.func.isRequired,
+    activities: PropTypes.array.isRequired
   }
-  static navigationOptions = ({navigation}) => {
+
+  static navigationOptions = ({ navigation }) => {
     return {
       title: 'My Activities',
       headerRight: (
         <ToolbarButton
-          androidIcon="more-vert"
+          androidIcon="settings"
           iosIcon="ios-cog"
-          onPress={ () => navigation.navigate('Settings') } />
-      ),
-      headerLeft: (
-        <ToolbarButton
-          androidIcon="add"
-          iosIcon="ios-add"
-          onPress={ () => navigation.navigate('UploadImages') } />
+          onPress={() => navigation.navigate('Settings')}
+        />
       )
     }
   }
 
-  constructor(props) {
-    super(props)
-    this.handleRefresh = this.handleRefresh.bind(this)
-    this.handleClick = this.handleClick.bind(this)
+  state = {
+    isLoading: true
   }
 
-  handleRefresh() {
-    this.props.loadContent()
+  componentDidMount() {
+    this.props
+      .fetchActivities()
+      .then(() => {
+        this.setState({ isLoading: false })
+      })
+      .catch(error => {
+        console.error(error)
+        this.setState({ isLoading: false })
+      })
   }
 
-  handleClick (activityObject) {
-    this.props.navigation.navigate('SingleActivity', {activityObject})
+  handleRefresh = () => {
+    this.props.fetchActivities()
+  }
+
+  handleItemClick = activityObject => {
+    this.props.navigation.navigate('SingleActivity', { activityObject })
   }
 
   render() {
-    const { content } = this.props
+    const { isLoading } = this.state
+
     return (
       <ActivitiesList
-        activitiesArray={content.activities}
-        isRefreshing = {content.isLoading}
-        handleRefresh = {this.handleRefresh}
-        handleClick = {this.handleClick}
+        activitiesArray={this.props.activities}
+        isRefreshing={isLoading}
+        handleRefresh={this.handleRefresh}
+        handleClick={this.handleItemClick}
       />
     )
   }
 }
 
-import { connect } from 'react-redux'
-
 const mapStateToProps = state => ({
-  content: state.content
+  activities: state.activities
 })
 
-import { loadContent } from '../redux/actions'
+const mapDispatchToProps = {
+  fetchActivities
+}
 
-const mapDispatchToProps = (dispatch) => ({
-  loadContent: (props) => { dispatch(loadContent(props)) }
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(ActivitiesOverview)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ActivitiesOverview)

@@ -1,101 +1,135 @@
-import React, { Component } from 'react'
-import { ActivityIndicator, StyleSheet, Text, TextInput, View } from 'react-native'
+import React from 'react'
+import {
+  ActivityIndicator,
+  StyleSheet,
+  Text,
+  TextInput,
+  View
+} from 'react-native'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+
+import { login } from '../redux/ducks/auth'
+
 import { Button } from '../components/Button'
 import colors from '../utils/colors'
 
-class Login extends Component {
-
-  constructor(props) {
-    super(props)
-    this.handleLogin = this.handleLogin.bind(this)
+class Login extends React.PureComponent {
+  static propTypes = {
+    navigation: PropTypes.object.isRequired,
+    login: PropTypes.func.isRequired
   }
 
-  state = { username: '', password: '' }
-
-  componentWillMount() {
-    this.props.resetAuth()
+  state = {
+    username: '',
+    password: '',
+    instanceUrl: 'https://ongearlmock.free.beeceptor.com',
+    isLoading: false,
+    isError: false
   }
 
-  handleLogin () {
-    console.log('handleLogin')
-    this.props.resetAuth()
-    const { username, password } = this.state
-    // if (username == '' && password == '') return true
-    this.props.login({username, password})
+  handleUsernameChange = username => {
+    this.setState({ username })
+  }
+
+  handlePasswordChange = password => {
+    this.setState({ password })
+  }
+
+  handleInstanceUrlChange = instanceUrl => {
+    this.setState({ instanceUrl })
+  }
+
+  handleLoginButtonPress = () => {
+    const { username, password, instanceUrl } = this.state
+    this.setState({ isLoading: true })
+
+    this.props.login({ username, password, instanceUrl }).catch(error => {
+      this.setState({ isError: true, isLoading: false })
+      console.error(error)
+    })
+  }
+
+  handleWebsiteButtonPress = () => {
+    this.props.navigation.navigate('WebApp')
   }
 
   render() {
-    console.log(this.props)
-    const { success } = this.state
-    const {navigation, auth} = this.props
-    const {isLogging, message} = auth
+    const { isLoading, isError } = this.state
+
     return (
       <View style={styles.container}>
         <View style={styles.messagesContainer}>
-          {success
-          ? (<ActivityIndicator
-            animating={this.state.visible}
-            style={[styles.centering]}
-            size="small"
-            color={colors.primaryGreen} />)
-          : (<Text style={styles.messagesErrorText}>{message}</Text>) }
+          {isLoading && (
+            <ActivityIndicator size="small" color={colors.primaryGreen} />
+          )}
+          {isError && (
+            <Text style={styles.messagesErrorText}>Something went wrong</Text>
+          )}
         </View>
-        <View style={isLogging ? {opacity: 0.5} : {}}>
-          <TextInput
-            autoCapitalize="none"
-            autoCorrect={false}
-            autoFocus={true}
-            style={styles.formElement}
-            placeholder="Username"
-            value={this.state.username}
-            onChangeText={(username) => this.setState({ username })}
-          />
-          <TextInput
-            autoCapitalize="none"
-            autoCorrect={false}
-            style={styles.formElement}
-            placeholder="Password"
-            secureTextEntry={true}
-            value={this.state.password}
-            onChangeText={(password) => this.setState({ password })}
-          />
+        <TextInput
+          disabled={isLoading}
+          autoCapitalize="none"
+          autoCorrect={false}
+          autoFocus={true}
+          style={styles.formElement}
+          placeholder="OnGea URL"
+          value={this.state.instanceUrl}
+          onChangeText={this.handleInstanceUrlChange}
+        />
+        <TextInput
+          disabled={isLoading}
+          autoCapitalize="none"
+          autoCorrect={false}
+          autoFocus={true}
+          style={styles.formElement}
+          placeholder="Username"
+          value={this.state.username}
+          onChangeText={this.handleUsernameChange}
+        />
+        <TextInput
+          disabled={isLoading}
+          autoCapitalize="none"
+          autoCorrect={false}
+          style={styles.formElement}
+          placeholder="Password"
+          secureTextEntry={true}
+          value={this.state.password}
+          onChangeText={this.handlePasswordChange()}
+        />
+        <View style={styles.loginButtonContainer}>
+          {isLoading ? (
+            <ActivityIndicator size="small" color={colors.primaryGreen} />
+          ) : (
+            <Button
+              label="Login"
+              backgroundColor={colors.primaryGreen}
+              color="white"
+              style={styles.loginButton}
+              onPress={this.handleLoginButtonPress}
+            />
+          )}
         </View>
-          <View style={styles.loginButtonContainer}>
-            {isLogging
-            ? (<ActivityIndicator
-              animating={this.state.visible}
-              style={[styles.centering]}
-              size="small"
-              color={colors.primaryGreen} />)
-            : success
-              ? (<Text style={styles.messagesSuccessText}>login success!</Text>)
-              : (<Button
-                  label="Login"
-                  backgroundColor={colors.primaryGreen}
-                  color="white"
-                  style={styles.loginButton}
-                  onPress={this.handleLogin} />)}
-          </View>
-          <Button
-            label="Go to Website"
-            backgroundColor="white"
-            color={colors.primaryGreen}
-            style={styles.loginButton}
-            onPress={() => navigation.navigate('WebApp')} />
-            <View style={{height: 100} /* adjust bottom */} />
+        <Button
+          label="Go to Website"
+          backgroundColor="white"
+          color={colors.primaryGreen}
+          style={styles.loginButton}
+          onPress={this.handleWebsiteButtonPress}
+        />
+        <View style={{ height: 100 }} />
       </View>
     )
   }
 }
 
-Login.propTypes = {
-  navigation: PropTypes.object,
-  content: PropTypes.object,
-  auth: PropTypes.object,
-  resetAuth: PropTypes.func,
-  login: PropTypes.func
-}
+const mapDispatchToProps = { login }
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Login)
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -108,7 +142,7 @@ const styles = StyleSheet.create({
     height: 50,
     alignSelf: 'center'
   },
-  messagesContainer:{
+  messagesContainer: {
     height: 20
   },
   messagesErrorText: {
@@ -126,21 +160,3 @@ const styles = StyleSheet.create({
     width: 200
   }
 })
-
-
-import { connect } from 'react-redux'
-
-const mapStateToProps = state => ({
-  agreement: state.agreement,
-  auth: state.auth,
-  content: state.content
-})
-
-import { login, resetAuth } from '../redux/actions'
-
-const mapDispatchToProps = (dispatch) => ({
-  login: (props) => { dispatch(login(props)) },
-  resetAuth: (props) => { dispatch(resetAuth(props)) }
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login)

@@ -2,103 +2,70 @@ import React from 'react'
 import { StatusBar, View } from 'react-native'
 import SplashScreen from 'rn-splash-screen'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
-import AgreementAcceptenceView from './AgreementAcceptence'
+import { setAgreementVersion } from '../redux/ducks/agreement'
+
+import AgreementAcceptance from './AgreementAcceptance'
 import LoginNavigation from '../navigations/LoginNavigation'
-import MainTabNavigation from '../navigations/MainTabNavigation'
+import MainNavigation from '../navigations/MainNavigation'
 
-import fileHash from '../utils/fileHash'
+import agreement from '../strings/agreements.json'
 
-const agreementText = require('../strings/agreements.json')
-const agreementtextFingerprint = fileHash(agreementText)
-
-class Root extends React.Component {
+class Root extends React.PureComponent {
   static propTypes = {
-    agreement: PropTypes.object,
-    auth: PropTypes.object,
-    acceptAgreement: PropTypes.func,
-    loadContent: PropTypes.func
+    isAgreementAccepted: PropTypes.bool.isRequired,
+    isLoggedIn: PropTypes.bool.isRequired,
+    setAgreementVersion: PropTypes.func.isRequired
   }
 
-  constructor(props) {
-    super(props)
-    this.agreementAcceptHandler = this.agreementAcceptHandler.bind(this)
-  }
-
-  state = {
-    appLoaded: true,
-    agreementAccepted: false
-  }
-
-  componentDidMount () {
-    this.checkAgreementAcceptance()
-  }
-
-  checkAgreementAcceptance () {
-    this.setState({
-      appLoaded: true,
-      agreementAccepted: this.props.agreement.textFingerprint == agreementtextFingerprint
-    })
+  componentDidMount() {
     SplashScreen.hide()
   }
 
-  agreementAcceptHandler () {
-    this.props.acceptAgreement(agreementtextFingerprint)
-    this.setState({agreementAccepted: true})
+  handleAgree = () => {
+    this.props.setAgreementVersion(agreement.version)
   }
 
-  componentWillReceiveProps (nexProps) {
-    // whenever app-state is from not-logged to logged - user login
-    if (!this.props.auth.logged && nexProps.auth.logged) {
-      this._userDidLogin()
-    }
+  renderMain = () => {
+    return (
+      <View style={{ flex: 1 }}>
+        {this.props.isLoggedIn ? <MainNavigation /> : <LoginNavigation />}
+      </View>
+    )
   }
 
-  _userDidLogin() {
-    this.props.loadContent()
+  renderAgreement = () => {
+    return (
+      <AgreementAcceptance
+        agreements={agreement.items}
+        onAgree={this.handleAgree}
+      />
+    )
   }
 
   render() {
-    const { appLoaded, agreementAccepted } = this.state
-    const { auth } = this.props
-    if (appLoaded) {
-      return (
-        <View style={{flex: 1}}>
-             <StatusBar
-               backgroundColor="blue"
-               barStyle="light-content"
-             />
-          { agreementAccepted
-            ? ( <View style={{flex: 1}}>
-                  { auth.logged
-                    ? ( <MainTabNavigation />)
-                    : ( <LoginNavigation /> ) }
-                </View> )
-            : ( <AgreementAcceptenceView
-                  agreementText={agreementText}
-                  hash={fileHash(agreementText)}
-                  agreementAcceptHandler = {this.agreementAcceptHandler} />
-              )}
-        </View>
-      )
-    } else {
-      return <View />
-    }
+    return (
+      <View style={{ flex: 1 }}>
+        <StatusBar backgroundColor="blue" barStyle="light-content" />
+        {this.props.isAgreementAccepted
+          ? this.renderMain()
+          : this.renderAgreement()}
+      </View>
+    )
   }
 }
 
-import { connect } from 'react-redux'
-
 const mapStateToProps = state => ({
-  agreement: state.agreement,
-  auth: state.auth
+  isAgreementAccepted: state.agreement.acceptedVersion === agreement.version,
+  isLoggedIn: !!state.auth.token
 })
 
-import { acceptAgreement, loadContent } from '../redux/actions'
+const mapDispatchToProps = {
+  setAgreementVersion
+}
 
-const mapDispatchToProps = (dispatch) => ({
-  acceptAgreement: (props) => { dispatch(acceptAgreement(props)) },
-  loadContent: (props) => { dispatch(loadContent(props)) }
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Root)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Root)

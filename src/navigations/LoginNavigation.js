@@ -2,13 +2,13 @@ import { StatusBar, Platform } from 'react-native'
 import { createStackNavigator } from 'react-navigation'
 import colors from '../utils/colors'
 
-import LoginView from '../views/Login'
-import WebAppView from '../views/WebApp'
+import Login from '../views/Login'
+import WebApp from '../views/WebApp'
 
 const LoginNavigation = createStackNavigator(
   {
-    Login: { screen: LoginView },
-    WebApp: { screen: WebAppView }
+    Login: { screen: Login },
+    WebApp: { screen: WebApp }
   },
   {
     initialRouteName: 'Login',

@@ -4,38 +4,41 @@ import PropTypes from 'prop-types'
 import ToolbarButton from '../components/ToolbarButton'
 import Button from '../components/ButtonText'
 import DebugBoard from '../components/debug/DebugBoard'
-import SignupForm from '../subviews/SignupForm'
-const formData = require('../api-data-structure/signupForm.json')
+
+import { logout } from '../redux/ducks/auth'
+import { resetActivities } from '../redux/ducks/activities'
 
 class Settings extends Component {
   static propTypes = {
-    logout: PropTypes.func,
-    flushContent: PropTypes.func
+    logout: PropTypes.func.isRequired,
+    resetActivities: PropTypes.func.isRequired
   }
-  static navigationOptions = ({navigation}) => {
+
+  static navigationOptions = ({ navigation }) => {
     return {
       title: 'Settings',
       headerLeft: (
         <ToolbarButton
           androidIcon="arrow-back"
           iosIcon="ios-arrow-back"
-          onPress={() => navigation.goBack(null)} /> )
+          onPress={() => navigation.goBack(null)}
+        />
+      )
     }
   }
 
-  handleLogout() {
+  handleLogout = () => {
     this.props.logout()
-    this.props.flushContent()
+    this.props.resetActivities()
   }
 
   render() {
     return (
       <View style={{ flex: 1, padding: 18 }}>
-        <SignupForm formData={formData}/>
         <View style={{ padding: 18 }} />
-        <Button label="Logout" onPress={ () => { this.handleLogout() } } />
-        { __DEV__ && (
-          <View style={{paddingTop: 50}}>
+        <Button label="Logout" onPress={this.handleLogout} />
+        {__DEV__ && (
+          <View style={{ paddingTop: 50 }}>
             <DebugBoard />
           </View>
         )}
@@ -46,14 +49,13 @@ class Settings extends Component {
 
 import { connect } from 'react-redux'
 
-const mapStateToProps = state => ({
-  auth: state.auth
-})
 
-import { logout, flushContent } from '../redux/actions'
+const mapDispatchToProps = {
+  logout,
+  resetActivities
+}
 
-const mapDispatchToProps = (dispatch) => ({
-  logout: (props) => { dispatch(logout(props)) },
-  flushContent: (props) => { dispatch(flushContent(props)) }
-})
-export default connect(mapStateToProps, mapDispatchToProps)(Settings)
+export default connect(
+  null,
+  mapDispatchToProps
+)(Settings)
