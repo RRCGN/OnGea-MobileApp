@@ -31,7 +31,6 @@ class ActivitiesOverview extends Component {
   }
 
   componentDidMount() {
-    this.setState({ isLoading: false })
     this.props
       .fetchActivities()
       .then(() => {
