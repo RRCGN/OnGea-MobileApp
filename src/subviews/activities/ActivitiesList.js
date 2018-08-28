@@ -1,35 +1,44 @@
 import React from 'react'
 import { FlatList } from 'react-native'
-import ActivityCard from './ActivityCard'
-import ActivitiesEmpty from './ActivitiesEmpty'
 import PropTypes from 'prop-types'
 
-class ActivitiesList extends React.Component {
+import ActivityCard from './ActivityCard'
+import ActivitiesEmpty from './ActivitiesEmpty'
 
+export default class ActivitiesList extends React.Component {
   static propTypes = {
-    activitiesArray: PropTypes.array,
+    activitiesArray: PropTypes.array.isRequired,
     isRefreshing: PropTypes.bool,
-    handleRefresh: PropTypes.func,
-    handleClick: PropTypes.func
+    handleRefresh: PropTypes.func.isRequired,
+    onGoToActivity: PropTypes.func.isRequired
   }
 
-  _renderItem = ({item}) => <ActivityCard activityObject={item} handleClick={this.props.handleClick} />
-  _keyExtractor = (activity) => activity.id.toString()
+  renderItem = ({ item }) => {
+    return (
+      <ActivityCard
+        activity={item}
+        onGoToActivity={this.props.onGoToActivity}
+      />
+    )
+  }
 
-  render () {
+  renderEmptyList = () => {
+    return <ActivitiesEmpty isRefreshing={isRefreshing} />
+  }
+
+  getKeyFromItem = item => item.id.toString()
+
+  render() {
     const { activitiesArray, isRefreshing, handleRefresh } = this.props
     return (
-        <FlatList
-          ListEmptyComponent={() => <ActivitiesEmpty isRefreshing={isRefreshing} />}
-          data={activitiesArray}
-          renderItem={this._renderItem}
-          keyExtractor={this._keyExtractor}
-          refreshing={isRefreshing}
-          onRefresh={() => {handleRefresh()}}
-        />
+      <FlatList
+        ListEmptyComponent={this.renderEmptyList}
+        data={activitiesArray}
+        renderItem={this.renderItem}
+        keyExtractor={this.getKeyFromItem}
+        refreshing={isRefreshing}
+        onRefresh={this.props.handleRefresh}
+      />
     )
   }
 }
-
-
-export default ActivitiesList

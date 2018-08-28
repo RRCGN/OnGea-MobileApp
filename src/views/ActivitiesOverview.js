@@ -46,7 +46,7 @@ class ActivitiesOverview extends Component {
     this.props.fetchActivities()
   }
 
-  handleItemClick = activityObject => {
+  handleGoToActivity = activityObject => {
     this.props.navigation.navigate('SingleActivity', { activityObject })
   }
 
@@ -58,7 +58,7 @@ class ActivitiesOverview extends Component {
         activitiesArray={this.props.activities}
         isRefreshing={isLoading}
         handleRefresh={this.handleRefresh}
-        handleClick={this.handleItemClick}
+        onGoToActivity={this.handleGoToActivity}
       />
     )
   }

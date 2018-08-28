@@ -72,6 +72,8 @@
   },
   "jest": {
     "preset": "react-native",
-    "transformIgnorePatterns": [ "node_modules/(?!react-native|tcomb-form-native)" ]
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|tcomb-form-native)"
+    ]
   }
 }

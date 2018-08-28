@@ -1,47 +1,54 @@
 import React from 'react'
 import { View } from 'react-native'
+import PropTypes from 'prop-types'
+
 import { Card, CardSegment, CardTitle } from '../../components/Card'
 import DateRange from '../../components/DateRange'
 import ButtonFlatGrid from '../../components/ButtonFlatGrid'
 import Button from '../../components/ButtonText'
 
-import PropTypes from 'prop-types'
-
-const Activity = ({activityObject, handleClick}) => {
-  const _onPress = () => {
-    handleClick(activityObject)
+export default class ActivityCard extends React.PureComponent {
+  static propTypes = {
+    onGoToActivity: PropTypes.func.isRequired,
+    activity: PropTypes.object.isRequired
   }
-  return (
-    <View style={styles.listItem}>
-      <Card>
-        {/* Image */}
-        <CardTitle
-          image={{ uri: activityObject.image.url }}
-          title={activityObject.name}
-          onPress={() => _onPress()} />
 
-        {/* Dates */}
-        <CardSegment big>
-          <DateRange from={activityObject.dateFrom} to={activityObject.dateTo} />
-        </CardSegment>
+  handleButtonPress = () => {
+    this.props.onGoToActivity()
+  }
 
-        {/* Action Buttons */}
-        <CardSegment big>
-          <ButtonFlatGrid>
-            <Button
-              label="View"
-              onPress={() => _onPress()} />
-          </ButtonFlatGrid>
-        </CardSegment>
+  handleImagePress = () => {
+    this.props.onGoToActivity()
+  }
 
-      </Card>
-    </View>
-  )
-}
+  render() {
+    const { activity } = this.props
 
-Activity.propTypes = {
-  activityObject: PropTypes.object,
-  handleClick: PropTypes.func
+    return (
+      <View style={styles.listItem}>
+        <Card>
+          <CardTitle
+            image={{ uri: activity.image.url }}
+            title={activity.title}
+            onPress={this.handleImagePress}
+          />
+
+          <CardSegment big>
+            <DateRange
+              from={activity.dateFrom}
+              to={activity.dateTo}
+            />
+          </CardSegment>
+
+          <CardSegment big>
+            <ButtonFlatGrid>
+              <Button label="View" onPress={this.handleButtonPress} />
+            </ButtonFlatGrid>
+          </CardSegment>
+        </Card>
+      </View>
+    )
+  }
 }
 
 const styles = {
@@ -50,4 +57,3 @@ const styles = {
     margin: 10
   }
 }
-export default Activity
