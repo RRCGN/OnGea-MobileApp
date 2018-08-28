@@ -1,26 +1,39 @@
+import { normalize } from 'normalizr'
+
+import * as schema from '../schema'
+import * as app from './app'
 import api from '../../lib/api'
 
-const SET_ACTIVITIES = 'content/SET_ACTIVITIES'
+const SET_ACTIVITY_IDS = 'content/SET_ACTIVITY_IDS'
 const RESET_ACTIVITES = 'content/RESET_ACTIVITES'
 
-const initialState = []
+const initialState = {
+  ids: [],
+  entities: {}
+}
 
 export default function content(state = initialState, action = {}) {
   switch (action.type) {
-  case SET_ACTIVITIES:
-    return [ ...action.activities ]
+  case app.ADD_ENTITIES:
+    return {
+      ...state,
+      entities: { ...state.entities, ...action.payload.activities }
+    }
+
+  case SET_ACTIVITY_IDS:
+    return { ...state, ids: action.activityIds }
 
   case RESET_ACTIVITES:
-    return []
+    return { ...initialState }
 
   default:
     return state
   }
 }
 
-export const setActivities = activities => ({
-  type: SET_ACTIVITIES,
-  activities
+export const setActivityIds = activityIds => ({
+  type: SET_ACTIVITY_IDS,
+  activityIds
 })
 
 export const resetActivities = () => ({
@@ -32,8 +45,10 @@ export const fetchActivities = () => (dispatch, getState) => {
 
   return api(instanceUrl, { token })
     .activities.get()
-    .then(activites => {
-      dispatch(setActivities(activites))
-      return activites
+    .then(activities => {
+      const { result, entities } = normalize(activities, [schema.activity])
+      dispatch(app.addEntities(entities))
+      dispatch(setActivityIds(result))
+      return activities
     })
 }

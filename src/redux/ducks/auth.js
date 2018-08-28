@@ -42,17 +42,17 @@ export const resetAuth = () => ({
 })
 
 export const login = ({ username, password, instanceUrl }) => dispatch => {
-  dispatch(setInstanceUrl(instanceUrl))
-
   return api(instanceUrl)
     .user.login({ username, password })
     .then(tokens => {
-      return dispatch(
+      dispatch(setInstanceUrl(instanceUrl))
+      dispatch(
         setTokens({
           token: tokens.token,
           logoutToken: tokens.logout_token
         })
       )
+      return tokens
     })
 }
 
