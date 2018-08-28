@@ -12,6 +12,7 @@ import { connect } from 'react-redux'
 import { login } from '../redux/ducks/auth'
 
 import { Button } from '../components/Button'
+import PurgeStore from '../components/debug/PurgeStore'
 import colors from '../utils/colors'
 
 class Login extends React.PureComponent {
@@ -23,7 +24,7 @@ class Login extends React.PureComponent {
   state = {
     username: '',
     password: '',
-    instanceUrl: 'https://ongearlmock.free.beeceptor.com',
+    instanceUrl: 'https://ongeamock.apps.railslabs.com',
     isLoading: false,
     isError: false
   }
@@ -117,6 +118,7 @@ class Login extends React.PureComponent {
           style={styles.loginButton}
           onPress={this.handleWebsiteButtonPress}
         />
+        <PurgeStore />
         <View style={{ height: 100 }} />
       </View>
     )

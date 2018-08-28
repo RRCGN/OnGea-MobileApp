@@ -31,6 +31,7 @@ class ActivitiesOverview extends Component {
   }
 
   componentDidMount() {
+    this.setState({ isLoading: false })
     this.props
       .fetchActivities()
       .then(() => {
@@ -46,8 +47,10 @@ class ActivitiesOverview extends Component {
     this.props.fetchActivities()
   }
 
-  handleGoToActivity = activityObject => {
-    this.props.navigation.navigate('SingleActivity', { activityObject })
+  handleGoToActivity = activity => () => {
+    this.props.navigation.navigate('SingleActivity', {
+      activityId: activity.id
+    })
   }
 
   render() {
@@ -65,7 +68,7 @@ class ActivitiesOverview extends Component {
 }
 
 const mapStateToProps = state => ({
-  activities: state.activities
+  activities: state.activities.ids.map(id => state.activities.entities[id])
 })
 
 const mapDispatchToProps = {

@@ -3,6 +3,7 @@ import { Text, View } from 'react-native'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
+import PurgeStore from './PurgeStore'
 import Button from '../ButtonText'
 
 class DebugBoard extends Component {
@@ -20,6 +21,7 @@ class DebugBoard extends Component {
         <View style={styles.block}>
           <Button label="Debug Store" onPress={this.debugStore} />
         </View>
+        <PurgeStore />
       </View>
     )
   }

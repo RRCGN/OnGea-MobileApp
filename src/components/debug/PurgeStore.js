@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from 'react-native'
 import { purgeStoredState } from 'redux-persist'
-import { persistConfig } from '../../redux'
+import { persistConfig } from '../../redux/configure-store'
 
 const PurgeStore = () => {
 

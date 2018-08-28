@@ -17,19 +17,20 @@ export default class ActivitiesList extends React.Component {
     return (
       <ActivityCard
         activity={item}
-        onGoToActivity={this.props.onGoToActivity}
+        onGoToActivity={this.props.onGoToActivity(item)}
       />
     )
   }
 
   renderEmptyList = () => {
-    return <ActivitiesEmpty isRefreshing={isRefreshing} />
+    return <ActivitiesEmpty isRefreshing={this.props.isRefreshing} />
   }
 
   getKeyFromItem = item => item.id.toString()
 
   render() {
     const { activitiesArray, isRefreshing, handleRefresh } = this.props
+
     return (
       <FlatList
         ListEmptyComponent={this.renderEmptyList}
