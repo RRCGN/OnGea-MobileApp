@@ -1,51 +1,81 @@
 import React from 'react'
+import { View, StyleSheet } from 'react-native'
 import Config from 'react-native-config'
 import MapboxGL from '@mapbox/react-native-mapbox-gl'
-import TabBarPage from '../components/Map/TabBar'
-import sheet from '../components/Map/sheet'
-import { onSortOptions } from '../components/Map/'
+
+import ToolbarButton from '../components/ToolbarButton'
+import MapInfoBar from '../components/MapInfoBar'
+import { transparentHeaderStyle as headerStyle } from '../utils/styles'
 
 MapboxGL.setAccessToken(Config.MAPBOX_ACCESS_TOKEN)
 
-class ShowMap extends React.Component {
-  constructor(props) {
-    super(props)
-    this._mapOptions = Object.keys(MapboxGL.StyleURL)
-      .map((key) => {
-        return {
-          label: key,
-          data: MapboxGL.StyleURL[key]
-        }
-      })
-      .sort(onSortOptions)
-
-    this.state = {
-      styleURL: this._mapOptions[0].data
+export default class ShowMap extends React.PureComponent {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: '',
+      headerStyle,
+      headerLeft: (
+        <ToolbarButton
+          iconColor="black"
+          androidIcon="arrow-back"
+          iosIcon="ios-arrow-back"
+          floating={true}
+          onPress={() => navigation.goBack(null)}
+        />
+      )
     }
-    this.onMapChange = this.onMapChange.bind(this)
   }
 
-  onMapChange(index, styleURL) {
-    this.setState({ styleURL: styleURL })
+  getCoordinates = () => {
+    const { place } = this.props.navigation.state.params
+    return [+place.longitude, +place.latitude]
+  }
+
+  setMapRef = ref => {
+    this.mapRef = ref
+  }
+
+  handleCenterPress = () => {
+    const coordinates = this.getCoordinates()
+    this.mapRef.setCamera({
+      centerCoordinate: coordinates,
+      zoom: 14,
+      duration: 700
+    })
   }
 
   render() {
+    const { place } = this.props.navigation.state.params
+    const coordinates = this.getCoordinates()
+
     return (
-      <TabBarPage
-        {...this.props}
-        scrollable
-        options={this._mapOptions}
-        onOptionPress={this.onMapChange}>
+      <View style={styles.screen}>
         <MapboxGL.MapView
+          ref={this.setMapRef}
+          centerCoordinate={coordinates}
           showUserLocation={true}
-          zoomLevel={12}
-          userTrackingMode={MapboxGL.UserTrackingModes.Follow}
-          styleURL={this.state.styleURL}
-          style={sheet.matchParent}
-        />
-      </TabBarPage>
+          zoomLevel={14}
+          styleURL={MapboxGL.StyleURL.Street}
+          style={styles.map}
+        >
+          <MapboxGL.PointAnnotation
+            id={place.id.toString()}
+            title={place.name}
+            selected={true}
+            coordinate={coordinates}
+          />
+        </MapboxGL.MapView>
+        <MapInfoBar place={place} onCenterPress={this.handleCenterPress} />
+      </View>
     )
   }
 }
 
-export default ShowMap
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1
+  },
+  map: {
+    flex: 1
+  }
+})

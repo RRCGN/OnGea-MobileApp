@@ -31,19 +31,23 @@ class ActivitiesOverview extends Component {
   }
 
   componentDidMount() {
+    this.loadActivities()
+  }
+
+  loadActivities = () => {
     this.props
       .fetchActivities()
       .then(() => {
         this.setState({ isLoading: false })
       })
       .catch(error => {
-        console.error(error)
         this.setState({ isLoading: false })
       })
   }
 
   handleRefresh = () => {
-    this.props.fetchActivities()
+    this.setState({ isLoading: true })
+    this.loadActivities()
   }
 
   handleGoToActivity = activity => () => {
@@ -54,6 +58,8 @@ class ActivitiesOverview extends Component {
 
   render() {
     const { isLoading } = this.state
+
+    if (this.props.activities.length === 0) return null
 
     return (
       <ActivitiesList

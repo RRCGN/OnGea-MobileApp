@@ -23,12 +23,15 @@ export default class ActivityCard extends React.PureComponent {
 
   render() {
     const { activity } = this.props
+    const image = activity.project.image[0]
+      ? activity.project.image[0].path
+      : 'https://placehold.it/1600x900'
 
     return (
       <View style={styles.listItem}>
         <Card>
           <CardTitle
-            image={{ uri: activity.image.url }}
+            image={{ uri: image }}
             title={activity.title}
             onPress={this.handleImagePress}
           />

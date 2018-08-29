@@ -7,6 +7,7 @@ import ListItemStandard from '../components/ListItemStandard'
 
 export default class SectionShortOrganization extends React.PureComponent {
   static propTypes = {
+    organizations: PropTypes.array.isRequired,
     onOrganizationPress: PropTypes.func.isRequired
   }
 
@@ -14,19 +15,21 @@ export default class SectionShortOrganization extends React.PureComponent {
     this.props.onOrganizationPress(organization)
   }
 
-  render() {
-    const organizations = [
-      { id: 1, title: 'Roots & Routes Cologne', acronym: 'RRCGN', phone: '0177 3685187' },
-      { id: 2, title: 'Roots & Routes Paris', acronym: 'RRPARIS', phone: '0177 3685187' }
-    ]
+  getSecondaryText = organization => {
+    const text = organization.acronym
 
+    if (organization.isHost) return `${text} – Host Organization`
+    return text
+  }
+
+  render() {
     return (
       <Section title="Contact Informations">
-        {organizations.map(organization => (
+        {this.props.organizations.map(organization => (
           <ListItemStandard
             key={organization.id}
             primary={organization.title}
-            secondary={organization.acronym}
+            secondary={this.getSecondaryText(organization)}
             onPress={this.handleItemPress(organization)}
           />
         ))}

@@ -27,12 +27,15 @@ export default class ActivityHeader extends React.PureComponent {
 
   renderTitleBackground = () => {
     const { activity } = this.props
+    const image = activity.project.image[0]
+      ? activity.project.image[0].path
+      : 'https://placehold.it/1600x900'
 
     return (
       <View style={{ height: this.headerHeight, flex: 1 }}>
         <Image
           style={{ flex: 1 }}
-          source={{ uri: activity.image.url }}
+          source={{ uri: image }}
           width={dimensions.headerWidth}
           height={dimensions.headerHeight}
           resizeMode="cover"

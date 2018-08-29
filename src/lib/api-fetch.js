@@ -5,7 +5,8 @@ export default function apiFetch(instanceUrl, { token } = {}) {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        'Cache-Control': 'no-cache'
+        'Cache-Control': 'no-cache',
+        Authorization: `Basic YXBpOmFwaQ==`
       },
       body: JSON.stringify(body)
     }).then(response => response.json())

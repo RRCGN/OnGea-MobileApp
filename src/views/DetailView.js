@@ -13,36 +13,17 @@ import {
 import ToolbarButton from '../components/ToolbarButton'
 import ToolbarFancy from '../components/ToolbarFancy'
 import Section from '../components/Section'
-import SectionShortTravel from '../subviews/SectionShortTravel'
-import SectionAllTravel from '../subviews/SectionAllTravel'
 import SectionAllOrganization from '../subviews/SectionAllOrganization'
-import SectionAllSchedule from '../subviews/SectionAllSchedule'
-import SectionShortStay from '../subviews/SectionShortStay'
-import SectionShortSchedule from '../subviews/SectionShortSchedule'
 import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
 import { Colors } from '../utils/constants'
 
-import generalStyles from '../utils/styles'
+import { transparentHeaderStyle as headerStyle } from '../utils/styles'
 
 export default class DetailView extends Component {
   static navigationOptions = ({navigation}) => {
     return {
       title: '',
-      titleStyle: {
-        color: 'white'
-      },
-      headerStyle: {
-        ...generalStyles.headerStyle,
-        elevation: 0,
-        borderRadius: 0,
-        borderBottomWidth: 0,
-        shadowRadius: 0,
-        shadowColor: 'transparent',
-        backgroundColor: 'transparent',
-        marginBottom:
-          Platform.OS === 'ios' ? -86 : -56 - StatusBar.currentHeight,
-        zIndex: 1
-      },
+      headerStyle,
       headerLeft: (
         <ToolbarButton
           androidIcon="arrow-back"

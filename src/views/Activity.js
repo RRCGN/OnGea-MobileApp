@@ -12,6 +12,11 @@ import * as Animatable from 'react-native-animatable'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
+import {
+  setMapDownloaded,
+  setMapDownloading
+} from '../redux/ducks/offline-maps'
+import { downloadMaps } from '../services/OfflineMapService'
 import ToolbarButton from '../components/ToolbarButton'
 import TitleOnShadow from '../components/TitleOnShadow'
 import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
@@ -24,12 +29,22 @@ import ActivityHeader from '../subviews/activities/ActivityHeader'
 
 import DateRange from '../components/DateRange'
 import SectionDownloads from '../subviews/SectionDownloads'
-import SectionShortTravel from '../subviews/SectionShortTravel'
-import SectionShortStay from '../subviews/SectionShortStay'
+import SectionShortPlaces from '../subviews/SectionShortPlaces'
 import SectionShortOrganization from '../subviews/SectionShortOrganization'
 import SectionDescription from '../subviews/SectionDescription'
 
-import generalStyles from '../utils/styles'
+import { transparentHeaderStyle as headerStyle } from '../utils/styles'
+
+const downloads = [
+  {
+    id: 1,
+    name: 'Test Datei',
+    url:
+      'https://shop.strato.com/WebRoot/StoreNL/Shops/61331913/MediaGallery/PDF_Test.pdf',
+    filename: 'test.pdf',
+    size: 1337
+  }
+]
 
 class Activity extends React.PureComponent {
   static propTypes = {
@@ -40,18 +55,7 @@ class Activity extends React.PureComponent {
   static navigationOptions = ({ navigation }) => {
     return {
       title: '',
-      headerStyle: {
-        ...generalStyles.headerStyle,
-        elevation: 0,
-        borderRadius: 0,
-        borderBottomWidth: 0,
-        shadowRadius: 0,
-        shadowColor: 'transparent',
-        backgroundColor: 'transparent',
-        marginBottom:
-          Platform.OS === 'ios' ? -86 : -56 - StatusBar.currentHeight,
-        zIndex: 1
-      },
+      headerStyle,
       headerLeft: (
         <ToolbarButton
           androidIcon="arrow-back"
@@ -63,13 +67,39 @@ class Activity extends React.PureComponent {
     }
   }
 
+  async componentDidMount() {
+    const { places } = this.props.activity
+    await downloadMaps(places, this.onPlaceDownloadStart, this.onPlaceDownloaded)
+  }
+
+  onPlaceDownloadStart = place => {
+    this.props.setMapDownloading(place)
+  }
+
+  onPlaceDownloaded = place => {
+    this.props.setMapDownloaded(place)
+  }
+
+  getImage = () => {
+    const { activity } = this.props
+    const image = activity.project.image[0]
+      ? activity.project.image[0].path
+      : 'https://placehold.it/1600x900'
+
+    return image
+  }
+
   handleOrganizationPress = organization => {
     this.props.navigation.navigate('Detail', {
       type: 'ORGANIZATION',
       title: organization.title,
-      image: this.props.activity.image.url,
+      image: this.getImage(),
       payload: organization
     })
+  }
+
+  handlePlacePress = place => {
+    this.props.navigation.navigate('ShowMap', { place })
   }
 
   render() {
@@ -100,62 +130,22 @@ class Activity extends React.PureComponent {
       <View>
         <SectionDescription text={activity.description} />
         <SectionShortOrganization
+          organizations={activity.organisations}
           onOrganizationPress={this.handleOrganizationPress}
         />
-        {/* <SectionShortTravel
-          mobilities={this.props.mobilities || []}
-          travelIndex={activity.id}
-          navigation={navigation}
-          footer={
-            <ButtonFlatGrid>
-              <Button
-                label="More"
-                // onPress={() => navigation.navigate('Detail', { type: 'TRAVEL', data: params.travels, ...genericParams })}
-                onPress={() => {}}
-              />
-            </ButtonFlatGrid>
-          }
-        /> */}
-        {/* <SectionShortStay
-          stays={this.props.activity.stays || []}
-          navigation={navigation}
-          footer={
-            <ButtonFlatGrid>
-              <Button
-                label="More"
-                // onPress={() => navigation.navigate('Detail', { type: 'STAY', data: params.stays, ...genericParams })}
-                onPress={() => {}}
-              />
-            </ButtonFlatGrid>
-          }
-        /> */}
-        {/* <SectionShortSchedule
-          data={params.schedule}
-          navigation={navigation}
-          footer={
-            <ButtonFlatGrid>
-              <Button
-                label="Schedule"
-                onPress={() => navigation.navigate('Detail', { type: 'SCHEDULE', data: params.schedule, ...genericParams })}
-              />
-            </ButtonFlatGrid>
-          }
-        /> */}
-        <SectionDownloads
-          data={[
-            {
-              id: 1,
-              name: 'Test Datei',
-              url:
-                'https://shop.strato.com/WebRoot/StoreNL/Shops/61331913/MediaGallery/PDF_Test.pdf',
-              filename: 'test.pdf',
-              size: 1337
-            }
-          ]}
+        <SectionShortPlaces
+          places={activity.places}
+          onPlacePress={this.handlePlacePress}
         />
+        <SectionDownloads data={downloads} />
       </View>
     )
   }
+}
+
+const mapDispatchToProps = {
+  setMapDownloaded,
+  setMapDownloading
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -166,4 +156,7 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps)(Activity)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Activity)

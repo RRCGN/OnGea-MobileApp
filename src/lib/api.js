@@ -9,7 +9,7 @@ export default function api(instanceUrl, { token } = {}) {
         return call('/user/login?_format=json', {
           method: 'POST',
           body: {
-            user: username,
+            name: username,
             pass: password
           }
         })

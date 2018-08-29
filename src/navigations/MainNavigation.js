@@ -8,7 +8,7 @@ import Settings from '../views/Settings'
 import UploadImagesView from '../views/UploadImagesView'
 import ShowMapView from '../views/ShowMapView'
 import colors from '../utils/colors'
-import generalStyles from '../utils/styles'
+import { normalHeaderStyle } from '../utils/styles'
 
 const MainNavigation = createStackNavigator(
   {
@@ -24,7 +24,7 @@ const MainNavigation = createStackNavigator(
     initialRouteName: 'Overview',
     headerMode: Platform.OS === 'ios' ? 'float' : 'screen',
     navigationOptions: {
-      headerStyle: generalStyles.headerStyle,
+      headerStyle: normalHeaderStyle,
       headerTitleStyle: { color: colors.white }
     }
   }

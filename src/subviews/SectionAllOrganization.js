@@ -16,20 +16,35 @@ export default class SectionAllOrganization extends React.PureComponent {
   }
 
   render() {
-    const { organization } = this.props
+    const { organization: org } = this.props
 
     return (
       <Section title="Contact Informations">
         <ListItemFancy
-          primary={organization.title}
-          secondary="Organization"
+          primary={org.title}
+          secondary={org.acronym}
           icon="account-group"
         />
         <ListItemFancy
-          primary={organization.phone}
+          primary={org.mail}
+          secondary="Mail"
+          icon="email"
+        />
+        <ListItemFancy
+          primary={org.phone}
           secondary="Phone"
           icon="phone"
           onPress={this.handlePhonePress}
+        />
+        <ListItemFancy
+          primary={org.website}
+          secondary="Website"
+          icon="web"
+        />
+        <ListItemFancy
+          primary={`${org.street}, ${org.postcode} ${org.town}`}
+          secondary={org.country}
+          icon="map-marker-radius"
         />
       </Section>
     )

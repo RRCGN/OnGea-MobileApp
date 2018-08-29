@@ -7,6 +7,7 @@ import agreement from './ducks/agreement'
 import auth from './ducks/auth'
 import activities from './ducks/activities'
 import downloads from './ducks/downloads'
+import offlineMaps from './ducks/offline-maps'
 
 export const persistConfig = {
   key: '@OnGeaApp:root',
@@ -18,7 +19,8 @@ export default function configureStore() {
     agreement,
     auth,
     activities,
-    downloads
+    downloads,
+    offlineMaps
   })
 
   const persistedReducer = persistReducer(persistConfig, reducer)
