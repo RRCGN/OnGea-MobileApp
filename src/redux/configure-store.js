@@ -6,6 +6,7 @@ import storage from 'redux-persist/lib/storage'
 import agreement from './ducks/agreement'
 import auth from './ducks/auth'
 import activities from './ducks/activities'
+import downloads from './ducks/downloads'
 
 export const persistConfig = {
   key: '@OnGeaApp:root',
@@ -16,7 +17,8 @@ export default function configureStore() {
   const reducer = combineReducers({
     agreement,
     auth,
-    activities
+    activities,
+    downloads
   })
 
   const persistedReducer = persistReducer(persistConfig, reducer)

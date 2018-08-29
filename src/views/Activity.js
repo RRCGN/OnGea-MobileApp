@@ -15,23 +15,21 @@ import { connect } from 'react-redux'
 import ToolbarButton from '../components/ToolbarButton'
 import TitleOnShadow from '../components/TitleOnShadow'
 import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
-import DateRange from '../components/DateRange'
-import SectionShortTravel from '../subviews/SectionShortTravel'
-import SectionShortStay from '../subviews/SectionShortStay'
-import SectionOrganization from '../subviews/SectionOrganization'
+
 import Section from '../components/Section'
 import Description from '../subviews/Description'
-import MainWorkingLanguage from '../subviews/MainWorkingLanguage'
-import ParticipationFee from '../subviews/ParticipationFee'
 import Button from '../components/ButtonText'
 import ButtonFlatGrid from '../components/ButtonFlatGrid'
-import generalStyles from '../utils/styles'
 import ActivityHeader from '../subviews/activities/ActivityHeader'
 
-const mobilitiesJSON = require('../api-data-structure/mobilities.json')
-const activitiesJSON = require('../api-data-structure/activities.json')
+import DateRange from '../components/DateRange'
+import SectionDownloads from '../subviews/SectionDownloads'
+import SectionShortTravel from '../subviews/SectionShortTravel'
+import SectionShortStay from '../subviews/SectionShortStay'
+import SectionShortOrganization from '../subviews/SectionShortOrganization'
+import SectionDescription from '../subviews/SectionDescription'
 
-const staysJSON = require('../api-data-structure/stays.json')
+import generalStyles from '../utils/styles'
 
 class Activity extends React.PureComponent {
   static propTypes = {
@@ -65,14 +63,13 @@ class Activity extends React.PureComponent {
     }
   }
 
-  renderDates = () => {
-    const { activity } = this.props
-
-    return (
-      <View style={{ backgroundColor: '#7B1FA2', padding: 16 }}>
-        <DateRange light from={activity.dateFrom} to={activity.dateTo} />
-      </View>
-    )
+  handleOrganizationPress = organization => {
+    this.props.navigation.navigate('Detail', {
+      type: 'ORGANIZATION',
+      title: organization.title,
+      image: this.props.activity.image.url,
+      payload: organization
+    })
   }
 
   render() {
@@ -86,18 +83,26 @@ class Activity extends React.PureComponent {
     )
   }
 
+  renderDates = () => {
+    const { activity } = this.props
+
+    return (
+      <View style={{ backgroundColor: '#7B1FA2', padding: 16 }}>
+        <DateRange light from={activity.dateFrom} to={activity.dateTo} />
+      </View>
+    )
+  }
+
   renderContent = () => {
     const { navigation, activity } = this.props
 
     return (
       <View>
-        <Section title="Description">
-          <Description description={activity.description} />
-        </Section>
-        <Section title="Main Working Languages">
-          <MainWorkingLanguage data={activity.mainWorkingLanguage} />
-        </Section>
-        <SectionShortTravel
+        <SectionDescription text={activity.description} />
+        <SectionShortOrganization
+          onOrganizationPress={this.handleOrganizationPress}
+        />
+        {/* <SectionShortTravel
           mobilities={this.props.mobilities || []}
           travelIndex={activity.id}
           navigation={navigation}
@@ -110,7 +115,7 @@ class Activity extends React.PureComponent {
               />
             </ButtonFlatGrid>
           }
-        />
+        /> */}
         {/* <SectionShortStay
           stays={this.props.activity.stays || []}
           navigation={navigation}
@@ -136,11 +141,18 @@ class Activity extends React.PureComponent {
             </ButtonFlatGrid>
           }
         /> */}
-        <SectionOrganization
-          hostOrganisation={{}}
-          coordinationOrganisation={{}}
+        <SectionDownloads
+          data={[
+            {
+              id: 1,
+              name: 'Test Datei',
+              url:
+                'https://shop.strato.com/WebRoot/StoreNL/Shops/61331913/MediaGallery/PDF_Test.pdf',
+              filename: 'test.pdf',
+              size: 1337
+            }
+          ]}
         />
-        {/* <SectionDownloads data={params.data.downloads} /> */}
       </View>
     )
   }

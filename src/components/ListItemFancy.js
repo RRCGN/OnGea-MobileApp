@@ -1,47 +1,63 @@
-/**
- * TripDate Shows Time, Location and Icon for a Travel
- * @flow
- */
-
 import React from 'react'
-import { View, Text, Image, StyleSheet } from 'react-native'
+import PropTypes from 'prop-types'
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import Touchable from './Touchable'
 import { Colors } from '../utils/constants'
 
+export default class ListItemFancy extends React.PureComponent {
+  static propTypes = {
+    primary: PropTypes.string.isRequired,
+    secondary: PropTypes.string,
+    icon: PropTypes.string,
+    iconColor: PropTypes.string,
+    isLinked: PropTypes.bool
+  }
 
-type Props = {
-  primary: string,
-  secondary: string,
-  icon?: string,
-  isLinked?: boolean,
-  onPress?: any,
-  iconColor?: string
-}
+  static defaultProps = {
+    iconColor: Colors.DARK_TERTIARY
+  }
 
-const ListItemFancy = ({ primary, secondary, icon, isLinked = false, onPress, iconColor }: Props) => (
-  <View>
-    <Touchable onPress={onPress}>
-      <View style={styles.container}>
-        <View style={styles.left}>
-          <View style={styles.iconContainer}>
-            {icon && <Icon name={icon} style={[ styles.icon, { color: iconColor } ]} size={24} />}
+  render() {
+    const {
+      primary,
+      secondary,
+      icon,
+      iconColor,
+      onPress,
+      isLinked
+    } = this.props
+
+    const ContainerComponent = onPress ? TouchableOpacity : View
+
+
+    return (
+      <View>
+        <ContainerComponent onPress={onPress}>
+          <View style={styles.container}>
+            <View style={styles.left}>
+              <View style={styles.iconContainer}>
+                {icon && (
+                  <Icon
+                    name={icon}
+                    style={[styles.icon, { color: iconColor }]}
+                    size={24}
+                  />
+                )}
+              </View>
+            </View>
+            <View style={styles.right}>
+              <Text style={styles.primary}>{primary}</Text>
+              <Text style={styles.secondary}>{secondary}</Text>
+            </View>
           </View>
-        </View>
-        <View style={styles.right}>
-          <Text style={styles.primary}>{primary}</Text>
-          <Text style={styles.secondary}>{secondary}</Text>
-        </View>
+        </ContainerComponent>
+        {isLinked && (
+          <Image source={require('../assets/dots.png')} style={styles.dots} />
+        )}
       </View>
-    </Touchable>
-    {isLinked &&
-      <Image source={require('../assets/dots.png')} style={styles.dots} />
-    }
-  </View>
-)
-
-export default ListItemFancy
-
+    )
+  }
+}
 
 const styles = StyleSheet.create({
   container: {

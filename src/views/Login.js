@@ -47,7 +47,6 @@ class Login extends React.PureComponent {
 
     this.props.login({ username, password, instanceUrl }).catch(error => {
       this.setState({ isError: true, isLoading: false })
-      console.error(error)
     })
   }
 
@@ -61,9 +60,6 @@ class Login extends React.PureComponent {
     return (
       <View style={styles.container}>
         <View style={styles.messagesContainer}>
-          {isLoading && (
-            <ActivityIndicator size="small" color={colors.primaryGreen} />
-          )}
           {isError && (
             <Text style={styles.messagesErrorText}>Something went wrong</Text>
           )}

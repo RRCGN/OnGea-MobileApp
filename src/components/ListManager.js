@@ -1,19 +1,9 @@
-/**
- *
- * @flow
- */
-
 import React from 'react'
 import { View } from 'react-native'
 
+// The idea was that each Item has a style applied to it, but, well...
 
-// FIXME: `renderItem: any` should be something like `(any, number) => void`
-type Props = {
-  items: Array<any>,
-  renderItem: any
-}
-
-const ListManager = ({ items, renderItem }: Props) => (
+const ListManager = ({ items, renderItem }) => (
   <View>
     {items.map(renderItem)}
   </View>

@@ -148,7 +148,7 @@ dependencies {
     compile project(':rn-splash-screen')
     compile project(':react-native-vector-icons')
     compile project(':react-native-linear-gradient')
-    compile project(':react-native-fetch-blob')
+    compile project(':rn-fetch-blob')
     compile project(':react-native-background-job')
     compile project(':react-native-config')
     compile project(':mapbox-react-native-mapbox-gl')

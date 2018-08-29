@@ -1,60 +1,75 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
-import Button from '../components/ButtonText'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import PropTypes from 'prop-types'
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+
+import PlatformIcon from '../components/PlatformIcon'
 import { Colors } from '../utils/constants'
 
-
-type Props = {
-  primary: string,
-  secondary: string,
-  big?: boolean,
-  interactive?: boolean,
-  onPress: func,
-  style: {}
-}
-
-const ListItemStandard = ({ primary, secondary, big = false, interactive, onPress, style}: Props) => {
-  const handlePress = () => {
-    interactive ? onPress() : () => {}
+export default class ListItemStandard extends React.PureComponent {
+  static propTypes = {
+    primary: PropTypes.string.isRequired,
+    secondary: PropTypes.string,
+    big: PropTypes.bool,
+    onPress: PropTypes.func
   }
-  return (
-    <View style={[ styles.container, big && styles.big, style ]}>
-      {!interactive
-        ? (<Text style={styles.primary}>{primary}</Text>)
-        : (<Button label={primary} onPress={handlePress} textStyle={{textAlign: 'left'}} />)
-      }
-      <Text style={styles.secondary}>{secondary}</Text>
-    </View>
-  )
+
+  static defaultProps = {
+    onPress: () => {}
+  }
+
+  render() {
+    const { big, primary, secondary } = this.props
+
+    const isInteractive = !!this.props.onPress
+    const containerProps = isInteractive ? { onPress: this.props.onPress } : {}
+    const ContainerComponent = isInteractive ? TouchableOpacity : View
+
+    return (
+      <ContainerComponent
+        style={[styles.container, big && styles.big]}
+        {...containerProps}
+      >
+        <View style={styles.mainInfos}>
+          <Text style={styles.primary}>{primary}</Text>
+          {secondary && <Text style={styles.secondary}>{secondary}</Text>}
+        </View>
+        {isInteractive && (
+          <PlatformIcon
+            androidIcon="keyboard-arrow-right"
+            iosIcon="ios-arrow-forward"
+            size={24}
+            style={styles.icon}
+          />
+        )}
+      </ContainerComponent>
+    )
+  }
 }
-
-export default ListItemStandard
-
 
 const styles = StyleSheet.create({
   container: {
     flex: 0,
-    flexDirection: 'column',
-    justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
     height: 50
+  },
+  mainInfos: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center'
   },
   big: {
     height: 72
+  },
+  icon: {
+    flex: 0,
+    marginLeft: 16,
+    color: Colors.DARK_TERTIARY
   },
   primary: {
     color: Colors.DARK_PRIMARY
   },
   secondary: {
     color: Colors.DARK_SECONDARY
-  },
-  dots: {
-    position: 'absolute',
-    top: 54,
-    left: 8,
-    width: 8,
-    height: 36,
-    zIndex: 2,
-    opacity: 0.38
   }
 })

@@ -50,7 +50,7 @@ const Touchable = ({
         onPressIn={onPressIn}
         onPressOut={onPressOut}
       >
-        {children}
+        <View>{children}</View>
       </TouchableNativeFeedback>
     )
 
@@ -69,6 +69,7 @@ const Touchable = ({
         onPressIn={onPressIn}
         onPressOut={onPressOut}
         disabled={!onPress}
+        style={{ flex: 1 }}
       >
         <View>{children}</View>
       </TouchableOpacity>

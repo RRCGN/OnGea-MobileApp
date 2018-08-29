@@ -119,7 +119,7 @@ const styles = {
     textShadowColor: 'rgba(0, 0, 0, 0.4)',
     textShadowRadius: 2,
     textShadowOffset: { width: 0, height: 1 },
-    fontWeight: '600',
+    fontWeight: '700',
     ...Platform.select({
       ios: {
         fontSize: 16,

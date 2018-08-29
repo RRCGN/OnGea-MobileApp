@@ -1,6 +1,7 @@
 import React from 'react'
-import { SafeAreaView, ScrollView, Text, View } from 'react-native'
+import { SafeAreaView, ScrollView, Text, View, Platform } from 'react-native'
 import PropTypes from 'prop-types'
+import Permissions from 'react-native-permissions'
 
 import AgreementAcceptanceItems from './AgreementAcceptanceItems'
 import PlatformIcon from '../components/PlatformIcon'
@@ -8,18 +9,28 @@ import Button from '../components/ButtonText'
 import fonts from '../utils/fonts'
 
 export default class AgreementAcceptance extends React.PureComponent {
-  static navigationOptions = {
-    title: 'Web',
-    tabBarLabel: 'Privacy Policy of OnGea app'
-  }
-
   static propTypes = {
     agreements: PropTypes.array.isRequired,
     onAgree: PropTypes.func.isRequired
   }
 
+  requestPermissions = () => {
+    return Permissions.request('location')
+      .then(() => Permissions.request('camera'))
+      .then(() => {
+        return Platform.OS === 'android'
+          ? Permissions.request('storage')
+          : true
+      })
+      .then(() => {
+        return Platform.OS === 'ios'
+          ? Permissions.request('notification')
+          : true
+      })
+  }
+
   handleButtonPress = () => {
-    this.props.onAgree()
+    this.requestPermissions().then(() => this.props.onAgree())
   }
 
   render() {
@@ -42,7 +53,7 @@ export default class AgreementAcceptance extends React.PureComponent {
             <View style={styles.wrapperBody}>
               <Text style={styles.subTitle}>
                 OnGea app requests the following informations as a part of its
-                services, by clicking `ACCEPT` at the end of the notes, you
+                services, by clicking ACCEPT at the end of the notes, you
                 proof that OnGea is allowed to use the following informations as
                 has been specified down in the description.
               </Text>

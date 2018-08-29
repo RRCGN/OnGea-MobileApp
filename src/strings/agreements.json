@@ -18,6 +18,12 @@
       "androidIcon": "notifications",
       "iosIcon": "md-notifications",
       "text": "The OnGea App needs push-notifications ability to be able to inform the user if plans have suddenly been changed."
+    },
+    {
+      "title": "Storage",
+      "androidIcon": "storage",
+      "iosIcon": "ios-folder-open",
+      "text": "The OnGea App needs read and write access to your storage, so that you can download and view important documents, even if you don't have an internet connection."
     }
   ]
 }

@@ -1,22 +1,23 @@
+import base64 from 'base-64'
 import api from '../../lib/api'
+import { resetActivities } from './activities'
 
-const SET_TOKENS = 'auth/SET_TOKENS'
+const SET_TOKEN = 'auth/SET_TOKEN'
 const SET_INSTANCE_URL = 'auth/SET_INSTANCE_URL'
 const RESET_AUTH = 'auth/RESET_AUTH'
 
 const initialState = {
   instanceUrl: null,
-  token: null,
-  logoutToken: null
+  token: null
 }
 
 export default function auth(state = initialState, action) {
   switch (action.type) {
   case RESET_AUTH:
-    return { ...state, token: null, logoutToken: null, instanceUrl: null }
+    return { ...state, token: null, instanceUrl: null }
 
-  case SET_TOKENS:
-    return { ...state, token: action.token, logoutToken: action.logoutToken }
+  case SET_TOKEN:
+    return { ...state, token: action.token }
 
   case SET_INSTANCE_URL:
     return { ...state, instanceUrl: action.instanceUrl }
@@ -31,10 +32,9 @@ export const setInstanceUrl = instanceUrl => ({
   instanceUrl
 })
 
-export const setTokens = ({ token, logoutToken }) => ({
-  type: SET_TOKENS,
-  token,
-  logoutToken
+export const setToken = token => ({
+  type: SET_TOKEN,
+  token
 })
 
 export const resetAuth = () => ({
@@ -44,22 +44,15 @@ export const resetAuth = () => ({
 export const login = ({ username, password, instanceUrl }) => dispatch => {
   return api(instanceUrl)
     .user.login({ username, password })
-    .then(tokens => {
+    .then(response => {
+      const token = base64.encode(`${username}:${password}`)
       dispatch(setInstanceUrl(instanceUrl))
-      dispatch(
-        setTokens({
-          token: tokens.token,
-          logoutToken: tokens.logout_token
-        })
-      )
-      return tokens
+      dispatch(setToken(token))
+      return true
     })
 }
 
-export const logout = () => (dispatch, getState) => {
-  const { instanceUrl, logoutToken, token } = getState().auth
-
-  return api(instanceUrl, { token })
-    .user.logout(logoutToken)
-    .then(() => dispatch(resetAuth()))
+export const logout = () => dispatch => {
+  dispatch(resetAuth())
+  dispatch(resetActivities())
 }

@@ -13,12 +13,6 @@ export default function api(instanceUrl, { token } = {}) {
             pass: password
           }
         })
-      },
-      logout(logoutToken) {
-        return call('/user/logout?_format=json', {
-          method: 'POST',
-          body: { logout_token: logoutToken }
-        })
       }
     },
 
