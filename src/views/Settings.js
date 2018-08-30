@@ -70,12 +70,12 @@ class Settings extends Component {
 
   handleDeleteAll = () => {
     Alert.alert(
-      i18n.t`Delete all App Data`,
+      i18n.t`Delete all data`,
       i18n.t`This action will delete all stored data and the offline available map. After that it will close OnGea. If you reopen OnGea again, you will be back to a fresh start.`,
       [
         { text: i18n.t`Cancel`, onPress: () => {}, style: 'cancel' },
         {
-          text: i18n.t`Delete All and Exit`,
+          text: i18n.t`Delete all and exit`,
           onPress: this.handleReallyDeleteAll
         }
       ],

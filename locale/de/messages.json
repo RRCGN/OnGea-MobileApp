@@ -48,21 +48,12 @@
       ]
     ]
   },
-  "Delete All and Exit": {
+  "Delete all and exit": {
     "translation": "Alles löschen und beenden",
     "origin": [
       [
         "src/views/Settings.js",
-        77
-      ]
-    ]
-  },
-  "Delete all App Data": {
-    "translation": "Alle Daten löschen",
-    "origin": [
-      [
-        "src/views/Settings.js",
-        73
+        78
       ]
     ]
   },
@@ -71,7 +62,11 @@
     "origin": [
       [
         "src/views/Settings.js",
-        104
+        73
+      ],
+      [
+        "src/views/Settings.js",
+        108
       ]
     ]
   },
@@ -80,7 +75,7 @@
     "origin": [
       [
         "src/views/Settings.js",
-        105
+        112
       ]
     ]
   },
@@ -89,7 +84,7 @@
     "origin": [
       [
         "src/views/Settings.js",
-        86
+        89
       ]
     ]
   },
@@ -98,7 +93,7 @@
     "origin": [
       [
         "src/views/Settings.js",
-        99
+        102
       ]
     ]
   },
@@ -125,7 +120,7 @@
     "origin": [
       [
         "src/views/Settings.js",
-        89
+        92
       ]
     ]
   },
@@ -188,7 +183,7 @@
     "origin": [
       [
         "src/views/Settings.js",
-        103
+        106
       ]
     ]
   },
