@@ -4,7 +4,8 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  View
+  View,
+  KeyboardAvoidingView
 } from 'react-native'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
@@ -12,7 +13,6 @@ import { connect } from 'react-redux'
 import { login } from '../redux/ducks/auth'
 
 import { Button } from '../components/Button'
-import PurgeStore from '../components/debug/PurgeStore'
 import colors from '../utils/colors'
 
 class Login extends React.PureComponent {
@@ -58,7 +58,7 @@ class Login extends React.PureComponent {
     const { isLoading, isError } = this.state
 
     return (
-      <View style={styles.container}>
+      <KeyboardAvoidingView enabled style={styles.container} behavior="padding">
         <View style={styles.messagesContainer}>
           {isError && (
             <Text style={styles.messagesErrorText}>Something went wrong</Text>
@@ -92,7 +92,7 @@ class Login extends React.PureComponent {
           placeholder="Password"
           secureTextEntry={true}
           value={this.state.password}
-          onChangeText={this.handlePasswordChange()}
+          onChangeText={this.handlePasswordChange}
         />
         <View style={styles.loginButtonContainer}>
           {isLoading ? (
@@ -114,9 +114,8 @@ class Login extends React.PureComponent {
           style={styles.loginButton}
           onPress={this.handleWebsiteButtonPress}
         />
-        <PurgeStore />
         <View style={{ height: 100 }} />
-      </View>
+      </KeyboardAvoidingView>
     )
   }
 }

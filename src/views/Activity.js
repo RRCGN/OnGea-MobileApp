@@ -69,7 +69,12 @@ class Activity extends React.PureComponent {
 
   async componentDidMount() {
     const { places } = this.props.activity
-    await downloadMaps(places, this.onPlaceDownloadStart, this.onPlaceDownloaded)
+    await downloadMaps(
+      places,
+      this.onPlaceDownloadStart,
+      this.onPlaceDownloaded,
+      this.onPlaceExists
+    )
   }
 
   onPlaceDownloadStart = place => {
@@ -80,11 +85,16 @@ class Activity extends React.PureComponent {
     this.props.setMapDownloaded(place)
   }
 
+  onPlaceExists = place => {
+    this.props.setMapDownloaded(place)
+  }
+
   getImage = () => {
     const { activity } = this.props
-    const image = activity.project.image[0]
-      ? activity.project.image[0].path
-      : 'https://placehold.it/1600x900'
+    const image =
+      activity.project && activity.project.image && activity.project.image[0]
+        ? activity.project.image[0].path
+        : 'https://placehold.it/1600x900'
 
     return image
   }

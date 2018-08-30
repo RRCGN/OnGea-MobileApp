@@ -27,14 +27,18 @@ class ActivitiesOverview extends Component {
   }
 
   state = {
-    isLoading: true
+    isLoading: false
   }
 
   componentDidMount() {
-    this.loadActivities()
+    if (this.props.activities.length === 0) {
+      this.loadActivities()
+    }
   }
 
   loadActivities = () => {
+    this.setState({ isLoading: true })
+
     this.props
       .fetchActivities()
       .then(() => {
@@ -46,7 +50,6 @@ class ActivitiesOverview extends Component {
   }
 
   handleRefresh = () => {
-    this.setState({ isLoading: true })
     this.loadActivities()
   }
 
@@ -58,8 +61,6 @@ class ActivitiesOverview extends Component {
 
   render() {
     const { isLoading } = this.state
-
-    if (this.props.activities.length === 0) return null
 
     return (
       <ActivitiesList
@@ -73,7 +74,9 @@ class ActivitiesOverview extends Component {
 }
 
 const mapStateToProps = state => ({
-  activities: state.activities.ids.map(id => state.activities.entities[id])
+  activities: state.activities.ids
+    .map(id => state.activities.entities[id])
+    .filter(a => !!a)
 })
 
 const mapDispatchToProps = {

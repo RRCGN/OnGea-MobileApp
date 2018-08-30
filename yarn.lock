@@ -3146,7 +3146,7 @@ cookie-signature@1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/cookie-signature/-/cookie-signature-1.0.6.tgz#e303a882b342cc3ee8ca513a79999734dab3ae2c"
 
-cookie@0.3.1:
+cookie@0.3.1, cookie@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
 
@@ -9230,6 +9230,12 @@ react-native-config@^0.11.5:
   version "0.11.5"
   resolved "https://registry.yarnpkg.com/react-native-config/-/react-native-config-0.11.5.tgz#516cb7b6ec437c7739236ca075971db3aabdcb95"
 
+react-native-cookie@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-cookie/-/react-native-cookie-0.2.0.tgz#e8bb0701faf107aaebc327c60551055e0149839d"
+  dependencies:
+    cookie "^0.3.1"
+
 react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-native-dismiss-keyboard/-/react-native-dismiss-keyboard-1.0.0.tgz#32886242b3f2317e121f3aeb9b0a585e2b879b49"
@@ -9254,6 +9260,10 @@ react-native-elements@^0.19.1:
     lodash.times "^4.3.2"
     opencollective "^1.0.3"
     prop-types "^15.5.8"
+
+react-native-exit-app@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-exit-app/-/react-native-exit-app-1.0.0.tgz#a2fbb121d902e6967cd8a365fe8453e5c4bc3172"
 
 react-native-fs@^2.5.1:
   version "2.10.14"
@@ -9292,6 +9302,10 @@ react-native-linear-gradient@^2.4.0:
   resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.4.0.tgz#51d8ea12bb72a59bede9edc87b694b16b64cf435"
   dependencies:
     prop-types "^15.5.10"
+
+react-native-loading-spinner-overlay@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/react-native-loading-spinner-overlay/-/react-native-loading-spinner-overlay-0.5.2.tgz#b7bcd277476d596615fd7feee601789f9bdc7acc"
 
 "react-native-material-bottom-navigation@git+ssh://git@github.com/timomeh/react-native-material-bottom-navigation.git#master":
   version "1.0.0"

@@ -27,9 +27,10 @@ export default class ActivityHeader extends React.PureComponent {
 
   renderTitleBackground = () => {
     const { activity } = this.props
-    const image = activity.project.image[0]
-      ? activity.project.image[0].path
-      : 'https://placehold.it/1600x900'
+    const image =
+      activity.project && activity.project.image && activity.project.image[0]
+        ? activity.project.image[0].path
+        : 'https://placehold.it/1600x900'
 
     return (
       <View style={{ height: this.headerHeight, flex: 1 }}>
@@ -47,12 +48,7 @@ export default class ActivityHeader extends React.PureComponent {
   renderTitleForeground = () => {
     const { activity } = this.props
 
-    return (
-      <TitleOnShadow
-        title={activity.title}
-        subtitle={activity.subtitle}
-      />
-    )
+    return <TitleOnShadow title={activity.title} subtitle={activity.subtitle} />
   }
 
   renderStickyHeader = () => {

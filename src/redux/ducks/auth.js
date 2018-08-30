@@ -46,7 +46,6 @@ export const login = ({ username, password, instanceUrl }) => dispatch => {
     .user.login({ username, password })
     .then(response => {
       const token = base64.encode(`${username}:${password}`)
-      alert(token)
       dispatch(setInstanceUrl(instanceUrl))
       dispatch(setToken(token))
       return true

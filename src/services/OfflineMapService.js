@@ -7,12 +7,20 @@ function getPackName(location) {
   return `location:${location.latitude}:${location.longitude}`
 }
 
-export async function downloadMaps(locations, onDownloadStart, onDownloaded) {
+export async function downloadMaps(
+  locations,
+  onDownloadStart,
+  onDownloaded,
+  onAlreadyExists
+) {
   for (let location of locations) {
     const name = getPackName(location)
 
     const existingPack = await MapboxGL.offlineManager.getPack(name)
-    if (existingPack) return
+    if (existingPack) {
+      onAlreadyExists(location)
+      return
+    }
 
     onDownloadStart(location)
 

@@ -23,9 +23,10 @@ export default class ActivityCard extends React.PureComponent {
 
   render() {
     const { activity } = this.props
-    const image = activity.project.image[0]
-      ? activity.project.image[0].path
-      : 'https://placehold.it/1600x900'
+    const image =
+      activity.project && activity.project.image && activity.project.image[0]
+        ? activity.project.image[0].path
+        : 'https://placehold.it/1600x900'
 
     return (
       <View style={styles.listItem}>
@@ -37,10 +38,7 @@ export default class ActivityCard extends React.PureComponent {
           />
 
           <CardSegment big>
-            <DateRange
-              from={activity.dateFrom}
-              to={activity.dateTo}
-            />
+            <DateRange from={activity.dateFrom} to={activity.dateTo} />
           </CardSegment>
 
           <CardSegment big>

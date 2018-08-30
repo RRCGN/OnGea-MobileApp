@@ -15,6 +15,14 @@ export default class SectionAllOrganization extends React.PureComponent {
     Communications.phonecall(this.props.organization.phone, true)
   }
 
+  handleEmailPress = () => {
+    Communications.email([this.props.organization.mail])
+  }
+
+  handleWebPress = () => {
+    Communications.web('http://' + this.props.organization.website)
+  }
+
   render() {
     const { organization: org } = this.props
 
@@ -29,6 +37,7 @@ export default class SectionAllOrganization extends React.PureComponent {
           primary={org.mail}
           secondary="Mail"
           icon="email"
+          onPress={this.handleEmailPress}
         />
         <ListItemFancy
           primary={org.phone}
@@ -40,6 +49,7 @@ export default class SectionAllOrganization extends React.PureComponent {
           primary={org.website}
           secondary="Website"
           icon="web"
+          onPress={this.handleWebPress}
         />
         <ListItemFancy
           primary={`${org.street}, ${org.postcode} ${org.town}`}
