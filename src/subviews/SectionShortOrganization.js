@@ -1,11 +1,12 @@
 import React from 'react'
 import { Modal, Text, TouchableOpacity, View } from 'react-native'
 import PropTypes from 'prop-types'
+import { withI18n } from '@lingui/react'
 
 import Section from '../components/Section'
 import ListItemStandard from '../components/ListItemStandard'
 
-export default class SectionShortOrganization extends React.PureComponent {
+class SectionShortOrganization extends React.PureComponent {
   static propTypes = {
     organizations: PropTypes.array.isRequired,
     onOrganizationPress: PropTypes.func.isRequired
@@ -16,15 +17,18 @@ export default class SectionShortOrganization extends React.PureComponent {
   }
 
   getSecondaryText = organization => {
-    const text = organization.acronym
+    const { i18n } = this.props
+    const acronym = organization.acronym
 
-    if (organization.isHost) return `${text} – Host Organization`
-    return text
+    if (organization.isHost) return acronym + ' – ' + i18n.t`Host Organization`
+    return acronym
   }
 
   render() {
+    const { i18n } = this.props
+
     return (
-      <Section title="Contact Informations">
+      <Section title={i18n.t`Contact Informations`}>
         {this.props.organizations.map(organization => (
           <ListItemStandard
             key={organization.id}
@@ -37,3 +41,5 @@ export default class SectionShortOrganization extends React.PureComponent {
     )
   }
 }
+
+export default withI18n()(SectionShortOrganization)

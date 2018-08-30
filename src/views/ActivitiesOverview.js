@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
+import { i18n } from '../i18n'
 import { fetchActivities } from '../redux/ducks/activities'
 import ActivitiesList from '../subviews/activities/ActivitiesList'
 import ToolbarButton from '../components/ToolbarButton'
@@ -15,7 +16,7 @@ class ActivitiesOverview extends Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'My Activities',
+      title: i18n.t`Activities`,
       headerRight: (
         <ToolbarButton
           androidIcon="settings"

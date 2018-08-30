@@ -6,6 +6,7 @@ import { Card, CardSegment, CardTitle } from '../../components/Card'
 import DateRange from '../../components/DateRange'
 import ButtonFlatGrid from '../../components/ButtonFlatGrid'
 import Button from '../../components/ButtonText'
+import { I18n } from '@lingui/react'
 
 export default class ActivityCard extends React.PureComponent {
   static propTypes = {
@@ -43,7 +44,14 @@ export default class ActivityCard extends React.PureComponent {
 
           <CardSegment big>
             <ButtonFlatGrid>
-              <Button label="View" onPress={this.handleButtonPress} />
+              <I18n>
+                {({ i18n }) => (
+                  <Button
+                    label={i18n.t`View`}
+                    onPress={this.handleButtonPress}
+                  />
+                )}
+              </I18n>
             </ButtonFlatGrid>
           </CardSegment>
         </Card>

@@ -1,3 +1,6 @@
+locale/_build/
+locale/**/*.js
+
 **/*/res/values/secrets.xml
 
 

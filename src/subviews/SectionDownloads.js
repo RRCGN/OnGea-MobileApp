@@ -5,6 +5,8 @@ import { View, Text, Platform } from 'react-native'
 import RNFetchBlob from 'rn-fetch-blob'
 import filesize from 'filesize'
 import * as mime from 'react-native-mime-types'
+import { withI18n } from '@lingui/react'
+import { compose } from 'recompose'
 
 import {
   addDownload,
@@ -33,12 +35,13 @@ class SectionDownloads extends React.PureComponent {
   }
 
   getSecondaryText = download => {
+    const { i18n } = this.props
     const { isDownloaded, isQueued } = this.getDownloadState(download)
     const size = filesize(download.size)
 
-    if (isDownloaded) return size + ', offline available'
-    if (isQueued) return size + ', downloading...'
-    return size + ', press to download'
+    if (isDownloaded) return size + ' – ' + i18n.t`offline available`
+    if (isQueued) return size + ' – ' + i18n.t`downloading...`
+    return size + ' – ' + i18n.t`press to download`
   }
 
   getIcon = download => {
@@ -49,6 +52,7 @@ class SectionDownloads extends React.PureComponent {
   }
 
   handleDownloadPress = download => () => {
+    const { i18n } = this.props
     const { isDownloaded, isQueued } = this.getDownloadState(download)
     if (isQueued) return
     if (isDownloaded) {
@@ -64,11 +68,11 @@ class SectionDownloads extends React.PureComponent {
         this.props.dequeueDownload(download)
 
         if (e.internalCode === 'NO_PERMISSION') {
-          alert('No storage permission.')
+          alert(i18n.t`No storage permission.`)
           return
         }
 
-        alert('Failed to download file.')
+        alert(i18n.t`Failed to download file.`)
       })
   }
 
@@ -82,8 +86,10 @@ class SectionDownloads extends React.PureComponent {
   }
 
   render() {
+    const { i18n } = this.props
+
     return (
-      <Section title="Files">
+      <Section title={i18n.t`Files`}>
         {this.props.data.map(download => (
           <ListItemFancy
             key={download.id}
@@ -109,7 +115,7 @@ const mapDispatchToProps = {
   dequeueDownload
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+export default compose(
+  withI18n(),
+  connect(mapStateToProps, mapDispatchToProps)
 )(SectionDownloads)

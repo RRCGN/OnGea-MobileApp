@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { View, Text, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
+import { withI18n } from '@lingui/react'
+import { compose } from 'recompose'
 
 import { getMapId } from '../redux/ducks/offline-maps'
 import Section from '../components/Section'
@@ -25,6 +27,7 @@ class SectionShortPlaces extends React.PureComponent {
   }
 
   getSecondaryText = place => {
+    const { i18n } = this.props
     const { placesDownloading, placesDownloaded } = this.props
     const mapId = getMapId(place)
 
@@ -33,19 +36,21 @@ class SectionShortPlaces extends React.PureComponent {
     const isDownloaded = placesDownloaded.includes(mapId)
 
     if (isDownloading) {
-      return address + ' (downloading...)'
+      return address + ' – ' + i18n.t`downloading...`
     }
 
     if (isDownloaded) {
-      return address + ' (offline available)'
+      return address + ' – ' + i18n.t`offline available`
     }
 
     return address
   }
 
   render() {
+    const { i18n } = this.props
+
     return (
-      <Section title="Places">
+      <Section title={i18n.t`Places`}>
         {this.props.places.map(place => (
           <ListItemStandard
             key={place.id}
@@ -64,4 +69,7 @@ const mapStateToProps = state => ({
   placesDownloading: state.offlineMaps.downloading
 })
 
-export default connect(mapStateToProps)(SectionShortPlaces)
+export default compose(
+  withI18n(),
+  connect(mapStateToProps)
+)(SectionShortPlaces)

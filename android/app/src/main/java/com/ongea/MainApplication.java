@@ -3,6 +3,7 @@ package com.ongea;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.reactcommunity.rnlanguages.RNLanguagesPackage;
 import im.shimo.react.cookie.CookieManagerPackage;
 import com.github.wumke.RNExitApp.RNExitAppPackage;
 import com.rnfs.RNFSPackage;
@@ -37,6 +38,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNLanguagesPackage(),
             new CookieManagerPackage(),
             new RNExitAppPackage(),
             new RNFSPackage(),

@@ -2,6 +2,7 @@ import React from 'react'
 import { SafeAreaView, ScrollView, Text, View, Platform } from 'react-native'
 import PropTypes from 'prop-types'
 import Permissions from 'react-native-permissions'
+import { Trans, I18n } from '@lingui/react'
 
 import AgreementAcceptanceItems from './AgreementAcceptanceItems'
 import PlatformIcon from '../components/PlatformIcon'
@@ -18,9 +19,7 @@ export default class AgreementAcceptance extends React.PureComponent {
     return Permissions.request('location')
       .then(() => Permissions.request('camera'))
       .then(() => {
-        return Platform.OS === 'android'
-          ? Permissions.request('storage')
-          : true
+        return Platform.OS === 'android' ? Permissions.request('storage') : true
       })
       .then(() => {
         return Platform.OS === 'ios'
@@ -40,28 +39,43 @@ export default class AgreementAcceptance extends React.PureComponent {
           <View style={styles.wrapper}>
             <View style={styles.wrapperHeader}>
               <Text style={styles.title}>
-                Privacy Policy of
-                <Text style={styles.titleBold}> OnGea app </Text>
+                <Trans>
+                  Privacy Policy of{' '}
+                  <Text style={styles.titleBold}>OnGea app</Text>
+                </Trans>
               </Text>
               <Text style={styles.subTitle}>
-                the following notes are related explicitly to OnGea app
+                <Trans>
+                  the following notes are related explicitly to OnGea app
+                </Trans>
               </Text>
               <View style={styles.line} />
-              <Text style={styles.title2}>REQUESTING PERMISSIONS</Text>
+              <Text style={styles.title2}>
+                <Trans>REQUESTING PERMISSIONS</Trans>
+              </Text>
               <View style={styles.line} />
             </View>
             <View style={styles.wrapperBody}>
               <Text style={styles.subTitle}>
-                OnGea app requests the following informations as a part of its
-                services, by clicking ACCEPT at the end of the notes, you
-                proof that OnGea is allowed to use the following informations as
-                has been specified down in the description.
+                <Trans>
+                  OnGea app requests the following informations as a part of its
+                  services, by clicking ACCEPT at the end of the notes, you
+                  proof that OnGea is allowed to use the following informations
+                  as has been specified down in the description.
+                </Trans>
               </Text>
               <AgreementAcceptanceItems items={this.props.agreements} />
             </View>
             <View style={styles.wrapperFooter}>
               <View style={styles.acceptButtonContainer}>
-                <Button label="ACCEPT" onPress={this.handleButtonPress} />
+                <I18n>
+                  {({ i18n }) => (
+                    <Button
+                      label={i18n.t`ACCEPT`}
+                      onPress={this.handleButtonPress}
+                    />
+                  )}
+                </I18n>
               </View>
             </View>
           </View>

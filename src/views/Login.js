@@ -9,6 +9,7 @@ import {
 } from 'react-native'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { Trans, I18n } from '@lingui/react'
 
 import { login } from '../redux/ducks/auth'
 
@@ -61,59 +62,67 @@ class Login extends React.PureComponent {
       <KeyboardAvoidingView enabled style={styles.container} behavior="padding">
         <View style={styles.messagesContainer}>
           {isError && (
-            <Text style={styles.messagesErrorText}>Something went wrong</Text>
+            <Text style={styles.messagesErrorText}>
+              <Trans>Something went wrong</Trans>
+            </Text>
           )}
         </View>
-        <TextInput
-          disabled={isLoading}
-          autoCapitalize="none"
-          autoCorrect={false}
-          autoFocus={true}
-          style={styles.formElement}
-          placeholder="OnGea URL"
-          value={this.state.instanceUrl}
-          onChangeText={this.handleInstanceUrlChange}
-        />
-        <TextInput
-          disabled={isLoading}
-          autoCapitalize="none"
-          autoCorrect={false}
-          autoFocus={true}
-          style={styles.formElement}
-          placeholder="Username"
-          value={this.state.username}
-          onChangeText={this.handleUsernameChange}
-        />
-        <TextInput
-          disabled={isLoading}
-          autoCapitalize="none"
-          autoCorrect={false}
-          style={styles.formElement}
-          placeholder="Password"
-          secureTextEntry={true}
-          value={this.state.password}
-          onChangeText={this.handlePasswordChange}
-        />
-        <View style={styles.loginButtonContainer}>
-          {isLoading ? (
-            <ActivityIndicator size="small" color={colors.primaryGreen} />
-          ) : (
-            <Button
-              label="Login"
-              backgroundColor={colors.primaryGreen}
-              color="white"
-              style={styles.loginButton}
-              onPress={this.handleLoginButtonPress}
-            />
+        <I18n>
+          {({ i18n }) => (
+            <React.Fragment>
+              <TextInput
+                disabled={isLoading}
+                autoCapitalize="none"
+                autoCorrect={false}
+                autoFocus={true}
+                style={styles.formElement}
+                placeholder={i18n.t`OnGea URL`}
+                value={this.state.instanceUrl}
+                onChangeText={this.handleInstanceUrlChange}
+              />
+              <TextInput
+                disabled={isLoading}
+                autoCapitalize="none"
+                autoCorrect={false}
+                autoFocus={true}
+                style={styles.formElement}
+                placeholder={i18n.t`Username`}
+                value={this.state.username}
+                onChangeText={this.handleUsernameChange}
+              />
+              <TextInput
+                disabled={isLoading}
+                autoCapitalize="none"
+                autoCorrect={false}
+                style={styles.formElement}
+                placeholder={i18n.t`Password`}
+                secureTextEntry={true}
+                value={this.state.password}
+                onChangeText={this.handlePasswordChange}
+              />
+              <View style={styles.loginButtonContainer}>
+                {isLoading ? (
+                  <ActivityIndicator size="small" color={colors.primaryGreen} />
+                ) : (
+                  <Button
+                    label={i18n.t`Login`}
+                    backgroundColor={colors.primaryGreen}
+                    color="white"
+                    style={styles.loginButton}
+                    onPress={this.handleLoginButtonPress}
+                  />
+                )}
+              </View>
+              <Button
+                label={i18n.t`Go to Website`}
+                backgroundColor="white"
+                color={colors.primaryGreen}
+                style={styles.loginButton}
+                onPress={this.handleWebsiteButtonPress}
+              />
+            </React.Fragment>
           )}
-        </View>
-        <Button
-          label="Go to Website"
-          backgroundColor="white"
-          color={colors.primaryGreen}
-          style={styles.loginButton}
-          onPress={this.handleWebsiteButtonPress}
-        />
+        </I18n>
         <View style={{ height: 100 }} />
       </KeyboardAvoidingView>
     )

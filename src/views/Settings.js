@@ -5,7 +5,9 @@ import { purgeStoredState } from 'redux-persist'
 import MapboxGL from '@mapbox/react-native-mapbox-gl'
 import RNExitApp from 'react-native-exit-app'
 import Spinner from 'react-native-loading-spinner-overlay'
+import { connect } from 'react-redux'
 
+import { i18n } from '../i18n'
 import ToolbarButton from '../components/ToolbarButton'
 import Button from '../components/ButtonText'
 
@@ -21,7 +23,7 @@ class Settings extends Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Settings',
+      title: i18n.t`Settings`,
       headerLeft: (
         <ToolbarButton
           androidIcon="arrow-back"
@@ -68,11 +70,14 @@ class Settings extends Component {
 
   handleDeleteAll = () => {
     Alert.alert(
-      'Delete all App Data',
-      'This action will delete all stored data and the offline available map. After that it will close OnGea. If you reopen OnGea again, you will be back to a fresh start.',
+      i18n.t`Delete all App Data`,
+      i18n.t`This action will delete all stored data and the offline available map. After that it will close OnGea. If you reopen OnGea again, you will be back to a fresh start.`,
       [
-        { text: 'Cancel', onPress: () => {}, style: 'cancel' },
-        { text: 'Delete All and Exit', onPress: this.handleReallyDeleteAll }
+        { text: i18n.t`Cancel`, onPress: () => {}, style: 'cancel' },
+        {
+          text: i18n.t`Delete All and Exit`,
+          onPress: this.handleReallyDeleteAll
+        }
       ],
       { cancelable: false }
     )
@@ -81,10 +86,10 @@ class Settings extends Component {
   handleDeleteMaps = () => {
     this.deleteMaps()
       .then(results => {
-        alert(`Deleted ${results.length} offline Maps.`)
+        alert(i18n.t`Deleted ${results.length} offline Maps.`)
       })
       .catch(err => {
-        alert('Failed to delete offline Maps.')
+        alert(i18n.t`Failed to delete offline Maps.`)
         console.error(err)
       })
   }
@@ -94,19 +99,23 @@ class Settings extends Component {
       <View style={{ flex: 1, padding: 18 }}>
         <Spinner
           visible={this.state.isDeleting}
-          textContent="Deleting..."
+          textContent={i18n.t`Deleting...`}
           textStyle={{ color: '#FFF' }}
         />
         <View style={{ padding: 18 }} />
-        <Button label="Logout" onPress={this.handleLogout} />
-        <Button label="Delete all data" onPress={this.handleDeleteAll} />
-        <Button label="Delete offline maps" onPress={this.handleDeleteMaps} />
+        <Button label={i18n.t`Logout`} onPress={this.handleLogout} />
+        <Button
+          label={i18n.t`Delete all data`}
+          onPress={this.handleDeleteAll}
+        />
+        <Button
+          label={i18n.t`Delete offline maps`}
+          onPress={this.handleDeleteMaps}
+        />
       </View>
     )
   }
 }
-
-import { connect } from 'react-redux'
 
 const mapDispatchToProps = {
   logout,

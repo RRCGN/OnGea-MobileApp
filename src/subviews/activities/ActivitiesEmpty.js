@@ -1,19 +1,22 @@
 import React from 'react'
-import { Image, Text ,View } from 'react-native'
+import { Image, Text, View } from 'react-native'
 import PropTypes from 'prop-types'
 const pullDownImage = require('../../assets/pull-down.png')
+import { Trans } from '@lingui/react'
 
-const ActivitiesEmpty = ({isRefreshing}) => {
+const ActivitiesEmpty = ({ isRefreshing }) => {
   if (isRefreshing) {
-    return (<View />)
+    return <View />
   } else {
     return (
       <View style={styles.container}>
-        <Image
-          style={ styles.image }
-          source={pullDownImage} />
-          <Text>no actitivity is available</Text>
-          <Text>pull down to refresh</Text>
+        <Image style={styles.image} source={pullDownImage} />
+        <Text>
+          <Trans>No Actitivities are available.</Trans>
+        </Text>
+        <Text>
+          <Trans>Pull down to refresh.</Trans>
+        </Text>
       </View>
     )
   }

@@ -10,7 +10,7 @@ import AgreementAcceptance from './AgreementAcceptance'
 import LoginNavigation from '../navigations/LoginNavigation'
 import MainNavigation from '../navigations/MainNavigation'
 
-import agreement from '../strings/agreements.json'
+import agreement from '../strings/agreements'
 
 class Root extends React.PureComponent {
   static propTypes = {

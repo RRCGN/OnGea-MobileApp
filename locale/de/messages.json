@@ -1,0 +1,467 @@
+{
+  "ACCEPT": {
+    "translation": "AKZEPTIEREN",
+    "origin": [
+      [
+        "src/views/AgreementAcceptance.js",
+        74
+      ]
+    ]
+  },
+  "Activities": {
+    "translation": "Activities",
+    "origin": [
+      [
+        "src/views/ActivitiesOverview.js",
+        19
+      ]
+    ]
+  },
+  "Camera": {
+    "translation": "Kamera",
+    "origin": [
+      [
+        "src/strings/agreements.js",
+        7
+      ]
+    ]
+  },
+  "Cancel": {
+    "translation": "Abbrechen",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        76
+      ]
+    ]
+  },
+  "Contact Informations": {
+    "translation": "Kontaktinformationen",
+    "origin": [
+      [
+        "src/subviews/SectionAllOrganization.js",
+        33
+      ],
+      [
+        "src/subviews/SectionShortOrganization.js",
+        31
+      ]
+    ]
+  },
+  "Delete All and Exit": {
+    "translation": "Alles löschen und beenden",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        77
+      ]
+    ]
+  },
+  "Delete all App Data": {
+    "translation": "Alle Daten löschen",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        73
+      ]
+    ]
+  },
+  "Delete all data": {
+    "translation": "Alle Daten löschen",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        104
+      ]
+    ]
+  },
+  "Delete offline maps": {
+    "translation": "Alle heruntergeladen Karten löschen",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        105
+      ]
+    ]
+  },
+  "Deleted {0} offline Maps.": {
+    "translation": "{0} heruntergeladene Karten wurden gelöscht.",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        86
+      ]
+    ]
+  },
+  "Deleting...": {
+    "translation": "Lösche...",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        99
+      ]
+    ]
+  },
+  "Description": {
+    "translation": "Beschreibung",
+    "origin": [
+      [
+        "src/subviews/SectionDescription.js",
+        12
+      ]
+    ]
+  },
+  "Email": {
+    "translation": "Email",
+    "origin": [
+      [
+        "src/subviews/SectionAllOrganization.js",
+        41
+      ]
+    ]
+  },
+  "Failed to delete offline Maps.": {
+    "translation": "Fehler beim löschen von heruntergeladenen Karten.",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        89
+      ]
+    ]
+  },
+  "Failed to download file.": {
+    "translation": "Datei konnte nicht heruntergeladen werden.",
+    "origin": [
+      [
+        "src/subviews/SectionDownloads.js",
+        75
+      ]
+    ]
+  },
+  "Files": {
+    "translation": "Dateien",
+    "origin": [
+      [
+        "src/subviews/SectionDownloads.js",
+        92
+      ]
+    ]
+  },
+  "Go to Website": {
+    "translation": "Zur Website",
+    "origin": [
+      [
+        "src/views/Login.js",
+        117
+      ]
+    ]
+  },
+  "Host Organization": {
+    "translation": "Gastgeber Organisation",
+    "origin": [
+      [
+        "src/subviews/SectionShortOrganization.js",
+        23
+      ]
+    ]
+  },
+  "Location": {
+    "translation": "Standort",
+    "origin": [
+      [
+        "src/strings/agreements.js",
+        14
+      ]
+    ]
+  },
+  "Login": {
+    "translation": "Einloggen",
+    "origin": [
+      [
+        "src/views/Login.js",
+        108
+      ]
+    ]
+  },
+  "Logout": {
+    "translation": "Ausloggen",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        103
+      ]
+    ]
+  },
+  "No Actitivities are available.": {
+    "translation": "Keine Aktivitäten verfügbar.",
+    "origin": [
+      [
+        "src/subviews/activities/ActivitiesEmpty.js",
+        15
+      ]
+    ]
+  },
+  "No storage permission.": {
+    "translation": "Keine Berechtigung für Dateizugriff.",
+    "origin": [
+      [
+        "src/subviews/SectionDownloads.js",
+        71
+      ]
+    ]
+  },
+  "OnGea URL": {
+    "translation": "OnGea URL",
+    "origin": [
+      [
+        "src/views/Login.js",
+        79
+      ]
+    ]
+  },
+  "OnGea app requests the following informations as a part of its services, by clicking ACCEPT at the end of the notes, you proof that OnGea is allowed to use the following informations as has been specified down in the description.": {
+    "translation": "",
+    "origin": [
+      [
+        "src/views/AgreementAcceptance.js",
+        60
+      ]
+    ]
+  },
+  "Password": {
+    "translation": "Passwort",
+    "origin": [
+      [
+        "src/views/Login.js",
+        98
+      ]
+    ]
+  },
+  "Phone": {
+    "translation": "Telefon",
+    "origin": [
+      [
+        "src/subviews/SectionAllOrganization.js",
+        47
+      ]
+    ]
+  },
+  "Places": {
+    "translation": "Orte",
+    "origin": [
+      [
+        "src/subviews/SectionShortPlaces.js",
+        53
+      ]
+    ]
+  },
+  "Privacy Policy of <0>OnGea app</0>": {
+    "translation": "Datenschutzerklärung der <0>OnGea app</0>",
+    "origin": [
+      [
+        "src/views/AgreementAcceptance.js",
+        42
+      ]
+    ]
+  },
+  "Pull down to refresh.": {
+    "translation": "Zum Aktualisieren nach unten ziehen.",
+    "origin": [
+      [
+        "src/subviews/activities/ActivitiesEmpty.js",
+        18
+      ]
+    ]
+  },
+  "Push Notifications": {
+    "translation": "Push-Benachrichtigungen",
+    "origin": [
+      [
+        "src/strings/agreements.js",
+        21
+      ]
+    ]
+  },
+  "REQUESTING PERMISSIONS": {
+    "translation": "BENÖTIGTE BERECHTIGUNGEN",
+    "origin": [
+      [
+        "src/views/AgreementAcceptance.js",
+        54
+      ]
+    ]
+  },
+  "Settings": {
+    "translation": "Einstellungen",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        26
+      ]
+    ]
+  },
+  "Something went wrong": {
+    "translation": "",
+    "origin": [
+      [
+        "src/views/Login.js",
+        66
+      ]
+    ]
+  },
+  "Storage": {
+    "translation": "Speicher",
+    "origin": [
+      [
+        "src/strings/agreements.js",
+        28
+      ]
+    ]
+  },
+  "The OnGea App needs access to your camera, so that you can take photos of your travel tickets/boarding cards and send them to your sending organisation if requested.": {
+    "translation": "",
+    "origin": [
+      [
+        "src/strings/agreements.js",
+        11
+      ]
+    ]
+  },
+  "The OnGea App needs access to your location data, so that you can inform the staff of your host and/or sending organisation about your current location by pressing the \"I am here\" button. The OnGea App won't send your location data anywhere as long as you don't push that button. Since the app is not completely examined and ready for production, there will be a test MapView which requires your location, no data will be saved or carried to third party.": {
+    "translation": "",
+    "origin": [
+      [
+        "src/strings/agreements.js",
+        18
+      ]
+    ]
+  },
+  "The OnGea App needs push-notifications ability to be able to inform the user if plans have suddenly been changed.": {
+    "translation": "",
+    "origin": [
+      [
+        "src/strings/agreements.js",
+        25
+      ]
+    ]
+  },
+  "The OnGea App needs read and write access to your storage, so that you can download and view important documents, even if you don't have an internet connection.": {
+    "translation": "",
+    "origin": [
+      [
+        "src/strings/agreements.js",
+        32
+      ]
+    ]
+  },
+  "This action will delete all stored data and the offline available map. After that it will close OnGea. If you reopen OnGea again, you will be back to a fresh start.": {
+    "translation": "",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        74
+      ]
+    ]
+  },
+  "Username": {
+    "translation": "Nutzername",
+    "origin": [
+      [
+        "src/views/Login.js",
+        89
+      ]
+    ]
+  },
+  "View": {
+    "translation": "Ansehen",
+    "origin": [
+      [
+        "src/subviews/activities/ActivityCard.js",
+        50
+      ]
+    ]
+  },
+  "Website": {
+    "translation": "Website",
+    "origin": [
+      [
+        "src/subviews/SectionAllOrganization.js",
+        53
+      ]
+    ]
+  },
+  "date-from": {
+    "translation": "vom",
+    "defaults": "from",
+    "origin": [
+      [
+        "src/components/DateRange.js",
+        28
+      ]
+    ]
+  },
+  "date-on": {
+    "translation": "am",
+    "defaults": "on",
+    "origin": [
+      [
+        "src/components/DateRange.js",
+        30
+      ]
+    ]
+  },
+  "date-to": {
+    "translation": "bis",
+    "defaults": "to",
+    "origin": [
+      [
+        "src/components/DateRange.js",
+        38
+      ]
+    ]
+  },
+  "downloading...": {
+    "translation": "lade...",
+    "origin": [
+      [
+        "src/subviews/SectionDownloads.js",
+        43
+      ],
+      [
+        "src/subviews/SectionShortPlaces.js",
+        39
+      ]
+    ]
+  },
+  "offline available": {
+    "translation": "offline verfügbar",
+    "origin": [
+      [
+        "src/subviews/SectionDownloads.js",
+        42
+      ],
+      [
+        "src/subviews/SectionShortPlaces.js",
+        43
+      ]
+    ]
+  },
+  "press to download": {
+    "translation": "",
+    "origin": [
+      [
+        "src/subviews/SectionDownloads.js",
+        44
+      ]
+    ]
+  },
+  "the following notes are related explicitly to OnGea app": {
+    "translation": "",
+    "origin": [
+      [
+        "src/views/AgreementAcceptance.js",
+        48
+      ]
+    ]
+  }
+}
