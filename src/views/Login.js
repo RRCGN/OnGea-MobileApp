@@ -9,7 +9,8 @@ import {
 } from 'react-native'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Trans, I18n } from '@lingui/react'
+import { Trans, withI18n } from '@lingui/react'
+import { compose } from 'recompose'
 
 import { login } from '../redux/ducks/auth'
 
@@ -57,6 +58,7 @@ class Login extends React.PureComponent {
 
   render() {
     const { isLoading, isError } = this.state
+    const { i18n } = this.props
 
     return (
       <KeyboardAvoidingView enabled style={styles.container} behavior="padding">
@@ -67,62 +69,56 @@ class Login extends React.PureComponent {
             </Text>
           )}
         </View>
-        <I18n>
-          {({ i18n }) => (
-            <React.Fragment>
-              <TextInput
-                disabled={isLoading}
-                autoCapitalize="none"
-                autoCorrect={false}
-                autoFocus={true}
-                style={styles.formElement}
-                placeholder={i18n.t`OnGea URL`}
-                value={this.state.instanceUrl}
-                onChangeText={this.handleInstanceUrlChange}
-              />
-              <TextInput
-                disabled={isLoading}
-                autoCapitalize="none"
-                autoCorrect={false}
-                autoFocus={true}
-                style={styles.formElement}
-                placeholder={i18n.t`Username`}
-                value={this.state.username}
-                onChangeText={this.handleUsernameChange}
-              />
-              <TextInput
-                disabled={isLoading}
-                autoCapitalize="none"
-                autoCorrect={false}
-                style={styles.formElement}
-                placeholder={i18n.t`Password`}
-                secureTextEntry={true}
-                value={this.state.password}
-                onChangeText={this.handlePasswordChange}
-              />
-              <View style={styles.loginButtonContainer}>
-                {isLoading ? (
-                  <ActivityIndicator size="small" color={colors.primaryGreen} />
-                ) : (
-                  <Button
-                    label={i18n.t`Login`}
-                    backgroundColor={colors.primaryGreen}
-                    color="white"
-                    style={styles.loginButton}
-                    onPress={this.handleLoginButtonPress}
-                  />
-                )}
-              </View>
-              <Button
-                label={i18n.t`Go to Website`}
-                backgroundColor="white"
-                color={colors.primaryGreen}
-                style={styles.loginButton}
-                onPress={this.handleWebsiteButtonPress}
-              />
-            </React.Fragment>
+        <TextInput
+          disabled={isLoading}
+          autoCapitalize="none"
+          autoCorrect={false}
+          autoFocus={true}
+          style={styles.formElement}
+          placeholder={i18n.t`OnGea URL`}
+          value={this.state.instanceUrl}
+          onChangeText={this.handleInstanceUrlChange}
+        />
+        <TextInput
+          disabled={isLoading}
+          autoCapitalize="none"
+          autoCorrect={false}
+          autoFocus={true}
+          style={styles.formElement}
+          placeholder={i18n.t`Username`}
+          value={this.state.username}
+          onChangeText={this.handleUsernameChange}
+        />
+        <TextInput
+          disabled={isLoading}
+          autoCapitalize="none"
+          autoCorrect={false}
+          style={styles.formElement}
+          placeholder={i18n.t`Password`}
+          secureTextEntry={true}
+          value={this.state.password}
+          onChangeText={this.handlePasswordChange}
+        />
+        <View style={styles.loginButtonContainer}>
+          {isLoading ? (
+            <ActivityIndicator size="small" color={colors.primaryGreen} />
+          ) : (
+            <Button
+              label={i18n.t`Login`}
+              backgroundColor={colors.primaryGreen}
+              color="white"
+              style={styles.loginButton}
+              onPress={this.handleLoginButtonPress}
+            />
           )}
-        </I18n>
+        </View>
+        <Button
+          label={i18n.t`Go to Website`}
+          backgroundColor="white"
+          color={colors.primaryGreen}
+          style={styles.loginButton}
+          onPress={this.handleWebsiteButtonPress}
+        />
         <View style={{ height: 100 }} />
       </KeyboardAvoidingView>
     )
@@ -131,9 +127,9 @@ class Login extends React.PureComponent {
 
 const mapDispatchToProps = { login }
 
-export default connect(
-  null,
-  mapDispatchToProps
+export default compose(
+  withI18n(),
+  connect(null, mapDispatchToProps)
 )(Login)
 
 const styles = StyleSheet.create({
