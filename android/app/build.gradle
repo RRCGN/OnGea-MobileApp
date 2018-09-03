@@ -95,7 +95,7 @@ android {
     defaultConfig {
         applicationId "com.ongea"
         minSdkVersion 21
-        targetSdkVersion 26
+        targetSdkVersion 25
         versionCode 2
         versionName "0.0.1"
         ndk {
@@ -141,6 +141,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-background-task')
     compile project(':react-native-image-picker')
     compile project(':react-native-languages')
     compile project(':react-native-cookie')
@@ -150,7 +151,6 @@ dependencies {
     compile project(':react-native-vector-icons')
     compile project(':react-native-linear-gradient')
     compile project(':rn-fetch-blob')
-    compile project(':react-native-background-job')
     compile project(':react-native-config')
     compile project(':mapbox-react-native-mapbox-gl')
     compile fileTree(dir: "libs", include: ["*.jar"])

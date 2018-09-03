@@ -6,6 +6,7 @@ import storage from 'redux-persist/lib/storage'
 import agreement from './ducks/agreement'
 import auth from './ducks/auth'
 import activities from './ducks/activities'
+import notifications from './ducks/notifications'
 import downloads from './ducks/downloads'
 import offlineMaps from './ducks/offline-maps'
 
@@ -20,7 +21,8 @@ export default function configureStore() {
     auth,
     activities,
     downloads,
-    offlineMaps
+    offlineMaps,
+    notifications
   })
 
   const persistedReducer = persistReducer(persistConfig, reducer)

@@ -41,6 +41,12 @@ export default function api(instanceUrl, { token } = {}) {
           }
         })
       }
+    },
+
+    notifications: {
+      get() {
+        return call('/api/v2/announcements?_format=json')
+      }
     }
   }
 }

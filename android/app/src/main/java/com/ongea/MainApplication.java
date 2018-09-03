@@ -3,6 +3,7 @@ package com.ongea;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.jamesisaac.rnbackgroundtask.BackgroundTaskPackage;
 import com.mapbox.rctmgl.RCTMGLPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.reactcommunity.rnlanguages.RNLanguagesPackage;
@@ -13,7 +14,6 @@ import com.mehcode.reactnative.splashscreen.SplashScreenPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
-import com.pilloxa.backgroundjob.BackgroundJobPackage;
 import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
@@ -36,6 +36,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new BackgroundTaskPackage(),
             new ImagePickerPackage(),
             new RNLanguagesPackage(),
             new CookieManagerPackage(),
@@ -45,7 +46,6 @@ public class MainApplication extends Application implements ReactApplication {
             new VectorIconsPackage(),
             new LinearGradientPackage(),
             new RNFetchBlobPackage(),
-            new BackgroundJobPackage(),
             new ReactNativeConfigPackage(),
             new RCTMGLPackage()
       );
@@ -61,5 +61,6 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+    BackgroundTaskPackage.useContext(this);
   }
 }

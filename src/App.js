@@ -6,8 +6,11 @@ import { I18nProvider } from '@lingui/react'
 import { i18n } from './i18n'
 import configureStore from '../src/redux/configure-store'
 import RootView from './views/Root'
+import { setStore } from './lib/notifications'
 
 const { store, persistor } = configureStore()
+
+setStore(store)
 
 class App extends React.PureComponent {
   render() {

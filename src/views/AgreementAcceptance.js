@@ -23,6 +23,11 @@ export default class AgreementAcceptance extends React.PureComponent {
       })
       .then(() => {
         return Platform.OS === 'ios'
+          ? Permissions.request('backgroundRefresh')
+          : true
+      })
+      .then(() => {
+        return Platform.OS === 'ios'
           ? Permissions.request('notification')
           : true
       })
