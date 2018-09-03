@@ -32,6 +32,23 @@
       [
         "src/views/Settings.js",
         76
+      ],
+      [
+        "src/views/UploadImagesView.js",
+        60
+      ]
+    ]
+  },
+  "Choose image": {
+    "translation": "",
+    "origin": [
+      [
+        "src/views/UploadImagesView.js",
+        59
+      ],
+      [
+        "src/views/UploadImagesView.js",
+        109
       ]
     ]
   },
@@ -115,6 +132,28 @@
       ]
     ]
   },
+  "Error when uploading file.": {
+    "translation": "",
+    "origin": [
+      [
+        "src/views/UploadImagesView.js",
+        87
+      ]
+    ]
+  },
+  "Events": {
+    "translation": "",
+    "origin": [
+      [
+        "src/subviews/SectionShortSchedule.js",
+        17
+      ],
+      [
+        "src/views/Activity.js",
+        117
+      ]
+    ]
+  },
   "Failed to delete offline Maps.": {
     "translation": "Fehler beim löschen von heruntergeladenen Karten.",
     "origin": [
@@ -128,8 +167,26 @@
     "translation": "Datei konnte nicht heruntergeladen werden.",
     "origin": [
       [
-        "src/subviews/SectionDownloads.js",
-        75
+        "src/subviews/SectionFiles.js",
+        80
+      ]
+    ]
+  },
+  "Failed to load image.": {
+    "translation": "",
+    "origin": [
+      [
+        "src/views/UploadImagesView.js",
+        66
+      ]
+    ]
+  },
+  "File uploaded successfully.": {
+    "translation": "",
+    "origin": [
+      [
+        "src/views/UploadImagesView.js",
+        83
       ]
     ]
   },
@@ -137,8 +194,8 @@
     "translation": "Dateien",
     "origin": [
       [
-        "src/subviews/SectionDownloads.js",
-        92
+        "src/subviews/SectionFiles.js",
+        97
       ]
     ]
   },
@@ -147,7 +204,7 @@
     "origin": [
       [
         "src/views/Login.js",
-        117
+        116
       ]
     ]
   },
@@ -174,7 +231,7 @@
     "origin": [
       [
         "src/views/Login.js",
-        108
+        107
       ]
     ]
   },
@@ -200,8 +257,8 @@
     "translation": "Keine Berechtigung für Dateizugriff.",
     "origin": [
       [
-        "src/subviews/SectionDownloads.js",
-        71
+        "src/subviews/SectionFiles.js",
+        76
       ]
     ]
   },
@@ -210,7 +267,7 @@
     "origin": [
       [
         "src/views/Login.js",
-        79
+        78
       ]
     ]
   },
@@ -228,7 +285,7 @@
     "origin": [
       [
         "src/views/Login.js",
-        98
+        97
       ]
     ]
   },
@@ -286,6 +343,15 @@
       ]
     ]
   },
+  "Repeating Event": {
+    "translation": "",
+    "origin": [
+      [
+        "src/components/EventItem.js",
+        31
+      ]
+    ]
+  },
   "Settings": {
     "translation": "Einstellungen",
     "origin": [
@@ -295,12 +361,21 @@
       ]
     ]
   },
+  "Show full schedule": {
+    "translation": "",
+    "origin": [
+      [
+        "src/subviews/SectionShortSchedule.js",
+        20
+      ]
+    ]
+  },
   "Something went wrong": {
     "translation": "",
     "origin": [
       [
         "src/views/Login.js",
-        66
+        68
       ]
     ]
   },
@@ -358,12 +433,39 @@
       ]
     ]
   },
+  "Travel": {
+    "translation": "",
+    "origin": [
+      [
+        "src/subviews/SectionShortTravel.js",
+        24
+      ]
+    ]
+  },
+  "Upload image": {
+    "translation": "",
+    "origin": [
+      [
+        "src/views/UploadImagesView.js",
+        119
+      ]
+    ]
+  },
+  "Upload your documents for this activity": {
+    "translation": "",
+    "origin": [
+      [
+        "src/subviews/SectionFiles.js",
+        99
+      ]
+    ]
+  },
   "Username": {
     "translation": "Nutzername",
     "origin": [
       [
         "src/views/Login.js",
-        89
+        88
       ]
     ]
   },
@@ -373,6 +475,15 @@
       [
         "src/subviews/activities/ActivityCard.js",
         50
+      ]
+    ]
+  },
+  "View all {0} events": {
+    "translation": "",
+    "origin": [
+      [
+        "src/subviews/SectionShortSchedule.js",
+        21
       ]
     ]
   },
@@ -419,8 +530,8 @@
     "translation": "lade...",
     "origin": [
       [
-        "src/subviews/SectionDownloads.js",
-        43
+        "src/subviews/SectionFiles.js",
+        44
       ],
       [
         "src/subviews/SectionShortPlaces.js",
@@ -428,12 +539,21 @@
       ]
     ]
   },
+  "for travel documents, e.g. boarding passes": {
+    "translation": "",
+    "origin": [
+      [
+        "src/subviews/SectionFiles.js",
+        100
+      ]
+    ]
+  },
   "offline available": {
     "translation": "offline verfügbar",
     "origin": [
       [
-        "src/subviews/SectionDownloads.js",
-        42
+        "src/subviews/SectionFiles.js",
+        43
       ],
       [
         "src/subviews/SectionShortPlaces.js",
@@ -445,8 +565,8 @@
     "translation": "",
     "origin": [
       [
-        "src/subviews/SectionDownloads.js",
-        44
+        "src/subviews/SectionFiles.js",
+        45
       ]
     ]
   },
