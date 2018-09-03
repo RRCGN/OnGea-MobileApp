@@ -68,14 +68,14 @@ class UploadImagesView extends React.Component {
         }
 
         const image = { uri: response.uri }
-        this.setState({ image })
+        this.setState({ image, isFailed: false, isSuccess: false })
       }
     )
   }
 
   handleUploadPress = () => {
     const { i18n } = this.props
-    this.setState({ isLoading: true })
+    this.setState({ isLoading: true, isFailed: false, isSuccess: false })
 
     this.props
       .uploadFile(this.state.image)
