@@ -16,10 +16,16 @@ OnGea App for iOS and Android
   - iOS: `$ react-native run-ios` (will start the iOS Simulator)
   - Android: `$ react-native run-android` (need a virtual or connected device)
 
+- Extract i18n strings into `locale/**/messages.json`: `yarn run i18n:extract`
+
+  - Use `locale/e/messages.json` as base for translations.
+
 
 You may face some issues when building for Android, check :point_down: [Known issues and its hacks](#known-issues-and-its-hacks)
 
 ## Production:
+
+Before you make a release, run `yarn run i18n:compile`. This will compile the translations for i18n-support.
 
 ### Deploy
 
