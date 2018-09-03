@@ -20,6 +20,12 @@ export default function api(instanceUrl, { token } = {}) {
       get() {
         return call('/api/v2/activities?_format=json')
       }
+    },
+
+    uploads: {
+      post() {
+        return Promise.resolve()
+      }
     }
   }
 }

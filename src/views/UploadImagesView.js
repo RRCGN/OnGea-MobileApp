@@ -1,121 +1,163 @@
 import React from 'react'
-import { Alert, ActivityIndicator, Text, View, Platform, StatusBar } from 'react-native'
+import {
+  Alert,
+  ActivityIndicator,
+  Text,
+  View,
+  Platform,
+  StatusBar,
+  TouchableOpacity,
+  Image
+} from 'react-native'
+import ImagePicker from 'react-native-image-picker'
+import { withI18n, Trans } from '@lingui/react'
+import { compose } from 'recompose'
+import { connect } from 'react-redux'
 
+import { uploadFile } from '../redux/ducks/activities'
 import ToolbarButton from '../components/ToolbarButton'
-import UploadImages from '../components/UploadImages/UploadImages'
-import Button from '../components/ButtonText'
+import { Button } from '../components/Button'
 import { Colors } from '../utils/constants'
-import Uploader from '../services/Uploader'
-
-// import ApiService from '../services/ApiService'
-// import { asyncStorageDebugger, loadDataDebugger } from '../utils/debugger'
 
 class UploadImagesView extends React.Component {
-  constructor(props) {
-    super(props)
-    this.appendImageContent = this.appendImageContent.bind(this)
-  }
-
-  state = {
-    imagesArray: [],
-    uploading: false,
-    uploadFailed: false,
-    uploadSuccess: false
-  }
-
-  static navigationOptions = ({navigation}) => {
+  static navigationOptions = ({ navigation }) => {
     return {
       title: 'Upload Images',
       headerStyle: {
         backgroundColor: Colors.PRIMARY,
         elevation: 5,
         ...Platform.select({
-          'android': {
+          android: {
             paddingTop: StatusBar.currentHeight,
-            height: 56 + StatusBar.currentHeight } })
+            height: 56 + StatusBar.currentHeight
+          }
+        })
       },
       headerTitleStyle: { color: Colors.WHITE },
       headerLeft: (
         <ToolbarButton
           androidIcon="arrow-back"
           iosIcon="ios-arrow-back"
-          onPress={() => navigation.goBack(null)} /> )
+          onPress={() => navigation.goBack(null)}
+        />
+      )
     }
   }
 
-  uploadImages = async () => {
-    const { imagesArray, uploadSuccess } = this.state
-    if (uploadSuccess) {
-      Alert.alert('Already uploaded!')
-    } else {
-      this.setState({uploadFailed: false, uploadSuccess: false, uploading: true})
-      const response = await Uploader.uploadFile(imagesArray)
-      if (response) {
-        this.setState({uploading: false})
-        response.ok ? this.preformSuccessUpload() : this.preformFailedUpload()
+  state = {
+    image: null,
+    isLoading: false,
+    isSuccess: false,
+    isFailed: false
+  }
+
+  handleImagePress = () => {
+    const { i18n } = this.props
+
+    ImagePicker.showImagePicker(
+      {
+        title: i18n.t`Choose image`,
+        cancelButtonTitle: i18n.t`Cancel`,
+        mediaType: 'photo'
+      },
+      response => {
+        if (response.didCancel) return
+        if (response.error) {
+          alert(i18n.t`Failed to load image.`)
+          return
+        }
+
+        const image = { uri: response.uri }
+        this.setState({ image })
       }
-    }
+    )
   }
 
-  preformSuccessUpload () {
-    this.setState({uploadFailed: false, uploadSuccess: true})
-  }
+  handleUploadPress = () => {
+    const { i18n } = this.props
+    this.setState({ isLoading: true })
 
-  preformFailedUpload () {
-    this.setState({uploadFailed: true, uploadSuccess: false})
-  }
-
-  appendImageContent(imageData) {
-    let {imagesArray} = this.state
-    imagesArray.push(imageData)
-    this.setState({imagesArray: imagesArray})
-  }
-
-  isUploadButtonActive () {
-    const {imagesArray} = this.state
-    return !!(imagesArray === undefined || imagesArray.length == 0)
+    this.props
+      .uploadFile(this.state.image)
+      .then(() => {
+        alert(i18n.t`File uploaded successfully.`)
+        return this.setState({ isLoading: false, isSuccess: true, image: null })
+      })
+      .catch(() => {
+        alert(i18n.t`Error when uploading file.`)
+        this.setState({ isLoading: false, isFailed: true })
+      })
   }
 
   render() {
-    const { uploading, uploadSuccess, uploadFailed } = this.state
+    const { i18n } = this.props
+    const { isLoading, isSuccess, isFailed, image } = this.state
+    const isUploadable = image && !isLoading
+
     return (
-      <View style={{ flex: 1, padding: 18 }}>
-          { !uploadSuccess
-            ? ( <UploadImages appendImageContent = {this.appendImageContent} style={uploading ? styles.uploading : {}}/>)
-            : ( <View style={{ flex: 1, padding: 1}} />)}
-         <View style={styles.buttonContainer}>
-           { uploadFailed && (
-             <Text style={styles.errorText}>error uploading!</Text>)}
-           { uploadSuccess && (
-             <Text style={styles.successText}>uploaded successfully!</Text>)}
-           { uploading
-             ? ( <ActivityIndicator size="small" color={Colors.PRIMARY} /> )
-             : ( <Button
-                   disabled={this.isUploadButtonActive()}
-                   icon='upload'
-                   label="Upload Images"
-                   onPress={ () => { this.uploadImages() } } />) }
-        </View>
+      <View style={styles.screen}>
+        <TouchableOpacity
+          onPress={this.handleImagePress}
+          style={styles.touchArea}
+          disabled={isLoading}
+        >
+          {image ? (
+            <Image source={image} style={styles.image} resizeMode="cover" />
+          ) : (
+            <View style={styles.placeholder}>
+              <Text style={styles.chooseText}>
+                <Trans>Choose image</Trans>
+              </Text>
+            </View>
+          )}
+        </TouchableOpacity>
+        {isUploadable && (
+          <Button
+            backgroundColor={Colors.PRIMARY}
+            color="white"
+            onPress={this.handleUploadPress}
+            label={i18n.t`Upload image`}
+          />
+        )}
+        {isLoading && (
+          <ActivityIndicator size="small" color={Colors.PRIMARY} />
+        )}
       </View>
     )
   }
 }
 
 const styles = {
-  uploading: {
-    opacity: 0.3
+  screen: {
+    flex: 1,
+    padding: 24
   },
-  buttonContainer: {
-    height: 40,
-    justifyContent: 'center'
+  touchArea: {
+    height: 260,
+    marginBottom: 40
   },
-  errorText: {
-    color: Colors.RED,
-    textAlign: 'center'
+  image: {
+    flex: 1,
+    borderRadius: 5
   },
-  successText: {
-    color: Colors.GREEN,
-    textAlign: 'center'
+  chooseText: {
+    fontSize: 24,
+    fontWeight: '700'
+  },
+  placeholder: {
+    flex: 1,
+    height: 400,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 4,
+    borderColor: Colors.DARK_DIVIDER
   }
 }
-export default UploadImagesView
+
+export default compose(
+  withI18n(),
+  connect(
+    null,
+    { uploadFile }
+  )
+)(UploadImagesView)

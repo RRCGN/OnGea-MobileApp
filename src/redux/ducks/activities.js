@@ -52,3 +52,10 @@ export const fetchActivities = () => (dispatch, getState) => {
       return activities
     })
 }
+
+export const uploadFile = (file) => (dispatch, getState) => {
+  const { instanceUrl, token } = getState().auth
+
+  return api(instanceUrl, { token })
+    .uploads.post(file)
+}

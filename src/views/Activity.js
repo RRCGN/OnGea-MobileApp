@@ -28,7 +28,7 @@ import ButtonFlatGrid from '../components/ButtonFlatGrid'
 import ActivityHeader from '../subviews/activities/ActivityHeader'
 
 import DateRange from '../components/DateRange'
-import SectionDownloads from '../subviews/SectionDownloads'
+import SectionFiles from '../subviews/SectionFiles'
 import SectionShortPlaces from '../subviews/SectionShortPlaces'
 import SectionShortOrganization from '../subviews/SectionShortOrganization'
 import SectionDescription from '../subviews/SectionDescription'
@@ -112,6 +112,10 @@ class Activity extends React.PureComponent {
     this.props.navigation.navigate('ShowMap', { place })
   }
 
+  handleUploadPress = () => {
+    this.props.navigation.navigate('UploadImages')
+  }
+
   render() {
     return (
       <ActivityHeader
@@ -147,7 +151,7 @@ class Activity extends React.PureComponent {
           places={activity.places}
           onPlacePress={this.handlePlacePress}
         />
-        <SectionDownloads data={downloads} />
+        <SectionFiles data={downloads} onUploadPress={this.handleUploadPress} />
       </View>
     )
   }

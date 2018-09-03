@@ -15,9 +15,10 @@ import {
 } from '../redux/ducks/downloads'
 import { downloadWithPermission } from '../services/FileService'
 import Section from '../components/Section'
+import ListItemStandard from '../components/ListItemStandard'
 import ListItemFancy from '../components/ListItemFancy'
 
-class SectionDownloads extends React.PureComponent {
+class SectionFiles extends React.PureComponent {
   static propTypes = {
     data: PropTypes.array.isRequired,
     storedDownloads: PropTypes.object.isRequired,
@@ -49,6 +50,10 @@ class SectionDownloads extends React.PureComponent {
     if (isDownloaded) return 'file'
     if (isQueued) return 'dots-horizontal'
     return 'download'
+  }
+
+  handleUploadPress = () => {
+    this.props.onUploadPress()
   }
 
   handleDownloadPress = download => () => {
@@ -90,6 +95,11 @@ class SectionDownloads extends React.PureComponent {
 
     return (
       <Section title={i18n.t`Files`}>
+        <ListItemStandard
+          primary={i18n.t`Upload your documents for this activity`}
+          secondary={i18n.t`for travel documents, e.g. boarding passes`}
+          onPress={this.handleUploadPress}
+        />
         {this.props.data.map(download => (
           <ListItemFancy
             key={download.id}
@@ -118,4 +128,4 @@ const mapDispatchToProps = {
 export default compose(
   withI18n(),
   connect(mapStateToProps, mapDispatchToProps)
-)(SectionDownloads)
+)(SectionFiles)

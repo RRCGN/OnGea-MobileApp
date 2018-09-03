@@ -141,12 +141,10 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-image-picker')
     compile project(':react-native-languages')
     compile project(':react-native-cookie')
     compile project(':react-native-exit-app')
-    compile project(':react-native-fs')
-    compile project(':react-native-image-resizer')
-    compile project(':react-native-image-picker')
     compile project(':react-native-push-notification')
     compile project(':rn-splash-screen')
     compile project(':react-native-vector-icons')
