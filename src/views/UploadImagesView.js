@@ -13,6 +13,7 @@ import ImagePicker from 'react-native-image-picker'
 import { withI18n, Trans } from '@lingui/react'
 import { compose } from 'recompose'
 import { connect } from 'react-redux'
+import * as mime from 'react-native-mime-types'
 
 import { uploadFile } from '../redux/ducks/activities'
 import ToolbarButton from '../components/ToolbarButton'
@@ -46,6 +47,7 @@ class UploadImagesView extends React.Component {
 
   state = {
     image: null,
+    mimeType: null,
     isLoading: false,
     isSuccess: false,
     isFailed: false
@@ -67,23 +69,40 @@ class UploadImagesView extends React.Component {
           return
         }
 
-        const image = { uri: response.uri }
-        this.setState({ image, isFailed: false, isSuccess: false })
+        const { fileName } = response
+        const mimeType = mime.lookup(fileName)
+
+        this.setState({
+          fileName,
+          mimeType,
+          image: response.data,
+          isFailed: false,
+          isSuccess: false
+        })
       }
     )
   }
 
   handleUploadPress = () => {
     const { i18n } = this.props
+    const { image: base64, mimeType, fileName } = this.state
+
     this.setState({ isLoading: true, isFailed: false, isSuccess: false })
 
     this.props
-      .uploadFile(this.state.image)
+      .uploadFile({ base64, mimeType, fileName })
       .then(() => {
         alert(i18n.t`File uploaded successfully.`)
-        return this.setState({ isLoading: false, isSuccess: true, image: null })
+
+        this.setState({
+          isLoading: false,
+          isSuccess: true,
+          image: null,
+          mimeType: null,
+          fileName: null
+        })
       })
-      .catch(() => {
+      .catch(error => {
         alert(i18n.t`Error when uploading file.`)
         this.setState({ isLoading: false, isFailed: true })
       })
@@ -91,7 +110,7 @@ class UploadImagesView extends React.Component {
 
   render() {
     const { i18n } = this.props
-    const { isLoading, isSuccess, isFailed, image } = this.state
+    const { isLoading, isSuccess, isFailed, image, mimeType } = this.state
     const isUploadable = image && !isLoading
 
     return (
@@ -102,7 +121,11 @@ class UploadImagesView extends React.Component {
           disabled={isLoading}
         >
           {image ? (
-            <Image source={image} style={styles.image} resizeMode="cover" />
+            <Image
+              source={{ uri: `data:${mimeType};base64,` + image }}
+              style={styles.image}
+              resizeMode="cover"
+            />
           ) : (
             <View style={styles.placeholder}>
               <Text style={styles.chooseText}>
@@ -119,9 +142,7 @@ class UploadImagesView extends React.Component {
             label={i18n.t`Upload image`}
           />
         )}
-        {isLoading && (
-          <ActivityIndicator size="small" color={Colors.PRIMARY} />
-        )}
+        {isLoading && <ActivityIndicator size="small" color={Colors.PRIMARY} />}
       </View>
     )
   }

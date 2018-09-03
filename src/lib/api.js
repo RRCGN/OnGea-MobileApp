@@ -23,8 +23,23 @@ export default function api(instanceUrl, { token } = {}) {
     },
 
     uploads: {
-      post() {
-        return Promise.resolve()
+      post({ fileName, mimeType, base64 }) {
+        return call('/entity/file?_format=hal+json', {
+          method: 'POST',
+          body: {
+            filename: {
+              value: fileName
+            },
+            filemime: {
+              value: mimeType
+            },
+            data: [
+              {
+                value: base64
+              }
+            ]
+          }
+        })
       }
     }
   }
