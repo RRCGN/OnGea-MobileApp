@@ -1,22 +1,29 @@
 import React from 'react'
-import moment from 'moment'
+import { withI18n } from '@lingui/react'
+
 import Section from '../components/Section'
+import EventItem from '../components/EventItem'
 import ListItemStandard from '../components/ListItemStandard'
 
-const SectionShortSchedule = ({ recentIndex, data, footer }) => {
-  const { name, dateFrom, dateTo } = data[recentIndex]
-  const dateFromString = moment(dateFrom).format('DD.MM.YYYY, HH:mm')
-  const dateToString = dateTo ? moment(dateTo).format('HH:mm') : null
+export class SectionShortSchedule extends React.PureComponent {
+  handleMorePress = () => {
+    this.props.onMorePress()
+  }
 
-  return (
-    <Section title="Next Event">
-      <ListItemStandard
-        primary={name}
-        secondary={dateFromString + (dateToString ? ` – ${dateToString}` : '')}
-      />
-      {footer}
-    </Section>
-  )
+  render() {
+    const { i18n, events } = this.props
+
+    return (
+      <Section title={i18n.t`Events`}>
+        <EventItem {...events[0]} />
+        <ListItemStandard
+          primary={i18n.t`Show full schedule`}
+          secondary={i18n.t`View all ${events.length} events`}
+          onPress={this.handleMorePress}
+        />
+      </Section>
+    )
+  }
 }
 
-export default SectionShortSchedule
+export default withI18n()(SectionShortSchedule)

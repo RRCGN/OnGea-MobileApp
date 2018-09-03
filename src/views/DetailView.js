@@ -14,6 +14,7 @@ import ToolbarButton from '../components/ToolbarButton'
 import ToolbarFancy from '../components/ToolbarFancy'
 import Section from '../components/Section'
 import SectionAllOrganization from '../subviews/SectionAllOrganization'
+import SectionAllSchedule from '../subviews/SectionAllSchedule'
 import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
 import { Colors } from '../utils/constants'
 
@@ -40,7 +41,7 @@ export default class DetailView extends Component {
     return (
       <View style={styles.background}>
         <StatusBarBackgroundIOS />
-        <ToolbarFancy image={{ uri: params.image }} title={params.payload.title} />
+        <ToolbarFancy image={{ uri: params.image }} title={params.title} />
         <ScrollView>
           {this.renderSwitchedContent()}
         </ScrollView>
@@ -55,6 +56,10 @@ export default class DetailView extends Component {
       case 'ORGANIZATION':
         return (
           <SectionAllOrganization organization={params.payload} />
+        )
+      case 'SCHEDULE':
+        return (
+          <SectionAllSchedule events={params.payload} />
         )
       default:
         return null

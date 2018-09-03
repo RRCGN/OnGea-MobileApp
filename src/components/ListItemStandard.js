@@ -9,16 +9,18 @@ export default class ListItemStandard extends React.PureComponent {
   static propTypes = {
     primary: PropTypes.string.isRequired,
     secondary: PropTypes.string,
+    additional: PropTypes.array,
     big: PropTypes.bool,
+    withBorder: PropTypes.bool,
     onPress: PropTypes.func
   }
 
   static defaultProps = {
-    onPress: () => {}
+    additional: []
   }
 
   render() {
-    const { big, primary, secondary } = this.props
+    const { big, primary, secondary, additional, withBorder } = this.props
 
     const isInteractive = !!this.props.onPress
     const containerProps = isInteractive ? { onPress: this.props.onPress } : {}
@@ -26,12 +28,21 @@ export default class ListItemStandard extends React.PureComponent {
 
     return (
       <ContainerComponent
-        style={[styles.container, big && styles.big]}
+        style={[
+          styles.container,
+          big && styles.big,
+          withBorder && styles.withBorder
+        ]}
         {...containerProps}
       >
         <View style={styles.mainInfos}>
           <Text style={styles.primary}>{primary}</Text>
           {secondary && <Text style={styles.secondary}>{secondary}</Text>}
+          {additional.map((t, i) => (
+            <Text key={i} style={styles.secondary}>
+              {t}
+            </Text>
+          ))}
         </View>
         {isInteractive && (
           <PlatformIcon
@@ -51,7 +62,13 @@ const styles = StyleSheet.create({
     flex: 0,
     flexDirection: 'row',
     alignItems: 'center',
-    height: 50
+    minHeight: 50,
+    paddingVertical: 8
+  },
+  withBorder: {
+    paddingVertical: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.DARK_DIVIDER
   },
   mainInfos: {
     flex: 1,
@@ -59,7 +76,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   big: {
-    height: 72
+    minHeight: 72
   },
   icon: {
     flex: 0,

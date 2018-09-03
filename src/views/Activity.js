@@ -11,6 +11,8 @@ import {
 import * as Animatable from 'react-native-animatable'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { withI18n } from '@lingui/react'
+import { compose } from 'recompose'
 
 import {
   setMapDownloaded,
@@ -31,20 +33,11 @@ import DateRange from '../components/DateRange'
 import SectionFiles from '../subviews/SectionFiles'
 import SectionShortPlaces from '../subviews/SectionShortPlaces'
 import SectionShortOrganization from '../subviews/SectionShortOrganization'
+import SectionShortTravel from '../subviews/SectionShortTravel'
+import SectionShortSchedule from '../subviews/SectionShortSchedule'
 import SectionDescription from '../subviews/SectionDescription'
 
 import { transparentHeaderStyle as headerStyle } from '../utils/styles'
-
-const downloads = [
-  {
-    id: 1,
-    name: 'Test Datei',
-    url:
-      'https://shop.strato.com/WebRoot/StoreNL/Shops/61331913/MediaGallery/PDF_Test.pdf',
-    filename: 'test.pdf',
-    size: 1337
-  }
-]
 
 class Activity extends React.PureComponent {
   static propTypes = {
@@ -116,6 +109,17 @@ class Activity extends React.PureComponent {
     this.props.navigation.navigate('UploadImages')
   }
 
+  handleMoreEventsPress = () => {
+    const { i18n } = this.props
+
+    this.props.navigation.navigate('Detail', {
+      type: 'SCHEDULE',
+      title: i18n.t`Events`,
+      image: this.getImage(),
+      payload: activity.mobilities.events
+    })
+  }
+
   render() {
     return (
       <ActivityHeader
@@ -139,19 +143,44 @@ class Activity extends React.PureComponent {
 
   renderContent = () => {
     const { navigation, activity } = this.props
+    const hasEvents =
+      activity.mobilities.length > 0 && activity.mobilities[0].events.length > 0
 
     return (
       <View>
         <SectionDescription text={activity.description} />
-        <SectionShortOrganization
-          organizations={activity.organisations}
-          onOrganizationPress={this.handleOrganizationPress}
+        {activity.organisations.length > 0 && (
+          <SectionShortOrganization
+            organizations={activity.organisations}
+            onOrganizationPress={this.handleOrganizationPress}
+          />
+        )}
+        {activity.mobilities.length > 0 && (
+          <SectionShortTravel
+            dateFrom={activity.mobilities[0].dateFrom}
+            dateTo={activity.mobilities[0].dateTo}
+            fromCity={activity.mobilities[0].fromCityPlace}
+            fromCountry={activity.mobilities[0].fromCountry}
+            toCity={activity.mobilities[0].toCityPlace}
+            toCountry={activity.mobilities[0].toCountry}
+          />
+        )}
+        {activity.places.length > 0 && (
+          <SectionShortPlaces
+            places={activity.places}
+            onPlacePress={this.handlePlacePress}
+          />
+        )}
+        {hasEvents && (
+          <SectionShortSchedule
+            events={activity.mobilities.events}
+            onMorePress={this.handleMoreEventsPress}
+          />
+        )}
+        <SectionFiles
+          data={activity.files}
+          onUploadPress={this.handleUploadPress}
         />
-        <SectionShortPlaces
-          places={activity.places}
-          onPlacePress={this.handlePlacePress}
-        />
-        <SectionFiles data={downloads} onUploadPress={this.handleUploadPress} />
       </View>
     )
   }
@@ -170,7 +199,7 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+export default compose(
+  withI18n(),
+  connect(mapStateToProps, mapDispatchToProps)
 )(Activity)
