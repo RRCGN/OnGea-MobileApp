@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlatList } from 'react-native'
+import { FlatList, SafeAreaView } from 'react-native'
 import PropTypes from 'prop-types'
 
 import ActivityCard from './ActivityCard'
@@ -33,6 +33,8 @@ export default class ActivitiesList extends React.Component {
 
     return (
       <FlatList
+        ListHeaderComponent={SafeAreaView}
+        ListFooterComponent={SafeAreaView}
         ListEmptyComponent={this.renderEmptyList}
         data={activitiesArray}
         renderItem={this.renderItem}

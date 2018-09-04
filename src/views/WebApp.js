@@ -2,6 +2,7 @@ import React from 'react'
 import { ActivityIndicator, StatusBar, View, WebView } from 'react-native'
 import ToolbarButton from '../components/ToolbarButton'
 import colors from '../utils/colors'
+import { normalHeaderStyle as headerStyle } from '../utils/styles'
 
 export default class WebViewScreen extends React.Component {
   state = {
@@ -9,14 +10,13 @@ export default class WebViewScreen extends React.Component {
   }
   static navigationOptions = ({navigation}) => {
     return {
-      title: 'WEBSITE',
-      headerStyle: {
-        backgroundColor: colors.primaryRed
-      },
+      title: 'rootsnroutes.eu',
+      headerStyle,
       headerLeft: (
         <ToolbarButton
           androidIcon="arrow-back"
           iosIcon="ios-arrow-back"
+          iconColor="black"
           onPress={() => navigation.goBack(null)} /> )
     }
   }
@@ -28,15 +28,21 @@ export default class WebViewScreen extends React.Component {
     const { loaded } = this.state
     return (
       <View style={styles.container}>
+        <StatusBar
+          barStyle="dark-content"
+          backgroundColor="transparent"
+          translucent
+          animated
+        />
         <WebView
           onLoad={() => this.preformLoaded()}
           source={{ uri: 'http://rootsnroutes.eu' }}
-          style={{flex: 1}} />
+          style={{ flex: 1, backgroundColor: 'white' }} />
          {!loaded && (
           <View style={styles.indicatorContainer}>
             <ActivityIndicator
               size="small"
-              color={colors.primaryRed} />
+              color="black" />
           </View>
         )}
       </View>
@@ -46,7 +52,6 @@ export default class WebViewScreen extends React.Component {
 
 const styles = {
   container: {
-    paddingTop: 50,
     flex: 1
   },
   indicatorContainer: {

@@ -117,6 +117,7 @@ class Login extends React.PureComponent {
                 disabled={isLoading}
                 isLoading={isLoading}
                 onPress={this.handleLoginButtonPress}
+                style={styles.loginButton}
               >
                 <Trans>Login</Trans>
               </FlatButton>
@@ -166,33 +167,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     justifyContent: 'flex-end'
   },
+  loginButton: {
+    marginBottom: 20
+  },
   logo: {
     width: 75,
     height: 75,
     alignSelf: 'center',
     marginBottom: 50,
     marginTop: 100
-  },
-  formElement: {
-    width: 200,
-    height: 50,
-    alignSelf: 'center'
-  },
-  messagesContainer: {
-    height: 20
-  },
-  messagesErrorText: {
-    color: colors.red
-  },
-  messagesSuccessText: {
-    color: colors.green
-  },
-  loginButtonContainer: {
-    height: 65,
-    alignContent: 'center',
-    justifyContent: 'center'
-  },
-  loginButton: {
-    width: 200
   }
 })

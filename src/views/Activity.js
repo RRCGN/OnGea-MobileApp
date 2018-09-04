@@ -6,7 +6,7 @@ import {
   Text,
   StyleSheet,
   View,
-  StatusBar
+  StatusBar,
 } from 'react-native'
 import * as Animatable from 'react-native-animatable'
 import PropTypes from 'prop-types'
@@ -187,6 +187,7 @@ class Activity extends React.PureComponent {
           data={activity.files}
           onUploadPress={this.handleUploadPress}
         />
+        {Platform.OS === 'ios' && <View style={styles.iPhoneXSpacing} />}
       </View>
     )
   }
@@ -212,3 +213,9 @@ export default compose(
     mapDispatchToProps
   )
 )(Activity)
+
+const styles = StyleSheet.create({
+  iPhoneXSpacing: {
+    height: 40
+  }
+})

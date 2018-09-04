@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Platform, Alert, View } from 'react-native'
+import { Platform, Alert, View, SafeAreaView } from 'react-native'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 

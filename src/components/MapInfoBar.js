@@ -1,5 +1,11 @@
 import React from 'react'
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
+import {
+  View,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  SafeAreaView
+} from 'react-native'
 import PropTypes from 'prop-types'
 
 import PlatformIcon from '../components/PlatformIcon'
@@ -15,30 +21,32 @@ export default class MapInfoBar extends React.PureComponent {
     const { place } = this.props
 
     return (
-      <View style={styles.bar}>
-        <View style={styles.infos}>
-          <Text style={styles.primaryText}>
-            {place.name}, {place.description}
-          </Text>
-          <Text style={styles.secondaryText}>{place.street}</Text>
-          <Text style={styles.secondaryText}>
-            {place.postcode} {place.town}, {place.country}
-          </Text>
+      <SafeAreaView style={{ backgroundColor: 'white' }}>
+        <View style={styles.bar}>
+          <View style={styles.infos}>
+            <Text style={styles.primaryText}>
+              {place.name}, {place.description}
+            </Text>
+            <Text style={styles.secondaryText}>{place.street}</Text>
+            <Text style={styles.secondaryText}>
+              {place.postcode} {place.town}, {place.country}
+            </Text>
+          </View>
+          <View style={styles.actions}>
+            <TouchableOpacity
+              onPress={this.props.onCenterPress}
+              style={styles.touchArea}
+            >
+              <PlatformIcon
+                androidIcon="filter-tilt-shift"
+                iosIcon="ios-contract"
+                color={Colors.DARK_SECONDARY}
+                size={32}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
-        <View style={styles.actions}>
-          <TouchableOpacity
-            onPress={this.props.onCenterPress}
-            style={styles.touchArea}
-          >
-            <PlatformIcon
-              androidIcon="filter-tilt-shift"
-              iosIcon="ios-contract"
-              color={Colors.DARK_SECONDARY}
-              size={32}
-            />
-          </TouchableOpacity>
-        </View>
-      </View>
+      </SafeAreaView>
     )
   }
 }

@@ -94,7 +94,7 @@ class SectionFiles extends React.PureComponent {
     const { i18n } = this.props
 
     return (
-      <Section title={i18n.t`Files`}>
+      <Section title={i18n.t`Files`} noBorder>
         <ListItemStandard
           primary={i18n.t`Upload your documents for this activity`}
           secondary={i18n.t`for travel documents, e.g. boarding passes`}

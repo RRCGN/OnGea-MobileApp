@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Platform, Text, View } from 'react-native'
+import { Image, Platform, Text, View, SafeAreaView } from 'react-native'
 import * as Animatable from 'react-native-animatable'
 import HeaderImageScrollView, {
   TriggeringView
