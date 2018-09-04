@@ -1801,7 +1801,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = eu.rootsnroutes;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.rootsnroutes.ongea;
 				PRODUCT_NAME = OnGea;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1838,7 +1838,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = eu.rootsnroutes;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.rootsnroutes.ongea;
 				PRODUCT_NAME = OnGea;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
