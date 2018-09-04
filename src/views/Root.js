@@ -8,6 +8,7 @@ import { setAgreementVersion } from '../redux/ducks/agreement'
 import {
   scheduleNotifications,
   poll,
+  cancelNotifications,
   configurePushNotifications
 } from '../lib/notifications'
 
