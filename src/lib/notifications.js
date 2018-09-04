@@ -44,6 +44,10 @@ export const setStore = s => {
   store = s
 }
 
+export function cancelNotifications() {
+  BackgroundTask.cancel()
+}
+
 export function scheduleNotifications() {
   const state = store.getState()
   const { isActive } = state.notifications

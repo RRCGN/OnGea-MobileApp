@@ -7,11 +7,6 @@ import { i18n } from '../i18n'
 import { fetchActivities } from '../redux/ducks/activities'
 import ActivitiesList from '../subviews/activities/ActivitiesList'
 import ToolbarButton from '../components/ToolbarButton'
-import {
-  scheduleNotifications,
-  poll,
-  configurePushNotifications
-} from '../lib/notifications'
 
 class ActivitiesOverview extends Component {
   static propTypes = {
@@ -38,34 +33,9 @@ class ActivitiesOverview extends Component {
   }
 
   componentDidMount() {
-    this.setupNotifications()
-
     if (this.props.activities.length === 0) {
       this.loadActivities()
     }
-  }
-
-  setupNotifications = () => {
-    configurePushNotifications()
-    scheduleNotifications()
-      .then(({ firstTime }) => {
-        poll().catch(err => console.error(err))
-
-        if (!firstTime) return
-
-        const message = i18n.t`We will send you notifications with important Announcements before and during your journey.`
-        const iosAddition = i18n.t`Notifications will work while OnGea is in Background. If you completely close the app, Notifications will also be turned off.`
-
-        Alert.alert(
-          i18n.t`Push Notifications enabled`,
-          Platform.OS === 'ios' ? message + ' ' + iosAddition : message,
-          [{ text: 'OK', onPress: () => {} }]
-        )
-      })
-      .catch(err => {
-        // Announcements Feature is not available.
-        // Intentially left blank
-      })
   }
 
   loadActivities = () => {

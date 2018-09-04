@@ -40,7 +40,7 @@ export const getNewNotifications = () => (dispatch, getState) => {
   const { instanceUrl, token } = getState().auth
   const { seenIds } = getState().notifications
 
-  return api('https://ongeamock.apps.railslabs.com', { token })
+  return api(instanceUrl, { token })
     .notifications.get()
     .then(notifications => {
       const newNotifications = notifications.filter(
