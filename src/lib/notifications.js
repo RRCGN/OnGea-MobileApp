@@ -71,6 +71,7 @@ export function scheduleNotifications() {
 export function configurePushNotifications() {
   PushNotification.configure({
     onNotification: function(notification) {
+      // ios does not show notifications in foreground
       if (Platform.OS === 'ios' && notification.foreground) {
         Alert.alert(notification.title, notification.message, [
           { text: 'OK', onPress: () => {} }
