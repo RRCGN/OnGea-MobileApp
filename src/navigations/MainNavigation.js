@@ -25,7 +25,7 @@ const MainNavigation = createStackNavigator(
     headerMode: Platform.OS === 'ios' ? 'float' : 'screen',
     navigationOptions: {
       headerStyle: normalHeaderStyle,
-      headerTitleStyle: { color: colors.white }
+      headerTitleStyle: { color: 'black' }
     }
   }
 )

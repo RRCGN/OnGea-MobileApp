@@ -2,28 +2,12 @@ import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import colors from '../../utils/colors'
 
-type Props = {
-  hasBorderBottom?: boolean,
-  children: Array
-}
-
-type SmallProps = {
-  small: boolean,
-  big?: null
-}
-
-type BigProps = {
-  small?: null,
-  big: boolean
-}
-
-
 const CardSegment = ({
   hasBorderBottom = false,
   small,
   big,
   children
-}: Props & (SmallProps | BigProps)) => (
+}) => (
   <View
     style={[
       hasBorderBottom && styles.segmentWithBorder,

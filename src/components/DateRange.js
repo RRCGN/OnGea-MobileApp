@@ -30,14 +30,14 @@ const DateRange = ({ from, to, light = false }: Props) => {
             <Trans id="date-on">on</Trans>
           )}
         </Text>
-        <Text style={primary}>{moment(from).format('DD.MM.YYYY')}</Text>
+        <Text style={primary}>{from}</Text>
       </Flex>
       {to && (
         <Flex>
           <Text style={secondary}>
             <Trans id="date-to">to</Trans>
           </Text>
-          <Text style={primary}>{moment(to).format('DD.MM.YYYY')}</Text>
+          <Text style={primary}>{to}</Text>
         </Flex>
       )}
     </Row>

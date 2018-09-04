@@ -2,7 +2,7 @@ import { Platform, StatusBar } from 'react-native'
 import colors from './colors'
 
 export const normalHeaderStyle = {
-  backgroundColor: colors.primaryGreen,
+  backgroundColor: 'white',
   elevation: 5,
   ...Platform.select({
     'android': {

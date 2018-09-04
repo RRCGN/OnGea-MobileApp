@@ -135,8 +135,8 @@ class Activity extends React.PureComponent {
     const { activity } = this.props
 
     return (
-      <View style={{ backgroundColor: '#7B1FA2', padding: 16 }}>
-        <DateRange light from={activity.dateFrom} to={activity.dateTo} />
+      <View style={{ backgroundColor: '#fedd32', padding: 16 }}>
+        <DateRange from={activity.dateFrom} to={activity.dateTo} />
       </View>
     )
   }
@@ -148,6 +148,12 @@ class Activity extends React.PureComponent {
 
     return (
       <View>
+        <StatusBar
+          barStyle="light-content"
+          backgroundColor="transparent"
+          translucent
+          animated
+        />
         <SectionDescription text={activity.description} />
         {activity.organisations.length > 0 && (
           <SectionShortOrganization
@@ -201,5 +207,8 @@ const mapStateToProps = (state, ownProps) => {
 
 export default compose(
   withI18n(),
-  connect(mapStateToProps, mapDispatchToProps)
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )
 )(Activity)

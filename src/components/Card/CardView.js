@@ -21,14 +21,15 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.18,
         shadowRadius: 1.4,
         shadowOffset: {
-          height: 1
+          height: 3
         }
       },
       android: {
-        elevation: 2
+        elevation: 5,
+        overflow: 'hidden'
       }
     }),
     backgroundColor: colors.primaryLight,
-    borderRadius: 2
+    borderRadius: 5
   }
 })

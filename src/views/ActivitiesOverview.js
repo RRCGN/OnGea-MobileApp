@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Platform, Alert } from 'react-native'
+import { Platform, Alert, View } from 'react-native'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
@@ -20,8 +20,9 @@ class ActivitiesOverview extends Component {
       title: i18n.t`Activities`,
       headerRight: (
         <ToolbarButton
-          androidIcon="settings"
-          iosIcon="ios-cog"
+          androidIcon="tune"
+          iosIcon="ios-options"
+          iconColor="black"
           onPress={() => navigation.navigate('Settings')}
         />
       )
@@ -65,12 +66,14 @@ class ActivitiesOverview extends Component {
     const { isLoading } = this.state
 
     return (
-      <ActivitiesList
-        activitiesArray={this.props.activities}
-        isRefreshing={isLoading}
-        handleRefresh={this.handleRefresh}
-        onGoToActivity={this.handleGoToActivity}
-      />
+      <View style={{ flex: 1, backgroundColor: 'white' }}>
+        <ActivitiesList
+          activitiesArray={this.props.activities}
+          isRefreshing={isLoading}
+          handleRefresh={this.handleRefresh}
+          onGoToActivity={this.handleGoToActivity}
+        />
+      </View>
     )
   }
 }

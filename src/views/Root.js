@@ -1,5 +1,5 @@
 import React from 'react'
-import { StatusBar, View, Platform } from 'react-native'
+import { StatusBar, View, Platform, StyleSheet } from 'react-native'
 import SplashScreen from 'rn-splash-screen'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
@@ -82,7 +82,15 @@ class Root extends React.PureComponent {
 
   renderMain = () => {
     return (
-      <View style={{ flex: 1 }}>
+      <View style={styles.screen}>
+        {this.props.isLoggedIn && (
+          <StatusBar
+            barStyle="dark-content"
+            backgroundColor="transparent"
+            translucent
+            animated
+          />
+        )}
         {this.props.isLoggedIn ? <MainNavigation /> : <LoginNavigation />}
       </View>
     )
@@ -99,7 +107,7 @@ class Root extends React.PureComponent {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <View style={styles.screen}>
         <StatusBar barStyle="dark-content" backgroundColor="white" />
         {this.props.isAgreementAccepted
           ? this.renderMain()
@@ -122,3 +130,10 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Root)
+
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    backgroundColor: 'white'
+  }
+})

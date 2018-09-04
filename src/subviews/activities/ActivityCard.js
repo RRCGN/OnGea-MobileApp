@@ -42,12 +42,13 @@ export default class ActivityCard extends React.PureComponent {
             <DateRange from={activity.dateFrom} to={activity.dateTo} />
           </CardSegment>
 
-          <CardSegment big>
+          <CardSegment small>
             <ButtonFlatGrid>
               <I18n>
                 {({ i18n }) => (
                   <Button
                     label={i18n.t`View`}
+                    color="black"
                     onPress={this.handleButtonPress}
                   />
                 )}
