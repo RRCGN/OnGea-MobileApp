@@ -1,6 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ActivityIndicator
+} from 'react-native'
 
 const FlatButton = props => {
   return (
@@ -10,7 +16,11 @@ const FlatButton = props => {
       onPress={props.onPress}
     >
       <View style={styles.base}>
-        <Text style={styles.text}>{props.children}</Text>
+        {props.isLoading ? (
+          <ActivityIndicator size="small" color="#6c6c6c" />
+        ) : (
+          <Text style={styles.text}>{props.children}</Text>
+        )}
       </View>
     </TouchableOpacity>
   )
@@ -19,7 +29,8 @@ const FlatButton = props => {
 FlatButton.propTypes = {
   onPress: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
-  style: PropTypes.any
+  style: PropTypes.any,
+  loading: PropTypes.bool
 }
 
 export default FlatButton
@@ -30,8 +41,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 6,
     backgroundColor: '#eaeaea',
-    paddingVertical: 8,
-    paddingHorizontal: 20
+    paddingVertical: 14,
+    paddingHorizontal: 24
   },
   text: {
     fontSize: 14,

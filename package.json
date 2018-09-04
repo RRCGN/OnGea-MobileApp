@@ -35,7 +35,7 @@
     "react-native-exit-app": "^1.0.0",
     "react-native-image-header-scroll-view": "^0.8.2",
     "react-native-image-picker": "^0.26.10",
-    "react-native-keyboard-aware-scroll-view": "^0.6.0",
+    "react-native-keyboard-aware-scroll-view": "^0.7.2",
     "react-native-languages": "^2.0.1",
     "react-native-linear-gradient": "^2.4.0",
     "react-native-loading-spinner-overlay": "^0.5.2",

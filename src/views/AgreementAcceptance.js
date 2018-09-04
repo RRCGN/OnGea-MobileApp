@@ -77,7 +77,7 @@ export default class AgreementAcceptance extends React.PureComponent {
             </View>
             <View style={styles.wrapperFooter}>
               <FlatButton onPress={this.handleButtonPress} style={{ flex: 1 }}>
-                <Text>Accept</Text>
+                <Trans>Accept</Trans>
               </FlatButton>
             </View>
           </View>
