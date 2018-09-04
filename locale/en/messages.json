@@ -6,6 +6,16 @@
         "src/views/AgreementAcceptance.js",
         74
       ]
+    ],
+    "obsolete": true
+  },
+  "Accept": {
+    "translation": "Accept",
+    "origin": [
+      [
+        "src/views/AgreementAcceptance.js",
+        80
+      ]
     ]
   },
   "Activities": {
@@ -13,7 +23,16 @@
     "origin": [
       [
         "src/views/ActivitiesOverview.js",
-        19
+        20
+      ]
+    ]
+  },
+  "App Information": {
+    "translation": "App Information",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        148
       ]
     ]
   },
@@ -31,11 +50,11 @@
     "origin": [
       [
         "src/views/Settings.js",
-        76
+        81
       ],
       [
         "src/views/UploadImagesView.js",
-        60
+        52
       ]
     ]
   },
@@ -44,11 +63,11 @@
     "origin": [
       [
         "src/views/UploadImagesView.js",
-        59
+        51
       ],
       [
         "src/views/UploadImagesView.js",
-        109
+        126
       ]
     ]
   },
@@ -70,7 +89,7 @@
     "origin": [
       [
         "src/views/Settings.js",
-        78
+        83
       ]
     ]
   },
@@ -79,11 +98,15 @@
     "origin": [
       [
         "src/views/Settings.js",
-        73
+        78
       ],
       [
         "src/views/Settings.js",
-        108
+        132
+      ],
+      [
+        "src/views/Settings.js",
+        145
       ]
     ]
   },
@@ -92,7 +115,11 @@
     "origin": [
       [
         "src/views/Settings.js",
-        112
+        116
+      ],
+      [
+        "src/views/Settings.js",
+        129
       ]
     ]
   },
@@ -101,7 +128,7 @@
     "origin": [
       [
         "src/views/Settings.js",
-        89
+        96
       ]
     ]
   },
@@ -112,7 +139,8 @@
         "src/views/Settings.js",
         102
       ]
-    ]
+    ],
+    "obsolete": true
   },
   "Description": {
     "translation": "Description",
@@ -137,7 +165,7 @@
     "origin": [
       [
         "src/views/UploadImagesView.js",
-        87
+        133
       ]
     ]
   },
@@ -159,7 +187,7 @@
     "origin": [
       [
         "src/views/Settings.js",
-        92
+        100
       ]
     ]
   },
@@ -177,7 +205,7 @@
     "origin": [
       [
         "src/views/UploadImagesView.js",
-        66
+        58
       ]
     ]
   },
@@ -186,7 +214,7 @@
     "origin": [
       [
         "src/views/UploadImagesView.js",
-        83
+        84
       ]
     ]
   },
@@ -204,7 +232,7 @@
     "origin": [
       [
         "src/views/Login.js",
-        116
+        126
       ]
     ]
   },
@@ -231,7 +259,7 @@
     "origin": [
       [
         "src/views/Login.js",
-        107
+        122
       ]
     ]
   },
@@ -240,7 +268,16 @@
     "origin": [
       [
         "src/views/Settings.js",
-        106
+        113
+      ]
+    ]
+  },
+  "Maps for places of your activity are downloaded for offline usage. Use this to delete all downloaded maps. If you view an Activity, relevant maps will be downloaded again.": {
+    "translation": "Maps for places of your activity are downloaded for offline usage. Use this to delete all downloaded maps. If you view an Activity, relevant maps will be downloaded again.",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        118
       ]
     ]
   },
@@ -262,12 +299,21 @@
       ]
     ]
   },
+  "OnGea Announcements on iOS": {
+    "translation": "OnGea Announcements on iOS",
+    "origin": [
+      [
+        "src/views/Root.js",
+        46
+      ]
+    ]
+  },
   "OnGea URL": {
     "translation": "OnGea URL",
     "origin": [
       [
         "src/views/Login.js",
-        78
+        93
       ]
     ]
   },
@@ -276,7 +322,7 @@
     "origin": [
       [
         "src/views/AgreementAcceptance.js",
-        60
+        69
       ]
     ]
   },
@@ -285,7 +331,7 @@
     "origin": [
       [
         "src/views/Login.js",
-        97
+        111
       ]
     ]
   },
@@ -312,7 +358,7 @@
     "origin": [
       [
         "src/views/AgreementAcceptance.js",
-        42
+        51
       ]
     ]
   },
@@ -339,7 +385,7 @@
     "origin": [
       [
         "src/views/AgreementAcceptance.js",
-        54
+        63
       ]
     ]
   },
@@ -357,7 +403,7 @@
     "origin": [
       [
         "src/views/Settings.js",
-        26
+        29
       ]
     ]
   },
@@ -376,6 +422,16 @@
       [
         "src/views/Login.js",
         68
+      ]
+    ],
+    "obsolete": true
+  },
+  "Something went wrong when logging in. Please check the OnGea URL, your Username and Password.": {
+    "translation": "Something went wrong when logging in. Please check the OnGea URL, your Username and Password.",
+    "origin": [
+      [
+        "src/views/Login.js",
+        82
       ]
     ]
   },
@@ -429,7 +485,11 @@
     "origin": [
       [
         "src/views/Settings.js",
-        74
+        79
+      ],
+      [
+        "src/views/Settings.js",
+        134
       ]
     ]
   },
@@ -442,12 +502,31 @@
       ]
     ]
   },
+  "Upload Documents": {
+    "translation": "Upload Documents",
+    "origin": [
+      [
+        "src/views/UploadImagesView.js",
+        28
+      ]
+    ]
+  },
   "Upload image": {
     "translation": "Upload image",
     "origin": [
       [
         "src/views/UploadImagesView.js",
         119
+      ]
+    ],
+    "obsolete": true
+  },
+  "Upload now": {
+    "translation": "Upload now",
+    "origin": [
+      [
+        "src/views/UploadImagesView.js",
+        143
       ]
     ]
   },
@@ -465,7 +544,7 @@
     "origin": [
       [
         "src/views/Login.js",
-        88
+        102
       ]
     ]
   },
@@ -484,6 +563,15 @@
       [
         "src/subviews/SectionShortSchedule.js",
         21
+      ]
+    ]
+  },
+  "We will send you Notifications about important Announcements. You will receive Notifications when the App is active or in background, but not if you completely close the App.": {
+    "translation": "We will send you Notifications about important Announcements. You will receive Notifications when the App is active or in background, but not if you completely close the App.",
+    "origin": [
+      [
+        "src/views/Root.js",
+        47
       ]
     ]
   },
@@ -575,7 +663,7 @@
     "origin": [
       [
         "src/views/AgreementAcceptance.js",
-        48
+        57
       ]
     ]
   }
