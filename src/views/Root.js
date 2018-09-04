@@ -100,7 +100,7 @@ class Root extends React.PureComponent {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <StatusBar backgroundColor="blue" barStyle="light-content" />
+        <StatusBar barStyle="dark-content" backgroundColor="white" />
         {this.props.isAgreementAccepted
           ? this.renderMain()
           : this.renderAgreement()}

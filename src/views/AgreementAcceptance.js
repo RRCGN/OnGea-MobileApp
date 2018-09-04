@@ -1,12 +1,12 @@
 import React from 'react'
-import { SafeAreaView, ScrollView, Text, View, Platform } from 'react-native'
+import { SafeAreaView, ScrollView, Text, View, Platform, StatusBar } from 'react-native'
 import PropTypes from 'prop-types'
 import Permissions from 'react-native-permissions'
 import { Trans, I18n } from '@lingui/react'
 
 import AgreementAcceptanceItems from './AgreementAcceptanceItems'
 import PlatformIcon from '../components/PlatformIcon'
-import Button from '../components/ButtonText'
+import FlatButton from '../components/FlatButton'
 import fonts from '../utils/fonts'
 
 export default class AgreementAcceptance extends React.PureComponent {
@@ -76,16 +76,9 @@ export default class AgreementAcceptance extends React.PureComponent {
               <AgreementAcceptanceItems items={this.props.agreements} />
             </View>
             <View style={styles.wrapperFooter}>
-              <View style={styles.acceptButtonContainer}>
-                <I18n>
-                  {({ i18n }) => (
-                    <Button
-                      label={i18n.t`ACCEPT`}
-                      onPress={this.handleButtonPress}
-                    />
-                  )}
-                </I18n>
-              </View>
+              <FlatButton onPress={this.handleButtonPress} style={{ flex: 1 }}>
+                <Text>Accept</Text>
+              </FlatButton>
             </View>
           </View>
         </ScrollView>
@@ -122,9 +115,6 @@ const styles = {
   subTitle: {
     textAlign: 'left',
     marginBottom: 20
-  },
-  acceptButtonContainer: {
-    padding: 12
   },
   line: {
     borderBottomColor: '#EEEEEE',
