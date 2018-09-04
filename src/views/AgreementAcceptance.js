@@ -31,6 +31,10 @@ export default class AgreementAcceptance extends React.PureComponent {
           ? Permissions.request('notification')
           : true
       })
+      .catch(err => {
+        console.warn(err)
+        return true
+      })
   }
 
   handleButtonPress = () => {

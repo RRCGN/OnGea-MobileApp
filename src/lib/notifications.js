@@ -1,4 +1,4 @@
-import { PushNotificationIOS, Alert } from 'react-native'
+import { PushNotificationIOS, Alert, Platform } from 'react-native'
 import BackgroundTask from 'react-native-background-task'
 import PushNotification from 'react-native-push-notification'
 import {
@@ -71,13 +71,20 @@ export function scheduleNotifications() {
 export function configurePushNotifications() {
   PushNotification.configure({
     onNotification: function(notification) {
-      if (notification.userInteraction) {
+      if (Platform.OS === 'ios' && notification.foreground) {
+        Alert.alert(notification.title, notification.message, [
+          { text: 'OK', onPress: () => {} }
+        ])
+      }
+
+      else if (notification.userInteraction) {
         Alert.alert(notification.title, notification.message, [
           { text: 'OK', onPress: () => {} }
         ])
       }
 
       notification.finish(PushNotificationIOS.FetchResult.NoData)
-    }
+    },
+    requestPermissions: false
   })
 }
