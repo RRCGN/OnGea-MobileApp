@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, StatusBar } from 'react-native'
 import Config from 'react-native-config'
 import MapboxGL from '@mapbox/react-native-mapbox-gl'
 
@@ -50,6 +50,12 @@ export default class ShowMap extends React.PureComponent {
 
     return (
       <View style={styles.screen}>
+        <StatusBar
+          barStyle="dark-content"
+          backgroundColor="transparent"
+          translucent
+          animated
+        />
         <MapboxGL.MapView
           ref={this.setMapRef}
           centerCoordinate={coordinates}

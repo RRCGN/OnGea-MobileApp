@@ -10,35 +10,27 @@ import {
   Image
 } from 'react-native'
 import ImagePicker from 'react-native-image-picker'
-import { withI18n, Trans } from '@lingui/react'
-import { compose } from 'recompose'
+import { Trans } from '@lingui/react'
 import { connect } from 'react-redux'
 import * as mime from 'react-native-mime-types'
 
+import { i18n } from '../i18n'
+
 import { uploadFile } from '../redux/ducks/activities'
 import ToolbarButton from '../components/ToolbarButton'
-import { Button } from '../components/Button'
+import FlatButton from '../components/FlatButton'
+import FailMessage from '../components/FailMessage'
 import { Colors } from '../utils/constants'
 
 class UploadImagesView extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Upload Images',
-      headerStyle: {
-        backgroundColor: Colors.PRIMARY,
-        elevation: 5,
-        ...Platform.select({
-          android: {
-            paddingTop: StatusBar.currentHeight,
-            height: 56 + StatusBar.currentHeight
-          }
-        })
-      },
-      headerTitleStyle: { color: Colors.WHITE },
+      title: i18n.t`Upload Documents`,
       headerLeft: (
         <ToolbarButton
           androidIcon="arrow-back"
           iosIcon="ios-arrow-back"
+          iconColor="black"
           onPress={() => navigation.goBack(null)}
         />
       )
@@ -54,8 +46,6 @@ class UploadImagesView extends React.Component {
   }
 
   handleImagePress = () => {
-    const { i18n } = this.props
-
     ImagePicker.showImagePicker(
       {
         title: i18n.t`Choose image`,
@@ -84,7 +74,6 @@ class UploadImagesView extends React.Component {
   }
 
   handleUploadPress = () => {
-    const { i18n } = this.props
     const { image: base64, mimeType, fileName } = this.state
 
     this.setState({ isLoading: true, isFailed: false, isSuccess: false })
@@ -103,7 +92,6 @@ class UploadImagesView extends React.Component {
         })
       })
       .catch(error => {
-        alert(i18n.t`Error when uploading file.`)
         this.setState({ isLoading: false, isFailed: true })
       })
   }
@@ -111,10 +99,16 @@ class UploadImagesView extends React.Component {
   render() {
     const { i18n } = this.props
     const { isLoading, isSuccess, isFailed, image, mimeType } = this.state
-    const isUploadable = image && !isLoading
+    const isUploadable = image
 
     return (
       <View style={styles.screen}>
+        <StatusBar
+          barStyle="dark-content"
+          backgroundColor="transparent"
+          translucent
+          animated
+        />
         <TouchableOpacity
           onPress={this.handleImagePress}
           style={styles.touchArea}
@@ -134,15 +128,21 @@ class UploadImagesView extends React.Component {
             </View>
           )}
         </TouchableOpacity>
+        {isFailed && (
+          <FailMessage style={styles.failMessage}>
+            <Trans>Error when uploading file.</Trans>
+          </FailMessage>
+        )}
         {isUploadable && (
-          <Button
-            backgroundColor={Colors.PRIMARY}
+          <FlatButton
+            disabled={isLoading}
+            isLoading={isLoading}
             color="white"
             onPress={this.handleUploadPress}
-            label={i18n.t`Upload image`}
-          />
+          >
+            <Trans>Upload now</Trans>
+          </FlatButton>
         )}
-        {isLoading && <ActivityIndicator size="small" color={Colors.PRIMARY} />}
       </View>
     )
   }
@@ -151,7 +151,11 @@ class UploadImagesView extends React.Component {
 const styles = {
   screen: {
     flex: 1,
-    padding: 24
+    padding: 24,
+    backgroundColor: 'white'
+  },
+  failMessage: {
+    marginBottom: 20
   },
   touchArea: {
     height: 260,
@@ -159,26 +163,23 @@ const styles = {
   },
   image: {
     flex: 1,
-    borderRadius: 5
+    borderRadius: 6
   },
   chooseText: {
     fontSize: 24,
-    fontWeight: '700'
+    color: '#6c6c6c'
   },
   placeholder: {
     flex: 1,
     height: 400,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 4,
-    borderColor: Colors.DARK_DIVIDER
+    backgroundColor: '#eaeaea',
+    borderRadius: 6
   }
 }
 
-export default compose(
-  withI18n(),
-  connect(
-    null,
-    { uploadFile }
-  )
+export default connect(
+  null,
+  { uploadFile }
 )(UploadImagesView)
