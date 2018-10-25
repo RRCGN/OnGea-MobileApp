@@ -1,8 +1,0 @@
-app_identifier("eu.rootsnroutes") # The bundle identifier of your app
-apple_id("amed@xbyte.team") # Your Apple email address - which associated to th team.
-
-itc_team_id("305106") # iTunes Connect for Railslove - current value is Railslove's account.
-team_id("305106") # Developer Portal Team ID - current value is Railslove's account.
-
-# For more information about the Appfile, see:
-#     https://docs.fastlane.tools/advanced/#appfile

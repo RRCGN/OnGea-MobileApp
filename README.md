@@ -1,27 +1,56 @@
 # OnGea App
-OnGea App for iOS and Android
 
-## Dependencies
+> OnGea App for iOS and Android
 
-- `react-native`
+## Prerequisites
 
-## Development
+- `node`
+- `yarn`
+- `react-native-cli`
+- Android Studio and Xcode according to react-native docs
 
-- Install dependencies: `$ yarn install`
+## Development Setup
 
-- Copy `.env.example` to `.env` with credentials.
+```sh
+yarn install
+cp .env.example .env
+yarn run i18n:compile
 
-- With the packager is running `$ yarn start` do following:
+react-native run-ios # start ios simulator
+react-native run-android # run app on android emulator
+```
 
-  - iOS: `$ react-native run-ios` (will start the iOS Simulator)
-  - Android: `$ react-native run-android` (need a virtual or connected device)
+### i18n
 
-- Extract i18n strings into `locale/**/messages.json`: `yarn run i18n:extract`
+We use linguijs for translation. When adding new strings, run `yarn run i18n:extract`.
 
-  - Use `locale/e/messages.json` as base for translations.
+## Build a release
+
+Before building a new release for rollout, bump the version:
+
+```
+npm version [patch|minor|major]
+```
+
+### Build a release for iOS with CLI
+
+```
+yarn run build:ios
+```
+
+### Build a release for iOS with Xcode
+
+First compile the translations:
+
+```
+yarn run i18n:compile
+```
+
+1. Start Xcode and open the project
+2. Select "Generic iOS Device" as target
+3. Product > Archive
 
 
-You may face some issues when building for Android, check :point_down: [Known issues and its hacks](#known-issues-and-its-hacks)
 
 ## Production:
 

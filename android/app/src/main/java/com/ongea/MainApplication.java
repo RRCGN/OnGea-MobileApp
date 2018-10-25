@@ -3,7 +3,7 @@ package com.ongea;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.jamesisaac.rnbackgroundtask.BackgroundTaskPackage;
+import com.transistorsoft.rnbackgroundfetch.RNBackgroundFetchPackage;
 import com.mapbox.rctmgl.RCTMGLPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.reactcommunity.rnlanguages.RNLanguagesPackage;
@@ -36,7 +36,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new BackgroundTaskPackage(),
+            new RNBackgroundFetchPackage(),
             new ImagePickerPackage(),
             new RNLanguagesPackage(),
             new CookieManagerPackage(),

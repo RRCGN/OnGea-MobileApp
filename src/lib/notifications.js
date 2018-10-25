@@ -1,5 +1,5 @@
 import { PushNotificationIOS, Alert, Platform } from 'react-native'
-import BackgroundTask from 'react-native-background-task'
+import BackgroundFetch from 'react-native-background-fetch'
 import PushNotification from 'react-native-push-notification'
 import {
   checkAnnouncementsAvailable,
@@ -17,27 +17,38 @@ export function poll() {
         click_action: 'OPEN_MAIN_ACTIVITY'
       })
     })
-    return
+
+    return notifications.length > 0
   })
 }
 
-BackgroundTask.define(() => {
-  poll()
-    .then(() => {
-      BackgroundTask.finish()
-    })
-    .catch(err => {
-      console.error(err)
-      BackgroundTask.finish()
-    })
-})
-
 function start() {
   // approx. runs every 30 mins (better for battery),
-  // depending on device sleep status
-  BackgroundTask.schedule({
-    period: 1800
-  })
+  // depending on device sleep status and user activity pattern.
+  BackgroundFetch.configure(
+    {
+      minimumFetchInterval: 30,
+      stopOnTerminate: false,
+      startOnBoot: true,
+      enableHeadless: true
+    },
+    () => {
+      poll()
+        .then(hasNewNotifications => {
+          const exitStatus = hasNewNotifications
+            ? BackgroundFetch.FETCH_RESULT_NEW_DATA
+            : BackgroundFetch.FETCH_RESULT_NO_DATA
+          BackgroundFetch.finish(exitStatus)
+        })
+        .catch(err => {
+          console.error(err)
+          BackgroundFetch.finish(BackgroundFetch.FETCH_RESULT_FAILED)
+        })
+    },
+    () => {
+      console.warn('RNBackgroundFetch failed to start')
+    }
+  )
 }
 
 export const setStore = s => {
@@ -45,7 +56,7 @@ export const setStore = s => {
 }
 
 export function cancelNotifications() {
-  BackgroundTask.cancel()
+  BackgroundFetch.stop()
 }
 
 export function scheduleNotifications() {
@@ -76,9 +87,7 @@ export function configurePushNotifications() {
         Alert.alert(notification.title, notification.message, [
           { text: 'OK', onPress: () => {} }
         ])
-      }
-
-      else if (notification.userInteraction) {
+      } else if (notification.userInteraction) {
         Alert.alert(notification.title, notification.message, [
           { text: 'OK', onPress: () => {} }
         ])
