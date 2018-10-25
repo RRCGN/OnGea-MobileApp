@@ -49,7 +49,6 @@ buck-out/
 \.buckd/
 *.keystore
 .env
-.env.production
 .env.build
 ios/fastlane/Appfile
 ios/*.zip

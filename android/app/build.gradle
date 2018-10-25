@@ -2,10 +2,6 @@ apply plugin: "com.android.application"
 
 import com.android.build.OutputFile
 
-project.ext.envConfigFiles = [
-        debug: ".env",
-        release: ".env.production",
-]
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
 /**
@@ -89,13 +85,13 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
         applicationId "eu.rootsnroutes.ongea"
         minSdkVersion 21
-        targetSdkVersion 26
+        targetSdkVersion rootProject.targetSdkVersion
         versionCode 3
         versionName "2.0.0"
         ndk {

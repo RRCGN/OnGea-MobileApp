@@ -1,4 +1,4 @@
-package com.ongea;
+package eu.rootsnroutes.ongea;
 
 import android.app.Application;
 
@@ -61,6 +61,5 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
-    BackgroundTaskPackage.useContext(this);
   }
 }
