@@ -32,7 +32,7 @@ Follow these steps before building a release:
 
 0. `cp .env.build.example .env.build`
 1. Fill out the keystore passwords inside `.env.build`
-2. Check if you need to change the credentials inside `.env` for prod builds
+2. Check if you need to change the credentials inside `.env` for the prod build
 3. Put `ongea-release-key.keystore` into `android/app`
 4. Bump the version number: `npm version [patch|minor|major]`
 
