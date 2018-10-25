@@ -3,6 +3,8 @@ locale/**/*.js
 
 **/*/res/values/secrets.xml
 
+ios/main.jsbundle
+ios/main.jsbundle.meta
 
 # OSX
 #
