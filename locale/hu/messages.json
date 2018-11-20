@@ -1,6 +1,6 @@
 {
   "Accept": {
-    "translation": "Accept",
+    "translation": "Elfogadás",
     "origin": [
       [
         "src/views/AgreementAcceptance.js",
@@ -9,7 +9,7 @@
     ]
   },
   "Activities": {
-    "translation": "Activities",
+    "translation": "Tevékenységek",
     "origin": [
       [
         "src/views/ActivitiesOverview.js",
@@ -18,7 +18,7 @@
     ]
   },
   "App Information": {
-    "translation": "App information",
+    "translation": "App információk",
     "origin": [
       [
         "src/views/Settings.js",
@@ -27,7 +27,7 @@
     ]
   },
   "Camera": {
-    "translation": "Camera",
+    "translation": "Kamera",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -36,7 +36,7 @@
     ]
   },
   "Cancel": {
-    "translation": "Cancel",
+    "translation": "Mégsem",
     "origin": [
       [
         "src/views/Settings.js",
@@ -49,7 +49,7 @@
     ]
   },
   "Choose image": {
-    "translation": "Choose image",
+    "translation": "Kép kiválasztása",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -62,7 +62,7 @@
     ]
   },
   "Contact Informations": {
-    "translation": "Contact information",
+    "translation": "Elérhetőségek",
     "origin": [
       [
         "src/subviews/SectionAllOrganization.js",
@@ -75,7 +75,7 @@
     ]
   },
   "Delete all and exit": {
-    "translation": "Delete all and exit",
+    "translation": "Minden törlése és kilépés",
     "origin": [
       [
         "src/views/Settings.js",
@@ -84,7 +84,7 @@
     ]
   },
   "Delete all data": {
-    "translation": "Delete all data",
+    "translation": "Minden adat törlése",
     "origin": [
       [
         "src/views/Settings.js",
@@ -101,7 +101,7 @@
     ]
   },
   "Delete offline maps": {
-    "translation": "Delete offline maps",
+    "translation": "Mentett térképek törlése",
     "origin": [
       [
         "src/views/Settings.js",
@@ -114,7 +114,7 @@
     ]
   },
   "Deleted {0} offline Maps.": {
-    "translation": "Deleted {0} offline maps.",
+    "translation": "{0} mentett térkép törölve.",
     "origin": [
       [
         "src/views/Settings.js",
@@ -123,7 +123,7 @@
     ]
   },
   "Description": {
-    "translation": "Description",
+    "translation": "Leírás",
     "origin": [
       [
         "src/subviews/SectionDescription.js",
@@ -141,7 +141,7 @@
     ]
   },
   "Error when uploading file.": {
-    "translation": "Error when uploading file.",
+    "translation": "A file feltöltésekor hiba történt.",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -150,7 +150,7 @@
     ]
   },
   "Events": {
-    "translation": "Events",
+    "translation": "Események",
     "origin": [
       [
         "src/subviews/SectionShortSchedule.js",
@@ -163,7 +163,7 @@
     ]
   },
   "Failed to delete offline Maps.": {
-    "translation": "Failed to delete offline maps.",
+    "translation": "Mentett térképek törlése nem sikerült.",
     "origin": [
       [
         "src/views/Settings.js",
@@ -172,7 +172,7 @@
     ]
   },
   "Failed to download file.": {
-    "translation": "Failed to download file.",
+    "translation": "File letöltése nem sikerült.",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -181,7 +181,7 @@
     ]
   },
   "Failed to load image.": {
-    "translation": "Failed to load image.",
+    "translation": "Kép betöltése nem sikerült.",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -190,7 +190,7 @@
     ]
   },
   "File uploaded successfully.": {
-    "translation": "File uploaded successfully.",
+    "translation": "File sikeresen feltöltve.",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -199,7 +199,7 @@
     ]
   },
   "Files": {
-    "translation": "Files",
+    "translation": "File-ok",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -208,7 +208,7 @@
     ]
   },
   "Go to Website": {
-    "translation": "Go to website",
+    "translation": "Tovább a weboldalra",
     "origin": [
       [
         "src/views/Login.js",
@@ -217,7 +217,7 @@
     ]
   },
   "Host Organization": {
-    "translation": "Host organisation",
+    "translation": "Fogadó szervezet",
     "origin": [
       [
         "src/subviews/SectionShortOrganization.js",
@@ -226,7 +226,7 @@
     ]
   },
   "Location": {
-    "translation": "Location",
+    "translation": "Helyszín",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -235,7 +235,7 @@
     ]
   },
   "Login": {
-    "translation": "Login",
+    "translation": "Bejelentkezés",
     "origin": [
       [
         "src/views/Login.js",
@@ -244,7 +244,7 @@
     ]
   },
   "Logout": {
-    "translation": "Logout",
+    "translation": "Kijelentkezés",
     "origin": [
       [
         "src/views/Settings.js",
@@ -253,7 +253,7 @@
     ]
   },
   "Maps for places of your activity are downloaded for offline usage. Use this to delete all downloaded maps. If you view an Activity, relevant maps will be downloaded again.": {
-    "translation": "Maps for places of your activity have been downloaded for offline usage. Use this to delete all downloaded maps. If you view an activity, relevant maps will be downloaded again.",
+    "translation": "A tevékenységed helyszíneinek térképei offline használatra letöltve. Használd ezt az összes letöltött térkép törlésére. Ha megnyitsz egy tevékenységet, a szükséges térképek ismét letöltődnek.",
     "origin": [
       [
         "src/views/Settings.js",
@@ -262,7 +262,7 @@
     ]
   },
   "No Actitivities are available.": {
-    "translation": "No actitivities are available.",
+    "translation": "Nincs elérhető tevékenység.",
     "origin": [
       [
         "src/subviews/activities/ActivitiesEmpty.js",
@@ -271,7 +271,7 @@
     ]
   },
   "No storage permission.": {
-    "translation": "No storage permission.",
+    "translation": "Tárolás nem engedélyezett.",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -280,7 +280,7 @@
     ]
   },
   "OnGea Announcements on iOS": {
-    "translation": "OnGea Announcements on iOS",
+    "translation": "OnGea értesítések iOS-en",
     "origin": [
       [
         "src/views/Root.js",
@@ -289,7 +289,7 @@
     ]
   },
   "OnGea URL": {
-    "translation": "OnGea URL",
+    "translation": "OnGea webcím",
     "origin": [
       [
         "src/views/Login.js",
@@ -298,7 +298,7 @@
     ]
   },
   "OnGea app requests the following informations as a part of its services, by clicking ACCEPT at the end of the notes, you proof that OnGea is allowed to use the following informations as has been specified down in the description.": {
-    "translation": "The OnGea App requests the following information as a part of its services. By clicking ACCEPT at the end of the notes, you approve that OnGea is allowed to use the following information as specified in the description below.",
+    "translation": "Az OnGea app az alábbi információkat igényli a működéséhez. A leírás végén az ELFOGADÁS gombra kattintással beleegyezel abba, hogy az OnGea felhasználhatja ezeket az információkat a leírásban megjelölt módokon.",
     "origin": [
       [
         "src/views/AgreementAcceptance.js",
@@ -307,7 +307,7 @@
     ]
   },
   "Password": {
-    "translation": "Password",
+    "translation": "Jelszó",
     "origin": [
       [
         "src/views/Login.js",
@@ -316,7 +316,7 @@
     ]
   },
   "Phone": {
-    "translation": "Phone",
+    "translation": "Telefonszám",
     "origin": [
       [
         "src/subviews/SectionAllOrganization.js",
@@ -325,7 +325,7 @@
     ]
   },
   "Places": {
-    "translation": "Places",
+    "translation": "Helyszínek",
     "origin": [
       [
         "src/subviews/SectionShortPlaces.js",
@@ -334,7 +334,7 @@
     ]
   },
   "Privacy Policy of <0>OnGea app</0>": {
-    "translation": "Privacy policy of <0>OnGea app</0>",
+    "translation": "Az <0>OnGea app</0> adatvédelmi irányelvei",
     "origin": [
       [
         "src/views/AgreementAcceptance.js",
@@ -343,7 +343,7 @@
     ]
   },
   "Pull down to refresh.": {
-    "translation": "Pull down to refresh.",
+    "translation": "Húzd le a frissítéshez!",
     "origin": [
       [
         "src/subviews/activities/ActivitiesEmpty.js",
@@ -352,7 +352,7 @@
     ]
   },
   "Push Notifications": {
-    "translation": "Push notifications",
+    "translation": "Push értesítések",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -361,7 +361,7 @@
     ]
   },
   "REQUESTING PERMISSIONS": {
-    "translation": "REQUESTING PERMISSIONS",
+    "translation": "ENGEDÉLYEZÉS",
     "origin": [
       [
         "src/views/AgreementAcceptance.js",
@@ -370,7 +370,7 @@
     ]
   },
   "Repeating Event": {
-    "translation": "Repeating Event",
+    "translation": "Ismétlődő esemény",
     "origin": [
       [
         "src/components/EventItem.js",
@@ -379,7 +379,7 @@
     ]
   },
   "Settings": {
-    "translation": "Settings",
+    "translation": "Beállítások",
     "origin": [
       [
         "src/views/Settings.js",
@@ -388,7 +388,7 @@
     ]
   },
   "Show full schedule": {
-    "translation": "Show full schedule",
+    "translation": "Mutasd a teljes programot",
     "origin": [
       [
         "src/subviews/SectionShortSchedule.js",
@@ -397,7 +397,7 @@
     ]
   },
   "Something went wrong when logging in. Please check the OnGea URL, your Username and Password.": {
-    "translation": "Something went wrong when logging in. Please check the OnGea URL, your Username and Password.",
+    "translation": "Hiba történt a bejelentkezésnél. Kérjük, ellenőrizd az OnGea webcímet, a felhasználói nevedet és a jelszavadat.",
     "origin": [
       [
         "src/views/Login.js",
@@ -406,7 +406,7 @@
     ]
   },
   "Storage": {
-    "translation": "Storage",
+    "translation": "Tárhely",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -415,7 +415,7 @@
     ]
   },
   "The OnGea App needs access to your camera, so that you can take photos of your travel tickets/boarding cards and send them to your sending organisation if requested.": {
-    "translation": "The OnGea App needs access to your camera, so that you can take photos of your travel tickets/boarding cards and send them to your sending organisation if requested.",
+    "translation": "Az OnGea appnak hozzá kell férnie a kamerádhoz, hogy lefotózhasd a menetjegyeidet/beszállókártyáidat, és elküldhesd a küldő szervezetednek, ha kérik.",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -424,7 +424,7 @@
     ]
   },
   "The OnGea App needs access to your location data, so that you can inform the staff of your host and/or sending organisation about your current location by pressing the \"I am here\" button. The OnGea App won't send your location data anywhere as long as you don't push that button. Since the app is not completely examined and ready for production, there will be a test MapView which requires your location, no data will be saved or carried to third party.": {
-    "translation": "The OnGea App needs access to your location data, so that you can inform the staff of your host and/or sending organisation about your current location by pressing the “I am here” button. The OnGea App won’t send your location data anywhere as long as you don’t push that button.",
+    "translation": "Az OnGea appnak hozzá kell férnie a tartózkodási adataidhoz, hogy a fogadó és/vagy küldő szervezetednél dolgozókat értesíthesd a tartózkodási helyedről az “Itt vagyok” gomb megnyomásával. Az OnGea app nem küld sehova információt a tartózkodási helyedről, amíg meg nem nyomod a gombot.",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -433,7 +433,7 @@
     ]
   },
   "The OnGea App needs push-notifications ability to be able to inform the user if plans have suddenly been changed.": {
-    "translation": "The OnGea App needs push-notifications ability to be able to inform the user if plans have suddenly been changed.",
+    "translation": "Az OnGea app push értesítéseit engedélyezni kell ahhoz, hogy tájékoztatni tudja a felhasználókat a váratlan változásokról.",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -442,7 +442,7 @@
     ]
   },
   "The OnGea App needs read and write access to your storage, so that you can download and view important documents, even if you don't have an internet connection.": {
-    "translation": "The OnGea App needs read and write access to your storage, so that you can download and view important documents, even if you don't have an internet connection.",
+    "translation": "Az OnGea app számára engedélyezni kell a tárhely olvasását és írását ahhoz, hogy a fontos dokumentumokat letölthesd és még internetkapcsolat nélkül is megnyithasd.",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -451,7 +451,7 @@
     ]
   },
   "This action will delete all stored data and the offline available map. After that it will close OnGea. If you reopen OnGea again, you will be back to a fresh start.": {
-    "translation": "This action will delete all stored data and the offline available map. After that it will close OnGea. If you reopen OnGea again, you will be back to a fresh start.",
+    "translation": "Ezzel letörlöd az összes mentett adatot és mentett térképet és kilépsz az OnGeából. Ha újra megnyitod az OnGeát, elölről kezdheted a használatát.",
     "origin": [
       [
         "src/views/Settings.js",
@@ -464,7 +464,7 @@
     ]
   },
   "Travel": {
-    "translation": "Travel",
+    "translation": "Utazás",
     "origin": [
       [
         "src/subviews/SectionShortTravel.js",
@@ -473,7 +473,7 @@
     ]
   },
   "Upload Documents": {
-    "translation": "Upload documents",
+    "translation": "Dokumentumok feltöltése",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -482,7 +482,7 @@
     ]
   },
   "Upload image": {
-    "translation": "Upload image",
+    "translation": "Kép feltöltése",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -492,7 +492,7 @@
     "obsolete": true
   },
   "Upload now": {
-    "translation": "Upload now",
+    "translation": "Feltöltés most",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -501,7 +501,7 @@
     ]
   },
   "Upload your documents for this activity": {
-    "translation": "Upload your documents for this activity",
+    "translation": "Töltsd fel az ehhez a tevékenységhez tartozó dokumentumaidat",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -510,7 +510,7 @@
     ]
   },
   "Username": {
-    "translation": "User name",
+    "translation": "Felhasználónév",
     "origin": [
       [
         "src/views/Login.js",
@@ -519,7 +519,7 @@
     ]
   },
   "View": {
-    "translation": "View",
+    "translation": "Megtekintés",
     "origin": [
       [
         "src/subviews/activities/ActivityCard.js",
@@ -528,7 +528,7 @@
     ]
   },
   "View all {0} events": {
-    "translation": "View all {0} events",
+    "translation": "Összes {0} esemény megtekintése",
     "origin": [
       [
         "src/subviews/SectionShortSchedule.js",
@@ -537,7 +537,7 @@
     ]
   },
   "We will send you Notifications about important Announcements. You will receive Notifications when the App is active or in background, but not if you completely close the App.": {
-    "translation": "We will send you notifications about important announcements. You will receive notifications when this app is active or in background, but not if you completely close the app.",
+    "translation": "Figyelmeztetéseket fogunk küldeni a fontos értesítésekről. A figyelmeztetéseket megkapod, ha az app aktív vagy a háttérben fut, de ha teljesen bezárod az appot, akkor nem.",
     "origin": [
       [
         "src/views/Root.js",
@@ -546,7 +546,7 @@
     ]
   },
   "Website": {
-    "translation": "Website",
+    "translation": "Weboldal",
     "origin": [
       [
         "src/subviews/SectionAllOrganization.js",
@@ -555,7 +555,7 @@
     ]
   },
   "date-from": {
-    "translation": "from",
+    "translation": "-tól/-től",
     "defaults": "from",
     "origin": [
       [
@@ -565,7 +565,7 @@
     ]
   },
   "date-on": {
-    "translation": "on",
+    "translation": "napon",
     "defaults": "on",
     "origin": [
       [
@@ -575,7 +575,7 @@
     ]
   },
   "date-to": {
-    "translation": "to",
+    "translation": "-ig",
     "defaults": "to",
     "origin": [
       [
@@ -584,18 +584,8 @@
       ]
     ]
   },
-  "downloading...": {
-    "translation": "downloading...",
-    "origin": [
-      [
-        "src/subviews/SectionShortPlaces.js",
-        39
-      ]
-    ],
-    "obsolete": true
-  },
   "downloading…": {
-    "translation": "Downloading...",
+    "translation": "Letöltés...",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -608,7 +598,7 @@
     ]
   },
   "for travel documents, e.g. boarding passes": {
-    "translation": "for travel documents, e. g. boarding passes",
+    "translation": "utazási dokumentumokhoz, pl. beszállókártyákhoz",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -617,7 +607,7 @@
     ]
   },
   "offline available": {
-    "translation": "available offline",
+    "translation": "offline elérhető",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -630,7 +620,7 @@
     ]
   },
   "press to download": {
-    "translation": "press to download",
+    "translation": "kattints rá a letöltéshez",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -639,7 +629,7 @@
     ]
   },
   "the following notes are related explicitly to OnGea app": {
-    "translation": "the following notes are related explicitly to the OnGea App",
+    "translation": "a következő leírások kifejezetten az OnGea appra vonatkoznak",
     "origin": [
       [
         "src/views/AgreementAcceptance.js",

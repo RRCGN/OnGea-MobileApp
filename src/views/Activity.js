@@ -109,14 +109,14 @@ class Activity extends React.PureComponent {
     this.props.navigation.navigate('UploadImages')
   }
 
-  handleMoreEventsPress = () => {
+  handleMoreEventsPress = events => {
     const { i18n } = this.props
 
     this.props.navigation.navigate('Detail', {
       type: 'SCHEDULE',
       title: i18n.t`Events`,
       image: this.getImage(),
-      payload: activity.mobilities.events
+      payload: events
     })
   }
 
@@ -179,7 +179,7 @@ class Activity extends React.PureComponent {
         )}
         {hasEvents && (
           <SectionShortSchedule
-            events={activity.mobilities.events}
+            events={activity.mobilities[0].events}
             onMorePress={this.handleMoreEventsPress}
           />
         )}

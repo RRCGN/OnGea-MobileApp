@@ -1,6 +1,6 @@
 {
   "Accept": {
-    "translation": "Accept",
+    "translation": "Accepteer",
     "origin": [
       [
         "src/views/AgreementAcceptance.js",
@@ -9,7 +9,7 @@
     ]
   },
   "Activities": {
-    "translation": "Activities",
+    "translation": "Activiteiten",
     "origin": [
       [
         "src/views/ActivitiesOverview.js",
@@ -18,7 +18,7 @@
     ]
   },
   "App Information": {
-    "translation": "App information",
+    "translation": "App informatie",
     "origin": [
       [
         "src/views/Settings.js",
@@ -49,7 +49,7 @@
     ]
   },
   "Choose image": {
-    "translation": "Choose image",
+    "translation": "Kies afbeelding",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -62,7 +62,7 @@
     ]
   },
   "Contact Informations": {
-    "translation": "Contact information",
+    "translation": "Contactinformatie",
     "origin": [
       [
         "src/subviews/SectionAllOrganization.js",
@@ -75,7 +75,7 @@
     ]
   },
   "Delete all and exit": {
-    "translation": "Delete all and exit",
+    "translation": "Verwijder",
     "origin": [
       [
         "src/views/Settings.js",
@@ -84,7 +84,7 @@
     ]
   },
   "Delete all data": {
-    "translation": "Delete all data",
+    "translation": "Verwijder alle data",
     "origin": [
       [
         "src/views/Settings.js",
@@ -101,7 +101,7 @@
     ]
   },
   "Delete offline maps": {
-    "translation": "Delete offline maps",
+    "translation": "Verwijder offline kaarten",
     "origin": [
       [
         "src/views/Settings.js",
@@ -114,7 +114,7 @@
     ]
   },
   "Deleted {0} offline Maps.": {
-    "translation": "Deleted {0} offline maps.",
+    "translation": "Verwijder {0} kaarten",
     "origin": [
       [
         "src/views/Settings.js",
@@ -123,7 +123,7 @@
     ]
   },
   "Description": {
-    "translation": "Description",
+    "translation": "Beschrijving",
     "origin": [
       [
         "src/subviews/SectionDescription.js",
@@ -141,7 +141,7 @@
     ]
   },
   "Error when uploading file.": {
-    "translation": "Error when uploading file.",
+    "translation": "Fout bij het uploaden",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -150,7 +150,7 @@
     ]
   },
   "Events": {
-    "translation": "Events",
+    "translation": "Evenementen",
     "origin": [
       [
         "src/subviews/SectionShortSchedule.js",
@@ -163,7 +163,7 @@
     ]
   },
   "Failed to delete offline Maps.": {
-    "translation": "Failed to delete offline maps.",
+    "translation": "Fout bij het verwijderen van de offline mappen",
     "origin": [
       [
         "src/views/Settings.js",
@@ -172,7 +172,7 @@
     ]
   },
   "Failed to download file.": {
-    "translation": "Failed to download file.",
+    "translation": "Mislukt om het bestand te downloaden",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -181,7 +181,7 @@
     ]
   },
   "Failed to load image.": {
-    "translation": "Failed to load image.",
+    "translation": "Mislukt de afbeelding te laden",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -190,7 +190,7 @@
     ]
   },
   "File uploaded successfully.": {
-    "translation": "File uploaded successfully.",
+    "translation": "File succesvol geupload",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -208,7 +208,7 @@
     ]
   },
   "Go to Website": {
-    "translation": "Go to website",
+    "translation": "Gaan naar de website",
     "origin": [
       [
         "src/views/Login.js",
@@ -217,7 +217,7 @@
     ]
   },
   "Host Organization": {
-    "translation": "Host organisation",
+    "translation": "Gastorganisatie",
     "origin": [
       [
         "src/subviews/SectionShortOrganization.js",
@@ -226,7 +226,7 @@
     ]
   },
   "Location": {
-    "translation": "Location",
+    "translation": "Locatie",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -235,7 +235,7 @@
     ]
   },
   "Login": {
-    "translation": "Login",
+    "translation": "Inloggen",
     "origin": [
       [
         "src/views/Login.js",
@@ -244,7 +244,7 @@
     ]
   },
   "Logout": {
-    "translation": "Logout",
+    "translation": "Uitloggen",
     "origin": [
       [
         "src/views/Settings.js",
@@ -253,7 +253,7 @@
     ]
   },
   "Maps for places of your activity are downloaded for offline usage. Use this to delete all downloaded maps. If you view an Activity, relevant maps will be downloaded again.": {
-    "translation": "Maps for places of your activity have been downloaded for offline usage. Use this to delete all downloaded maps. If you view an activity, relevant maps will be downloaded again.",
+    "translation": "Kaarten met plaats van activiteiten zijn gedownload voor offline gebruik. Gebruik dit om alle gedownloade kaarten te verwijderen. Wanneer je een activiteit bekijkt zal de betreffende kaart opnieuw worden gedownload.",
     "origin": [
       [
         "src/views/Settings.js",
@@ -262,7 +262,7 @@
     ]
   },
   "No Actitivities are available.": {
-    "translation": "No actitivities are available.",
+    "translation": "Er zijn geen activiteiten beschikbaar",
     "origin": [
       [
         "src/subviews/activities/ActivitiesEmpty.js",
@@ -271,7 +271,7 @@
     ]
   },
   "No storage permission.": {
-    "translation": "No storage permission.",
+    "translation": "Geen recht om data op te slaan",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -280,7 +280,7 @@
     ]
   },
   "OnGea Announcements on iOS": {
-    "translation": "OnGea Announcements on iOS",
+    "translation": "OnGea aankondigingen op iOS",
     "origin": [
       [
         "src/views/Root.js",
@@ -289,7 +289,7 @@
     ]
   },
   "OnGea URL": {
-    "translation": "OnGea URL",
+    "translation": "Ongea webadres",
     "origin": [
       [
         "src/views/Login.js",
@@ -298,7 +298,7 @@
     ]
   },
   "OnGea app requests the following informations as a part of its services, by clicking ACCEPT at the end of the notes, you proof that OnGea is allowed to use the following informations as has been specified down in the description.": {
-    "translation": "The OnGea App requests the following information as a part of its services. By clicking ACCEPT at the end of the notes, you approve that OnGea is allowed to use the following information as specified in the description below.",
+    "translation": "De Ongea App heeft de volgende informatie nodig als onderdeel van de service. Met het aanklikken van accepteer aan het einde van tekst, geef je toestemming aan OnGea om de informatie zoals gespecificeerd in de onderstaande beschrijving te gebruiken.",
     "origin": [
       [
         "src/views/AgreementAcceptance.js",
@@ -307,7 +307,7 @@
     ]
   },
   "Password": {
-    "translation": "Password",
+    "translation": "Wachtwoord",
     "origin": [
       [
         "src/views/Login.js",
@@ -316,7 +316,7 @@
     ]
   },
   "Phone": {
-    "translation": "Phone",
+    "translation": "Telefoon",
     "origin": [
       [
         "src/subviews/SectionAllOrganization.js",
@@ -325,7 +325,7 @@
     ]
   },
   "Places": {
-    "translation": "Places",
+    "translation": "Plaatsen",
     "origin": [
       [
         "src/subviews/SectionShortPlaces.js",
@@ -334,7 +334,7 @@
     ]
   },
   "Privacy Policy of <0>OnGea app</0>": {
-    "translation": "Privacy policy of <0>OnGea app</0>",
+    "translation": "Privacy protocol van <0>OnGea app</0>",
     "origin": [
       [
         "src/views/AgreementAcceptance.js",
@@ -343,7 +343,7 @@
     ]
   },
   "Pull down to refresh.": {
-    "translation": "Pull down to refresh.",
+    "translation": "Swipe naar beneden om te vernieuwen",
     "origin": [
       [
         "src/subviews/activities/ActivitiesEmpty.js",
@@ -352,7 +352,7 @@
     ]
   },
   "Push Notifications": {
-    "translation": "Push notifications",
+    "translation": "Push berichten",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -361,7 +361,7 @@
     ]
   },
   "REQUESTING PERMISSIONS": {
-    "translation": "REQUESTING PERMISSIONS",
+    "translation": "VERZOEK TOT TOESTEMMING",
     "origin": [
       [
         "src/views/AgreementAcceptance.js",
@@ -370,7 +370,7 @@
     ]
   },
   "Repeating Event": {
-    "translation": "Repeating Event",
+    "translation": "Herhalend evenement",
     "origin": [
       [
         "src/components/EventItem.js",
@@ -379,7 +379,7 @@
     ]
   },
   "Settings": {
-    "translation": "Settings",
+    "translation": "Instellingen",
     "origin": [
       [
         "src/views/Settings.js",
@@ -388,7 +388,7 @@
     ]
   },
   "Show full schedule": {
-    "translation": "Show full schedule",
+    "translation": "Toon gehele schema",
     "origin": [
       [
         "src/subviews/SectionShortSchedule.js",
@@ -397,7 +397,7 @@
     ]
   },
   "Something went wrong when logging in. Please check the OnGea URL, your Username and Password.": {
-    "translation": "Something went wrong when logging in. Please check the OnGea URL, your Username and Password.",
+    "translation": "Er is een fout opgetreden bij het inloggen. Controleer het webadres, je gebruikersnaam en wachtwoord",
     "origin": [
       [
         "src/views/Login.js",
@@ -406,7 +406,7 @@
     ]
   },
   "Storage": {
-    "translation": "Storage",
+    "translation": "Opslag",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -415,7 +415,7 @@
     ]
   },
   "The OnGea App needs access to your camera, so that you can take photos of your travel tickets/boarding cards and send them to your sending organisation if requested.": {
-    "translation": "The OnGea App needs access to your camera, so that you can take photos of your travel tickets/boarding cards and send them to your sending organisation if requested.",
+    "translation": "De Ongea App heeft toegang tot de camera van de telefoon nodig zodat je foto's kunt maken van reisdocumenten en deze kunt verzenden.",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -424,7 +424,7 @@
     ]
   },
   "The OnGea App needs access to your location data, so that you can inform the staff of your host and/or sending organisation about your current location by pressing the \"I am here\" button. The OnGea App won't send your location data anywhere as long as you don't push that button. Since the app is not completely examined and ready for production, there will be a test MapView which requires your location, no data will be saved or carried to third party.": {
-    "translation": "The OnGea App needs access to your location data, so that you can inform the staff of your host and/or sending organisation about your current location by pressing the “I am here” button. The OnGea App won’t send your location data anywhere as long as you don’t push that button.",
+    "translation": "De Ongea App heeft toegang tot de locatie data nodig om je locatie te kunnen delen met de gastorganisatie en of haar medewerkers door het drukken op de “Ik ben hier“ knop. De OnGea app zal geen data delen zonder dat je op de Ik ben hier knop drukt.",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -433,7 +433,7 @@
     ]
   },
   "The OnGea App needs push-notifications ability to be able to inform the user if plans have suddenly been changed.": {
-    "translation": "The OnGea App needs push-notifications ability to be able to inform the user if plans have suddenly been changed.",
+    "translation": "De Ongea App moet de mogelijkheid hebben om push berichten te verzenden om informatie te delen op het moment er onvoorziene wijzigingen plaatsvinden.",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -442,7 +442,7 @@
     ]
   },
   "The OnGea App needs read and write access to your storage, so that you can download and view important documents, even if you don't have an internet connection.": {
-    "translation": "The OnGea App needs read and write access to your storage, so that you can download and view important documents, even if you don't have an internet connection.",
+    "translation": "De Ongea App heeft lees en schrijfrechten nodig van je opslag zodat je ook offline gebruik kunt maken van de documenten.",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -451,7 +451,7 @@
     ]
   },
   "This action will delete all stored data and the offline available map. After that it will close OnGea. If you reopen OnGea again, you will be back to a fresh start.": {
-    "translation": "This action will delete all stored data and the offline available map. After that it will close OnGea. If you reopen OnGea again, you will be back to a fresh start.",
+    "translation": "Hiermee verwijder je alle opgeslagen data en offline kaarten. Na verwijdering wordt de app afgesloten. Wanneer je de app opnieuw start begin je in een lege omgeving.",
     "origin": [
       [
         "src/views/Settings.js",
@@ -464,7 +464,7 @@
     ]
   },
   "Travel": {
-    "translation": "Travel",
+    "translation": "Reizen",
     "origin": [
       [
         "src/subviews/SectionShortTravel.js",
@@ -473,7 +473,7 @@
     ]
   },
   "Upload Documents": {
-    "translation": "Upload documents",
+    "translation": "Upload documenten",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -482,7 +482,7 @@
     ]
   },
   "Upload image": {
-    "translation": "Upload image",
+    "translation": "Upload afbeelding",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -492,7 +492,7 @@
     "obsolete": true
   },
   "Upload now": {
-    "translation": "Upload now",
+    "translation": "Nu Uploaden",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -501,7 +501,7 @@
     ]
   },
   "Upload your documents for this activity": {
-    "translation": "Upload your documents for this activity",
+    "translation": "Upload je documten voor deze activiteit",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -510,7 +510,7 @@
     ]
   },
   "Username": {
-    "translation": "User name",
+    "translation": "gebruikersnaam",
     "origin": [
       [
         "src/views/Login.js",
@@ -519,7 +519,7 @@
     ]
   },
   "View": {
-    "translation": "View",
+    "translation": "Bekijk",
     "origin": [
       [
         "src/subviews/activities/ActivityCard.js",
@@ -528,7 +528,7 @@
     ]
   },
   "View all {0} events": {
-    "translation": "View all {0} events",
+    "translation": "Bekijk alle {0} evenementen",
     "origin": [
       [
         "src/subviews/SectionShortSchedule.js",
@@ -537,7 +537,7 @@
     ]
   },
   "We will send you Notifications about important Announcements. You will receive Notifications when the App is active or in background, but not if you completely close the App.": {
-    "translation": "We will send you notifications about important announcements. You will receive notifications when this app is active or in background, but not if you completely close the app.",
+    "translation": "Je ontvangt berichten van belangrijke aankondigingen zolang de app actief is of op de achtergrond draait maar niet wanneer je de app geheel afsluit.",
     "origin": [
       [
         "src/views/Root.js",
@@ -555,7 +555,7 @@
     ]
   },
   "date-from": {
-    "translation": "from",
+    "translation": "van",
     "defaults": "from",
     "origin": [
       [
@@ -565,7 +565,7 @@
     ]
   },
   "date-on": {
-    "translation": "on",
+    "translation": "op",
     "defaults": "on",
     "origin": [
       [
@@ -575,7 +575,7 @@
     ]
   },
   "date-to": {
-    "translation": "to",
+    "translation": "tot",
     "defaults": "to",
     "origin": [
       [
@@ -584,18 +584,8 @@
       ]
     ]
   },
-  "downloading...": {
-    "translation": "downloading...",
-    "origin": [
-      [
-        "src/subviews/SectionShortPlaces.js",
-        39
-      ]
-    ],
-    "obsolete": true
-  },
   "downloading…": {
-    "translation": "Downloading...",
+    "translation": "Aan het downloaden",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -608,7 +598,7 @@
     ]
   },
   "for travel documents, e.g. boarding passes": {
-    "translation": "for travel documents, e. g. boarding passes",
+    "translation": "voor reisdocumenten, boardingpas, tickets",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -617,7 +607,7 @@
     ]
   },
   "offline available": {
-    "translation": "available offline",
+    "translation": "offline beschikbaar",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -630,7 +620,7 @@
     ]
   },
   "press to download": {
-    "translation": "press to download",
+    "translation": "klik om de download te starten",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -639,7 +629,7 @@
     ]
   },
   "the following notes are related explicitly to OnGea app": {
-    "translation": "the following notes are related explicitly to the OnGea App",
+    "translation": "de volgende opmerkingen zijn expliciet gerelateerd aan de OnGea App",
     "origin": [
       [
         "src/views/AgreementAcceptance.js",

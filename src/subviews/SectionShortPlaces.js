@@ -36,7 +36,7 @@ class SectionShortPlaces extends React.PureComponent {
     const isDownloaded = placesDownloaded.includes(mapId)
 
     if (isDownloading) {
-      return address + ' – ' + i18n.t`downloading...`
+      return address + ' – ' + i18n.t`downloading…`
     }
 
     if (isDownloaded) {

@@ -9,7 +9,7 @@
     ]
   },
   "Activities": {
-    "translation": "Activities",
+    "translation": "Activitati",
     "origin": [
       [
         "src/views/ActivitiesOverview.js",
@@ -18,7 +18,7 @@
     ]
   },
   "App Information": {
-    "translation": "App information",
+    "translation": "Informatii despre aplicatie",
     "origin": [
       [
         "src/views/Settings.js",
@@ -27,7 +27,7 @@
     ]
   },
   "Camera": {
-    "translation": "Camera",
+    "translation": "Camera foto a telefonului",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -36,7 +36,7 @@
     ]
   },
   "Cancel": {
-    "translation": "Cancel",
+    "translation": "Anuleaza",
     "origin": [
       [
         "src/views/Settings.js",
@@ -49,7 +49,7 @@
     ]
   },
   "Choose image": {
-    "translation": "Choose image",
+    "translation": "Selecteaza imagine",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -62,7 +62,7 @@
     ]
   },
   "Contact Informations": {
-    "translation": "Contact information",
+    "translation": "Date contact",
     "origin": [
       [
         "src/subviews/SectionAllOrganization.js",
@@ -75,7 +75,7 @@
     ]
   },
   "Delete all and exit": {
-    "translation": "Delete all and exit",
+    "translation": "Sterge toate datele si iesi",
     "origin": [
       [
         "src/views/Settings.js",
@@ -84,7 +84,7 @@
     ]
   },
   "Delete all data": {
-    "translation": "Delete all data",
+    "translation": "Sterge toate datele",
     "origin": [
       [
         "src/views/Settings.js",
@@ -101,7 +101,7 @@
     ]
   },
   "Delete offline maps": {
-    "translation": "Delete offline maps",
+    "translation": "Sterge hartile offline",
     "origin": [
       [
         "src/views/Settings.js",
@@ -114,7 +114,7 @@
     ]
   },
   "Deleted {0} offline Maps.": {
-    "translation": "Deleted {0} offline maps.",
+    "translation": "Sterge {0} hartile offline",
     "origin": [
       [
         "src/views/Settings.js",
@@ -123,7 +123,7 @@
     ]
   },
   "Description": {
-    "translation": "Description",
+    "translation": "Descriere",
     "origin": [
       [
         "src/subviews/SectionDescription.js",
@@ -132,7 +132,7 @@
     ]
   },
   "Email": {
-    "translation": "E-mail",
+    "translation": "e-mail",
     "origin": [
       [
         "src/subviews/SectionAllOrganization.js",
@@ -141,7 +141,7 @@
     ]
   },
   "Error when uploading file.": {
-    "translation": "Error when uploading file.",
+    "translation": "Eroare la incarcarea fisierului.",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -150,7 +150,7 @@
     ]
   },
   "Events": {
-    "translation": "Events",
+    "translation": "Evenimente",
     "origin": [
       [
         "src/subviews/SectionShortSchedule.js",
@@ -163,7 +163,7 @@
     ]
   },
   "Failed to delete offline Maps.": {
-    "translation": "Failed to delete offline maps.",
+    "translation": "Stergerea hartilor offline a esuat",
     "origin": [
       [
         "src/views/Settings.js",
@@ -172,7 +172,7 @@
     ]
   },
   "Failed to download file.": {
-    "translation": "Failed to download file.",
+    "translation": "Descarcarea documentelor a esuat",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -181,7 +181,7 @@
     ]
   },
   "Failed to load image.": {
-    "translation": "Failed to load image.",
+    "translation": "Incarcarea imaginii a esuat",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -190,7 +190,7 @@
     ]
   },
   "File uploaded successfully.": {
-    "translation": "File uploaded successfully.",
+    "translation": "Fisierul a fost incarcat cu succes",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -199,7 +199,7 @@
     ]
   },
   "Files": {
-    "translation": "Files",
+    "translation": "Fisiere",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -208,7 +208,7 @@
     ]
   },
   "Go to Website": {
-    "translation": "Go to website",
+    "translation": "Mergi la website",
     "origin": [
       [
         "src/views/Login.js",
@@ -217,7 +217,7 @@
     ]
   },
   "Host Organization": {
-    "translation": "Host organisation",
+    "translation": "Organizatia gazda",
     "origin": [
       [
         "src/subviews/SectionShortOrganization.js",
@@ -226,7 +226,7 @@
     ]
   },
   "Location": {
-    "translation": "Location",
+    "translation": "Locatie",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -235,7 +235,7 @@
     ]
   },
   "Login": {
-    "translation": "Login",
+    "translation": "Conectare",
     "origin": [
       [
         "src/views/Login.js",
@@ -244,7 +244,7 @@
     ]
   },
   "Logout": {
-    "translation": "Logout",
+    "translation": "Deconectare",
     "origin": [
       [
         "src/views/Settings.js",
@@ -253,7 +253,7 @@
     ]
   },
   "Maps for places of your activity are downloaded for offline usage. Use this to delete all downloaded maps. If you view an Activity, relevant maps will be downloaded again.": {
-    "translation": "Maps for places of your activity have been downloaded for offline usage. Use this to delete all downloaded maps. If you view an activity, relevant maps will be downloaded again.",
+    "translation": "Hartile pentru activitatile tale au fost descarcate pentru a fi utilizate offline. Foloseste acesta pentru a sterge toate hartile descarcate. Daca vizualizezi o activitate, hartile relevante vor fi descarcate din nou.",
     "origin": [
       [
         "src/views/Settings.js",
@@ -262,7 +262,7 @@
     ]
   },
   "No Actitivities are available.": {
-    "translation": "No actitivities are available.",
+    "translation": "Nu sunt activitati disponibile",
     "origin": [
       [
         "src/subviews/activities/ActivitiesEmpty.js",
@@ -271,7 +271,7 @@
     ]
   },
   "No storage permission.": {
-    "translation": "No storage permission.",
+    "translation": "Nu exista permisiune pentru stocare",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -280,7 +280,7 @@
     ]
   },
   "OnGea Announcements on iOS": {
-    "translation": "OnGea Announcements on iOS",
+    "translation": "Anunturi OnGea pe iOS",
     "origin": [
       [
         "src/views/Root.js",
@@ -289,7 +289,7 @@
     ]
   },
   "OnGea URL": {
-    "translation": "OnGea URL",
+    "translation": "URL OnGea",
     "origin": [
       [
         "src/views/Login.js",
@@ -298,7 +298,7 @@
     ]
   },
   "OnGea app requests the following informations as a part of its services, by clicking ACCEPT at the end of the notes, you proof that OnGea is allowed to use the following informations as has been specified down in the description.": {
-    "translation": "The OnGea App requests the following information as a part of its services. By clicking ACCEPT at the end of the notes, you approve that OnGea is allowed to use the following information as specified in the description below.",
+    "translation": "Aplicatia ONGea solicita urmatoarele informatii ca o componenta a serviciilor sale. Apasand ACCEPT la finalul textului, iti dai acordul ca OnGea sa foloseasca urmatoarele informatii, conform specificatiilor din descrierea de mai jos.",
     "origin": [
       [
         "src/views/AgreementAcceptance.js",
@@ -307,7 +307,7 @@
     ]
   },
   "Password": {
-    "translation": "Password",
+    "translation": "Parola",
     "origin": [
       [
         "src/views/Login.js",
@@ -316,7 +316,7 @@
     ]
   },
   "Phone": {
-    "translation": "Phone",
+    "translation": "Telefon",
     "origin": [
       [
         "src/subviews/SectionAllOrganization.js",
@@ -325,7 +325,7 @@
     ]
   },
   "Places": {
-    "translation": "Places",
+    "translation": "Locuri",
     "origin": [
       [
         "src/subviews/SectionShortPlaces.js",
@@ -334,7 +334,7 @@
     ]
   },
   "Privacy Policy of <0>OnGea app</0>": {
-    "translation": "Privacy policy of <0>OnGea app</0>",
+    "translation": "Politica de confidentialitate a <0>OnGea app</0>",
     "origin": [
       [
         "src/views/AgreementAcceptance.js",
@@ -343,7 +343,7 @@
     ]
   },
   "Pull down to refresh.": {
-    "translation": "Pull down to refresh.",
+    "translation": "Trage in jos pentru a reincarca",
     "origin": [
       [
         "src/subviews/activities/ActivitiesEmpty.js",
@@ -352,7 +352,7 @@
     ]
   },
   "Push Notifications": {
-    "translation": "Push notifications",
+    "translation": "Acceseaza notificari",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -361,7 +361,7 @@
     ]
   },
   "REQUESTING PERMISSIONS": {
-    "translation": "REQUESTING PERMISSIONS",
+    "translation": "PERMIS SOLICITAT",
     "origin": [
       [
         "src/views/AgreementAcceptance.js",
@@ -370,7 +370,7 @@
     ]
   },
   "Repeating Event": {
-    "translation": "Repeating Event",
+    "translation": "Eveniment care se repeta",
     "origin": [
       [
         "src/components/EventItem.js",
@@ -379,7 +379,7 @@
     ]
   },
   "Settings": {
-    "translation": "Settings",
+    "translation": "Setari",
     "origin": [
       [
         "src/views/Settings.js",
@@ -388,7 +388,7 @@
     ]
   },
   "Show full schedule": {
-    "translation": "Show full schedule",
+    "translation": "Arata programul complet",
     "origin": [
       [
         "src/subviews/SectionShortSchedule.js",
@@ -397,7 +397,7 @@
     ]
   },
   "Something went wrong when logging in. Please check the OnGea URL, your Username and Password.": {
-    "translation": "Something went wrong when logging in. Please check the OnGea URL, your Username and Password.",
+    "translation": "A aparut o eroare la momentul conectarii. Te rog verifica OnGea URL, numele de utilizator si parola.",
     "origin": [
       [
         "src/views/Login.js",
@@ -406,7 +406,7 @@
     ]
   },
   "Storage": {
-    "translation": "Storage",
+    "translation": "Stocare",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -415,7 +415,7 @@
     ]
   },
   "The OnGea App needs access to your camera, so that you can take photos of your travel tickets/boarding cards and send them to your sending organisation if requested.": {
-    "translation": "The OnGea App needs access to your camera, so that you can take photos of your travel tickets/boarding cards and send them to your sending organisation if requested.",
+    "translation": "Aplicatia OnGea are nevoie de acces la camera ta foto, astfel incat poti face fotografii la biletele de calatorie/cartile de imbarcare si le poti trimit organizatie de trimitere cand sunt solicitate.",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -424,7 +424,7 @@
     ]
   },
   "The OnGea App needs access to your location data, so that you can inform the staff of your host and/or sending organisation about your current location by pressing the \"I am here\" button. The OnGea App won't send your location data anywhere as long as you don't push that button. Since the app is not completely examined and ready for production, there will be a test MapView which requires your location, no data will be saved or carried to third party.": {
-    "translation": "The OnGea App needs access to your location data, so that you can inform the staff of your host and/or sending organisation about your current location by pressing the “I am here” button. The OnGea App won’t send your location data anywhere as long as you don’t push that button.",
+    "translation": "Aplicatia OnGea are nevoie de acces la locatia ta, astfel incat poti informa personalul organizatiei tale gazda/de trimitere despre locatia ta curenta, apasand butonul \"sunt aici\". Aplicatia OnGea nu va transmite informatiile despre locatia ta atata timp cat nu apesi acest buton.",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -433,7 +433,7 @@
     ]
   },
   "The OnGea App needs push-notifications ability to be able to inform the user if plans have suddenly been changed.": {
-    "translation": "The OnGea App needs push-notifications ability to be able to inform the user if plans have suddenly been changed.",
+    "translation": "Aplicatia OnGea are nevoie de sistem de notificari pentru a putea informa utilizatorul daca planificarile existente au fost brusc modificate.",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -442,7 +442,7 @@
     ]
   },
   "The OnGea App needs read and write access to your storage, so that you can download and view important documents, even if you don't have an internet connection.": {
-    "translation": "The OnGea App needs read and write access to your storage, so that you can download and view important documents, even if you don't have an internet connection.",
+    "translation": "Aplicatia OnGea are nevoie de acces la vizualizare si editare la datele tale stocate, pentru a putea descarca si vizualiza documente importante, chiar daca nu ai conexiune la internet.",
     "origin": [
       [
         "src/strings/agreements.js",
@@ -451,7 +451,7 @@
     ]
   },
   "This action will delete all stored data and the offline available map. After that it will close OnGea. If you reopen OnGea again, you will be back to a fresh start.": {
-    "translation": "This action will delete all stored data and the offline available map. After that it will close OnGea. If you reopen OnGea again, you will be back to a fresh start.",
+    "translation": "Aceasta actiune va sterge toate datele stocate si hartile disponibile offline. Dupa aceasta actiune, va inchide aplicatia OnGea. Cand redeschizi aplicatia OnGea, te vei intoarce la nou start.",
     "origin": [
       [
         "src/views/Settings.js",
@@ -464,7 +464,7 @@
     ]
   },
   "Travel": {
-    "translation": "Travel",
+    "translation": "Calatorie",
     "origin": [
       [
         "src/subviews/SectionShortTravel.js",
@@ -473,7 +473,7 @@
     ]
   },
   "Upload Documents": {
-    "translation": "Upload documents",
+    "translation": "Incarca documente",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -482,7 +482,7 @@
     ]
   },
   "Upload image": {
-    "translation": "Upload image",
+    "translation": "Incarca imagine",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -492,7 +492,7 @@
     "obsolete": true
   },
   "Upload now": {
-    "translation": "Upload now",
+    "translation": "Incarca acum",
     "origin": [
       [
         "src/views/UploadImagesView.js",
@@ -501,7 +501,7 @@
     ]
   },
   "Upload your documents for this activity": {
-    "translation": "Upload your documents for this activity",
+    "translation": "Incarca documentele tale pentru aceasta activitate",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -510,7 +510,7 @@
     ]
   },
   "Username": {
-    "translation": "User name",
+    "translation": "Utilizator",
     "origin": [
       [
         "src/views/Login.js",
@@ -519,7 +519,7 @@
     ]
   },
   "View": {
-    "translation": "View",
+    "translation": "Vizualizeaza",
     "origin": [
       [
         "src/subviews/activities/ActivityCard.js",
@@ -528,7 +528,7 @@
     ]
   },
   "View all {0} events": {
-    "translation": "View all {0} events",
+    "translation": "Vizualizeaza {0} toate evenimentele",
     "origin": [
       [
         "src/subviews/SectionShortSchedule.js",
@@ -537,7 +537,7 @@
     ]
   },
   "We will send you Notifications about important Announcements. You will receive Notifications when the App is active or in background, but not if you completely close the App.": {
-    "translation": "We will send you notifications about important announcements. You will receive notifications when this app is active or in background, but not if you completely close the app.",
+    "translation": "Iti vom trimite notificari despre anunturile importante. Vei primi notificari cand aceasta aplicatie este activa sau deschisa, dar nu si in cazul in care ai inchis complet aplicatia.",
     "origin": [
       [
         "src/views/Root.js",
@@ -555,7 +555,7 @@
     ]
   },
   "date-from": {
-    "translation": "from",
+    "translation": "de la",
     "defaults": "from",
     "origin": [
       [
@@ -565,7 +565,7 @@
     ]
   },
   "date-on": {
-    "translation": "on",
+    "translation": "pe",
     "defaults": "on",
     "origin": [
       [
@@ -575,7 +575,7 @@
     ]
   },
   "date-to": {
-    "translation": "to",
+    "translation": "catre",
     "defaults": "to",
     "origin": [
       [
@@ -584,18 +584,8 @@
       ]
     ]
   },
-  "downloading...": {
-    "translation": "downloading...",
-    "origin": [
-      [
-        "src/subviews/SectionShortPlaces.js",
-        39
-      ]
-    ],
-    "obsolete": true
-  },
   "downloading…": {
-    "translation": "Downloading...",
+    "translation": "In curs de descarcare",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -608,7 +598,7 @@
     ]
   },
   "for travel documents, e.g. boarding passes": {
-    "translation": "for travel documents, e. g. boarding passes",
+    "translation": "pentru documente de calatorie; de ex. cartea de imbarcare",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -617,7 +607,7 @@
     ]
   },
   "offline available": {
-    "translation": "available offline",
+    "translation": "disponibil offline",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -630,7 +620,7 @@
     ]
   },
   "press to download": {
-    "translation": "press to download",
+    "translation": "apasa pentru a descarca",
     "origin": [
       [
         "src/subviews/SectionFiles.js",
@@ -639,7 +629,7 @@
     ]
   },
   "the following notes are related explicitly to OnGea app": {
-    "translation": "the following notes are related explicitly to the OnGea App",
+    "translation": "urmatoarele informatii se refera in mod explicit la aplicatia OnGea",
     "origin": [
       [
         "src/views/AgreementAcceptance.js",

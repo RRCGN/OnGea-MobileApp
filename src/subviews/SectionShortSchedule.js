@@ -7,7 +7,7 @@ import ListItemStandard from '../components/ListItemStandard'
 
 export class SectionShortSchedule extends React.PureComponent {
   handleMorePress = () => {
-    this.props.onMorePress()
+    this.props.onMorePress(this.props.events)
   }
 
   render() {
