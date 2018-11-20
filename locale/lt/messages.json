@@ -1,0 +1,640 @@
+{
+  "Accept": {
+    "translation": "Sutinku",
+    "origin": [
+      [
+        "src/views/AgreementAcceptance.js",
+        80
+      ]
+    ]
+  },
+  "Activities": {
+    "translation": "Veiklos",
+    "origin": [
+      [
+        "src/views/ActivitiesOverview.js",
+        20
+      ]
+    ]
+  },
+  "App Information": {
+    "translation": "Programėlės informacija",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        148
+      ]
+    ]
+  },
+  "Camera": {
+    "translation": "Fotokamera",
+    "origin": [
+      [
+        "src/strings/agreements.js",
+        7
+      ]
+    ]
+  },
+  "Cancel": {
+    "translation": "Atšaukti",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        81
+      ],
+      [
+        "src/views/UploadImagesView.js",
+        52
+      ]
+    ]
+  },
+  "Choose image": {
+    "translation": "Pasirinkti paveikslą",
+    "origin": [
+      [
+        "src/views/UploadImagesView.js",
+        51
+      ],
+      [
+        "src/views/UploadImagesView.js",
+        126
+      ]
+    ]
+  },
+  "Contact Informations": {
+    "translation": "Kontaktinė informacija",
+    "origin": [
+      [
+        "src/subviews/SectionAllOrganization.js",
+        33
+      ],
+      [
+        "src/subviews/SectionShortOrganization.js",
+        31
+      ]
+    ]
+  },
+  "Delete all and exit": {
+    "translation": "Ištrinti viską ir išeiti",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        83
+      ]
+    ]
+  },
+  "Delete all data": {
+    "translation": "Ištrinti visus duomenis",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        78
+      ],
+      [
+        "src/views/Settings.js",
+        132
+      ],
+      [
+        "src/views/Settings.js",
+        145
+      ]
+    ]
+  },
+  "Delete offline maps": {
+    "translation": "Ištrinti parsisiųstus žemėlapius",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        116
+      ],
+      [
+        "src/views/Settings.js",
+        129
+      ]
+    ]
+  },
+  "Deleted {0} offline Maps.": {
+    "translation": "Ištrinti {0} parsisiųsti žemėlapiai",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        96
+      ]
+    ]
+  },
+  "Description": {
+    "translation": "Aprašymas",
+    "origin": [
+      [
+        "src/subviews/SectionDescription.js",
+        12
+      ]
+    ]
+  },
+  "Email": {
+    "translation": "El. paštas",
+    "origin": [
+      [
+        "src/subviews/SectionAllOrganization.js",
+        41
+      ]
+    ]
+  },
+  "Error when uploading file.": {
+    "translation": "Klaida išsiunčiant bylą.",
+    "origin": [
+      [
+        "src/views/UploadImagesView.js",
+        133
+      ]
+    ]
+  },
+  "Events": {
+    "translation": "Įvykiai",
+    "origin": [
+      [
+        "src/subviews/SectionShortSchedule.js",
+        17
+      ],
+      [
+        "src/views/Activity.js",
+        117
+      ]
+    ]
+  },
+  "Failed to delete offline Maps.": {
+    "translation": "Nepavyko ištrinti parsisiųstų žemėlapių.",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        100
+      ]
+    ]
+  },
+  "Failed to download file.": {
+    "translation": "Nepavyko parsisiųsti bylos.",
+    "origin": [
+      [
+        "src/subviews/SectionFiles.js",
+        80
+      ]
+    ]
+  },
+  "Failed to load image.": {
+    "translation": "Nepavyko įkelti paveikslo.",
+    "origin": [
+      [
+        "src/views/UploadImagesView.js",
+        58
+      ]
+    ]
+  },
+  "File uploaded successfully.": {
+    "translation": "Byla sėkmingai išsiųsta.",
+    "origin": [
+      [
+        "src/views/UploadImagesView.js",
+        84
+      ]
+    ]
+  },
+  "Files": {
+    "translation": "Bylos",
+    "origin": [
+      [
+        "src/subviews/SectionFiles.js",
+        97
+      ]
+    ]
+  },
+  "Go to Website": {
+    "translation": "Eiti į tinklalapį",
+    "origin": [
+      [
+        "src/views/Login.js",
+        126
+      ]
+    ]
+  },
+  "Host Organization": {
+    "translation": "Priimanti organizacija",
+    "origin": [
+      [
+        "src/subviews/SectionShortOrganization.js",
+        23
+      ]
+    ]
+  },
+  "Location": {
+    "translation": "Vieta",
+    "origin": [
+      [
+        "src/strings/agreements.js",
+        14
+      ]
+    ]
+  },
+  "Login": {
+    "translation": "Prisijungti",
+    "origin": [
+      [
+        "src/views/Login.js",
+        122
+      ]
+    ]
+  },
+  "Logout": {
+    "translation": "Atsijungti",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        113
+      ]
+    ]
+  },
+  "Maps for places of your activity are downloaded for offline usage. Use this to delete all downloaded maps. If you view an Activity, relevant maps will be downloaded again.": {
+    "translation": "Jūsų veiklų vietovių žemėlapiai buvo parsisiųsti naudojimui neprisijungus prie interneto. Naudokite šią funkciją visų parsisiųstų žemėlapių ištrynimui. Peržiūrint veiklą, susiję žemėlapiai bus ir vėl parsiųsti.",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        118
+      ]
+    ]
+  },
+  "No Actitivities are available.": {
+    "translation": "Nėra jokių veiklų.",
+    "origin": [
+      [
+        "src/subviews/activities/ActivitiesEmpty.js",
+        15
+      ]
+    ]
+  },
+  "No storage permission.": {
+    "translation": "Nesuteiktas leidimas išsaugoti telefono atmintyje.",
+    "origin": [
+      [
+        "src/subviews/SectionFiles.js",
+        76
+      ]
+    ]
+  },
+  "OnGea Announcements on iOS": {
+    "translation": "„OnGea“ pranešimai „iOS“ sistemoje",
+    "origin": [
+      [
+        "src/views/Root.js",
+        46
+      ]
+    ]
+  },
+  "OnGea URL": {
+    "translation": "„OnGea“ tinklalapio adresas",
+    "origin": [
+      [
+        "src/views/Login.js",
+        93
+      ]
+    ]
+  },
+  "OnGea app requests the following informations as a part of its services, by clicking ACCEPT at the end of the notes, you proof that OnGea is allowed to use the following informations as has been specified down in the description.": {
+    "translation": "„OnGea“ programėlei būtina toliau nurodyta informacija savo paslaugų teikimui. Paspausdami SUTINKU pastabų pabaigoje, Jūs sutinkate, kad „OnGea“ būtų leista naudoti toliau nurodytą informaciją kaip paaiškinta žemiau esančiame aprašyme.",
+    "origin": [
+      [
+        "src/views/AgreementAcceptance.js",
+        69
+      ]
+    ]
+  },
+  "Password": {
+    "translation": "Slaptažodis",
+    "origin": [
+      [
+        "src/views/Login.js",
+        111
+      ]
+    ]
+  },
+  "Phone": {
+    "translation": "Telefonas",
+    "origin": [
+      [
+        "src/subviews/SectionAllOrganization.js",
+        47
+      ]
+    ]
+  },
+  "Places": {
+    "translation": "Vietos",
+    "origin": [
+      [
+        "src/subviews/SectionShortPlaces.js",
+        53
+      ]
+    ]
+  },
+  "Privacy Policy of <0>OnGea app</0>": {
+    "translation": "<0>„OnGea“</0> programėlės privatumo politika",
+    "origin": [
+      [
+        "src/views/AgreementAcceptance.js",
+        51
+      ]
+    ]
+  },
+  "Pull down to refresh.": {
+    "translation": "Tempkite į apačią, kad duomenys būtų atnaujinti.",
+    "origin": [
+      [
+        "src/subviews/activities/ActivitiesEmpty.js",
+        18
+      ]
+    ]
+  },
+  "Push Notifications": {
+    "translation": "Aktyvieji pranešimai",
+    "origin": [
+      [
+        "src/strings/agreements.js",
+        21
+      ]
+    ]
+  },
+  "REQUESTING PERMISSIONS": {
+    "translation": "PRAŠOMI LEIDIMAI",
+    "origin": [
+      [
+        "src/views/AgreementAcceptance.js",
+        63
+      ]
+    ]
+  },
+  "Repeating Event": {
+    "translation": "Pasikartojantis renginys",
+    "origin": [
+      [
+        "src/components/EventItem.js",
+        31
+      ]
+    ]
+  },
+  "Settings": {
+    "translation": "Nustatymai",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        29
+      ]
+    ]
+  },
+  "Show full schedule": {
+    "translation": "Rodyti visą darbotvarkę",
+    "origin": [
+      [
+        "src/subviews/SectionShortSchedule.js",
+        20
+      ]
+    ]
+  },
+  "Something went wrong when logging in. Please check the OnGea URL, your Username and Password.": {
+    "translation": "Nepavyko prisijungti. Prašome patikrinti „OnGea“ tinklalapio adresą, savo vartotojo vardą ir slaptažodį.",
+    "origin": [
+      [
+        "src/views/Login.js",
+        82
+      ]
+    ]
+  },
+  "Storage": {
+    "translation": "Saugojimas telefono atmintyje",
+    "origin": [
+      [
+        "src/strings/agreements.js",
+        28
+      ]
+    ]
+  },
+  "The OnGea App needs access to your camera, so that you can take photos of your travel tickets/boarding cards and send them to your sending organisation if requested.": {
+    "translation": "„OnGea“ programėlei reikalinga prieiga prie Jūsų fotokameros, kad ji galėtų nufotografuoti Jūsų kelionės bilietus/įlaipinimo korteles ir nusiųsti juos į Jūsų išsiunčiančią organizaciją.",
+    "origin": [
+      [
+        "src/strings/agreements.js",
+        11
+      ]
+    ]
+  },
+  "The OnGea App needs access to your location data, so that you can inform the staff of your host and/or sending organisation about your current location by pressing the \"I am here\" button. The OnGea App won't send your location data anywhere as long as you don't push that button. Since the app is not completely examined and ready for production, there will be a test MapView which requires your location, no data will be saved or carried to third party.": {
+    "translation": "„OnGea“ programėlei reikalinga prieiga prie Jūsų buvimo vietos duomenų, kad ji galėtų informuoti Jūsų priimančią ir(arba) išsiunčiančią organizaciją apie Jūsų dabartinę vietą, paspaudus mygtuką „Aš esu čia“. Jei mygtuko nepaspausite, „OnGea“ programėlė niekur nesiųs Jūsų buvimo vietos duomenų.",
+    "origin": [
+      [
+        "src/strings/agreements.js",
+        18
+      ]
+    ]
+  },
+  "The OnGea App needs push-notifications ability to be able to inform the user if plans have suddenly been changed.": {
+    "translation": "„OnGea“ programėlei aktyviųjų pranešimų funkcija yra reikalinga tam, kad vartotoją būtų galima informuoti įvykus staigiems planų pakeitimams.",
+    "origin": [
+      [
+        "src/strings/agreements.js",
+        25
+      ]
+    ]
+  },
+  "The OnGea App needs read and write access to your storage, so that you can download and view important documents, even if you don't have an internet connection.": {
+    "translation": "„OnGea“ programėlei skaitymo ir rašymo prieiga prie Jūsų įrenginio atminties reikalinga tam, kad galėtumėte parsisiųsti ir peržiūrėti svarbius dokumentus net ir be interneto ryšio.",
+    "origin": [
+      [
+        "src/strings/agreements.js",
+        32
+      ]
+    ]
+  },
+  "This action will delete all stored data and the offline available map. After that it will close OnGea. If you reopen OnGea again, you will be back to a fresh start.": {
+    "translation": "Šis veiksmas pašalins visus išsaugotus duomenis ir žemėlapį, kuris yra prieinamas be interneto ryšio. Po to „OnGea“ programėlė bus uždaryta. Jei ir vėl atidarysite „OnGea“, ji bus paleista iš naujo.",
+    "origin": [
+      [
+        "src/views/Settings.js",
+        79
+      ],
+      [
+        "src/views/Settings.js",
+        134
+      ]
+    ]
+  },
+  "Travel": {
+    "translation": "Kelionė",
+    "origin": [
+      [
+        "src/subviews/SectionShortTravel.js",
+        24
+      ]
+    ]
+  },
+  "Upload Documents": {
+    "translation": "Įkelti dokumentus",
+    "origin": [
+      [
+        "src/views/UploadImagesView.js",
+        28
+      ]
+    ]
+  },
+  "Upload image": {
+    "translation": "Įkelti nuotrauką",
+    "origin": [
+      [
+        "src/views/UploadImagesView.js",
+        119
+      ]
+    ],
+    "obsolete": true
+  },
+  "Upload now": {
+    "translation": "Įkelti dabar",
+    "origin": [
+      [
+        "src/views/UploadImagesView.js",
+        143
+      ]
+    ]
+  },
+  "Upload your documents for this activity": {
+    "translation": "Įkelti dokumentus šiai veiklai",
+    "origin": [
+      [
+        "src/subviews/SectionFiles.js",
+        99
+      ]
+    ]
+  },
+  "Username": {
+    "translation": "Vartotojo vardas",
+    "origin": [
+      [
+        "src/views/Login.js",
+        102
+      ]
+    ]
+  },
+  "View": {
+    "translation": "Peržiūrėti",
+    "origin": [
+      [
+        "src/subviews/activities/ActivityCard.js",
+        50
+      ]
+    ]
+  },
+  "View all {0} events": {
+    "translation": "Peržiūrėti visus {0} įvykius",
+    "origin": [
+      [
+        "src/subviews/SectionShortSchedule.js",
+        21
+      ]
+    ]
+  },
+  "We will send you Notifications about important Announcements. You will receive Notifications when the App is active or in background, but not if you completely close the App.": {
+    "translation": "Mes atsiųsime Jums pranešimus apie svarbias naujienas. Pranešimus gausite, kol ši programėlė aktyvi arba veikia fone, tačiau negausite, jei ją visiškai uždarysite.",
+    "origin": [
+      [
+        "src/views/Root.js",
+        47
+      ]
+    ]
+  },
+  "Website": {
+    "translation": "Tinklalapis",
+    "origin": [
+      [
+        "src/subviews/SectionAllOrganization.js",
+        53
+      ]
+    ]
+  },
+  "date-from": {
+    "translation": "nuo",
+    "defaults": "from",
+    "origin": [
+      [
+        "src/components/DateRange.js",
+        28
+      ]
+    ]
+  },
+  "date-on": {
+    "translation": "per",
+    "defaults": "on",
+    "origin": [
+      [
+        "src/components/DateRange.js",
+        30
+      ]
+    ]
+  },
+  "date-to": {
+    "translation": "iki",
+    "defaults": "to",
+    "origin": [
+      [
+        "src/components/DateRange.js",
+        38
+      ]
+    ]
+  },
+  "downloading…": {
+    "translation": "Siunčiama...",
+    "origin": [
+      [
+        "src/subviews/SectionFiles.js",
+        44
+      ],
+      [
+        "src/subviews/SectionShortPlaces.js",
+        39
+      ]
+    ]
+  },
+  "for travel documents, e.g. boarding passes": {
+    "translation": "kelionės dokumentams, pvz., įlaipinimo kortelėms",
+    "origin": [
+      [
+        "src/subviews/SectionFiles.js",
+        100
+      ]
+    ]
+  },
+  "offline available": {
+    "translation": "prieinama be interneto ryšio",
+    "origin": [
+      [
+        "src/subviews/SectionFiles.js",
+        43
+      ],
+      [
+        "src/subviews/SectionShortPlaces.js",
+        43
+      ]
+    ]
+  },
+  "press to download": {
+    "translation": "spauskite parsisiuntimui",
+    "origin": [
+      [
+        "src/subviews/SectionFiles.js",
+        45
+      ]
+    ]
+  },
+  "the following notes are related explicitly to OnGea app": {
+    "translation": "toliau nurodytos pastabos yra susijusios konkrečiai su „OnGea“ programėle",
+    "origin": [
+      [
+        "src/views/AgreementAcceptance.js",
+        57
+      ]
+    ]
+  }
+}
