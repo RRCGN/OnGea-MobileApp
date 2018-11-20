@@ -41,7 +41,7 @@ class SectionFiles extends React.PureComponent {
     const size = filesize(download.size)
 
     if (isDownloaded) return size + ' – ' + i18n.t`offline available`
-    if (isQueued) return size + ' – ' + i18n.t`downloading...`
+    if (isQueued) return size + ' – ' + i18n.t`downloading…`
     return size + ' – ' + i18n.t`press to download`
   }
 

@@ -41,12 +41,7 @@
       [
         "src/views/Settings.js",
         81
-      ]
-    ]
-  },
-  "Cancel": {
-    "translation": "annuler",
-    "origin": [
+      ],
       [
         "src/views/UploadImagesView.js",
         52
@@ -59,12 +54,7 @@
       [
         "src/views/UploadImagesView.js",
         51
-      ]
-    ]
-  },
-  "Choose image": {
-    "translation": "Choisir une image",
-    "origin": [
+      ],
       [
         "src/views/UploadImagesView.js",
         126
@@ -77,12 +67,7 @@
       [
         "src/subviews/SectionAllOrganization.js",
         33
-      ]
-    ]
-  },
-  "Contact Informations": {
-    "translation": "Informations de contact",
-    "origin": [
+      ],
       [
         "src/subviews/SectionShortOrganization.js",
         31
@@ -104,21 +89,11 @@
       [
         "src/views/Settings.js",
         78
-      ]
-    ]
-  },
-  "Delete all data": {
-    "translation": "Supprimer toutes les données",
-    "origin": [
+      ],
       [
         "src/views/Settings.js",
         132
-      ]
-    ]
-  },
-  "Delete all data": {
-    "translation": "Supprimer toutes les données",
-    "origin": [
+      ],
       [
         "src/views/Settings.js",
         145
@@ -131,12 +106,7 @@
       [
         "src/views/Settings.js",
         116
-      ]
-    ]
-  },
-  "Delete offline maps": {
-    "translation": "Supprimer les cartes hors ligne",
-    "origin": [
+      ],
       [
         "src/views/Settings.js",
         129
@@ -185,12 +155,7 @@
       [
         "src/subviews/SectionShortSchedule.js",
         17
-      ]
-    ]
-  },
-  "Events": {
-    "translation": "événements",
-    "origin": [
+      ],
       [
         "src/views/Activity.js",
         117
@@ -328,7 +293,7 @@
     "origin": [
       [
         "src/views/Login.js",
-        79
+        93
       ]
     ]
   },
@@ -486,17 +451,12 @@
     ]
   },
   "This action will delete all stored data and the offline available map. After that it will close OnGea. If you reopen OnGea again, you will be back to a fresh start.": {
-    "translation": "Cette action veut supprimer toutes les données stockées et les cartes disponibles hors connexion. Après cela, l’application OnGea se fermera. Si vous ouvrez OnGea à nouveau, vous reprendrez un nouveau départ.",
+    "translation": "Cette action supprimera toutes les données stockées et la carte disponible hors connexion. Après cela, il fermera OnGea. Si vous ouvrez OnGea à nouveau, vous reprendrez un nouveau départ.",
     "origin": [
       [
         "src/views/Settings.js",
-        74
-      ]
-    ]
-  },
-  "This action will delete all stored data and the offline available map. After that it will close OnGea. If you reopen OnGea again, you will be back to a fresh start.": {
-    "translation": "Cette action supprimera toutes les données stockées et la carte disponible hors connexion. Après cela, il fermera OnGea. Si vous ouvrez OnGea à nouveau, vous reprendrez un nouveau départ.",
-    "origin": [
+        79
+      ],
       [
         "src/views/Settings.js",
         134
@@ -528,7 +488,8 @@
         "src/views/UploadImagesView.js",
         119
       ]
-    ]
+    ],
+    "obsolete": true
   },
   "Upload now": {
     "translation": "Télécharger maintenant",
@@ -595,6 +556,7 @@
   },
   "date-from": {
     "translation": "du",
+    "defaults": "from",
     "origin": [
       [
         "src/components/DateRange.js",
@@ -604,6 +566,7 @@
   },
   "date-on": {
     "translation": "le",
+    "defaults": "on",
     "origin": [
       [
         "src/components/DateRange.js",
@@ -613,6 +576,7 @@
   },
   "date-to": {
     "translation": "au",
+    "defaults": "to",
     "origin": [
       [
         "src/components/DateRange.js",
@@ -626,12 +590,7 @@
       [
         "src/subviews/SectionFiles.js",
         44
-      ]
-    ]
-  },
-  "downloading…": {
-    "translation": "Téléchargement ...",
-    "origin": [
+      ],
       [
         "src/subviews/SectionShortPlaces.js",
         39
@@ -653,12 +612,7 @@
       [
         "src/subviews/SectionFiles.js",
         43
-      ]
-    ]
-  },
-  "offline available": {
-    "translation": "disponible hors ligne",
-    "origin": [
+      ],
       [
         "src/subviews/SectionShortPlaces.js",
         43
