@@ -102,6 +102,10 @@ class Settings extends Component {
       })
   }
 
+  handleCreditsPress = () => {
+    this.props.navigation.navigate('Credits')
+  }
+
   render() {
     const { isDeletingMaps, isDeletingAllData } = this.state
 
@@ -143,6 +147,11 @@ class Settings extends Component {
               onPress={this.handleDeleteAll}
             >
               <Trans>Delete all data</Trans>
+            </FlatButton>
+          </Section>
+          <Section>
+            <FlatButton onPress={this.handleCreditsPress}>
+              <Trans>Credits</Trans>
             </FlatButton>
           </Section>
           <Section title={i18n.t`App Information`}>

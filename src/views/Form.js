@@ -5,7 +5,9 @@ import ToolbarButton from '../components/ToolbarButton'
 import SignupForm from '../subviews/SignupForm'
 const formData = require('../api-data-structure/signupForm.json')
 
-class Settings extends Component {
+// Abandoned and unused
+
+class Form extends Component {
   static propTypes = {
     logout: PropTypes.func,
     flushContent: PropTypes.func
@@ -45,4 +47,4 @@ const mapDispatchToProps = (dispatch) => ({
   logout: (props) => { dispatch(logout(props)) },
   flushContent: (props) => { dispatch(flushContent(props)) }
 })
-export default connect(mapStateToProps, mapDispatchToProps)(Settings)
+export default connect(mapStateToProps, mapDispatchToProps)(Form)

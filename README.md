@@ -26,6 +26,14 @@ react-native run-android # run app on android emulator
 
 We use linguijs for translation. When adding new strings, run `yarn run i18n:extract`.
 
+### Open Source Attributions
+
+When adding a package, update the open source attribution list simply by running
+
+```sh
+npm run oss-credits
+```
+
 ## Build a release
 
 Follow these steps before building a release:

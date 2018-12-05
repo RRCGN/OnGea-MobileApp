@@ -1,0 +1,248 @@
+{
+    "@lingui/react@2.5.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/lingui/js-lingui",
+        "licenseUrl": "https://github.com/lingui/js-lingui/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "@mapbox/react-native-mapbox-gl@6.1.2-beta2": {
+        "licenses": "BSD",
+        "repository": "https://github.com/mapbox/react-native-mapbox-gl",
+        "licenseUrl": "https://github.com/mapbox/react-native-mapbox-gl/blob/master/LICENSE.md",
+        "parents": "OnGea"
+    },
+    "babel-preset-airbnb@2.5.1": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/airbnb/babel-preset-airbnb",
+        "licenseUrl": "https://github.com/airbnb/babel-preset-airbnb",
+        "parents": "OnGea"
+    },
+    "base-64@0.1.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/mathiasbynens/base64",
+        "licenseUrl": "http://mths.be/mit",
+        "parents": "OnGea"
+    },
+    "express@4.16.3": {
+        "licenses": "MIT",
+        "repository": "https://github.com/expressjs/express",
+        "licenseUrl": "https://github.com/expressjs/express/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "filesize@3.6.1": {
+        "licenses": "BSD-3-Clause",
+        "repository": "https://github.com/avoidwork/filesize.js",
+        "licenseUrl": "https://github.com/avoidwork/filesize.js/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "getstorybook@1.7.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/kadirahq/getstorybook",
+        "licenseUrl": "https://github.com/kadirahq/getstorybook/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "jest-cli@23.2.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/facebook/jest",
+        "licenseUrl": "https://github.com/facebook/jest",
+        "parents": "OnGea"
+    },
+    "moment@2.22.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/moment/moment",
+        "licenseUrl": "https://github.com/moment/moment/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "normalizr@3.2.4": {
+        "licenses": "MIT",
+        "repository": "https://github.com/paularmstrong/normalizr",
+        "licenseUrl": "https://github.com/paularmstrong/normalizr/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-native-animatable@1.3.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/oblador/react-native-animatable",
+        "licenseUrl": "https://github.com/oblador/react-native-animatable/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-native-background-fetch@2.4.3": {
+        "licenses": "MIT",
+        "repository": "https://github.com/transistorsoft/react-native-background-fetch",
+        "licenseUrl": "https://github.com/transistorsoft/react-native-background-fetch/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-native-communications@2.2.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/anarchicknight/react-native-communications",
+        "licenseUrl": "https://github.com/anarchicknight/react-native-communications/blob/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-native-config@0.11.5": {
+        "licenses": "MIT",
+        "repository": "https://github.com/luggit/react-native-config",
+        "licenseUrl": "https://github.com/luggit/react-native-config/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-native-cookie@0.2.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/shimohq/react-native-cookie",
+        "licenseUrl": "https://github.com/shimohq/react-native-cookie/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-native-exit-app@1.0.0": {
+        "licenses": "GPLv3",
+        "repository": "https://github.com/wumke/react-native-exit-app",
+        "licenseUrl": "https://github.com/wumke/react-native-exit-app/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-native-image-header-scroll-view@0.8.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/bamlab/react-native-image-header-scroll-view",
+        "licenseUrl": "https://github.com/bamlab/react-native-image-header-scroll-view/raw/master/LICENCE",
+        "parents": "OnGea"
+    },
+    "react-native-image-picker@0.26.10": {
+        "licenses": "MIT*",
+        "repository": "https://github.com/marcshilling/react-native-image-picker",
+        "licenseUrl": "https://github.com/marcshilling/react-native-image-picker/raw/master/LICENSE.md",
+        "parents": "OnGea"
+    },
+    "react-native-keyboard-aware-scroll-view@0.7.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/APSL/react-native-keyboard-aware-scroll-view",
+        "licenseUrl": "https://github.com/APSL/react-native-keyboard-aware-scroll-view/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-native-languages@2.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/react-community/react-native-languages",
+        "licenseUrl": "https://github.com/react-community/react-native-languages",
+        "parents": "OnGea"
+    },
+    "react-native-linear-gradient@2.4.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/brentvatne/react-native-linear-gradient",
+        "licenseUrl": "https://github.com/brentvatne/react-native-linear-gradient/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-native-loading-spinner-overlay@0.5.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/joinspontaneous/react-native-loading-spinner-overlay",
+        "licenseUrl": "https://github.com/joinspontaneous/react-native-loading-spinner-overlay/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-native-material-bottom-navigation@1.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/timomeh/react-native-material-bottom-navigation",
+        "licenseUrl": "https://github.com/timomeh/react-native-material-bottom-navigation/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-native-mime-types@2.2.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/Liroo/react-native-mime-types",
+        "licenseUrl": "https://github.com/Liroo/react-native-mime-types/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-native-permissions@1.1.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/yonahforst/react-native-permissions",
+        "licenseUrl": "https://github.com/yonahforst/react-native-permissions/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-native-push-notification@3.0.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com:zo0r/react-native-push-notification",
+        "licenseUrl": "https://github.com:zo0r/react-native-push-notification/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-native-simple-markdown@1.1.0": {
+        "licenses": "UNKNOWN",
+        "repository": "https://github.com/CharlesMangwa/react-native-simple-markdown",
+        "licenseUrl": "https://github.com/CharlesMangwa/react-native-simple-markdown/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-native-status-bar-height@2.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/ovr/react-native-status-bar-height",
+        "licenseUrl": "https://github.com/ovr/react-native-status-bar-height/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-native-tab-view@1.0.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/react-native-community/react-native-tab-view",
+        "licenseUrl": "https://github.com/react-native-community/react-native-tab-view/raw/master/LICENSE.md",
+        "parents": "OnGea"
+    },
+    "react-native-vector-icons@4.6.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/oblador/react-native-vector-icons",
+        "licenseUrl": "https://github.com/oblador/react-native-vector-icons/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-native@0.55.4": {
+        "licenses": "MIT",
+        "repository": "https://github.com/facebook/react-native",
+        "licenseUrl": "https://github.com/facebook/react-native/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-navigation@2.0.4": {
+        "licenses": "BSD-2-Clause",
+        "repository": "https://github.com/react-navigation/react-navigation",
+        "licenseUrl": "https://github.com/react-navigation/react-navigation/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "react-redux@5.0.7": {
+        "licenses": "MIT",
+        "repository": "https://github.com/reactjs/react-redux",
+        "licenseUrl": "https://github.com/reactjs/react-redux/raw/master/LICENSE.md",
+        "parents": "OnGea"
+    },
+    "react@16.3.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/facebook/react",
+        "licenseUrl": "https://github.com/facebook/react/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "recompose@0.30.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/acdlite/recompose",
+        "licenseUrl": "https://github.com/acdlite/recompose/raw/master/LICENSE.md",
+        "parents": "OnGea"
+    },
+    "redux-persist@5.10.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/rt2zz/redux-persist",
+        "licenseUrl": "https://github.com/rt2zz/redux-persist/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "redux-thunk@2.3.0": {
+        "licenses": "MIT",
+        "repository": "github:reduxjs/redux-thunk",
+        "licenseUrl": "github:reduxjs/redux-thunk",
+        "parents": "OnGea"
+    },
+    "redux@4.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/reactjs/redux",
+        "licenseUrl": "https://github.com/reactjs/redux/raw/master/LICENSE.md",
+        "parents": "OnGea"
+    },
+    "rn-fetch-blob@0.10.13": {
+        "licenses": "MIT",
+        "repository": "https://github.com/joltup/rn-fetch-blob",
+        "licenseUrl": "https://github.com/joltup/rn-fetch-blob/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "rn-splash-screen@5.2.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/mehcode/rn-splash-screen",
+        "licenseUrl": "https://github.com/mehcode/rn-splash-screen/raw/master/LICENSE",
+        "parents": "OnGea"
+    },
+    "tcomb-form-native@0.6.14": {
+        "licenses": "MIT",
+        "repository": "https://github.com/gcanti/tcomb-form-native",
+        "licenseUrl": "https://github.com/gcanti/tcomb-form-native/raw/master/LICENSE",
+        "parents": "OnGea"
+    }
+}

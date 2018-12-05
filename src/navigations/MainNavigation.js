@@ -2,8 +2,8 @@ import { Platform } from 'react-native'
 import { createStackNavigator } from 'react-navigation'
 import ActivitiesOverview from '../views/ActivitiesOverview'
 import Activity from '../views/Activity'
+import Credits from '../views/Credits'
 import DetailView from '../views/DetailView'
-import MapView from '../views/MapView'
 import Settings from '../views/Settings'
 import UploadImagesView from '../views/UploadImagesView'
 import ShowMapView from '../views/ShowMapView'
@@ -14,9 +14,9 @@ const MainNavigation = createStackNavigator(
   {
     Overview: { screen: ActivitiesOverview },
     SingleActivity: { screen: Activity },
-    Map: { screen: MapView },
     Detail: { screen: DetailView },
     Settings: { screen: Settings },
+    Credits: { screen: Credits },
     UploadImages: { screen: UploadImagesView },
     ShowMap: { screen: ShowMapView }
   },
