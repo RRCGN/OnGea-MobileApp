@@ -85,6 +85,7 @@ export default class Credits extends Component {
         keyExtractor={item => item}
         renderItem={this.renderItem}
         renderSectionHeader={this.renderSectionHeader}
+        stickySectionHeadersEnabled={false}
       />
     )
   }
