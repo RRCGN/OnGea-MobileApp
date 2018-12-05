@@ -43,12 +43,24 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Not used.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Not used.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>camera</string>
+	<string>Upload photos like your travel documents to the OnGea system.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string />
+	<string>The location allows you to inform your host about your current location.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Not used.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>photo</string>
+	<string>Choose photos like your travel documents and upload them to the OnGea system.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Not used.</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Not used.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Not used.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Entypo.ttf</string>
