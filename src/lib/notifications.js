@@ -1,4 +1,4 @@
-import { PushNotificationIOS, Alert, Platform } from 'react-native'
+import { PushNotificationIOS, Alert, Platform, AppState } from 'react-native'
 import BackgroundFetch from 'react-native-background-fetch'
 import PushNotification from 'react-native-push-notification'
 import {
@@ -10,6 +10,17 @@ let store = null
 
 export function poll() {
   return store.dispatch(getNewNotifications()).then(notifications => {
+    // The push notification library currently doesn't show local notifications
+    // when the app is in foreground. Instead we show an alert.
+    if (Platform.OS === 'android' && AppState.currentState === 'active') {
+      notifications.forEach(notif => {
+        Alert.alert(notif.title, notif.message, [
+          { text: 'OK', onPress: () => {} }
+        ])
+      })
+      return
+    }
+
     notifications.forEach(notif => {
       PushNotification.localNotification({
         title: notif.title,
