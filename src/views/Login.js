@@ -26,7 +26,7 @@ class Login extends React.PureComponent {
   state = {
     username: '',
     password: '',
-    instanceUrl: __DEV__ ? 'http://ongeastage.nano-dev.de' : '',
+    instanceUrl: __DEV__ ? 'ongea.getcues.com' : '',
     isLoading: false,
     isError: false
   }
