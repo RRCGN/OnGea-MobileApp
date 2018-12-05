@@ -23,7 +23,10 @@ class SectionShortPlaces extends React.PureComponent {
   }
 
   getPrimaryText = place => {
-    return `${place.name}, ${place.description}`
+    const name = place.name || ''
+    const description = place.description || ''
+    const sep = place.name ? ', ' : ''
+    return name + sep + description
   }
 
   getSecondaryText = place => {
@@ -31,7 +34,11 @@ class SectionShortPlaces extends React.PureComponent {
     const { placesDownloading, placesDownloaded } = this.props
     const mapId = getMapId(place)
 
-    const address = `${place.street}, ${place.postcode} ${place.town}`
+    const street = place.street ? place.street.trim() + ', ' : ''
+    const postcode = place.postcode ? place.postcode.trim() + ' ' : ''
+    const town = place.town.trim() || ''
+    const address = street + postcode + town
+
     const isDownloading = placesDownloading.includes(mapId)
     const isDownloaded = placesDownloaded.includes(mapId)
 

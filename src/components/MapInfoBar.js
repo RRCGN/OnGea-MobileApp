@@ -19,18 +19,25 @@ export default class MapInfoBar extends React.PureComponent {
 
   render() {
     const { place } = this.props
+    const name = place.name || ''
+    const description = place.description || ''
+    const sep = place.name ? ', ' : ''
+    const primary = name + sep + description
+
+    const postcode = place.postcode ? place.postcode.trim() : ''
+    const town = place.town ? ' ' + place.town.trim() : ''
+    const country = place.country ? ', ' + place.country : ''
+    const secondary = postcode + town + country
 
     return (
       <SafeAreaView style={{ backgroundColor: 'white' }}>
         <View style={styles.bar}>
           <View style={styles.infos}>
-            <Text style={styles.primaryText}>
-              {place.name}, {place.description}
-            </Text>
-            <Text style={styles.secondaryText}>{place.street}</Text>
-            <Text style={styles.secondaryText}>
-              {place.postcode} {place.town}, {place.country}
-            </Text>
+            <Text style={styles.primaryText}>{primary}</Text>
+            {!!place.street && (
+              <Text style={styles.secondaryText}>{place.street}</Text>
+            )}
+            <Text style={styles.secondaryText}>{secondary}</Text>
           </View>
           <View style={styles.actions}>
             <TouchableOpacity
