@@ -14,7 +14,7 @@ export function poll() {
     // when the app is in foreground. Instead we show an alert.
     if (Platform.OS === 'android' && AppState.currentState === 'active') {
       notifications.forEach(notif => {
-        Alert.alert(notif.title, notif.message, [
+        Alert.alert(notif.title || 'OnGea Announcement', notif.message, [
           { text: 'OK', onPress: () => {} }
         ])
       })
@@ -95,13 +95,17 @@ export function configurePushNotifications() {
     onNotification: function(notification) {
       // ios does not show notifications in foreground
       if (Platform.OS === 'ios' && notification.foreground) {
-        Alert.alert(notification.title, notification.message, [
-          { text: 'OK', onPress: () => {} }
-        ])
+        Alert.alert(
+          notification.title || 'OnGea Announcement',
+          notification.message,
+          [{ text: 'OK', onPress: () => {} }]
+        )
       } else if (notification.userInteraction) {
-        Alert.alert(notification.title, notification.message, [
-          { text: 'OK', onPress: () => {} }
-        ])
+        Alert.alert(
+          notification.title || 'OnGea Announcement',
+          notification.message,
+          [{ text: 'OK', onPress: () => {} }]
+        )
       }
 
       notification.finish(PushNotificationIOS.FetchResult.NoData)
