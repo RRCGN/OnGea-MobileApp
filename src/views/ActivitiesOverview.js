@@ -34,9 +34,7 @@ class ActivitiesOverview extends Component {
   }
 
   componentDidMount() {
-    if (this.props.activities.length === 0) {
-      this.loadActivities()
-    }
+    this.loadActivities()
   }
 
   loadActivities = () => {
