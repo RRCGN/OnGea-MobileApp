@@ -1,49 +1,44 @@
-/**
- *
- * @flow
- */
-
 import React from 'react'
-import { View, Text } from 'react-native'
-import moment from 'moment'
+import { Text, View } from 'react-native'
+import PropTypes from 'prop-types'
+import { I18n } from '@lingui/react'
+
 import Section from '../components/Section'
-import { Row } from '../components/Layout'
-import ListManager from '../components/ListManager'
 import ListItemFancy from '../components/ListItemFancy'
-import SectionSeperator from '../components/SectionSeperator'
 
-
-const SectionAllTravel = ({ data }) => {
-  const icons = {
-    FLIGHT: [ 'airplane-takeoff', 'airplane-landing' ],
-    TRAIN: [ 'train', 'train' ],
-    OTHER: [ 'home', 'flag-triangle' ]
+export default class SectionAllTravel extends React.PureComponent {
+  static propTypes = {
+    travel: PropTypes.object.isRequired
   }
 
-  return (
-    <Section title="Travels">
-      <ListManager
-        items={data}
-        renderItem={(item, i) => (
-          <View key={i}>
-            <ListItemFancy
-              primary={moment(item.dateFrom).format('DD.MM.YYYY, HH:mm')}
-              secondary={`${item.number}, ${item.origin.locationName}`}
-              icon={icons[item.type][0]}
-              isLinked
-            />
-            <ListItemFancy
-              primary={moment(item.dateTo).format('DD.MM.YYYY, HH:mm')}
-              secondary={item.destination.locationName}
-              icon={icons[item.type][1]}
-              seperator
-            />
-            {i < data.length - 1 && <SectionSeperator />}
-          </View>
-        )}
-      />
-    </Section>
-  )
-}
+  render() {
+    const { travel } = this.props
 
-export default SectionAllTravel
+    return (
+      <I18n>
+        {({ i18n }) => (
+          <Section title={i18n.t`Travel`}>
+            <ListItemFancy
+              primary={travel.title}
+              icon="information-outline"
+            />
+            {!!travel.informationForTravellers && <ListItemFancy
+              primary={travel.informationForTravellers}
+              icon="comment-text-outline"
+            />}
+            <ListItemFancy
+              primary={travel.departureCustomLocation}
+              secondary={travel.departureDate + ' ' + travel.departureTime}
+              icon="airplane-takeoff"
+            />
+            <ListItemFancy
+              primary={travel.arrivalCustomLocation}
+              secondary={travel.arrivalDate + ' ' + travel.arrivalTime}
+              icon="airplane-landing"
+            />
+          </Section>
+        )}
+      </I18n>
+    )
+  }
+}

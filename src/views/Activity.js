@@ -6,7 +6,7 @@ import {
   Text,
   StyleSheet,
   View,
-  StatusBar,
+  StatusBar
 } from 'react-native'
 import * as Animatable from 'react-native-animatable'
 import PropTypes from 'prop-types'
@@ -105,6 +105,17 @@ class Activity extends React.PureComponent {
     this.props.navigation.navigate('ShowMap', { place })
   }
 
+  handleTravelPress = travel => {
+    const { i18n } = this.props
+
+    this.props.navigation.navigate('Detail', {
+      type: 'TRAVEL',
+      title: travel.title,
+      image: this.getImage(),
+      payload: travel
+    })
+  }
+
   handleUploadPress = () => {
     this.props.navigation.navigate('UploadImages')
   }
@@ -145,6 +156,9 @@ class Activity extends React.PureComponent {
     const { navigation, activity } = this.props
     const hasEvents =
       activity.mobilities.length > 0 && activity.mobilities[0].events.length > 0
+    const hasTravels =
+      activity.mobilities.length > 0 &&
+      activity.mobilities[0].travels.length > 0
 
     return (
       <View>
@@ -161,14 +175,10 @@ class Activity extends React.PureComponent {
             onOrganizationPress={this.handleOrganizationPress}
           />
         )}
-        {activity.mobilities.length > 0 && (
+        {hasTravels && (
           <SectionShortTravel
-            dateFrom={activity.mobilities[0].dateFrom}
-            dateTo={activity.mobilities[0].dateTo}
-            fromCity={activity.mobilities[0].fromCityPlace}
-            fromCountry={activity.mobilities[0].fromCountry}
-            toCity={activity.mobilities[0].toCityPlace}
-            toCountry={activity.mobilities[0].toCountry}
+            travels={activity.mobilities[0].travels}
+            onMorePress={this.handleTravelPress}
           />
         )}
         {activity.places.length > 0 && (

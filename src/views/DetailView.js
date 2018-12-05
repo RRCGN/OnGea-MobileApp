@@ -15,6 +15,7 @@ import ToolbarFancy from '../components/ToolbarFancy'
 import Section from '../components/Section'
 import SectionAllOrganization from '../subviews/SectionAllOrganization'
 import SectionAllSchedule from '../subviews/SectionAllSchedule'
+import SectionAllTravel from '../subviews/SectionAllTravel'
 import StatusBarBackgroundIOS from '../components/StatusBarBackgroundIOS'
 import { Colors } from '../utils/constants'
 
@@ -60,6 +61,10 @@ export default class DetailView extends Component {
       case 'SCHEDULE':
         return (
           <SectionAllSchedule events={params.payload} />
+        )
+      case 'TRAVEL':
+        return (
+          <SectionAllTravel travel={params.payload} />
         )
       default:
         return null

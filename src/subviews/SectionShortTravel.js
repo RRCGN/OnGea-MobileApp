@@ -6,33 +6,33 @@ import { withI18n } from '@lingui/react'
 import Section from '../components/Section'
 import { Row } from '../components/Layout'
 import ListManager from '../components/ListManager'
-import ListItemFancy from '../components/ListItemFancy'
+import ListItemStandard from '../components/ListItemStandard'
 
 export class SectionShortTravel extends React.PureComponent {
+  handleItemPress = travel => () => {
+    this.props.onMorePress(travel)
+  }
+
   render() {
-    const {
-      dateFrom,
-      dateTo,
-      toCountry,
-      toCity,
-      fromCountry,
-      fromCity,
-      i18n
-    } = this.props
+    const { travels, i18n } = this.props
 
     return (
       <Section title={i18n.t`Travel`}>
-        <ListItemFancy
-          primary={fromCity}
-          secondary={`${dateFrom} ${fromCountry || ''}`}
-          icon="home-variant"
-          isLinked
-        />
-        <ListItemFancy
-          primary={toCity}
-          secondary={`${dateTo} ${toCountry || ''}`}
-          icon="account-group"
-        />
+        {travels.map((travel, i) => {
+          const secondary =
+            travel.departureCustomLocation +
+            '  ►  ' +
+            travel.arrivalCustomLocation
+
+          return (
+            <ListItemStandard
+              key={travel.id}
+              primary={travel.title}
+              secondary={secondary}
+              onPress={this.handleItemPress(travel)}
+            />
+          )
+        })}
       </Section>
     )
   }
