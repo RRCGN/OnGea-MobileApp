@@ -1,6 +1,5 @@
 import React from 'react'
-import moment from 'moment'
-import Markdown from 'react-native-simple-markdown'
+import { Text } from 'react-native'
 import { I18n } from '@lingui/react'
 
 import Section from '../components/Section'
@@ -10,7 +9,7 @@ const SectionDescription = ({ text }) => {
     <I18n>
       {({ i18n }) => (
         <Section title={i18n.t`Description`}>
-          <Markdown>{text}</Markdown>
+          <Text style={{ color: 'black' }}>{text}</Text>
         </Section>
       )}
     </I18n>
