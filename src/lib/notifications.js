@@ -40,8 +40,7 @@ function start() {
     {
       minimumFetchInterval: 30,
       stopOnTerminate: false,
-      startOnBoot: true,
-      enableHeadless: true
+      startOnBoot: true
     },
     () => {
       poll()
