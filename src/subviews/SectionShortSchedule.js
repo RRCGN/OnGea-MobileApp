@@ -22,6 +22,7 @@ export class SectionShortSchedule extends React.PureComponent {
       <Section title={i18n.t`Events`}>
         <EventItem
           {...nextEvent}
+          showDate
           onPress={this.props.onEventPress(nextEvent)}
         />
         <ListItemStandard

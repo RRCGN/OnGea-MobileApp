@@ -39,14 +39,16 @@ class EventItem extends React.PureComponent {
   }
 
   render() {
-    const { title, startTime, endTime } = this.props
+    const { title, startTime, startDate, endTime, showDate } = this.props
     const datetime = this.getDateTime()
     const placeName = this.getPlaceName()
 
     const icon = this.getIcon()
-    const primary = startTime + ': ' + title
+    let primary = startTime + ': ' + title
     const until = i18n.t`date-to` + ' ' + endTime
     const secondary = placeName ? until + ', ' + placeName : until
+
+    if (showDate) primary = startDate + ' ' + primary
 
     return (
       <ListItemFancy
