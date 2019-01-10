@@ -22,7 +22,7 @@ import { Colors } from '../utils/constants'
 import { transparentHeaderStyle as headerStyle } from '../utils/styles'
 
 export default class DetailView extends Component {
-  static navigationOptions = ({navigation}) => {
+  static navigationOptions = ({ navigation }) => {
     return {
       title: '',
       headerStyle,
@@ -31,10 +31,17 @@ export default class DetailView extends Component {
           androidIcon="arrow-back"
           iosIcon="ios-arrow-back"
           floating={true}
-          onPress={() => navigation.goBack(null)} />
-      )}
+          onPress={() => navigation.goBack(null)}
+        />
+      )
+    }
   }
 
+  handleEventPress = event => () => {
+    if (event.place) {
+      this.props.navigation.navigate('ShowMap', { place: event.place })
+    }
+  }
 
   render() {
     const { params } = this.props.navigation.state
@@ -43,9 +50,7 @@ export default class DetailView extends Component {
       <View style={styles.background}>
         <StatusBarBackgroundIOS />
         <ToolbarFancy image={{ uri: params.image }} title={params.title} />
-        <ScrollView>
-          {this.renderSwitchedContent()}
-        </ScrollView>
+        <ScrollView>{this.renderSwitchedContent()}</ScrollView>
       </View>
     )
   }
@@ -54,20 +59,19 @@ export default class DetailView extends Component {
     const { params } = this.props.navigation.state
 
     switch (params.type) {
-      case 'ORGANIZATION':
-        return (
-          <SectionAllOrganization organization={params.payload} />
-        )
-      case 'SCHEDULE':
-        return (
-          <SectionAllSchedule events={params.payload} />
-        )
-      case 'TRAVEL':
-        return (
-          <SectionAllTravel travel={params.payload} />
-        )
-      default:
-        return null
+    case 'ORGANIZATION':
+      return <SectionAllOrganization organization={params.payload} />
+    case 'SCHEDULE':
+      return (
+          <SectionAllSchedule
+            events={params.payload}
+            onEventPress={this.handleEventPress}
+          />
+      )
+    case 'TRAVEL':
+      return <SectionAllTravel travel={params.payload} />
+    default:
+      return null
     }
   }
 }

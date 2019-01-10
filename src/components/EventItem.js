@@ -2,18 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withI18n } from '@lingui/react'
 
-import ListItemStandard from './ListItemStandard'
+import { i18n } from '../i18n'
+import ListItemFancy from './ListItemFancy'
 
 class EventItem extends React.PureComponent {
   getDateTime = () => {
-    const { startDate, startTime, endDate, endTime } = this.props
+    const { startTime, endTime } = this.props
     let str = ''
-
-    if (startDate) str += startDate + ' '
     if (startTime) str += startTime
-    if (endTime || endDate) str += ' – '
-    if (endDate) str += endDate
-    if (endTime) str += ' ' + endTime
+    if (endTime) str += ' - ' + endTime
     return str
   }
 
@@ -24,29 +21,39 @@ class EventItem extends React.PureComponent {
     return place.name
   }
 
-  getAdditional = () => {
-    const { repeatEvent, i18n } = this.props
+  getIcon = () => {
+    const { category } = this.props
 
-    return [
-      !!repeatEvent && i18n.t`Repeating Event`
-    ].filter(add => !!add)
+    switch (category) {
+    case 'meal':
+      return 'food-fork-drink'
+    case 'program':
+      return 'account-group'
+    case 'overnight_stay':
+      return 'bed-empty'
+    case 'free_time':
+      return 'beach'
+    default:
+      return 'bookmark'
+    }
   }
 
   render() {
-    const { title, category, withBorder } = this.props
+    const { title, startTime, endTime } = this.props
     const datetime = this.getDateTime()
-    const additional = this.getAdditional()
     const placeName = this.getPlaceName()
-    const secondary = placeName
-      ? datetime + ', ' + placeName
-      : datetime
+
+    const icon = this.getIcon()
+    const primary = startTime + ': ' + title
+    const until = i18n.t`date-to` + ' ' + endTime
+    const secondary = placeName ? until + ', ' + placeName : until
 
     return (
-      <ListItemStandard
-        primary={`${title} (${category})`}
+      <ListItemFancy
+        icon={icon}
+        primary={primary}
         secondary={secondary}
-        additional={additional}
-        withBorder={withBorder}
+        onPress={this.props.onPress}
       />
     )
   }

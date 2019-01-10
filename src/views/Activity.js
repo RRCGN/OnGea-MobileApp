@@ -105,6 +105,12 @@ class Activity extends React.PureComponent {
     this.props.navigation.navigate('ShowMap', { place })
   }
 
+  handleEventPress = event => () => {
+    if (event.place) {
+      this.props.navigation.navigate('ShowMap', { place: event.place })
+    }
+  }
+
   handleTravelPress = travel => {
     const { i18n } = this.props
 
@@ -191,6 +197,7 @@ class Activity extends React.PureComponent {
           <SectionShortSchedule
             events={activity.mobilities[0].events}
             onMorePress={this.handleMoreEventsPress}
+            onEventPress={this.handleEventPress}
           />
         )}
         <SectionFiles

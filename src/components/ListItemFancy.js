@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft: -16,
     marginRight: -16,
-    paddingLeft: 16
+    paddingLeft: 16,
+    paddingRight: 16
   },
   right: {
     marginLeft: 32,
