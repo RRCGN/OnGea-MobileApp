@@ -74,7 +74,7 @@ class Root extends React.PureComponent {
   }
 
   pollOneTimeNotification = () => {
-    poll().catch(err => console.error(err))
+    poll().catch(err => console.warn(err))
   }
 
   handleAgree = () => {

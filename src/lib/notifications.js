@@ -51,7 +51,7 @@ function start() {
           BackgroundFetch.finish(exitStatus)
         })
         .catch(err => {
-          console.error(err)
+          console.warn(err)
           BackgroundFetch.finish(BackgroundFetch.FETCH_RESULT_FAILED)
         })
     },
