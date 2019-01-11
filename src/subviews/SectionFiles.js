@@ -95,11 +95,11 @@ class SectionFiles extends React.PureComponent {
 
     return (
       <Section title={i18n.t`Files`} noBorder>
-        <ListItemStandard
+        {/* <ListItemStandard
           primary={i18n.t`Upload your documents for this activity`}
           secondary={i18n.t`for travel documents, e.g. boarding passes`}
           onPress={this.handleUploadPress}
-        />
+        /> */}
         {this.props.data.map(download => (
           <ListItemFancy
             key={download.id}
