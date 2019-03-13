@@ -11138,10 +11138,10 @@ react-native-permissions@^1.1.1:
   resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-1.1.1.tgz#4876004681ff8556454613d85249b01baff9b35b"
   integrity sha512-t0Ujm177bagjUOSzhpmkSz+LqFW04HnY9TeZFavDCmV521fQvFz82aD+POXqWsAdsJVOK3umJYBNNqCjC3g0hQ==
 
-react-native-push-notification@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/react-native-push-notification/-/react-native-push-notification-3.0.2.tgz#3fa7d654cfd915436597b0dd5ba8b0f898c4b0f5"
-  integrity sha512-enBzytbmBi4keOSPH6eofcXC2/z0GivJAbYpJmT6SdM964WbRAZV3mW6ouX/WhcqcI9dD8IEAu1edZuPzZkxCw==
+react-native-push-notification@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-push-notification/-/react-native-push-notification-3.1.1.tgz#99ce426e78e95788c298f73750cc4e68db04d7ab"
+  integrity sha512-4+4yQXNPqh5IVvpSBmR4Cy/UeMjTcfE8KIJgEuT7pME97WK+aGPn6W3ybhOoXC1n+ZWKfrAlsHydLE4xfBZDJg==
 
 react-native-safe-area-view@^0.7.0:
   version "0.7.0"

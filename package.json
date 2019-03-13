@@ -41,7 +41,7 @@
     "react-native-material-bottom-navigation": "git+ssh://git@github.com/timomeh/react-native-material-bottom-navigation.git#master",
     "react-native-mime-types": "^2.2.0",
     "react-native-permissions": "^1.1.1",
-    "react-native-push-notification": "^3.0.2",
+    "react-native-push-notification": "3.1.1",
     "react-native-simple-markdown": "^1.1.0",
     "react-native-status-bar-height": "^2.0.0",
     "react-native-tab-view": "^1.0.2",

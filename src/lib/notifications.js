@@ -24,8 +24,7 @@ export function poll() {
     notifications.forEach(notif => {
       PushNotification.localNotification({
         title: notif.title,
-        message: notif.message,
-        click_action: 'OPEN_MAIN_ACTIVITY'
+        message: notif.message
       })
     })
 
@@ -33,18 +32,17 @@ export function poll() {
   })
 }
 
-function fetchTask() {
-  poll()
-    .then(hasNewNotifications => {
-      const exitStatus = hasNewNotifications
-        ? BackgroundFetch.FETCH_RESULT_NEW_DATA
-        : BackgroundFetch.FETCH_RESULT_NO_DATA
-      BackgroundFetch.finish(exitStatus)
-    })
-    .catch(err => {
-      console.warn(err)
-      BackgroundFetch.finish(BackgroundFetch.FETCH_RESULT_FAILED)
-    })
+async function fetchTask() {
+  try {
+    const hasNewNotifications = await poll()
+    const exitStatus = hasNewNotifications
+      ? BackgroundFetch.FETCH_RESULT_NEW_DATA
+      : BackgroundFetch.FETCH_RESULT_NO_DATA
+    BackgroundFetch.finish(exitStatus)
+  } catch (err) {
+    console.warn(err)
+    BackgroundFetch.finish(BackgroundFetch.FETCH_RESULT_FAILED)
+  }
 }
 
 function start() {
@@ -113,6 +111,6 @@ export function configurePushNotifications() {
 
       notification.finish(PushNotificationIOS.FetchResult.NoData)
     },
-    requestPermissions: false
+    requestPermissions: true
   })
 }
