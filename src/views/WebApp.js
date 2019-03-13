@@ -10,7 +10,7 @@ export default class WebViewScreen extends React.Component {
   }
   static navigationOptions = ({navigation}) => {
     return {
-      title: 'rootsnroutes.eu',
+      title: 'ongea.eu',
       headerStyle,
       headerLeft: (
         <ToolbarButton
