@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, Text, TouchableOpacity, View } from 'react-native'
+import { Modal, Text, TouchableOpacity, View, Linking } from 'react-native'
 import PropTypes from 'prop-types'
 import Communications from 'react-native-communications'
 import { I18n } from '@lingui/react'
@@ -21,7 +21,11 @@ export default class SectionAllOrganization extends React.PureComponent {
   }
 
   handleWebPress = () => {
-    Communications.web('http://' + this.props.organization.website)
+    const url = this.props.organization.website.startsWith('http')
+      ? this.props.organization.website
+      : 'http://' + this.props.organization.website
+
+    Linking.openURL(url)
   }
 
   render() {
