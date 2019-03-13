@@ -84,12 +84,13 @@ class Activity extends React.PureComponent {
 
   getImage = () => {
     const { activity } = this.props
-    const image =
+    const projectImage =
       activity.project && activity.project.image && activity.project.image[0]
         ? activity.project.image[0].path
         : 'https://placehold.it/1600x900'
+    const activityImage = activity.image && activity.image.path
 
-    return image
+    return activityImage || projectImage
   }
 
   handleOrganizationPress = organization => {
