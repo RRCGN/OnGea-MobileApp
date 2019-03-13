@@ -2,6 +2,7 @@ import api from '../../lib/api'
 
 const ACTIVATE_NOTIFICATIONS = 'notifications/ACTIVATE_NOTIFICATIONS'
 const ADD_SEEN = 'notifications/ADD_SEEN'
+const RESET = 'notifications/RESET'
 
 const initialState = {
   isActive: false,
@@ -22,6 +23,9 @@ export default function notifications(state = initialState, action = {}) {
       seenIds: [...action.notificationIds, ...state.seenIds]
     }
 
+  case RESET:
+    return { ...initialState }
+
   default:
     return state
   }
@@ -34,6 +38,10 @@ export const activateNotifications = () => ({
 export const addSeenNotifications = notificationIds => ({
   type: ADD_SEEN,
   notificationIds
+})
+
+export const resetAnnouncements = () => ({
+  type: RESET
 })
 
 export const getNewNotifications = () => (dispatch, getState) => {

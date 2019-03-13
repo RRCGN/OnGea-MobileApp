@@ -1,6 +1,7 @@
 import base64 from 'base-64'
 import api from '../../lib/api'
 import { resetActivities } from './activities'
+import { resetAnnouncements } from './notifications'
 
 const SET_TOKEN = 'auth/SET_TOKEN'
 const SET_INSTANCE_URL = 'auth/SET_INSTANCE_URL'
@@ -53,6 +54,7 @@ export const login = ({ username, password, instanceUrl }) => dispatch => {
 }
 
 export const logout = () => dispatch => {
+  dispatch(resetAnnouncements())
   dispatch(resetAuth())
   dispatch(resetActivities())
 }
