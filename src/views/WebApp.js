@@ -36,7 +36,7 @@ export default class WebViewScreen extends React.Component {
         />
         <WebView
           onLoad={() => this.preformLoaded()}
-          source={{ uri: 'http://rootsnroutes.eu' }}
+          source={{ uri: 'https://ongea.eu' }}
           style={{ flex: 1, backgroundColor: 'white' }} />
          {!loaded && (
           <View style={styles.indicatorContainer}>
