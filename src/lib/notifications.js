@@ -33,6 +33,20 @@ export function poll() {
   })
 }
 
+function fetchTask() {
+  poll()
+    .then(hasNewNotifications => {
+      const exitStatus = hasNewNotifications
+        ? BackgroundFetch.FETCH_RESULT_NEW_DATA
+        : BackgroundFetch.FETCH_RESULT_NO_DATA
+      BackgroundFetch.finish(exitStatus)
+    })
+    .catch(err => {
+      console.warn(err)
+      BackgroundFetch.finish(BackgroundFetch.FETCH_RESULT_FAILED)
+    })
+}
+
 function start() {
   // approx. runs every 30 mins (better for battery),
   // depending on device sleep status and user activity pattern.
@@ -40,25 +54,15 @@ function start() {
     {
       minimumFetchInterval: 30,
       stopOnTerminate: false,
-      startOnBoot: true
+      startOnBoot: true,
+      enableHeadless: true
     },
-    () => {
-      poll()
-        .then(hasNewNotifications => {
-          const exitStatus = hasNewNotifications
-            ? BackgroundFetch.FETCH_RESULT_NEW_DATA
-            : BackgroundFetch.FETCH_RESULT_NO_DATA
-          BackgroundFetch.finish(exitStatus)
-        })
-        .catch(err => {
-          console.warn(err)
-          BackgroundFetch.finish(BackgroundFetch.FETCH_RESULT_FAILED)
-        })
-    },
+    fetchTask,
     () => {
       console.warn('RNBackgroundFetch failed to start')
     }
   )
+  BackgroundFetch.registerHeadlessTask(fetchTask)
 }
 
 export const setStore = s => {
